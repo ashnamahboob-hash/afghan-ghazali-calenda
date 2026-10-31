@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/afghan_calendar.dart';
+import '../services/islamic_calendar.dart';
 import '../services/prayer_times.dart';
 import 'agriculture_screen.dart';
 
@@ -41,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final solar = AfghanCalendar.fromGregorian(selectedDate);
     final nowSolar = AfghanCalendar.fromGregorian(DateTime.now());
+    final hijri = IslamicCalendar.fromGregorian(selectedDate);
     final prayer = PrayerTimes.calculate(
       date: selectedDate,
       latitude: cities[city]![0],
@@ -73,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
           children: [
-            _todayCard(solar, isToday),
+            _todayCard(solar, isToday, hijri),
             const SizedBox(height: 16),
             _monthHeader(solar),
             const SizedBox(height: 8),
@@ -189,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _todayCard(dynamic solar, bool isToday) {
+  Widget _todayCard(dynamic solar, bool isToday, IslamicDate hijri) {
     final month = AfghanCalendar.monthName(solar.month, language);
     final day = AfghanCalendar.formatNumber(solar.day, language);
     final year = AfghanCalendar.formatNumber(solar.year, language);
@@ -211,6 +213,47 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 8),
           Text(day, style: const TextStyle(color: Color(0xFFFFD76A), fontSize: 52, fontWeight: FontWeight.w800)),
           Text('$month $year', style: const TextStyle(color: Colors.white, fontSize: 23, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  language == 'en'
+                      ? 'Islamic: ${IslamicCalendar.monthName(hijri.month, language)} ${hijri.day} ${hijri.year} AH'
+                      : language == 'fa'
+                          ? 'قمری: ${IslamicCalendar.monthName(hijri.month, language)} ${AfghanCalendar.formatNumber(hijri.day, language)} ${AfghanCalendar.formatNumber(hijri.year, language)}'
+                          : 'قمري: ${IslamicCalendar.monthName(hijri.month, language)} ${AfghanCalendar.formatNumber(hijri.day, language)} ${AfghanCalendar.formatNumber(hijri.year, language)}',
+                  style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  language == 'en'
+                      ? 'Gregorian: ${_gregorian(selectedDate)}'
+                      : language == 'fa'
+                          ? 'میلادی: ${_gregorian(selectedDate)}'
+                          : 'میلادي: ${_gregorian(selectedDate)}',
+                  style: const TextStyle(color: Colors.white70, fontSize: 13),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  language == 'en'
+                      ? 'Tabular estimate; local moon sighting may differ by one day.'
+                      : language == 'fa'
+                          ? 'تاریخ محاسباتی است؛ ممکن است با رؤیت محلی هلال یک روز تفاوت داشته باشد.'
+                          : 'دا محاسبوي قمري نېټه ده؛ د سپوږمۍ د رسمي لیدنې له مخې یوه ورځ توپیر کولای شي.',
+                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
           const SizedBox(height: 14),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
