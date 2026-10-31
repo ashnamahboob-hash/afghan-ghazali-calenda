@@ -206,6 +206,18 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                 ? (v) { if (v != null) setState(() => district = v); }
                 : null,
           ),
+          if (province == 'Kandahar')
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text(
+                en
+                    ? 'District names: Open Admin Data (CC BY 4.0); Dari-specific spellings are pending verification.'
+                    : fa
+                        ? 'نام‌های ولسوالی از داده‌های باز گرفته شده‌اند؛ املای اختصاصی دری هنوز تأیید نشده است، بنابراین نام انگلیسی نمایش داده می‌شود.'
+                        : 'د ولسوالیو نومونه د پرانیستو اداري معلوماتو له ډیټابېس څخه اخیستل شوي؛ د دري ځانګړې املا لا نه ده تایید شوې.',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
           if (province != 'Kandahar')
             Padding(
               padding: const EdgeInsets.only(top: 6),
