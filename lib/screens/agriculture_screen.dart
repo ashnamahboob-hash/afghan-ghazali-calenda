@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+class _Province {
+  final String id;
+  final String ps;
+  final String fa;
+  final String en;
+  final String zone;
+  const _Province(this.id, this.ps, this.fa, this.en, this.zone);
+}
+
 class AgricultureScreen extends StatefulWidget {
   final String language;
   const AgricultureScreen({super.key, required this.language});
@@ -9,36 +18,87 @@ class AgricultureScreen extends StatefulWidget {
 }
 
 class _AgricultureScreenState extends State<AgricultureScreen> {
-  String region = 'Central';
-  String season = 'Spring';
+  String province = 'Kandahar';
+  String season = 'Autumn';
 
-  static const regions = <String, String>{
-    'Central': 'مرکزي زون',
-    'South': 'سوېلي زون',
-    'East': 'ختیځ زون',
-    'North': 'شمالي زون',
-    'West': 'لوېدیځ زون',
-    'Northeast': 'شمال ختیځ زون',
-    'Highlands': 'لوړې غرنۍ سیمې',
+  // Province names are localized. Sowing windows below follow the Afghan
+  // Ministry of Agriculture's provincial wheat advisory (1402/8/17).
+  static const provinces = <_Province>[
+    _Province('Badakhshan','بدخشان','بدخشان','Badakhshan','northeast'),
+    _Province('Badghis','بادغیس','بادغیس','Badghis','west'),
+    _Province('Baghlan','بغلان','بغلان','Baghlan','northeast'),
+    _Province('Balkh','بلخ','بلخ','Balkh','north'),
+    _Province('Bamyan','بامیان','بامیان','Bamyan','central'),
+    _Province('Daykundi','دایکندي','دایکندی','Daykundi','central'),
+    _Province('Farah','فراه','فراه','Farah','southwest'),
+    _Province('Faryab','فاریاب','فاریاب','Faryab','north'),
+    _Province('Ghazni','غزني','غزنی','Ghazni','cold'),
+    _Province('Ghor','غور','غور','Ghor','west'),
+    _Province('Helmand','هلمند','هلمند','Helmand','southwest'),
+    _Province('Herat','هرات','هرات','Herat','west'),
+    _Province('Jawzjan','جوزجان','جوزجان','Jawzjan','north'),
+    _Province('Kabul','کابل','کابل','Kabul','cold'),
+    _Province('Kandahar','کندهار','قندهار','Kandahar','southwest'),
+    _Province('Kapisa','کاپیسا','کاپیسا','Kapisa','cold'),
+    _Province('Khost','خوست','خوست','Khost','east'),
+    _Province('Kunar','کونړ','کنر','Kunar','east'),
+    _Province('Kunduz','کندز','کندز','Kunduz','northeast'),
+    _Province('Laghman','لغمان','لغمان','Laghman','east'),
+    _Province('Logar','لوګر','لوگر','Logar','cold'),
+    _Province('Nangarhar','ننګرهار','ننگرهار','Nangarhar','east'),
+    _Province('Nimroz','نیمروز','نیمروز','Nimroz','southwest'),
+    _Province('Nuristan','نورستان','نورستان','Nuristan','east'),
+    _Province('Uruzgan','ارزګان','ارزگان','Uruzgan','southwest'),
+    _Province('Paktia','پکتیا','پکتیا','Paktia','east'),
+    _Province('Paktika','پکتیکا','پکتیکا','Paktika','cold'),
+    _Province('Panjshir','پنجشېر','پنجشیر','Panjshir','central'),
+    _Province('Parwan','پروان','پروان','Parwan','cold'),
+    _Province('Samangan','سمنګان','سمنگان','Samangan','north'),
+    _Province('Sar-e-Pul','سرپل','سرپل','Sar-e-Pul','north'),
+    _Province('Takhar','تخار','تخار','Takhar','northeast'),
+    _Province('Wardak','میدان وردګ','میدان وردک','Maidan Wardak','cold'),
+    _Province('Zabul','زابل','زابل','Zabul','southwest'),
+  ];
+
+  static const seasons = <String, List<String>>{
+    'Spring': ['پسرلی', 'بهار'],
+    'Summer': ['اوړی', 'تابستان'],
+    'Autumn': ['منی', 'خزان'],
+    'Winter': ['ژمی', 'زمستان'],
   };
 
-  static const seasons = <String, String>{
-    'Spring': 'پسرلی',
-    'Summer': 'اوړی',
-    'Autumn': 'منی',
-    'Winter': 'ژمی',
-  };
+  String get lang => widget.language;
+  bool get en => lang == 'en';
+  bool get fa => lang == 'fa';
+  String get title => en ? 'Afghanistan agriculture calendar' : fa ? 'تقویم زراعتی افغانستان' : 'د افغانستان د کرنې کلیز';
 
-  String get _title => widget.language == 'en'
-      ? 'Agriculture calendar'
-      : widget.language == 'fa'
-          ? 'تقویم زراعتی افغانستان'
-          : 'د افغانستان د کرنې کلیز';
+  String _provinceName(_Province p) => en ? p.en : fa ? p.fa : p.ps;
+  String _seasonName(String id) => en ? id : seasons[id]![fa ? 1 : 0];
+
+  String _wheatWindow(String zone) {
+    switch (zone) {
+      case 'cold':
+        return en
+            ? 'Winter wheat: 1–20 Mizan. Semi-winter wheat: 20 Mizan–20 Aqrab.'
+            : fa
+                ? 'گندم زمستانی: ۱ تا ۲۰ میزان؛ گندم نیمه‌زمستانی: ۲۰ میزان تا ۲۰ عقرب.'
+                : 'ژمنی غنم: د میزان له ۱مې تر ۲۰مې؛ نیمه‌ژمنی غنم: د میزان له ۲۰مې تر ۲۰مې عقرب.';
+      case 'north':
+        return en ? 'Wheat sowing: 1 Aqrab–1 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱ عقرب تا ۱ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱مې تر ۱مې قوس.';
+      case 'west':
+        return en ? 'Wheat sowing: after 15 Aqrab through the end of Qaws.' : fa ? 'زمان مناسب کشت گندم: پس از ۱۵ عقرب تا پایان قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې څخه د قوس تر پای پورې.';
+      case 'northeast':
+        return en ? 'Wheat sowing: 15 Aqrab–10 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱۵ عقرب تا ۱۰ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې تر ۱۰مې قوس.';
+      case 'east':
+        return en ? 'Wheat sowing: 15 Aqrab–15 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱۵ عقرب تا ۱۵ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې تر ۱۵مې قوس.';
+      default:
+        return en ? 'Wheat sowing: 15 Aqrab–15 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱۵ عقرب تا ۱۵ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې تر ۱۵مې قوس.';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final en = widget.language == 'en';
-    final fa = widget.language == 'fa';
+    final selected = provinces.firstWhere((p) => p.id == province);
     return SafeArea(
       child: ListView(
         padding: const EdgeInsets.all(16),
@@ -58,29 +118,39 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
               children: [
                 const Icon(Icons.agriculture, color: Color(0xFFFFD76A), size: 34),
                 const SizedBox(height: 10),
-                Text(_title, style: const TextStyle(color: Colors.white, fontSize: 21, fontWeight: FontWeight.bold)),
+                Text(title, style: const TextStyle(color: Colors.white, fontSize: 21, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 6),
                 Text(
-                  en ? 'Crop guidance by region and season' : fa ? 'راهنمای کشت بر اساس منطقه و فصل' : 'د سیمې او موسم له مخې د فصلونو لارښوونې',
+                  en ? 'Choose your province and season' : fa ? 'ولایت و فصل را انتخاب کنید' : 'خپل ولایت او موسم وټاکئ',
                   style: const TextStyle(color: Colors.white70),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 16),
-          Text(en ? 'Region' : fa ? 'منطقه' : 'سیمه', style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text(en ? 'Province' : fa ? 'ولایت' : 'ولایت', style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 6),
           DropdownButtonFormField<String>(
-            value: region,
-            decoration: const InputDecoration(border: OutlineInputBorder(), prefixIcon: Icon(Icons.map_outlined)),
-            items: regions.entries.map((e) => DropdownMenuItem(value: e.key, child: Text(en ? e.key : e.value))).toList(),
-            onChanged: (v) { if (v != null) setState(() => region = v); },
+            value: province,
+            isExpanded: true,
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.location_on_outlined),
+              labelText: en ? 'Select province' : fa ? 'انتخاب ولایت' : 'ولایت وټاکئ',
+            ),
+            items: provinces.map((p) => DropdownMenuItem(value: p.id, child: Text(_provinceName(p)))).toList(),
+            onChanged: (v) { if (v != null) setState(() => province = v); },
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 14),
           Text(en ? 'Season' : fa ? 'فصل' : 'موسم', style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 6),
           DropdownButtonFormField<String>(
             value: season,
-            decoration: const InputDecoration(border: OutlineInputBorder(), prefixIcon: Icon(Icons.wb_sunny_outlined)),
-            items: seasons.entries.map((e) => DropdownMenuItem(value: e.key, child: Text(en ? e.key : fa ? e.value : e.value))).toList(),
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.wb_sunny_outlined),
+            ),
+            items: seasons.keys.map((s) => DropdownMenuItem(value: s, child: Text(_seasonName(s)))).toList(),
             onChanged: (v) { if (v != null) setState(() => season = v); },
           ),
           const SizedBox(height: 16),
@@ -91,22 +161,30 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(children: [
-                    const Icon(Icons.info_outline, color: Color(0xFFD4AF37)),
+                    const Icon(Icons.grass, color: Color(0xFF145A42)),
                     const SizedBox(width: 8),
-                    Expanded(child: Text(en ? 'Regional crop database' : fa ? 'بانک معلومات زراعتی منطقه‌ای' : 'د سیمو د کرنې معلوماتي زېرمه', style: const TextStyle(fontWeight: FontWeight.bold))),
+                    Expanded(child: Text(en ? 'Wheat planting guidance' : fa ? 'راهنمای زمان کشت گندم' : 'د غنمو د کرلو لارښوونه', style: const TextStyle(fontWeight: FontWeight.bold))),
                   ]),
                   const SizedBox(height: 10),
-                  Text(
-                    en
-                        ? 'The region and season selectors are ready. Verified crop calendars, sowing windows, seed rates, irrigation and harvest guidance will be added from reliable Afghan agricultural sources before being presented as recommendations.'
-                        : fa
-                            ? 'انتخاب منطقه و فصل آماده است. زمان کشت، مقدار تخم، آبیاری و برداشت پس از بررسی منابع معتبر زراعتی افغانستان اضافه می‌شود.'
-                            : 'د سیمې او موسم ټاکلو برخه چمتو ده. د کرلو وختونه، د تخم اندازه، اوبه لګول او د حاصل ټولولو لارښوونې به د افغانستان له باوري کرنیزو سرچینو تر څېړنې وروسته ورزیاتې شي.',
-                  ),
+                  if (season == 'Autumn')
+                    Text(_wheatWindow(selected.zone), style: const TextStyle(fontSize: 15, height: 1.5))
+                  else
+                    Text(
+                      en
+                          ? 'A verified planting window for this crop and season has not yet been added. We will not show an unverified date.'
+                          : fa
+                              ? 'زمان معتبر کشت این محصول برای این فصل هنوز ثبت نشده است؛ تاریخ تأییدنشده نمایش داده نمی‌شود.'
+                              : 'د دې فصل لپاره د دې فصل کرنیز وخت لا تر اوسه په باوري سرچینه نه دی تثبیت شوی؛ ناتایید شوې نېټه نه ښودل کېږي.',
+                      style: const TextStyle(fontSize: 14, height: 1.5),
+                    ),
                   const SizedBox(height: 12),
                   Text(
-                    en ? 'Selected: ${regions[region]} · ${seasons[season]}' : 'ټاکل شوې سیمه: ${regions[region]} — ${seasons[season]}',
-                    style: const TextStyle(color: Color(0xFF145A42), fontWeight: FontWeight.w600),
+                    en
+                        ? 'Official source: Afghanistan Ministry of Agriculture, General Directorate of Agricultural Extension, advisory dated 17 Aqrab 1402.'
+                        : fa
+                            ? 'منبع: وزارت زراعت، آبیاری و مالداری افغانستان، ریاست عمومی ترویج زراعتی، اطلاعیه ۱۷ عقرب ۱۴۰۲.'
+                            : 'سرچینه: د افغانستان د کرنې، اوبولګولو او مالدارۍ وزارت، د کرنیز ترویج عمومي ریاست؛ د ۱۴۰۲ کال د عقرب ۱۷مه لارښوونه.',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.black54),
                   ),
                 ],
               ),
@@ -114,9 +192,15 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
           ),
           Card(
             child: ListTile(
-              leading: const Icon(Icons.menu_book_outlined, color: Color(0xFF145A42)),
-              title: Text(en ? 'Crop guides' : fa ? 'راهنمای محصولات' : 'د فصلونو لارښود'),
-              subtitle: Text(en ? 'Planting · care · pests · harvest' : fa ? 'کشت · مراقبت · آفات · برداشت' : 'کرنه · پالنه · افتونه · حاصل'),
+              leading: const Icon(Icons.info_outline, color: Color(0xFFD4AF37)),
+              title: Text(en ? 'Local conditions matter' : fa ? 'شرایط محلی مهم است' : 'ځايي شرایط مهم دي'),
+              subtitle: Text(
+                en
+                    ? 'Sowing dates can shift with altitude, temperature, soil moisture, irrigation and yearly weather. District-level guidance and seed rates will be added only after source verification.'
+                    : fa
+                        ? 'زمان کشت با ارتفاع، دما، رطوبت خاک، آبیاری و وضعیت سالانه هوا تغییر می‌کند. راهنمای ولسوالی و مقدار تخم پس از بررسی منبع معتبر اضافه می‌شود.'
+                        : 'د کرلو نېټه د ارتفاع، تودوخې، د خاورې لندبل، اوبو لګولو او کلنۍ هوا له بدلون سره بدلېږي. د ولسوالیو لارښوونې او د تخم اندازه به د باوري سرچینې تر تایید وروسته ورزیاتې شي.',
+              ),
             ),
           ),
         ],
