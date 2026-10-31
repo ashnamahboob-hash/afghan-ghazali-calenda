@@ -22,3 +22,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/data/kandahar_districts.json
+    - assets/data/agricultural_advisory.json
