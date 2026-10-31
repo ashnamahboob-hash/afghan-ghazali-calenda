@@ -1,0 +1,3598 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "AFGHANISTAN-ADMIN-REFERENCE-DRAFT-2026-10",
+  "last_updated": "2026-10-31",
+  "status": "secondary_reference_draft_pending_ocha_pcode_crosscheck",
+  "counts": {
+    "provinces": 34,
+    "districts": 401
+  },
+  "purpose": "A bilingual administrative reference draft for application development and candidate name/code matching. It is not an officially verified OCHA gazetteer.",
+  "sources": {
+    "secondary": {
+      "name": "Open Admin Data - Afghanistan Administrative Divisions",
+      "url": "https://github.com/open-admin-data/afghanistan-administrative-divisions",
+      "raw_url": "https://raw.githubusercontent.com/open-admin-data/afghanistan-administrative-divisions/main/data/hierarchy.json",
+      "source_commit": "9ceec68cc8f3eb66116b304f8ceaa6c7330d6266",
+      "license": "CC-BY-4.0",
+      "retrieved_at": "2026-10-31",
+      "declared_coverage": "34 provinces and 401 districts",
+      "role": "Secondary candidate reference; local-script labels are not assumed to be verified Pashto or Dari official spellings."
+    },
+    "primary": {
+      "name": "OCHA/HDX Afghanistan - Subnational Administrative Boundaries (COD-AB)",
+      "url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74",
+      "metadata_url": "https://data.amerigeoss.org/dataset/cod-ab-afg",
+      "resource_name": "afg_admin_boundaries.xlsx",
+      "resource_url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74/resource/45f2ff90-13c0-46bf-a46e-7d443e9b9fdd/download/afg_admin_boundaries.xlsx",
+      "source_authority": "Afghanistan Geodesy and Cartography Head Office (AGCHO)",
+      "established_year": 2019,
+      "last_accuracy_review": "2024-07",
+      "metadata_last_updated": "2025-01-17",
+      "declared_coverage": {
+        "admin1_provinces": 34,
+        "admin2_districts": 401
+      },
+      "license": "CC-BY-IGO",
+      "verification_status": "metadata_confirmed_row_level_pcode_extraction_pending",
+      "notes": "The official metadata confirms the dataset and coverage, but this draft does not yet contain a verified row-by-row P-code comparison against its gazetteer."
+    }
+  },
+  "rules": [
+    "Treat IDs from the secondary source as candidate identifiers only until checked against the OCHA COD-AB gazetteer.",
+    "Do not use these records to overwrite existing application IDs or user-supplied IDs.",
+    "Preserve original source spellings and add reviewed aliases separately; never silently normalize names.",
+    "Do not publish district-specific agricultural recommendations solely because an administrative code is present.",
+    "Keep this file separate from runtime advisory data until primary-source verification is complete."
+  ],
+  "provinces": [
+    {
+      "id": "AF17",
+      "names": {
+        "local": "بدخشان",
+        "en": "Badakhshan"
+      },
+      "slug": "badakhshan-af17",
+      "districts": [
+        {
+          "id": "AF1705",
+          "names": {
+            "local": "خاش",
+            "en": "Khash"
+          },
+          "slug": "khash-af1705"
+        },
+        {
+          "id": "AF1712",
+          "names": {
+            "local": "شهدا",
+            "en": "Shuhada"
+          },
+          "slug": "shuhada-af1712"
+        },
+        {
+          "id": "AF1711",
+          "names": {
+            "local": "تشکان",
+            "en": "Teshkan"
+          },
+          "slug": "teshkan-af1711"
+        },
+        {
+          "id": "AF1708",
+          "names": {
+            "local": "کوهستان",
+            "en": "Kohistan"
+          },
+          "slug": "kohistan-af1708"
+        },
+        {
+          "id": "AF1726",
+          "names": {
+            "local": "کران ومنجان",
+            "en": "Koran Wa Monjan"
+          },
+          "slug": "koran-wa-monjan-af1726"
+        },
+        {
+          "id": "AF1713",
+          "names": {
+            "local": "شهر بزرگ",
+            "en": "Shahr-e-Buzorg"
+          },
+          "slug": "shahr-e-buzorg-af1713"
+        },
+        {
+          "id": "AF1710",
+          "names": {
+            "local": "جرم",
+            "en": "Jorm"
+          },
+          "slug": "jorm-af1710"
+        },
+        {
+          "id": "AF1718",
+          "names": {
+            "local": "یمگان",
+            "en": "Yamgan"
+          },
+          "slug": "yamgan-af1718"
+        },
+        {
+          "id": "AF1725",
+          "names": {
+            "local": "زیباک",
+            "en": "Zebak"
+          },
+          "slug": "zebak-af1725"
+        },
+        {
+          "id": "AF1709",
+          "names": {
+            "local": "یاوان",
+            "en": "Yawan"
+          },
+          "slug": "yawan-af1709"
+        },
+        {
+          "id": "AF1716",
+          "names": {
+            "local": "وردوج",
+            "en": "Warduj"
+          },
+          "slug": "warduj-af1716"
+        },
+        {
+          "id": "AF1706",
+          "names": {
+            "local": "بهارک",
+            "en": "Baharak"
+          },
+          "slug": "baharak-af1706"
+        },
+        {
+          "id": "AF1721",
+          "names": {
+            "local": "کوف آب",
+            "en": "Kofab"
+          },
+          "slug": "kofab-af1721"
+        },
+        {
+          "id": "AF1701",
+          "names": {
+            "local": "فیض آباد",
+            "en": "Fayzabad"
+          },
+          "slug": "fayzabad-af1701"
+        },
+        {
+          "id": "AF1714",
+          "names": {
+            "local": "راغستان",
+            "en": "Raghestan"
+          },
+          "slug": "raghestan-af1714"
+        },
+        {
+          "id": "AF1704",
+          "names": {
+            "local": "یفتل سفلی",
+            "en": "Yaftal-e-Sufla"
+          },
+          "slug": "yaftal-e-sufla-af1704"
+        },
+        {
+          "id": "AF1702",
+          "names": {
+            "local": "ارگو",
+            "en": "Argo"
+          },
+          "slug": "argo-af1702"
+        },
+        {
+          "id": "AF1717",
+          "names": {
+            "local": "تگاب",
+            "en": "Tagab"
+          },
+          "slug": "tagab-af1717"
+        },
+        {
+          "id": "AF1722",
+          "names": {
+            "local": "درواز پائین (ما می )",
+            "en": "Darwaz-e-Payin"
+          },
+          "slug": "darwaz-e-payin-af1722"
+        },
+        {
+          "id": "AF1727",
+          "names": {
+            "local": "دروازبالا ( نیسی)",
+            "en": "Darwaz-e-Balla"
+          },
+          "slug": "darwaz-e-balla-af1727"
+        },
+        {
+          "id": "AF1703",
+          "names": {
+            "local": "ارغنچخواه",
+            "en": "Arghanj Khwah"
+          },
+          "slug": "arghanj-khwah-af1703"
+        },
+        {
+          "id": "AF1720",
+          "names": {
+            "local": "خواهان",
+            "en": "Khwahan"
+          },
+          "slug": "khwahan-af1720"
+        },
+        {
+          "id": "AF1728",
+          "names": {
+            "local": "واخان",
+            "en": "Wakhan"
+          },
+          "slug": "wakhan-af1728"
+        },
+        {
+          "id": "AF1719",
+          "names": {
+            "local": "شغنان",
+            "en": "Shighnan"
+          },
+          "slug": "shighnan-af1719"
+        },
+        {
+          "id": "AF1723",
+          "names": {
+            "local": "اشکاشم",
+            "en": "Eshkashem"
+          },
+          "slug": "eshkashem-af1723"
+        },
+        {
+          "id": "AF1707",
+          "names": {
+            "local": "درایم",
+            "en": "Darayem"
+          },
+          "slug": "darayem-af1707"
+        },
+        {
+          "id": "AF1724",
+          "names": {
+            "local": "شکی",
+            "en": "Shaki"
+          },
+          "slug": "shaki-af1724"
+        },
+        {
+          "id": "AF1715",
+          "names": {
+            "local": "کشم",
+            "en": "Keshem"
+          },
+          "slug": "keshem-af1715"
+        }
+      ]
+    },
+    {
+      "id": "AF20",
+      "names": {
+        "local": "سمنگان",
+        "en": "Samangan"
+      },
+      "slug": "samangan-af20",
+      "districts": [
+        {
+          "id": "AF2002",
+          "names": {
+            "local": "حضرت سلطان",
+            "en": "Hazrat-e-Sultan"
+          },
+          "slug": "hazrat-e-sultan-af2002"
+        },
+        {
+          "id": "AF2001",
+          "names": {
+            "local": "ایبک",
+            "en": "Aybak"
+          },
+          "slug": "aybak-af2001"
+        },
+        {
+          "id": "AF2005",
+          "names": {
+            "local": "روی دو آب",
+            "en": "Ruy-e-Duab"
+          },
+          "slug": "ruy-e-duab-af2005"
+        },
+        {
+          "id": "AF2006",
+          "names": {
+            "local": "درۀ صوف پائین",
+            "en": "Dara-e-Suf-e-Payin"
+          },
+          "slug": "dara-e-suf-e-payin-af2006"
+        },
+        {
+          "id": "AF2003",
+          "names": {
+            "local": "خرم وسارباغ",
+            "en": "Khuram Wa Sarbagh"
+          },
+          "slug": "khuram-wa-sarbagh-af2003"
+        },
+        {
+          "id": "AF2008",
+          "names": {
+            "local": "خلم",
+            "en": "Khulm"
+          },
+          "slug": "khulm-af2008"
+        },
+        {
+          "id": "AF2007",
+          "names": {
+            "local": "درۀ صوف بالا",
+            "en": "Dara-e-Suf-e-Bala"
+          },
+          "slug": "dara-e-suf-e-bala-af2007"
+        },
+        {
+          "id": "AF2004",
+          "names": {
+            "local": "فیروز نخچیر",
+            "en": "Feroz Nakhchir"
+          },
+          "slug": "feroz-nakhchir-af2004"
+        }
+      ]
+    },
+    {
+      "id": "AF05",
+      "names": {
+        "local": "لوگر",
+        "en": "Logar"
+      },
+      "slug": "logar-af05",
+      "districts": [
+        {
+          "id": "AF0501",
+          "names": {
+            "local": "پل علم",
+            "en": "Pul-e-Alam"
+          },
+          "slug": "pul-e-alam-af0501"
+        },
+        {
+          "id": "AF0502",
+          "names": {
+            "local": "برکی برک",
+            "en": "Baraki Barak"
+          },
+          "slug": "baraki-barak-af0502"
+        },
+        {
+          "id": "AF0503",
+          "names": {
+            "local": "چرخ",
+            "en": "Charkh"
+          },
+          "slug": "charkh-af0503"
+        },
+        {
+          "id": "AF0505",
+          "names": {
+            "local": "محمدآغه",
+            "en": "Mohammad Agha"
+          },
+          "slug": "mohammad-agha-af0505"
+        },
+        {
+          "id": "AF0504",
+          "names": {
+            "local": "خوشی",
+            "en": "Khoshi"
+          },
+          "slug": "khoshi-af0504"
+        },
+        {
+          "id": "AF0506",
+          "names": {
+            "local": "خروار",
+            "en": "Kharwar"
+          },
+          "slug": "kharwar-af0506"
+        },
+        {
+          "id": "AF0507",
+          "names": {
+            "local": "ازره",
+            "en": "Azra"
+          },
+          "slug": "azra-af0507"
+        }
+      ]
+    },
+    {
+      "id": "AF12",
+      "names": {
+        "local": "پکتیکا",
+        "en": "Paktika"
+      },
+      "slug": "paktika-af12",
+      "districts": [
+        {
+          "id": "AF1202",
+          "names": {
+            "local": "متاخان",
+            "en": "Mata Khan"
+          },
+          "slug": "mata-khan-af1202"
+        },
+        {
+          "id": "AF1212",
+          "names": {
+            "local": "زیړوک",
+            "en": "Ziruk"
+          },
+          "slug": "ziruk-af1212"
+        },
+        {
+          "id": "AF1213",
+          "names": {
+            "local": "نیکه",
+            "en": "Nika"
+          },
+          "slug": "nika-af1213"
+        },
+        {
+          "id": "AF1214",
+          "names": {
+            "local": "برمل",
+            "en": "Barmal"
+          },
+          "slug": "barmal-af1214"
+        },
+        {
+          "id": "AF1219",
+          "names": {
+            "local": "تروو",
+            "en": "Turwo"
+          },
+          "slug": "turwo-af1219"
+        },
+        {
+          "id": "AF1211",
+          "names": {
+            "local": "ارگون",
+            "en": "Urgun"
+          },
+          "slug": "urgun-af1211"
+        },
+        {
+          "id": "AF1204",
+          "names": {
+            "local": "یحی خیل",
+            "en": "Yahya Khel"
+          },
+          "slug": "yahya-khel-af1204"
+        },
+        {
+          "id": "AF1208",
+          "names": {
+            "local": "گومل",
+            "en": "Gomal"
+          },
+          "slug": "gomal-af1208"
+        },
+        {
+          "id": "AF1209",
+          "names": {
+            "local": "جانی خیل",
+            "en": "Jani Khel"
+          },
+          "slug": "jani-khel-af1209"
+        },
+        {
+          "id": "AF1210",
+          "names": {
+            "local": "سروبی",
+            "en": "Surobi"
+          },
+          "slug": "surobi-af1210"
+        },
+        {
+          "id": "AF1205",
+          "names": {
+            "local": "سرروضه (سرحوضه)",
+            "en": "Sar Rawzah"
+          },
+          "slug": "sar-rawzah-af1205"
+        },
+        {
+          "id": "AF1216",
+          "names": {
+            "local": "دیله",
+            "en": "Dila"
+          },
+          "slug": "dila-af1216"
+        },
+        {
+          "id": "AF1203",
+          "names": {
+            "local": "یوسف خیل",
+            "en": "Yosuf Khel"
+          },
+          "slug": "yosuf-khel-af1203"
+        },
+        {
+          "id": "AF1201",
+          "names": {
+            "local": "شرن",
+            "en": "Sharan"
+          },
+          "slug": "sharan-af1201"
+        },
+        {
+          "id": "AF1218",
+          "names": {
+            "local": "وړ ممی",
+            "en": "Wormamay"
+          },
+          "slug": "wormamay-af1218"
+        },
+        {
+          "id": "AF1215",
+          "names": {
+            "local": "گیان",
+            "en": "Giyan"
+          },
+          "slug": "giyan-af1215"
+        },
+        {
+          "id": "AF1217",
+          "names": {
+            "local": "وازه خواه",
+            "en": "Wazakhah"
+          },
+          "slug": "wazakhah-af1217"
+        },
+        {
+          "id": "AF1207",
+          "names": {
+            "local": "زرغون شهر",
+            "en": "Zarghun Shahr"
+          },
+          "slug": "zarghun-shahr-af1207"
+        },
+        {
+          "id": "AF1206",
+          "names": {
+            "local": "اومنه",
+            "en": "Omna"
+          },
+          "slug": "omna-af1206"
+        }
+      ]
+    },
+    {
+      "id": "AF22",
+      "names": {
+        "local": "سرپل",
+        "en": "Sar-e-Pul"
+      },
+      "slug": "sar-e-pul-af22",
+      "districts": [
+        {
+          "id": "AF2206",
+          "names": {
+            "local": "گوسفندی",
+            "en": "Gosfandi"
+          },
+          "slug": "gosfandi-af2206"
+        },
+        {
+          "id": "AF2202",
+          "names": {
+            "local": "صیاد",
+            "en": "Sayad"
+          },
+          "slug": "sayad-af2202"
+        },
+        {
+          "id": "AF2201",
+          "names": {
+            "local": "سرپل",
+            "en": "Sar-e-Pul"
+          },
+          "slug": "sar-e-pul-af2201"
+        },
+        {
+          "id": "AF2207",
+          "names": {
+            "local": "بلخاب",
+            "en": "Balkhab"
+          },
+          "slug": "balkhab-af2207"
+        },
+        {
+          "id": "AF2205",
+          "names": {
+            "local": "سانچارك",
+            "en": "Sancharak"
+          },
+          "slug": "sancharak-af2205"
+        },
+        {
+          "id": "AF2204",
+          "names": {
+            "local": "سوزمه قلعه",
+            "en": "Sozmaqala"
+          },
+          "slug": "sozmaqala-af2204"
+        },
+        {
+          "id": "AF2203",
+          "names": {
+            "local": "کوهستانات",
+            "en": "Kohestanat"
+          },
+          "slug": "kohestanat-af2203"
+        }
+      ]
+    },
+    {
+      "id": "AF13",
+      "names": {
+        "local": "پکتیا",
+        "en": "Paktya"
+      },
+      "slug": "paktya-af13",
+      "districts": [
+        {
+          "id": "AF1310",
+          "names": {
+            "local": "څمکنی",
+            "en": "Chamkani"
+          },
+          "slug": "chamkani-af1310"
+        },
+        {
+          "id": "AF1307",
+          "names": {
+            "local": "علی خیل",
+            "en": "Jaji"
+          },
+          "slug": "jaji-af1307"
+        },
+        {
+          "id": "AF1308",
+          "names": {
+            "local": "لجه احمد خیل",
+            "en": "Lija Ahmad Khel"
+          },
+          "slug": "lija-ahmad-khel-af1308"
+        },
+        {
+          "id": "AF1309",
+          "names": {
+            "local": "جانی خیل",
+            "en": "Jani Khel"
+          },
+          "slug": "jani-khel-af1309"
+        },
+        {
+          "id": "AF1304",
+          "names": {
+            "local": "شواک",
+            "en": "Shawak"
+          },
+          "slug": "shawak-af1304"
+        },
+        {
+          "id": "AF1305",
+          "names": {
+            "local": "حّدران",
+            "en": "Zadran"
+          },
+          "slug": "zadran-af1305"
+        },
+        {
+          "id": "AF1302",
+          "names": {
+            "local": "احمد آبا",
+            "en": "Ahmadaba"
+          },
+          "slug": "ahmadaba-af1302"
+        },
+        {
+          "id": "AF1303",
+          "names": {
+            "local": "زُرمت",
+            "en": "Zurmat"
+          },
+          "slug": "zurmat-af1303"
+        },
+        {
+          "id": "AF1311",
+          "names": {
+            "local": "دند وپټان",
+            "en": "Dand Wa Patan"
+          },
+          "slug": "dand-wa-patan-af1311"
+        },
+        {
+          "id": "AF1301",
+          "names": {
+            "local": "گردیز",
+            "en": "Gardez"
+          },
+          "slug": "gardez-af1301"
+        },
+        {
+          "id": "AF1306",
+          "names": {
+            "local": "سیدکرم",
+            "en": "Sayed Karam"
+          },
+          "slug": "sayed-karam-af1306"
+        }
+      ]
+    },
+    {
+      "id": "AF16",
+      "names": {
+        "local": "نورستان",
+        "en": "Nuristan"
+      },
+      "slug": "nuristan-af16",
+      "districts": [
+        {
+          "id": "AF1602",
+          "names": {
+            "local": "وایگل",
+            "en": "Waygal"
+          },
+          "slug": "waygal-af1602"
+        },
+        {
+          "id": "AF1604",
+          "names": {
+            "local": "نورگرام",
+            "en": "Nurgaram"
+          },
+          "slug": "nurgaram-af1604"
+        },
+        {
+          "id": "AF1605",
+          "names": {
+            "local": "دو آب",
+            "en": "Duab"
+          },
+          "slug": "duab-af1605"
+        },
+        {
+          "id": "AF1603",
+          "names": {
+            "local": "واما",
+            "en": "Wama"
+          },
+          "slug": "wama-af1603"
+        },
+        {
+          "id": "AF1606",
+          "names": {
+            "local": "کامدیش",
+            "en": "Kamdesh"
+          },
+          "slug": "kamdesh-af1606"
+        },
+        {
+          "id": "AF1601",
+          "names": {
+            "local": "پرونس",
+            "en": "Parun"
+          },
+          "slug": "parun-af1601"
+        },
+        {
+          "id": "AF1608",
+          "names": {
+            "local": "برگ متال",
+            "en": "Barg-e-Matal"
+          },
+          "slug": "barg-e-matal-af1608"
+        },
+        {
+          "id": "AF1607",
+          "names": {
+            "local": "مندول",
+            "en": "Mandol"
+          },
+          "slug": "mandol-af1607"
+        }
+      ]
+    },
+    {
+      "id": "AF21",
+      "names": {
+        "local": "بلخ",
+        "en": "Balkh"
+      },
+      "slug": "balkh-af21",
+      "districts": [
+        {
+          "id": "AF2113",
+          "names": {
+            "local": "کلدار",
+            "en": "Kaldar"
+          },
+          "slug": "kaldar-af2113"
+        },
+        {
+          "id": "AF2116",
+          "names": {
+            "local": "شهرک حیرتان",
+            "en": "Sharak-e-Hayratan"
+          },
+          "slug": "sharak-e-hayratan-af2116"
+        },
+        {
+          "id": "AF2105",
+          "names": {
+            "local": "مارمُل",
+            "en": "Marmul"
+          },
+          "slug": "marmul-af2105"
+        },
+        {
+          "id": "AF2109",
+          "names": {
+            "local": "دولت آباد",
+            "en": "Dawlat Abad"
+          },
+          "slug": "dawlat-abad-af2109"
+        },
+        {
+          "id": "AF2101",
+          "names": {
+            "local": "مزار شریف",
+            "en": "Mazar-e-Sharif"
+          },
+          "slug": "mazar-e-sharif-af2101"
+        },
+        {
+          "id": "AF2115",
+          "names": {
+            "local": "زاری",
+            "en": "Zari"
+          },
+          "slug": "zari-af2115"
+        },
+        {
+          "id": "AF2103",
+          "names": {
+            "local": "دهدادی",
+            "en": "Dehdadi"
+          },
+          "slug": "dehdadi-af2103"
+        },
+        {
+          "id": "AF2111",
+          "names": {
+            "local": "چار بولک",
+            "en": "Char Bolak"
+          },
+          "slug": "char-bolak-af2111"
+        },
+        {
+          "id": "AF2104",
+          "names": {
+            "local": "چار کنت",
+            "en": "Charkent"
+          },
+          "slug": "charkent-af2104"
+        },
+        {
+          "id": "AF2112",
+          "names": {
+            "local": "شور تیپه",
+            "en": "Shortepa"
+          },
+          "slug": "shortepa-af2112"
+        },
+        {
+          "id": "AF2106",
+          "names": {
+            "local": "بلخ",
+            "en": "Balkh"
+          },
+          "slug": "balkh-af2106"
+        },
+        {
+          "id": "AF2114",
+          "names": {
+            "local": "کشنده",
+            "en": "Keshendeh"
+          },
+          "slug": "keshendeh-af2114"
+        },
+        {
+          "id": "AF2102",
+          "names": {
+            "local": "نهر شاهی",
+            "en": "Nahr-e-Shahi"
+          },
+          "slug": "nahr-e-shahi-af2102"
+        },
+        {
+          "id": "AF2107",
+          "names": {
+            "local": "شولگره",
+            "en": "Sholgareh"
+          },
+          "slug": "sholgareh-af2107"
+        },
+        {
+          "id": "AF2108",
+          "names": {
+            "local": "چمتال",
+            "en": "Chemtal"
+          },
+          "slug": "chemtal-af2108"
+        }
+      ]
+    },
+    {
+      "id": "AF08",
+      "names": {
+        "local": "پنجشیر",
+        "en": "Panjsher"
+      },
+      "slug": "panjsher-af08",
+      "districts": [
+        {
+          "id": "AF0807",
+          "names": {
+            "local": "پریان",
+            "en": "Paryan"
+          },
+          "slug": "paryan-af0807"
+        },
+        {
+          "id": "AF0802",
+          "names": {
+            "local": "رُخه",
+            "en": "Rukha"
+          },
+          "slug": "rukha-af0802"
+        },
+        {
+          "id": "AF0803",
+          "names": {
+            "local": "دره",
+            "en": "Dara"
+          },
+          "slug": "dara-af0803"
+        },
+        {
+          "id": "AF0805",
+          "names": {
+            "local": "عنابه",
+            "en": "Anawa"
+          },
+          "slug": "anawa-af0805"
+        },
+        {
+          "id": "AF0806",
+          "names": {
+            "local": "شُتل",
+            "en": "Shutul"
+          },
+          "slug": "shutul-af0806"
+        },
+        {
+          "id": "AF0801",
+          "names": {
+            "local": "بازارک",
+            "en": "Bazarak"
+          },
+          "slug": "bazarak-af0801"
+        },
+        {
+          "id": "AF0804",
+          "names": {
+            "local": "خنج (حصه اول)",
+            "en": "Khenj"
+          },
+          "slug": "khenj-af0804"
+        }
+      ]
+    },
+    {
+      "id": "AF28",
+      "names": {
+        "local": "جوزجان",
+        "en": "Jawzjan"
+      },
+      "slug": "jawzjan-af28",
+      "districts": [
+        {
+          "id": "AF2804",
+          "names": {
+            "local": "منگجک",
+            "en": "Mingajik"
+          },
+          "slug": "mingajik-af2804"
+        },
+        {
+          "id": "AF2811",
+          "names": {
+            "local": "درز آب",
+            "en": "Darzab"
+          },
+          "slug": "darzab-af2811"
+        },
+        {
+          "id": "AF2806",
+          "names": {
+            "local": "خمیاب",
+            "en": "Khamyab"
+          },
+          "slug": "khamyab-af2806"
+        },
+        {
+          "id": "AF2805",
+          "names": {
+            "local": "قوش تیپه",
+            "en": "Qush Tepa"
+          },
+          "slug": "qush-tepa-af2805"
+        },
+        {
+          "id": "AF2803",
+          "names": {
+            "local": "خانقا",
+            "en": "Khanaqa"
+          },
+          "slug": "khanaqa-af2803"
+        },
+        {
+          "id": "AF2810",
+          "names": {
+            "local": "قرقین",
+            "en": "Qarqin"
+          },
+          "slug": "qarqin-af2810"
+        },
+        {
+          "id": "AF2809",
+          "names": {
+            "local": "مردیان",
+            "en": "Mardyan"
+          },
+          "slug": "mardyan-af2809"
+        },
+        {
+          "id": "AF2802",
+          "names": {
+            "local": "خواجه دوکوه",
+            "en": "Khwaja Dukoh"
+          },
+          "slug": "khwaja-dukoh-af2802"
+        },
+        {
+          "id": "AF2807",
+          "names": {
+            "local": "آقچه",
+            "en": "Aqcha"
+          },
+          "slug": "aqcha-af2807"
+        },
+        {
+          "id": "AF2808",
+          "names": {
+            "local": "فیض آباد",
+            "en": "Fayzabad"
+          },
+          "slug": "fayzabad-af2808"
+        },
+        {
+          "id": "AF2801",
+          "names": {
+            "local": "شبرغان",
+            "en": "Shiberghan"
+          },
+          "slug": "shiberghan-af2801"
+        }
+      ]
+    },
+    {
+      "id": "AF27",
+      "names": {
+        "local": "کندهار",
+        "en": "Kandahar"
+      },
+      "slug": "kandahar-af27",
+      "districts": [
+        {
+          "id": "AF2709",
+          "names": {
+            "local": "غورک",
+            "en": "Ghorak"
+          },
+          "slug": "ghorak-af2709"
+        },
+        {
+          "id": "AF2704",
+          "names": {
+            "local": "پنجوائی",
+            "en": "Panjwayi"
+          },
+          "slug": "panjwayi-af2704"
+        },
+        {
+          "id": "AF2705",
+          "names": {
+            "local": "ژړۍ",
+            "en": "Zheray"
+          },
+          "slug": "zheray-af2705"
+        },
+        {
+          "id": "AF2713",
+          "names": {
+            "local": "میانشین",
+            "en": "Miyanshin"
+          },
+          "slug": "miyanshin-af2713"
+        },
+        {
+          "id": "AF2714",
+          "names": {
+            "local": "شور آبک",
+            "en": "Shorabak"
+          },
+          "slug": "shorabak-af2714"
+        },
+        {
+          "id": "AF2711",
+          "names": {
+            "local": "سپین بولدک",
+            "en": "Spin Boldak"
+          },
+          "slug": "spin-boldak-af2711"
+        },
+        {
+          "id": "AF2703",
+          "names": {
+            "local": "دامان",
+            "en": "Daman"
+          },
+          "slug": "daman-af2703"
+        },
+        {
+          "id": "AF2706",
+          "names": {
+            "local": "شاه ولی کوت",
+            "en": "Shah Wali Kot"
+          },
+          "slug": "shah-wali-kot-af2706"
+        },
+        {
+          "id": "AF2701",
+          "names": {
+            "local": "کندهار",
+            "en": "Kandahar"
+          },
+          "slug": "kandahar-af2701"
+        },
+        {
+          "id": "AF2715",
+          "names": {
+            "local": "معروف",
+            "en": "Maruf"
+          },
+          "slug": "maruf-af2715"
+        },
+        {
+          "id": "AF2707",
+          "names": {
+            "local": "خاکریز",
+            "en": "Khakrez"
+          },
+          "slug": "khakrez-af2707"
+        },
+        {
+          "id": "AF2702",
+          "names": {
+            "local": "ارغنداب",
+            "en": "Arghandab"
+          },
+          "slug": "arghandab-af2702"
+        },
+        {
+          "id": "AF2712",
+          "names": {
+            "local": "نیش",
+            "en": "Nesh"
+          },
+          "slug": "nesh-af2712"
+        },
+        {
+          "id": "AF2716",
+          "names": {
+            "local": "ریگ ( شگه )",
+            "en": "Reg"
+          },
+          "slug": "reg-af2716"
+        },
+        {
+          "id": "AF2710",
+          "names": {
+            "local": "میوند",
+            "en": "Maywand"
+          },
+          "slug": "maywand-af2710"
+        },
+        {
+          "id": "AF2708",
+          "names": {
+            "local": "ارغستان",
+            "en": "Arghestan"
+          },
+          "slug": "arghestan-af2708"
+        }
+      ]
+    },
+    {
+      "id": "AF24",
+      "names": {
+        "local": "دایکندی",
+        "en": "Daykundi"
+      },
+      "slug": "daykundi-af24",
+      "districts": [
+        {
+          "id": "AF2402",
+          "names": {
+            "local": "شهرستان",
+            "en": "Shahrestan"
+          },
+          "slug": "shahrestan-af2402"
+        },
+        {
+          "id": "AF2403",
+          "names": {
+            "local": "اشترلی",
+            "en": "Ashtarlay"
+          },
+          "slug": "ashtarlay-af2403"
+        },
+        {
+          "id": "AF2405",
+          "names": {
+            "local": "کیتی",
+            "en": "Kiti"
+          },
+          "slug": "kiti-af2405"
+        },
+        {
+          "id": "AF2409",
+          "names": {
+            "local": "پاتو",
+            "en": "Patoo"
+          },
+          "slug": "patoo-af2409"
+        },
+        {
+          "id": "AF2406",
+          "names": {
+            "local": "میرامور",
+            "en": "Miramor"
+          },
+          "slug": "miramor-af2406"
+        },
+        {
+          "id": "AF2401",
+          "names": {
+            "local": "نیلی",
+            "en": "Nili"
+          },
+          "slug": "nili-af2401"
+        },
+        {
+          "id": "AF2404",
+          "names": {
+            "local": "خدیر",
+            "en": "Khadir"
+          },
+          "slug": "khadir-af2404"
+        },
+        {
+          "id": "AF2407",
+          "names": {
+            "local": "سنگ تخت",
+            "en": "Sang-e-Takht"
+          },
+          "slug": "sang-e-takht-af2407"
+        },
+        {
+          "id": "AF2408",
+          "names": {
+            "local": "کجران",
+            "en": "Kajran"
+          },
+          "slug": "kajran-af2408"
+        }
+      ]
+    },
+    {
+      "id": "AF25",
+      "names": {
+        "local": "ارزگان",
+        "en": "Uruzgan"
+      },
+      "slug": "uruzgan-af25",
+      "districts": [
+        {
+          "id": "AF2506",
+          "names": {
+            "local": "چنارتو",
+            "en": "Chinarto"
+          },
+          "slug": "chinarto-af2506"
+        },
+        {
+          "id": "AF2505",
+          "names": {
+            "local": "خاص ارزگان",
+            "en": "Khas Uruzgan"
+          },
+          "slug": "khas-uruzgan-af2505"
+        },
+        {
+          "id": "AF2507",
+          "names": {
+            "local": "گیزاب",
+            "en": "Gizab"
+          },
+          "slug": "gizab-af2507"
+        },
+        {
+          "id": "AF2503",
+          "names": {
+            "local": "چوره",
+            "en": "Chora"
+          },
+          "slug": "chora-af2503"
+        },
+        {
+          "id": "AF2504",
+          "names": {
+            "local": "شهید حساس",
+            "en": "Shahid-e-Hassas"
+          },
+          "slug": "shahid-e-hassas-af2504"
+        },
+        {
+          "id": "AF2502",
+          "names": {
+            "local": "دهراود",
+            "en": "Dehrawud"
+          },
+          "slug": "dehrawud-af2502"
+        },
+        {
+          "id": "AF2501",
+          "names": {
+            "local": "تیرینکوت",
+            "en": "Tirinkot"
+          },
+          "slug": "tirinkot-af2501"
+        }
+      ]
+    },
+    {
+      "id": "AF23",
+      "names": {
+        "local": "غور",
+        "en": "Ghor"
+      },
+      "slug": "ghor-af23",
+      "districts": [
+        {
+          "id": "AF2306",
+          "names": {
+            "local": "شهرک",
+            "en": "Shahrak"
+          },
+          "slug": "shahrak-af2306"
+        },
+        {
+          "id": "AF2304",
+          "names": {
+            "local": "چار صد ره",
+            "en": "Charsadra"
+          },
+          "slug": "charsadra-af2304"
+        },
+        {
+          "id": "AF2302",
+          "names": {
+            "local": "دو لینه",
+            "en": "DoLayna"
+          },
+          "slug": "dolayna-af2302"
+        },
+        {
+          "id": "AF2309",
+          "names": {
+            "local": "تولک",
+            "en": "Tolak"
+          },
+          "slug": "tolak-af2309"
+        },
+        {
+          "id": "AF2307",
+          "names": {
+            "local": "لعل و سرجنگل",
+            "en": "Lal Wa Sarjangal"
+          },
+          "slug": "lal-wa-sarjangal-af2307"
+        },
+        {
+          "id": "AF2308",
+          "names": {
+            "local": "تیوره",
+            "en": "Taywarah"
+          },
+          "slug": "taywarah-af2308"
+        },
+        {
+          "id": "AF2303",
+          "names": {
+            "local": "دولت یار",
+            "en": "Dawlatyar"
+          },
+          "slug": "dawlatyar-af2303"
+        },
+        {
+          "id": "AF2305",
+          "names": {
+            "local": "پسابند",
+            "en": "Pasaband"
+          },
+          "slug": "pasaband-af2305"
+        },
+        {
+          "id": "AF2301",
+          "names": {
+            "local": "فیروزکوه",
+            "en": "Feroz Koh"
+          },
+          "slug": "feroz-koh-af2301"
+        },
+        {
+          "id": "AF2310",
+          "names": {
+            "local": "ساغر",
+            "en": "Saghar"
+          },
+          "slug": "saghar-af2310"
+        }
+      ]
+    },
+    {
+      "id": "AF33",
+      "names": {
+        "local": "فراه",
+        "en": "Farah"
+      },
+      "slug": "farah-af33",
+      "districts": [
+        {
+          "id": "AF3309",
+          "names": {
+            "local": "لاش جوین",
+            "en": "Lash-e-Juwayn"
+          },
+          "slug": "lash-e-juwayn-af3309"
+        },
+        {
+          "id": "AF3302",
+          "names": {
+            "local": "پشترود",
+            "en": "Pushtrod"
+          },
+          "slug": "pushtrod-af3302"
+        },
+        {
+          "id": "AF3304",
+          "names": {
+            "local": "قلعه کاه",
+            "en": "Qala-e-Kah"
+          },
+          "slug": "qala-e-kah-af3304"
+        },
+        {
+          "id": "AF3307",
+          "names": {
+            "local": "انار دره",
+            "en": "Anar Dara"
+          },
+          "slug": "anar-dara-af3307"
+        },
+        {
+          "id": "AF3308",
+          "names": {
+            "local": "بکواه",
+            "en": "Bakwa"
+          },
+          "slug": "bakwa-af3308"
+        },
+        {
+          "id": "AF3306",
+          "names": {
+            "local": "بالا بلوک",
+            "en": "Bala Buluk"
+          },
+          "slug": "bala-buluk-af3306"
+        },
+        {
+          "id": "AF3301",
+          "names": {
+            "local": "فراه",
+            "en": "Farah"
+          },
+          "slug": "farah-af3301"
+        },
+        {
+          "id": "AF3305",
+          "names": {
+            "local": "شیب کوه",
+            "en": "Shibkoh"
+          },
+          "slug": "shibkoh-af3305"
+        },
+        {
+          "id": "AF3311",
+          "names": {
+            "local": "پُرچمن",
+            "en": "Pur Chaman"
+          },
+          "slug": "pur-chaman-af3311"
+        },
+        {
+          "id": "AF3303",
+          "names": {
+            "local": "خاک سفید",
+            "en": "Khak-e-Safed"
+          },
+          "slug": "khak-e-safed-af3303"
+        },
+        {
+          "id": "AF3310",
+          "names": {
+            "local": "گلستان",
+            "en": "Gulistan"
+          },
+          "slug": "gulistan-af3310"
+        }
+      ]
+    },
+    {
+      "id": "AF03",
+      "names": {
+        "local": "پروان",
+        "en": "Parwan"
+      },
+      "slug": "parwan-af03",
+      "districts": [
+        {
+          "id": "AF0307",
+          "names": {
+            "local": "غوربند",
+            "en": "Ghorband"
+          },
+          "slug": "ghorband-af0307"
+        },
+        {
+          "id": "AF0308",
+          "names": {
+            "local": "کوه صافی",
+            "en": "Koh-e-Safi"
+          },
+          "slug": "koh-e-safi-af0308"
+        },
+        {
+          "id": "AF0306",
+          "names": {
+            "local": "سالنگ",
+            "en": "Salang"
+          },
+          "slug": "salang-af0306"
+        },
+        {
+          "id": "AF0309",
+          "names": {
+            "local": "سرخ پارسا",
+            "en": "Surkh-e-Parsa"
+          },
+          "slug": "surkh-e-parsa-af0309"
+        },
+        {
+          "id": "AF0305",
+          "names": {
+            "local": "جبل السراج",
+            "en": "Jabal Saraj"
+          },
+          "slug": "jabal-saraj-af0305"
+        },
+        {
+          "id": "AF0304",
+          "names": {
+            "local": "سیدخیل",
+            "en": "Sayed Khel"
+          },
+          "slug": "sayed-khel-af0304"
+        },
+        {
+          "id": "AF0310",
+          "names": {
+            "local": "شیخ علی",
+            "en": "Shekh Ali"
+          },
+          "slug": "shekh-ali-af0310"
+        },
+        {
+          "id": "AF0303",
+          "names": {
+            "local": "شینواری",
+            "en": "Shinwari"
+          },
+          "slug": "shinwari-af0303"
+        },
+        {
+          "id": "AF0301",
+          "names": {
+            "local": "چاریکار",
+            "en": "Charikar"
+          },
+          "slug": "charikar-af0301"
+        },
+        {
+          "id": "AF0302",
+          "names": {
+            "local": "بگرام",
+            "en": "Bagram"
+          },
+          "slug": "bagram-af0302"
+        }
+      ]
+    },
+    {
+      "id": "AF29",
+      "names": {
+        "local": "فاریاب",
+        "en": "Faryab"
+      },
+      "slug": "faryab-af29",
+      "districts": [
+        {
+          "id": "AF2902",
+          "names": {
+            "local": "پشتون کوټ",
+            "en": "Pashtun Kot"
+          },
+          "slug": "pashtun-kot-af2902"
+        },
+        {
+          "id": "AF2912",
+          "names": {
+            "local": "قرغان",
+            "en": "Qurghan"
+          },
+          "slug": "qurghan-af2912"
+        },
+        {
+          "id": "AF2911",
+          "names": {
+            "local": "قرم قل",
+            "en": "Qaram Qul"
+          },
+          "slug": "qaram-qul-af2911"
+        },
+        {
+          "id": "AF2908",
+          "names": {
+            "local": "گرزیوان",
+            "en": "Garzewan"
+          },
+          "slug": "garzewan-af2908"
+        },
+        {
+          "id": "AF2904",
+          "names": {
+            "local": "المار",
+            "en": "Almar"
+          },
+          "slug": "almar-af2904"
+        },
+        {
+          "id": "AF2903",
+          "names": {
+            "local": "خواجه سبزپوش",
+            "en": "Khwaja Sabz Posh"
+          },
+          "slug": "khwaja-sabz-posh-af2903"
+        },
+        {
+          "id": "AF2901",
+          "names": {
+            "local": "میمنه",
+            "en": "Maymana"
+          },
+          "slug": "maymana-af2901"
+        },
+        {
+          "id": "AF2914",
+          "names": {
+            "local": "خان چارباغ",
+            "en": "Khan-e-Char Bagh"
+          },
+          "slug": "khan-e-char-bagh-af2914"
+        },
+        {
+          "id": "AF2910",
+          "names": {
+            "local": "کوهستان",
+            "en": "Kohistan"
+          },
+          "slug": "kohistan-af2910"
+        },
+        {
+          "id": "AF2913",
+          "names": {
+            "local": "اندخوی",
+            "en": "Andkhoy"
+          },
+          "slug": "andkhoy-af2913"
+        },
+        {
+          "id": "AF2906",
+          "names": {
+            "local": "شیرین تگاب",
+            "en": "Shirin Tagab"
+          },
+          "slug": "shirin-tagab-af2906"
+        },
+        {
+          "id": "AF2905",
+          "names": {
+            "local": "بلچراغ",
+            "en": "Bilcheragh"
+          },
+          "slug": "bilcheragh-af2905"
+        },
+        {
+          "id": "AF2907",
+          "names": {
+            "local": "قیصار",
+            "en": "Qaysar"
+          },
+          "slug": "qaysar-af2907"
+        },
+        {
+          "id": "AF2909",
+          "names": {
+            "local": "دولت آباد",
+            "en": "Dawlat Abad"
+          },
+          "slug": "dawlat-abad-af2909"
+        }
+      ]
+    },
+    {
+      "id": "AF19",
+      "names": {
+        "local": "کندز",
+        "en": "Kunduz"
+      },
+      "slug": "kunduz-af19",
+      "districts": [
+        {
+          "id": "AF1905",
+          "names": {
+            "local": "امام صاحب",
+            "en": "Imam Sahib"
+          },
+          "slug": "imam-sahib-af1905"
+        },
+        {
+          "id": "AF1903",
+          "names": {
+            "local": "علی آباد",
+            "en": "Ali Abad"
+          },
+          "slug": "ali-abad-af1903"
+        },
+        {
+          "id": "AF1904",
+          "names": {
+            "local": "خان آباد",
+            "en": "Khan Abad"
+          },
+          "slug": "khan-abad-af1904"
+        },
+        {
+          "id": "AF1906",
+          "names": {
+            "local": "دشت ارچی",
+            "en": "Dasht-e-Archi"
+          },
+          "slug": "dasht-e-archi-af1906"
+        },
+        {
+          "id": "AF1907",
+          "names": {
+            "local": "قلعه ذال",
+            "en": "Qala-e-Zal"
+          },
+          "slug": "qala-e-zal-af1907"
+        },
+        {
+          "id": "AF1902",
+          "names": {
+            "local": "چهار دره",
+            "en": "Chahar Darah"
+          },
+          "slug": "chahar-darah-af1902"
+        },
+        {
+          "id": "AF1901",
+          "names": {
+            "local": "کندز",
+            "en": "Kunduz"
+          },
+          "slug": "kunduz-af1901"
+        }
+      ]
+    },
+    {
+      "id": "AF14",
+      "names": {
+        "local": "خوست",
+        "en": "Khost"
+      },
+      "slug": "khost-af14",
+      "districts": [
+        {
+          "id": "AF1411",
+          "names": {
+            "local": "سپیره",
+            "en": "Spera"
+          },
+          "slug": "spera-af1411"
+        },
+        {
+          "id": "AF1410",
+          "names": {
+            "local": "قلندر",
+            "en": "Qalandar"
+          },
+          "slug": "qalandar-af1410"
+        },
+        {
+          "id": "AF1412",
+          "names": {
+            "local": "شمل",
+            "en": "Shamal"
+          },
+          "slug": "shamal-af1412"
+        },
+        {
+          "id": "AF1413",
+          "names": {
+            "local": "جاجی میدان",
+            "en": "Jaji Maydan"
+          },
+          "slug": "jaji-maydan-af1413"
+        },
+        {
+          "id": "AF1404",
+          "names": {
+            "local": "تنی",
+            "en": "Tani"
+          },
+          "slug": "tani-af1404"
+        },
+        {
+          "id": "AF1403",
+          "names": {
+            "local": "گربز",
+            "en": "Gurbuz"
+          },
+          "slug": "gurbuz-af1403"
+        },
+        {
+          "id": "AF1408",
+          "names": {
+            "local": "تری زائی",
+            "en": "Terezayi"
+          },
+          "slug": "terezayi-af1408"
+        },
+        {
+          "id": "AF1406",
+          "names": {
+            "local": "نادرشاه کوت",
+            "en": "Nadir Shah Kot"
+          },
+          "slug": "nadir-shah-kot-af1406"
+        },
+        {
+          "id": "AF1402",
+          "names": {
+            "local": "مندوزائی",
+            "en": "Mandozayi"
+          },
+          "slug": "mandozayi-af1402"
+        },
+        {
+          "id": "AF1409",
+          "names": {
+            "local": "باک",
+            "en": "Bak"
+          },
+          "slug": "bak-af1409"
+        },
+        {
+          "id": "AF1407",
+          "names": {
+            "local": "صبری",
+            "en": "Sabari"
+          },
+          "slug": "sabari-af1407"
+        },
+        {
+          "id": "AF1401",
+          "names": {
+            "local": "خوست (متون)",
+            "en": "Matun"
+          },
+          "slug": "matun-af1401"
+        },
+        {
+          "id": "AF1405",
+          "names": {
+            "local": "موسی خیل",
+            "en": "Musa Khel"
+          },
+          "slug": "musa-khel-af1405"
+        }
+      ]
+    },
+    {
+      "id": "AF32",
+      "names": {
+        "local": "هرات",
+        "en": "Hirat"
+      },
+      "slug": "hirat-af32",
+      "districts": [
+        {
+          "id": "AF3212",
+          "names": {
+            "local": "اوبی",
+            "en": "Obe"
+          },
+          "slug": "obe-af3212"
+        },
+        {
+          "id": "AF3208",
+          "names": {
+            "local": "گلران",
+            "en": "Gulran"
+          },
+          "slug": "gulran-af3208"
+        },
+        {
+          "id": "AF3203",
+          "names": {
+            "local": "گذره",
+            "en": "Guzara"
+          },
+          "slug": "guzara-af3203"
+        },
+        {
+          "id": "AF3201",
+          "names": {
+            "local": "هرات",
+            "en": "Hirat"
+          },
+          "slug": "hirat-af3201"
+        },
+        {
+          "id": "AF3210",
+          "names": {
+            "local": "کُشک کهنه",
+            "en": "Kushk-e-Kuhna"
+          },
+          "slug": "kushk-e-kuhna-af3210"
+        },
+        {
+          "id": "AF3206",
+          "names": {
+            "local": "پشتون زرغون",
+            "en": "Pashtun Zarghun"
+          },
+          "slug": "pashtun-zarghun-af3206"
+        },
+        {
+          "id": "AF3207",
+          "names": {
+            "local": "کُشک",
+            "en": "Kushk"
+          },
+          "slug": "kushk-af3207"
+        },
+        {
+          "id": "AF3205",
+          "names": {
+            "local": "زنده جان",
+            "en": "Zindajan"
+          },
+          "slug": "zindajan-af3205"
+        },
+        {
+          "id": "AF3214",
+          "names": {
+            "local": "شیندند",
+            "en": "Shindand"
+          },
+          "slug": "shindand-af3214"
+        },
+        {
+          "id": "AF3202",
+          "names": {
+            "local": "انجیل",
+            "en": "Injil"
+          },
+          "slug": "injil-af3202"
+        },
+        {
+          "id": "AF3213",
+          "names": {
+            "local": "کوهسان",
+            "en": "Kohsan"
+          },
+          "slug": "kohsan-af3213"
+        },
+        {
+          "id": "AF3216",
+          "names": {
+            "local": "چشت شریف",
+            "en": "Chisht-e-Sharif"
+          },
+          "slug": "chisht-e-sharif-af3216"
+        },
+        {
+          "id": "AF3204",
+          "names": {
+            "local": "کرُخ",
+            "en": "Karukh"
+          },
+          "slug": "karukh-af3204"
+        },
+        {
+          "id": "AF3211",
+          "names": {
+            "local": "غوریان",
+            "en": "Ghoryan"
+          },
+          "slug": "ghoryan-af3211"
+        },
+        {
+          "id": "AF3215",
+          "names": {
+            "local": "فرسی",
+            "en": "Farsi"
+          },
+          "slug": "farsi-af3215"
+        },
+        {
+          "id": "AF3209",
+          "names": {
+            "local": "ادرسکن",
+            "en": "Adraskan"
+          },
+          "slug": "adraskan-af3209"
+        }
+      ]
+    },
+    {
+      "id": "AF15",
+      "names": {
+        "local": "کنر ها",
+        "en": "Kunar"
+      },
+      "slug": "kunar-af15",
+      "districts": [
+        {
+          "id": "AF1509",
+          "names": {
+            "local": "چوکی",
+            "en": "Chawkay"
+          },
+          "slug": "chawkay-af1509"
+        },
+        {
+          "id": "AF1513",
+          "names": {
+            "local": "چپه دره",
+            "en": "Chapa Dara"
+          },
+          "slug": "chapa-dara-af1513"
+        },
+        {
+          "id": "AF1503",
+          "names": {
+            "local": "وته پور",
+            "en": "Watapur"
+          },
+          "slug": "watapur-af1503"
+        },
+        {
+          "id": "AF1501",
+          "names": {
+            "local": "اسد آباد",
+            "en": "Asad Abad"
+          },
+          "slug": "asad-abad-af1501"
+        },
+        {
+          "id": "AF1514",
+          "names": {
+            "local": "نورگل",
+            "en": "Nurgal"
+          },
+          "slug": "nurgal-af1514"
+        },
+        {
+          "id": "AF1511",
+          "names": {
+            "local": "غازی آباد",
+            "en": "Ghazi Abad"
+          },
+          "slug": "ghazi-abad-af1511"
+        },
+        {
+          "id": "AF1510",
+          "names": {
+            "local": "خاص کنر",
+            "en": "Khas Kunar"
+          },
+          "slug": "khas-kunar-af1510"
+        },
+        {
+          "id": "AF1507",
+          "names": {
+            "local": "دره پیچ",
+            "en": "Dara-e-Pech"
+          },
+          "slug": "dara-e-pech-af1507"
+        },
+        {
+          "id": "AF1502",
+          "names": {
+            "local": "مروره",
+            "en": "Marawara"
+          },
+          "slug": "marawara-af1502"
+        },
+        {
+          "id": "AF1506",
+          "names": {
+            "local": "شیگل وشلتن",
+            "en": "Shigal"
+          },
+          "slug": "shigal-af1506"
+        },
+        {
+          "id": "AF1504",
+          "names": {
+            "local": "نرنگ",
+            "en": "Narang"
+          },
+          "slug": "narang-af1504"
+        },
+        {
+          "id": "AF1515",
+          "names": {
+            "local": "ناړی",
+            "en": "Nari"
+          },
+          "slug": "nari-af1515"
+        },
+        {
+          "id": "AF1512",
+          "names": {
+            "local": "دانگام",
+            "en": "Dangam"
+          },
+          "slug": "dangam-af1512"
+        },
+        {
+          "id": "AF1508",
+          "names": {
+            "local": "برکنر",
+            "en": "Bar Kunar"
+          },
+          "slug": "bar-kunar-af1508"
+        },
+        {
+          "id": "AF1505",
+          "names": {
+            "local": "سرکانی",
+            "en": "Sar Kani"
+          },
+          "slug": "sar-kani-af1505"
+        }
+      ]
+    },
+    {
+      "id": "AF01",
+      "names": {
+        "local": "کابل",
+        "en": "Kabul"
+      },
+      "slug": "kabul-af01",
+      "districts": [
+        {
+          "id": "AF0115",
+          "names": {
+            "local": "سروبی",
+            "en": "Surobi"
+          },
+          "slug": "surobi-af0115"
+        },
+        {
+          "id": "AF0108",
+          "names": {
+            "local": "میر بچه کوت",
+            "en": "Mir Bacha Kot"
+          },
+          "slug": "mir-bacha-kot-af0108"
+        },
+        {
+          "id": "AF0112",
+          "names": {
+            "local": "فرزه",
+            "en": "Farza"
+          },
+          "slug": "farza-af0112"
+        },
+        {
+          "id": "AF0106",
+          "names": {
+            "local": "شکردره",
+            "en": "Shakar Dara"
+          },
+          "slug": "shakar-dara-af0106"
+        },
+        {
+          "id": "AF0105",
+          "names": {
+            "local": "ده سبز",
+            "en": "Deh Sabz"
+          },
+          "slug": "deh-sabz-af0105"
+        },
+        {
+          "id": "AF0107",
+          "names": {
+            "local": "موسهی",
+            "en": "Musahi"
+          },
+          "slug": "musahi-af0107"
+        },
+        {
+          "id": "AF0109",
+          "names": {
+            "local": "خاک جبار",
+            "en": "Khak-e-Jabbar"
+          },
+          "slug": "khak-e-jabbar-af0109"
+        },
+        {
+          "id": "AF0104",
+          "names": {
+            "local": "بگرامی",
+            "en": "Bagrami"
+          },
+          "slug": "bagrami-af0104"
+        },
+        {
+          "id": "AF0101",
+          "names": {
+            "local": "کابل",
+            "en": "Kabul"
+          },
+          "slug": "kabul-af0101"
+        },
+        {
+          "id": "AF0111",
+          "names": {
+            "local": "گلدره",
+            "en": "Guldara"
+          },
+          "slug": "guldara-af0111"
+        },
+        {
+          "id": "AF0113",
+          "names": {
+            "local": "استالف",
+            "en": "Estalef"
+          },
+          "slug": "estalef-af0113"
+        },
+        {
+          "id": "AF0102",
+          "names": {
+            "local": "پغمان",
+            "en": "Paghman"
+          },
+          "slug": "paghman-af0102"
+        },
+        {
+          "id": "AF0103",
+          "names": {
+            "local": "چهار آسیاب",
+            "en": "Chahar Asyab"
+          },
+          "slug": "chahar-asyab-af0103"
+        },
+        {
+          "id": "AF0110",
+          "names": {
+            "local": "کلکان",
+            "en": "Kalakan"
+          },
+          "slug": "kalakan-af0110"
+        },
+        {
+          "id": "AF0114",
+          "names": {
+            "local": "قره باغ",
+            "en": "Qara Bagh"
+          },
+          "slug": "qara-bagh-af0114"
+        }
+      ]
+    },
+    {
+      "id": "AF30",
+      "names": {
+        "local": "هلمند",
+        "en": "Hilmand"
+      },
+      "slug": "hilmand-af30",
+      "districts": [
+        {
+          "id": "AF3013",
+          "names": {
+            "local": "دیشو",
+            "en": "Deh-e-Shu"
+          },
+          "slug": "deh-e-shu-af3013"
+        },
+        {
+          "id": "AF3012",
+          "names": {
+            "local": "باغران",
+            "en": "Baghran"
+          },
+          "slug": "baghran-af3012"
+        },
+        {
+          "id": "AF3008",
+          "names": {
+            "local": "سنگین",
+            "en": "Sangin"
+          },
+          "slug": "sangin-af3008"
+        },
+        {
+          "id": "AF3006",
+          "names": {
+            "local": "گرم سیر",
+            "en": "Garmser"
+          },
+          "slug": "garmser-af3006"
+        },
+        {
+          "id": "AF3004",
+          "names": {
+            "local": "نهر سراج",
+            "en": "Nahr-e-Saraj"
+          },
+          "slug": "nahr-e-saraj-af3004"
+        },
+        {
+          "id": "AF3003",
+          "names": {
+            "local": "ناوه بارکزائی",
+            "en": "Nawa-e-Barakzaiy"
+          },
+          "slug": "nawa-e-barakzaiy-af3003"
+        },
+        {
+          "id": "AF3001",
+          "names": {
+            "local": "لشکرگاه",
+            "en": "Lashkargah"
+          },
+          "slug": "lashkargah-af3001"
+        },
+        {
+          "id": "AF3005",
+          "names": {
+            "local": "واشیر",
+            "en": "Washer"
+          },
+          "slug": "washer-af3005"
+        },
+        {
+          "id": "AF3011",
+          "names": {
+            "local": "ریگ خان نشین",
+            "en": "Reg-i-Khan Nishin"
+          },
+          "slug": "reg-i-khan-nishin-af3011"
+        },
+        {
+          "id": "AF3010",
+          "names": {
+            "local": "کجکی",
+            "en": "Kajaki"
+          },
+          "slug": "kajaki-af3010"
+        },
+        {
+          "id": "AF3002",
+          "names": {
+            "local": "نادعلی",
+            "en": "Nad-e-Ali"
+          },
+          "slug": "nad-e-ali-af3002"
+        },
+        {
+          "id": "AF3007",
+          "names": {
+            "local": "نوزاد",
+            "en": "Nawzad"
+          },
+          "slug": "nawzad-af3007"
+        },
+        {
+          "id": "AF3009",
+          "names": {
+            "local": "موسی قلعه",
+            "en": "Musa Qala"
+          },
+          "slug": "musa-qala-af3009"
+        }
+      ]
+    },
+    {
+      "id": "AF11",
+      "names": {
+        "local": "غزنی",
+        "en": "Ghazni"
+      },
+      "slug": "ghazni-af11",
+      "districts": [
+        {
+          "id": "AF1106",
+          "names": {
+            "local": "جغتو",
+            "en": "Jaghatu"
+          },
+          "slug": "jaghatu-af1106"
+        },
+        {
+          "id": "AF1112",
+          "names": {
+            "local": "گیرو",
+            "en": "Giro"
+          },
+          "slug": "giro-af1112"
+        },
+        {
+          "id": "AF1104",
+          "names": {
+            "local": "واغظ",
+            "en": "Waghaz"
+          },
+          "slug": "waghaz-af1104"
+        },
+        {
+          "id": "AF1113",
+          "names": {
+            "local": "آب بند",
+            "en": "Ab Band"
+          },
+          "slug": "ab-band-af1113"
+        },
+        {
+          "id": "AF1114",
+          "names": {
+            "local": "جاغوری",
+            "en": "Jaghuri"
+          },
+          "slug": "jaghuri-af1114"
+        },
+        {
+          "id": "AF1101",
+          "names": {
+            "local": "غزنی",
+            "en": "Ghazni"
+          },
+          "slug": "ghazni-af1101"
+        },
+        {
+          "id": "AF1102",
+          "names": {
+            "local": "ولی محمد شهید",
+            "en": "Wal-e-Muhammad-e-Shahid"
+          },
+          "slug": "wal-e-muhammad-e-shahid-af1102"
+        },
+        {
+          "id": "AF1105",
+          "names": {
+            "local": "ده یک",
+            "en": "Deh Yak"
+          },
+          "slug": "deh-yak-af1105"
+        },
+        {
+          "id": "AF1109",
+          "names": {
+            "local": "رشیدان",
+            "en": "Rashidan"
+          },
+          "slug": "rashidan-af1109"
+        },
+        {
+          "id": "AF1116",
+          "names": {
+            "local": "مالستان",
+            "en": "Malistan"
+          },
+          "slug": "malistan-af1116"
+        },
+        {
+          "id": "AF1115",
+          "names": {
+            "local": "مقر",
+            "en": "Muqur"
+          },
+          "slug": "muqur-af1115"
+        },
+        {
+          "id": "AF1108",
+          "names": {
+            "local": "زنه خان",
+            "en": "Zanakhan"
+          },
+          "slug": "zanakhan-af1108"
+        },
+        {
+          "id": "AF1107",
+          "names": {
+            "local": "اندړ",
+            "en": "Andar"
+          },
+          "slug": "andar-af1107"
+        },
+        {
+          "id": "AF1111",
+          "names": {
+            "local": "قره باغ",
+            "en": "Qara Bagh"
+          },
+          "slug": "qara-bagh-af1111"
+        },
+        {
+          "id": "AF1103",
+          "names": {
+            "local": "خواجه عمری",
+            "en": "Khwaja Umari"
+          },
+          "slug": "khwaja-umari-af1103"
+        },
+        {
+          "id": "AF1110",
+          "names": {
+            "local": "ناور",
+            "en": "Nawur"
+          },
+          "slug": "nawur-af1110"
+        },
+        {
+          "id": "AF1119",
+          "names": {
+            "local": "ناوه",
+            "en": "Nawa"
+          },
+          "slug": "nawa-af1119"
+        },
+        {
+          "id": "AF1117",
+          "names": {
+            "local": "گیلان",
+            "en": "Gelan"
+          },
+          "slug": "gelan-af1117"
+        },
+        {
+          "id": "AF1118",
+          "names": {
+            "local": "اجرستان",
+            "en": "Ajristan"
+          },
+          "slug": "ajristan-af1118"
+        }
+      ]
+    },
+    {
+      "id": "AF04",
+      "names": {
+        "local": "میدان وردک",
+        "en": "Maidan Wardak"
+      },
+      "slug": "maidan-wardak-af04",
+      "districts": [
+        {
+          "id": "AF0403",
+          "names": {
+            "local": "جلریز",
+            "en": "Jalrez"
+          },
+          "slug": "jalrez-af0403"
+        },
+        {
+          "id": "AF0401",
+          "names": {
+            "local": "میدان شهر",
+            "en": "Maydan Shahr"
+          },
+          "slug": "maydan-shahr-af0401"
+        },
+        {
+          "id": "AF0406",
+          "names": {
+            "local": "دایمیرداد",
+            "en": "Daymirdad"
+          },
+          "slug": "daymirdad-af0406"
+        },
+        {
+          "id": "AF0408",
+          "names": {
+            "local": "جغتو",
+            "en": "Jaghatu"
+          },
+          "slug": "jaghatu-af0408"
+        },
+        {
+          "id": "AF0404",
+          "names": {
+            "local": "چک",
+            "en": "Chak-e-Wardak"
+          },
+          "slug": "chak-e-wardak-af0404"
+        },
+        {
+          "id": "AF0405",
+          "names": {
+            "local": "سید آباد",
+            "en": "Saydabad"
+          },
+          "slug": "saydabad-af0405"
+        },
+        {
+          "id": "AF0409",
+          "names": {
+            "local": "مدکز بهسود",
+            "en": "Markaz-e-Behsud"
+          },
+          "slug": "markaz-e-behsud-af0409"
+        },
+        {
+          "id": "AF0407",
+          "names": {
+            "local": "حصه اول بهسود",
+            "en": "Hesa-e-Awal-e-Behsud"
+          },
+          "slug": "hesa-e-awal-e-behsud-af0407"
+        },
+        {
+          "id": "AF0402",
+          "names": {
+            "local": "نرخ",
+            "en": "Nerkh"
+          },
+          "slug": "nerkh-af0402"
+        }
+      ]
+    },
+    {
+      "id": "AF02",
+      "names": {
+        "local": "کاپیسا",
+        "en": "Kapisa"
+      },
+      "slug": "kapisa-af02",
+      "districts": [
+        {
+          "id": "AF0201",
+          "names": {
+            "local": "محمود راقی",
+            "en": "Mahmood-e-Raqi"
+          },
+          "slug": "mahmood-e-raqi-af0201"
+        },
+        {
+          "id": "AF0203",
+          "names": {
+            "local": "کوه بند",
+            "en": "Koh Band"
+          },
+          "slug": "koh-band-af0203"
+        },
+        {
+          "id": "AF0205",
+          "names": {
+            "local": "نجراب",
+            "en": "Nijrab"
+          },
+          "slug": "nijrab-af0205"
+        },
+        {
+          "id": "AF0206",
+          "names": {
+            "local": "تگاب",
+            "en": "Tagab"
+          },
+          "slug": "tagab-af0206"
+        },
+        {
+          "id": "AF0204",
+          "names": {
+            "local": "حصه اول کوهستان",
+            "en": "Hisa-e-Awal-e-Kohistan"
+          },
+          "slug": "hisa-e-awal-e-kohistan-af0204"
+        },
+        {
+          "id": "AF0202",
+          "names": {
+            "local": "حصه دوم کوهستان",
+            "en": "Hisa-e-Duwum-e-Kohistan"
+          },
+          "slug": "hisa-e-duwum-e-kohistan-af0202"
+        },
+        {
+          "id": "AF0207",
+          "names": {
+            "local": "اله سای",
+            "en": "Alasay"
+          },
+          "slug": "alasay-af0207"
+        }
+      ]
+    },
+    {
+      "id": "AF06",
+      "names": {
+        "local": "ننگرهار",
+        "en": "Nangarhar"
+      },
+      "slug": "nangarhar-af06",
+      "districts": [
+        {
+          "id": "AF0602",
+          "names": {
+            "local": "بهسود",
+            "en": "Behsud"
+          },
+          "slug": "behsud-af0602"
+        },
+        {
+          "id": "AF0617",
+          "names": {
+            "local": "مهمند دره",
+            "en": "Muhmand Dara"
+          },
+          "slug": "muhmand-dara-af0617"
+        },
+        {
+          "id": "AF0621",
+          "names": {
+            "local": "حصارک",
+            "en": "Hesarak"
+          },
+          "slug": "hesarak-af0621"
+        },
+        {
+          "id": "AF0606",
+          "names": {
+            "local": "کوز کنر",
+            "en": "Kuz Kunar"
+          },
+          "slug": "kuz-kunar-af0606"
+        },
+        {
+          "id": "AF0620",
+          "names": {
+            "local": "نازیان",
+            "en": "Nazyan"
+          },
+          "slug": "nazyan-af0620"
+        },
+        {
+          "id": "AF0604",
+          "names": {
+            "local": "چپر هار",
+            "en": "Chaparhar"
+          },
+          "slug": "chaparhar-af0604"
+        },
+        {
+          "id": "AF0607",
+          "names": {
+            "local": "رودات",
+            "en": "Rodat"
+          },
+          "slug": "rodat-af0607"
+        },
+        {
+          "id": "AF0609",
+          "names": {
+            "local": "بتی کوټ",
+            "en": "Bati Kot"
+          },
+          "slug": "bati-kot-af0609"
+        },
+        {
+          "id": "AF0613",
+          "names": {
+            "local": "کوټ",
+            "en": "Kot"
+          },
+          "slug": "kot-af0613"
+        },
+        {
+          "id": "AF0619",
+          "names": {
+            "local": "شیرزاد",
+            "en": "Sherzad"
+          },
+          "slug": "sherzad-af0619"
+        },
+        {
+          "id": "AF0615",
+          "names": {
+            "local": "اچین",
+            "en": "Achin"
+          },
+          "slug": "achin-af0615"
+        },
+        {
+          "id": "AF0618",
+          "names": {
+            "local": "لعل پور",
+            "en": "Lalpur"
+          },
+          "slug": "lalpur-af0618"
+        },
+        {
+          "id": "AF0608",
+          "names": {
+            "local": "خوگیانی",
+            "en": "Khogyani"
+          },
+          "slug": "khogyani-af0608"
+        },
+        {
+          "id": "AF0610",
+          "names": {
+            "local": "ده بالا",
+            "en": "Deh Bala"
+          },
+          "slug": "deh-bala-af0610"
+        },
+        {
+          "id": "AF0616",
+          "names": {
+            "local": "شینوار",
+            "en": "Shinwar"
+          },
+          "slug": "shinwar-af0616"
+        },
+        {
+          "id": "AF0611",
+          "names": {
+            "local": "پچیراگام",
+            "en": "Pachir Wa Agam"
+          },
+          "slug": "pachir-wa-agam-af0611"
+        },
+        {
+          "id": "AF0612",
+          "names": {
+            "local": "دره نور",
+            "en": "Dara-e-Nur"
+          },
+          "slug": "dara-e-nur-af0612"
+        },
+        {
+          "id": "AF0622",
+          "names": {
+            "local": "دُر بابا",
+            "en": "Dur Baba"
+          },
+          "slug": "dur-baba-af0622"
+        },
+        {
+          "id": "AF0605",
+          "names": {
+            "local": "کامه",
+            "en": "Kama"
+          },
+          "slug": "kama-af0605"
+        },
+        {
+          "id": "AF0601",
+          "names": {
+            "local": "جلال آباد",
+            "en": "Jalalabad"
+          },
+          "slug": "jalalabad-af0601"
+        },
+        {
+          "id": "AF0614",
+          "names": {
+            "local": "گوشته",
+            "en": "Goshta"
+          },
+          "slug": "goshta-af0614"
+        },
+        {
+          "id": "AF0603",
+          "names": {
+            "local": "سرخ رود",
+            "en": "Surkh Rod"
+          },
+          "slug": "surkh-rod-af0603"
+        }
+      ]
+    },
+    {
+      "id": "AF26",
+      "names": {
+        "local": "زابل",
+        "en": "Zabul"
+      },
+      "slug": "zabul-af26",
+      "districts": [
+        {
+          "id": "AF2610",
+          "names": {
+            "local": "شملزائی",
+            "en": "Shamul Zayi"
+          },
+          "slug": "shamul-zayi-af2610"
+        },
+        {
+          "id": "AF2607",
+          "names": {
+            "local": "دای چوپان",
+            "en": "Daychopan"
+          },
+          "slug": "daychopan-af2607"
+        },
+        {
+          "id": "AF2604",
+          "names": {
+            "local": "میزان",
+            "en": "Mizan"
+          },
+          "slug": "mizan-af2604"
+        },
+        {
+          "id": "AF2611",
+          "names": {
+            "local": "کاکړ",
+            "en": "Kakar"
+          },
+          "slug": "kakar-af2611"
+        },
+        {
+          "id": "AF2603",
+          "names": {
+            "local": "شینکی",
+            "en": "Shinkay"
+          },
+          "slug": "shinkay-af2603"
+        },
+        {
+          "id": "AF2608",
+          "names": {
+            "local": "اتغر",
+            "en": "Atghar"
+          },
+          "slug": "atghar-af2608"
+        },
+        {
+          "id": "AF2606",
+          "names": {
+            "local": "شاه جوی",
+            "en": "Shah Joi"
+          },
+          "slug": "shah-joi-af2606"
+        },
+        {
+          "id": "AF2609",
+          "names": {
+            "local": "نوبهار",
+            "en": "Nawbahar"
+          },
+          "slug": "nawbahar-af2609"
+        },
+        {
+          "id": "AF2602",
+          "names": {
+            "local": "ترنک و جلدک",
+            "en": "Tarnak Wa Jaldak"
+          },
+          "slug": "tarnak-wa-jaldak-af2602"
+        },
+        {
+          "id": "AF2605",
+          "names": {
+            "local": "ارغنداب",
+            "en": "Arghandab"
+          },
+          "slug": "arghandab-af2605"
+        },
+        {
+          "id": "AF2601",
+          "names": {
+            "local": "قلات",
+            "en": "Qalat"
+          },
+          "slug": "qalat-af2601"
+        }
+      ]
+    },
+    {
+      "id": "AF18",
+      "names": {
+        "local": "تخار",
+        "en": "Takhar"
+      },
+      "slug": "takhar-af18",
+      "districts": [
+        {
+          "id": "AF1803",
+          "names": {
+            "local": "بهارک",
+            "en": "Baharak"
+          },
+          "slug": "baharak-af1803"
+        },
+        {
+          "id": "AF1813",
+          "names": {
+            "local": "ورسج",
+            "en": "Warsaj"
+          },
+          "slug": "warsaj-af1813"
+        },
+        {
+          "id": "AF1802",
+          "names": {
+            "local": "هزار سموچ",
+            "en": "Hazar Sumuch"
+          },
+          "slug": "hazar-sumuch-af1802"
+        },
+        {
+          "id": "AF1801",
+          "names": {
+            "local": "تالقان",
+            "en": "Taloqan"
+          },
+          "slug": "taloqan-af1801"
+        },
+        {
+          "id": "AF1804",
+          "names": {
+            "local": "بنگی",
+            "en": "Bangi"
+          },
+          "slug": "bangi-af1804"
+        },
+        {
+          "id": "AF1805",
+          "names": {
+            "local": "چال",
+            "en": "Chal"
+          },
+          "slug": "chal-af1805"
+        },
+        {
+          "id": "AF1808",
+          "names": {
+            "local": "فرخار",
+            "en": "Farkhar"
+          },
+          "slug": "farkhar-af1808"
+        },
+        {
+          "id": "AF1806",
+          "names": {
+            "local": "نمک آب",
+            "en": "Namak Ab"
+          },
+          "slug": "namak-ab-af1806"
+        },
+        {
+          "id": "AF1816",
+          "names": {
+            "local": "چاه آب",
+            "en": "Chahab"
+          },
+          "slug": "chahab-af1816"
+        },
+        {
+          "id": "AF1812",
+          "names": {
+            "local": "دشت قلعه",
+            "en": "Dasht-e-Qala"
+          },
+          "slug": "dasht-e-qala-af1812"
+        },
+        {
+          "id": "AF1807",
+          "names": {
+            "local": "کلفگان",
+            "en": "Kalafgan"
+          },
+          "slug": "kalafgan-af1807"
+        },
+        {
+          "id": "AF1814",
+          "names": {
+            "local": "خواجه بهاوالدین",
+            "en": "Khwaja Bahawuddin"
+          },
+          "slug": "khwaja-bahawuddin-af1814"
+        },
+        {
+          "id": "AF1811",
+          "names": {
+            "local": "اشکمش",
+            "en": "Eshkmesh"
+          },
+          "slug": "eshkmesh-af1811"
+        },
+        {
+          "id": "AF1817",
+          "names": {
+            "local": "ینگی قلعه",
+            "en": "Yangi Qala"
+          },
+          "slug": "yangi-qala-af1817"
+        },
+        {
+          "id": "AF1815",
+          "names": {
+            "local": "درقد",
+            "en": "Darqad"
+          },
+          "slug": "darqad-af1815"
+        },
+        {
+          "id": "AF1809",
+          "names": {
+            "local": "خواجه غار",
+            "en": "Khwaja Ghar"
+          },
+          "slug": "khwaja-ghar-af1809"
+        },
+        {
+          "id": "AF1810",
+          "names": {
+            "local": "رُستاق",
+            "en": "Rostaq"
+          },
+          "slug": "rostaq-af1810"
+        }
+      ]
+    },
+    {
+      "id": "AF34",
+      "names": {
+        "local": "نیمروز",
+        "en": "Nimroz"
+      },
+      "slug": "nimroz-af34",
+      "districts": [
+        {
+          "id": "AF3402",
+          "names": {
+            "local": "کنگ",
+            "en": "Kang"
+          },
+          "slug": "kang-af3402"
+        },
+        {
+          "id": "AF3404",
+          "names": {
+            "local": "چاربرجک",
+            "en": "Char Burjak"
+          },
+          "slug": "char-burjak-af3404"
+        },
+        {
+          "id": "AF3405",
+          "names": {
+            "local": "خاش رود",
+            "en": "Khashrod"
+          },
+          "slug": "khashrod-af3405"
+        },
+        {
+          "id": "AF3401",
+          "names": {
+            "local": "زرنج",
+            "en": "Zaranj"
+          },
+          "slug": "zaranj-af3401"
+        },
+        {
+          "id": "AF3403",
+          "names": {
+            "local": "چخانسور",
+            "en": "Chakhansur"
+          },
+          "slug": "chakhansur-af3403"
+        }
+      ]
+    },
+    {
+      "id": "AF07",
+      "names": {
+        "local": "لغمان",
+        "en": "Laghman"
+      },
+      "slug": "laghman-af07",
+      "districts": [
+        {
+          "id": "AF0704",
+          "names": {
+            "local": "علینگار",
+            "en": "Alingar"
+          },
+          "slug": "alingar-af0704"
+        },
+        {
+          "id": "AF0701",
+          "names": {
+            "local": "مهتر لام",
+            "en": "Mehtarlam"
+          },
+          "slug": "mehtarlam-af0701"
+        },
+        {
+          "id": "AF0705",
+          "names": {
+            "local": "دولت شاه",
+            "en": "Dawlatshah"
+          },
+          "slug": "dawlatshah-af0705"
+        },
+        {
+          "id": "AF0703",
+          "names": {
+            "local": "علیشنگ",
+            "en": "Alishang"
+          },
+          "slug": "alishang-af0703"
+        },
+        {
+          "id": "AF0702",
+          "names": {
+            "local": "قرغه ئی",
+            "en": "Qarghayi"
+          },
+          "slug": "qarghayi-af0702"
+        }
+      ]
+    },
+    {
+      "id": "AF09",
+      "names": {
+        "local": "بغلان",
+        "en": "Baghlan"
+      },
+      "slug": "baghlan-af09",
+      "districts": [
+        {
+          "id": "AF0909",
+          "names": {
+            "local": "خواجه هجران",
+            "en": "Khwaja Hejran"
+          },
+          "slug": "khwaja-hejran-af0909"
+        },
+        {
+          "id": "AF0914",
+          "names": {
+            "local": "گذرگاه نور",
+            "en": "Guzargah-e-Nur"
+          },
+          "slug": "guzargah-e-nur-af0914"
+        },
+        {
+          "id": "AF0913",
+          "names": {
+            "local": "خوست و فرنگ",
+            "en": "Khost Wa Fereng"
+          },
+          "slug": "khost-wa-fereng-af0913"
+        },
+        {
+          "id": "AF0907",
+          "names": {
+            "local": "اندراب",
+            "en": "Andarab"
+          },
+          "slug": "andarab-af0907"
+        },
+        {
+          "id": "AF0903",
+          "names": {
+            "local": "دوشی",
+            "en": "Doshi"
+          },
+          "slug": "doshi-af0903"
+        },
+        {
+          "id": "AF0902",
+          "names": {
+            "local": "دهنۀ غوری",
+            "en": "Dahana-e-Ghori"
+          },
+          "slug": "dahana-e-ghori-af0902"
+        },
+        {
+          "id": "AF0912",
+          "names": {
+            "local": "پل حصار",
+            "en": "Pul-e-Hisar"
+          },
+          "slug": "pul-e-hisar-af0912"
+        },
+        {
+          "id": "AF0906",
+          "names": {
+            "local": "خنجان",
+            "en": "Khinjan"
+          },
+          "slug": "khinjan-af0906"
+        },
+        {
+          "id": "AF0911",
+          "names": {
+            "local": "تاله وبرفک",
+            "en": "Tala Wa Barfak"
+          },
+          "slug": "tala-wa-barfak-af0911"
+        },
+        {
+          "id": "AF0904",
+          "names": {
+            "local": "نهرین",
+            "en": "Nahrin"
+          },
+          "slug": "nahrin-af0904"
+        },
+        {
+          "id": "AF0901",
+          "names": {
+            "local": "پلخمری",
+            "en": "Pul-e-Khumri"
+          },
+          "slug": "pul-e-khumri-af0901"
+        },
+        {
+          "id": "AF0908",
+          "names": {
+            "local": "ده صلاح",
+            "en": "Deh Salah"
+          },
+          "slug": "deh-salah-af0908"
+        },
+        {
+          "id": "AF0910",
+          "names": {
+            "local": "بورکه",
+            "en": "Burka"
+          },
+          "slug": "burka-af0910"
+        },
+        {
+          "id": "AF0905",
+          "names": {
+            "local": "بغلان جدید",
+            "en": "Baghlan-e-Jadid"
+          },
+          "slug": "baghlan-e-jadid-af0905"
+        },
+        {
+          "id": "AF0915",
+          "names": {
+            "local": "فرنگ وغارو",
+            "en": "Fereng Wa Gharu"
+          },
+          "slug": "fereng-wa-gharu-af0915"
+        }
+      ]
+    },
+    {
+      "id": "AF31",
+      "names": {
+        "local": "بادغیس",
+        "en": "Badghis"
+      },
+      "slug": "badghis-af31",
+      "districts": [
+        {
+          "id": "AF3105",
+          "names": {
+            "local": "بالا مرغاب",
+            "en": "Bala Murghab"
+          },
+          "slug": "bala-murghab-af3105"
+        },
+        {
+          "id": "AF3106",
+          "names": {
+            "local": "جوند",
+            "en": "Jawand"
+          },
+          "slug": "jawand-af3106"
+        },
+        {
+          "id": "AF3103",
+          "names": {
+            "local": "مقر",
+            "en": "Muqur"
+          },
+          "slug": "muqur-af3103"
+        },
+        {
+          "id": "AF3101",
+          "names": {
+            "local": "قلعه نو",
+            "en": "Qala-e-Naw"
+          },
+          "slug": "qala-e-naw-af3101"
+        },
+        {
+          "id": "AF3107",
+          "names": {
+            "local": "غورماچ",
+            "en": "Ghormach"
+          },
+          "slug": "ghormach-af3107"
+        },
+        {
+          "id": "AF3104",
+          "names": {
+            "local": "قادیس",
+            "en": "Qadis"
+          },
+          "slug": "qadis-af3104"
+        },
+        {
+          "id": "AF3102",
+          "names": {
+            "local": "آب کمری",
+            "en": "Ab Kamari"
+          },
+          "slug": "ab-kamari-af3102"
+        }
+      ]
+    },
+    {
+      "id": "AF10",
+      "names": {
+        "local": "بامیان",
+        "en": "Bamyan"
+      },
+      "slug": "bamyan-af10",
+      "districts": [
+        {
+          "id": "AF1002",
+          "names": {
+            "local": "شیبر",
+            "en": "Shibar"
+          },
+          "slug": "shibar-af1002"
+        },
+        {
+          "id": "AF1006",
+          "names": {
+            "local": "پنجاب",
+            "en": "Panjab"
+          },
+          "slug": "panjab-af1006"
+        },
+        {
+          "id": "AF1001",
+          "names": {
+            "local": "بامیان",
+            "en": "Bamyan"
+          },
+          "slug": "bamyan-af1001"
+        },
+        {
+          "id": "AF1007",
+          "names": {
+            "local": "ورث",
+            "en": "Waras"
+          },
+          "slug": "waras-af1007"
+        },
+        {
+          "id": "AF1003",
+          "names": {
+            "local": "سیغان",
+            "en": "Sayghan"
+          },
+          "slug": "sayghan-af1003"
+        },
+        {
+          "id": "AF1004",
+          "names": {
+            "local": "کهمرد",
+            "en": "Kahmard"
+          },
+          "slug": "kahmard-af1004"
+        },
+        {
+          "id": "AF1005",
+          "names": {
+            "local": "یکاولنگ",
+            "en": "Yakawlang"
+          },
+          "slug": "yakawlang-af1005"
+        }
+      ]
+    }
+  ]
+}
