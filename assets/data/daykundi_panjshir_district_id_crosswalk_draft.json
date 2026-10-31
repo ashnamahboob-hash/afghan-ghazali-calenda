@@ -55,7 +55,7 @@
     "province_count": 2,
     "source_local_district_ids": 16,
     "candidate_mappings": 16,
-    "oсha_verified_mappings": 0,
+    "ocha_verified_mappings": 0,
     "runtime_enabled": false,
     "notes": [
       "All 16 source-local identifiers have a candidate match in the cited secondary administrative dataset.",
