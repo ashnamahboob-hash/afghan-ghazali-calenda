@@ -78,8 +78,8 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
 
   String get cropName => crops[crop]![en ? 2 : fa ? 1 : 0];
 
-  // Province names are localized. Sowing windows below follow the Afghan
-  // Ministry of Agriculture's provincial wheat advisory (1402/8/17).
+  // Province labels are localized. Agricultural dates are loaded only from
+  // the source-reviewed advisory dataset; no dates are hard-coded here.
   static const provinces = <_Province>[
     _Province('Badakhshan','بدخشان','بدخشان','Badakhshan','northeast'),
     _Province('Badghis','بادغیس','بادغیس','Badghis','west'),
@@ -132,34 +132,10 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
   String _provinceName(_Province p) => en ? p.en : fa ? p.fa : p.ps;
   String _seasonName(String id) => en ? id : seasons[id]![fa ? 1 : 0];
 
-  String _wheatWindow(String zone) {
-    switch (zone) {
-      case 'cold':
-        return en
-            ? 'Winter wheat: 1–20 Mizan. Semi-winter wheat: 20 Mizan–20 Aqrab.'
-            : fa
-                ? 'گندم زمستانی: ۱ تا ۲۰ میزان؛ گندم نیمه‌زمستانی: ۲۰ میزان تا ۲۰ عقرب.'
-                : 'ژمنی غنم: د میزان له ۱مې تر ۲۰مې؛ نیمه‌ژمنی غنم: د میزان له ۲۰مې تر ۲۰مې عقرب.';
-      case 'north':
-        return en ? 'Wheat sowing: 1 Aqrab–1 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱ عقرب تا ۱ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱مې تر ۱مې قوس.';
-      case 'west':
-        return en ? 'Wheat sowing: after 15 Aqrab through the end of Qaws.' : fa ? 'زمان مناسب کشت گندم: پس از ۱۵ عقرب تا پایان قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې څخه د قوس تر پای پورې.';
-      case 'northeast':
-        return en ? 'Wheat sowing: 15 Aqrab–10 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱۵ عقرب تا ۱۰ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې تر ۱۰مې قوس.';
-      case 'east':
-        return en ? 'Wheat sowing: 15 Aqrab–15 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱۵ عقرب تا ۱۵ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې تر ۱۵مې قوس.';
-      default:
-        return en
-            ? 'No verified provincial sowing window is available for this province yet. Please consult the local agricultural extension office.'
-            : fa
-                ? 'زمان کشت تأییدشده برای این ولایت هنوز در دسترس نیست؛ لطفاً با ریاست ترویج زراعتی محل مشوره کنید.'
-                : 'د دې ولایت لپاره د کرلو تایید شوی وخت لا نه دی موندل شوی؛ مهرباني وکړئ د خپلې سیمې د کرنیز ترویج له ادارې سره مشوره وکړئ.';
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {
-    final selected = provinces.firstWhere((p) => p.id == province);
     return SafeArea(
       child: ListView(
         padding: const EdgeInsets.all(16),
@@ -317,28 +293,14 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                     Expanded(child: Text(en ? '$cropName planting guidance' : fa ? 'راهنمای زمان کشت $cropName' : 'د $cropName د کرلو لارښوونه', style: const TextStyle(fontWeight: FontWeight.bold))),
                   ]),
                   const SizedBox(height: 10),
-                  if (crop == 'Wheat' && season == 'Autumn')
-                    Text(_wheatWindow(selected.zone), style: const TextStyle(fontSize: 15, height: 1.5))
-                  else
-                    Text(
-                      en
-                          ? 'A verified planting window for this crop and season has not yet been added. We will not show an unverified date.'
-                          : fa
-                              ? 'زمان معتبر کشت این محصول برای این فصل هنوز ثبت نشده است؛ تاریخ تأییدنشده نمایش داده نمی‌شود.'
-                              : 'د دې محصول او موسم لپاره کره کرنیز مهالوېش لا نه دی تایید شوی؛ له همدې امله ناتایید شوې نېټه نه ښودل کېږي.',
-                      style: const TextStyle(fontSize: 14, height: 1.5),
-                    ),
-                  if (crop == 'Wheat' && season == 'Autumn') ...[
-                    const SizedBox(height: 12),
-                    Text(
+                  Text(
                     en
-                        ? 'Official source: Afghanistan Ministry of Agriculture, General Directorate of Agricultural Extension, advisory dated 17 Aqrab 1402.'
+                        ? 'No verified advisory is available for this crop, province and season yet. Unverified dates are intentionally hidden.'
                         : fa
-                            ? 'منبع: وزارت زراعت، آبیاری و مالداری افغانستان، ریاست عمومی ترویج زراعتی، اطلاعیه ۱۷ عقرب ۱۴۰۲.'
-                            : 'سرچینه: د افغانستان د کرنې، اوبولګولو او مالدارۍ وزارت، د کرنیز ترویج عمومي ریاست؛ د ۱۴۰۲ کال د عقرب ۱۷مه لارښوونه.',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.black54),
-                    ),
-                  ],
+                            ? 'برای این محصول، ولایت و فصل هنوز رهنمود زراعتی تأییدشده ثبت نشده است؛ تاریخ تأییدنشده نمایش داده نمی‌شود.'
+                            : 'د دې محصول، ولایت او موسم لپاره لا تایید شوې کرنیزه لارښوونه نشته؛ ناتایید شوې نېټې قصداً نه ښودل کېږي.',
+                    style: const TextStyle(fontSize: 14, height: 1.5),
+                  ),
                 ],
               ),
             ),
