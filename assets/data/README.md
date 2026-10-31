@@ -42,3 +42,9 @@ OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is
 - `afghanistan_admin_divisions_reference_draft.json`: bilingual candidate reference containing 34 provinces and 401 districts from Open Admin Data (CC BY 4.0). It is a secondary reference only; its IDs and local-script labels must not be treated as OCHA-certified until row-level P-code comparison is complete.
 - OCHA/HDX COD-AB metadata confirms Afghanistan's ADM1/ADM2 coverage (34 provinces and 401 districts), identifies AGCHO as the source, and records a July 2024 accuracy review. The OCHA gazetteer row-level extraction is still pending; no district is promoted to officially verified on metadata alone.
 - Kandahar pilot cross-check: `kandahar_districts_verification.md` records 16/16 candidate ID and English-name matches against Open Admin Data, with two local-script spacing/spelling variants. OCHA row-level verification and local-language orthography review remain pending.
+
+## NSIA 1402 Kandahar production extract (draft)
+- `kandahar_production_profiles_nsia_1402_draft.json`: source-transcribed Kandahar province rows from NSIA Statistical Yearbook 1402 (2023-24), covering wheat (Table 8-6), maize/rice/barley (8-7), major fruits (8-13), and potatoes/onions/carrots (8-17), plus national cultivated-area context from Table 8-5.
+- Source PDF: user-provided `سالنامه-احصائیوی-1402نسخه-وبسایت.pdf`. Printed pages 209, 210, 211, 216, 220 correspond to PDF pages 248, 249, 250, 255, 259 in the file reader.
+- All records are province-level; the source does not provide district breakdowns here. Blank source cells remain null, not zero. The extract is draft pending a second numeric transcription review and is not enabled for runtime advice.
+- Keep NSIA 1402 figures separate from MAIL 1402 figures; do not merge or average the two sources.
