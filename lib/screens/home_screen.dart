@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/afghan_calendar.dart';
 import '../services/prayer_times.dart';
+import 'agriculture_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -62,7 +63,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: SafeArea(
+      body: tab == 2
+          ? AgricultureScreen(language: language)
+          : tab == 1
+              ? _prayerPage(prayer)
+              : tab == 3
+                  ? _settingsPage()
+                  : SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
           children: [
@@ -105,7 +112,78 @@ class _HomeScreenState extends State<HomeScreen> {
         destinations: [
           NavigationDestination(icon: const Icon(Icons.calendar_month), label: language == 'en' ? 'Calendar' : language == 'fa' ? 'تقویم' : 'کلیز'),
           NavigationDestination(icon: const Icon(Icons.access_time), label: language == 'en' ? 'Prayer' : language == 'fa' ? 'نماز' : 'لمونځ'),
+          NavigationDestination(icon: const Icon(Icons.agriculture), label: language == 'en' ? 'Farming' : language == 'fa' ? 'زراعت' : 'کرنه'),
           NavigationDestination(icon: const Icon(Icons.settings), label: language == 'en' ? 'Settings' : language == 'fa' ? 'تنظیمات' : 'تنظیمات'),
+        ],
+      ),
+    );
+  }
+
+
+  Widget _prayerPage(PrayerTimes prayer) {
+    return SafeArea(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          _sectionTitle(language == 'en' ? 'Prayer times' : language == 'fa' ? 'اوقات نماز' : 'د لمانځه وختونه'),
+          const SizedBox(height: 8),
+          _citySelector(),
+          const SizedBox(height: 12),
+          _prayerCard(prayer),
+          const SizedBox(height: 12),
+          Text(
+            language == 'en'
+                ? 'Times are calculated offline and are approximate. Select your city and verify with your local mosque.'
+                : language == 'fa'
+                    ? 'اوقات به‌صورت آفلاین و تقریبی محاسبه می‌شود. شهر خود را انتخاب کنید و با مسجد محل بررسی نمایید.'
+                    : 'وختونه په آفلاین ډول اټکلي محاسبه کېږي. خپل ښار وټاکئ او د خپل محل له جومات سره یې پرتله کړئ.',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _settingsPage() {
+    return SafeArea(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          _sectionTitle(language == 'en' ? 'Settings' : language == 'fa' ? 'تنظیمات' : 'تنظیمات'),
+          const SizedBox(height: 12),
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.language),
+              title: Text(language == 'en' ? 'App language' : language == 'fa' ? 'زبان برنامه' : 'د اپلیکیشن ژبه'),
+              subtitle: Text(language == 'en' ? 'Pashto, Dari, English' : language == 'fa' ? 'پشتو، دری، انگلیسی' : 'پښتو، دري، انګلیسي'),
+              trailing: DropdownButton<String>(
+                value: language,
+                items: const [
+                  DropdownMenuItem(value: 'ps', child: Text('پښتو')),
+                  DropdownMenuItem(value: 'fa', child: Text('دري')),
+                  DropdownMenuItem(value: 'en', child: Text('English')),
+                ],
+                onChanged: (value) { if (value != null) setState(() => language = value); },
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Card(child: ListTile(
+            leading: const Icon(Icons.location_on_outlined),
+            title: Text(language == 'en' ? 'Selected city' : language == 'fa' ? 'شهر انتخاب‌شده' : 'ټاکل شوی ښار'),
+            subtitle: Text(city),
+            trailing: const Icon(Icons.location_city),
+          )),
+          _citySelector(),
+          const SizedBox(height: 8),
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.info_outline),
+              title: Text(language == 'en' ? 'About this app' : language == 'fa' ? 'درباره برنامه' : 'د اپلیکیشن په اړه'),
+              subtitle: const Text('Afghan Ghazali Calendar'),
+            ),
+          ),
         ],
       ),
     );
