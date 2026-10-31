@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "AF-KDH-PRODUCTION-NSIA-1402-DRAFT",
+  "last_updated": "2026-10-31",
+  "status": "source_extracted_draft_pending_independent_numeric_review",
+  "geography": {
+    "country_id": "AF",
+    "province_id": "AF27",
+    "province_name": {
+      "ps": "کندهار",
+      "fa": "قندهار",
+      "en": "Kandahar"
+    },
+    "scope": "province_level_only",
+    "district_level_data_available": false
+  },
+  "reference_period": {
+    "solar_year": 1402,
+    "gregorian": "2023-24"
+  },
+  "units": {
+    "area": "hectare",
+    "production": "metric_tonne"
+  },
+  "source": {
+    "title": "سالنامه احصائیوی ۱۴۰۲ / Statistical Yearbook 2023-24",
+    "publisher": "National Statistics and Information Authority (NSIA)",
+    "source_file": "سالنامه-احصائیوی-1402نسخه-وبسایت.pdf",
+    "source_file_ref": "turn149file0",
+    "official_portal": "https://nsia.gov.af/",
+    "source_pages": [
+      {
+        "table": "8-5",
+        "printed_page": 209,
+        "pdf_page": 248,
+        "topic": "National cultivated area totals for fruits, oil seeds and vegetables"
+      },
+      {
+        "table": "8-6",
+        "printed_page": 210,
+        "pdf_page": 249,
+        "topic": "Irrigated and rain-fed wheat area and production by province"
+      },
+      {
+        "table": "8-7",
+        "printed_page": 211,
+        "pdf_page": 250,
+        "topic": "Maize, rice and barley area and production by province"
+      },
+      {
+        "table": "8-13",
+        "printed_page": 216,
+        "pdf_page": 255,
+        "topic": "Major fruits area and production by province"
+      },
+      {
+        "table": "8-17",
+        "printed_page": 220,
+        "pdf_page": 259,
+        "topic": "Potato, onion and carrot area and production by province"
+      }
+    ],
+    "source_agency_for_agriculture_tables": "Ministry of Agriculture, Irrigation and Livestock (MAIL), as printed under the tables",
+    "notes": [
+      "Values below are transcribed from the Kandahar row in the named NSIA tables.",
+      "These are province-level figures, not district-level figures.",
+      "A blank cell in the source is stored as null; it is not assumed to be zero.",
+      "This dataset is a draft pending a second numeric transcription review."
+    ]
+  },
+  "national_area_totals_1402": {
+    "source_table": "8-5",
+    "fruits": {
+      "area_ha": 413942
+    },
+    "oil_seeds": {
+      "area_ha": null,
+      "components": {
+        "sunflower_seed": {
+          "area_ha": 1325
+        },
+        "sesame_seed": {
+          "area_ha": 20049
+        },
+        "cotton": {
+          "area_ha": 93630
+        },
+        "common_flax_seed": {
+          "area_ha": 34878
+        },
+        "mustard": {
+          "area_ha": 527
+        }
+      }
+    },
+    "vegetables": {
+      "area_ha": 181081
+    },
+    "fruits_components": {
+      "orange": {
+        "area_ha": 1316
+      },
+      "other_citrus": {
+        "area_ha": 1805
+      },
+      "apple": {
+        "area_ha": 31228
+      },
+      "pear": {
+        "area_ha": 3820
+      },
+      "apricot": {
+        "area_ha": 25373
+      },
+      "peach": {
+        "area_ha": 8997
+      },
+      "plum": {
+        "area_ha": 6218
+      },
+      "berry": {
+        "area_ha": 8581
+      },
+      "grape": {
+        "area_ha": 92600
+      },
+      "watermelon": {
+        "area_ha": 78998
+      },
+      "melon": {
+        "area_ha": 64944
+      },
+      "figs": {
+        "area_ha": 9833
+      },
+      "other_fruits": {
+        "area_ha": 80229
+      }
+    }
+  },
+  "kandahar": {
+    "wheat": {
+      "source_table": "8-6",
+      "irrigated": {
+        "area_ha": 100589,
+        "production_t": 352760
+      },
+      "rain_fed": {
+        "area_ha": 0,
+        "production_t": 0
+      },
+      "total": {
+        "area_ha": 100589,
+        "production_t": 352760
+      }
+    },
+    "cereals": {
+      "source_table": "8-7",
+      "barley": {
+        "area_ha": 3000,
+        "production_t": 6900
+      },
+      "rice": {
+        "area_ha": 0,
+        "production_t": 0
+      },
+      "maize": {
+        "area_ha": 5000,
+        "production_t": 19000
+      }
+    },
+    "major_fruits": {
+      "source_table": "8-13",
+      "grape": {
+        "area_ha": 21307,
+        "production_t": 266338
+      },
+      "apple": {
+        "area_ha": null,
+        "production_t": null
+      },
+      "pomegranate": {
+        "area_ha": 12000,
+        "production_t": 216000
+      },
+      "almond": {
+        "area_ha": 400,
+        "production_t": 800
+      },
+      "peach": {
+        "area_ha": 800,
+        "production_t": 14080
+      }
+    },
+    "vegetables": {
+      "source_table": "8-17",
+      "potato": {
+        "area_ha": 50,
+        "production_t": 1100
+      },
+      "onion": {
+        "area_ha": 1900,
+        "production_t": 57000
+      },
+      "carrot": {
+        "area_ha": 150,
+        "production_t": 3900
+      }
+    }
+  },
+  "validation": {
+    "transcription_review": "pending_second_review",
+    "source_row_crosscheck": "visually_and_textually_located_in_pdf",
+    "district_allocation": "not_available_in_source",
+    "runtime_advisory_enabled": false
+  }
+}
