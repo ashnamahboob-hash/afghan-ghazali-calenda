@@ -37,3 +37,8 @@ Draft dataset. It preserves the 16 district identifiers and Pashto labels alread
 - Open Admin Data (CC BY 4.0): https://github.com/open-admin-data/afghanistan-administrative-divisions
 
 OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is sourced from the Afghanistan Geodesy and Cartography Head Office. The linked multilingual dataset is a secondary reference, not a substitute for official name validation.
+
+## National administrative reference (draft)
+- `afghanistan_admin_divisions_reference_draft.json`: bilingual candidate reference containing 34 provinces and 401 districts from Open Admin Data (CC BY 4.0). It is a secondary reference only; its IDs and local-script labels must not be treated as OCHA-certified until row-level P-code comparison is complete.
+- OCHA/HDX COD-AB metadata confirms Afghanistan's ADM1/ADM2 coverage (34 provinces and 401 districts), identifies AGCHO as the source, and records a July 2024 accuracy review. The OCHA gazetteer row-level extraction is still pending; no district is promoted to officially verified on metadata alone.
+- Kandahar pilot cross-check: `kandahar_districts_verification.md` records 16/16 candidate ID and English-name matches against Open Admin Data, with two local-script spacing/spelling variants. OCHA row-level verification and local-language orthography review remain pending.
