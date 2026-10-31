@@ -20,6 +20,16 @@ class AgricultureScreen extends StatefulWidget {
 class _AgricultureScreenState extends State<AgricultureScreen> {
   String province = 'Kandahar';
   String season = 'Autumn';
+  String crop = 'Wheat';
+
+  static const crops = <String, List<String>>{
+    'Wheat': ['غنم', 'گندم', 'Wheat'],
+    'Rice': ['وریجې', 'برنج', 'Rice'],
+    'Maize': ['جوار', 'ذرت', 'Maize'],
+    'Barley': ['وربشې', 'جو', 'Barley'],
+  };
+
+  String get cropName => crops[crop]![en ? 2 : fa ? 1 : 0];
 
   // Province names are localized. Sowing windows below follow the Afghan
   // Ministry of Agriculture's provincial wheat advisory (1402/8/17).
@@ -157,6 +167,20 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
             items: seasons.keys.map((s) => DropdownMenuItem(value: s, child: Text(_seasonName(s)))).toList(),
             onChanged: (v) { if (v != null) setState(() => season = v); },
           ),
+          const SizedBox(height: 14),
+          Text(en ? 'Crop' : fa ? 'محصول' : 'کرنیز فصل', style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 6),
+          DropdownButtonFormField<String>(
+            value: crop,
+            isExpanded: true,
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.grass_outlined),
+              labelText: en ? 'Select crop' : fa ? 'انتخاب محصول' : 'محصول وټاکئ',
+            ),
+            items: crops.keys.map((id) => DropdownMenuItem(value: id, child: Text(crops[id]![en ? 2 : fa ? 1 : 0]))).toList(),
+            onChanged: (v) { if (v != null) setState(() => crop = v); },
+          ),
           const SizedBox(height: 16),
           Card(
             child: Padding(
@@ -167,10 +191,10 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                   Row(children: [
                     const Icon(Icons.grass, color: Color(0xFF145A42)),
                     const SizedBox(width: 8),
-                    Expanded(child: Text(en ? 'Wheat planting guidance' : fa ? 'راهنمای زمان کشت گندم' : 'د غنمو د کرلو لارښوونه', style: const TextStyle(fontWeight: FontWeight.bold))),
+                    Expanded(child: Text(en ? '$cropName planting guidance' : fa ? 'راهنمای زمان کشت $cropName' : 'د $cropName د کرلو لارښوونه', style: const TextStyle(fontWeight: FontWeight.bold))),
                   ]),
                   const SizedBox(height: 10),
-                  if (season == 'Autumn')
+                  if (crop == 'Wheat' && season == 'Autumn')
                     Text(_wheatWindow(selected.zone), style: const TextStyle(fontSize: 15, height: 1.5))
                   else
                     Text(
@@ -181,15 +205,17 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                               : 'د دې فصل لپاره د دې فصل کرنیز وخت لا تر اوسه په باوري سرچینه نه دی تثبیت شوی؛ ناتایید شوې نېټه نه ښودل کېږي.',
                       style: const TextStyle(fontSize: 14, height: 1.5),
                     ),
-                  const SizedBox(height: 12),
-                  Text(
+                  if (crop == 'Wheat' && season == 'Autumn') ...[
+                    const SizedBox(height: 12),
+                    Text(
                     en
                         ? 'Official source: Afghanistan Ministry of Agriculture, General Directorate of Agricultural Extension, advisory dated 17 Aqrab 1402.'
                         : fa
                             ? 'منبع: وزارت زراعت، آبیاری و مالداری افغانستان، ریاست عمومی ترویج زراعتی، اطلاعیه ۱۷ عقرب ۱۴۰۲.'
                             : 'سرچینه: د افغانستان د کرنې، اوبولګولو او مالدارۍ وزارت، د کرنیز ترویج عمومي ریاست؛ د ۱۴۰۲ کال د عقرب ۱۷مه لارښوونه.',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.black54),
-                  ),
+                    ),
+                  ],
                 ],
               ),
             ),
