@@ -202,7 +202,7 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                           ? 'A verified planting window for this crop and season has not yet been added. We will not show an unverified date.'
                           : fa
                               ? 'زمان معتبر کشت این محصول برای این فصل هنوز ثبت نشده است؛ تاریخ تأییدنشده نمایش داده نمی‌شود.'
-                              : 'د دې فصل لپاره د دې فصل کرنیز وخت لا تر اوسه په باوري سرچینه نه دی تثبیت شوی؛ ناتایید شوې نېټه نه ښودل کېږي.',
+                              : 'د دې محصول او موسم لپاره کره کرنیز مهالوېش لا نه دی تایید شوی؛ له همدې امله ناتایید شوې نېټه نه ښودل کېږي.',
                       style: const TextStyle(fontSize: 14, height: 1.5),
                     ),
                   if (crop == 'Wheat' && season == 'Autumn') ...[
