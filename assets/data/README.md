@@ -5,6 +5,11 @@ Draft dataset. It preserves the 16 district identifiers and Pashto labels alread
 
 ## Files
 - `kandahar_districts.json`: data and provenance metadata.
+- `district.schema.json`: administrative district dataset schema.
+- `kandahar_districts_verification.md`: independent district reference cross-check; not an official OCHA row-level certification.
+- `agricultural_advisory.json`: source-backed agricultural guidance records (currently empty by design).
+- `agricultural_advisory.schema.json`: validation contract for agricultural guidance records.
+- `AGRICULTURE_DATA_POLICY.md`: sourcing, review and publication rules for agricultural guidance.
 
 ## Schema
 - `schema_version`: data contract version.
