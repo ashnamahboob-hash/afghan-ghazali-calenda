@@ -9,6 +9,13 @@ class _Province {
   const _Province(this.id, this.ps, this.fa, this.en, this.zone);
 }
 
+class _District {
+  final String id;
+  final String local;
+  final String en;
+  const _District(this.id, this.local, this.en);
+}
+
 class AgricultureScreen extends StatefulWidget {
   final String language;
   const AgricultureScreen({super.key, required this.language});
@@ -21,6 +28,29 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
   String province = 'Kandahar';
   String season = 'Autumn';
   String crop = 'Wheat';
+  String? district = 'AF2701';
+
+  // Kandahar pilot district gazetteer. Local-script names and stable IDs
+  // are from Open Admin Data; English names are retained as supplied.
+  // Dari-specific spellings are not independently verified yet.
+  static const kandaharDistricts = <_District>[
+    _District('AF2701', 'کندهار', 'Kandahar'),
+    _District('AF2702', 'ارغنداب', 'Arghandab'),
+    _District('AF2703', 'دامان', 'Daman'),
+    _District('AF2704', 'پنجوائی', 'Panjwayi'),
+    _District('AF2705', 'ژړۍ', 'Zheray'),
+    _District('AF2706', 'شاه ولی کوت', 'Shah Wali Kot'),
+    _District('AF2707', 'خاکریز', 'Khakrez'),
+    _District('AF2708', 'ارغستان', 'Arghestan'),
+    _District('AF2709', 'غورک', 'Ghorak'),
+    _District('AF2710', 'میوند', 'Maywand'),
+    _District('AF2711', 'سپین بولدک', 'Spin Boldak'),
+    _District('AF2712', 'نیش', 'Nesh'),
+    _District('AF2713', 'میانشین', 'Miyanshin'),
+    _District('AF2714', 'شور آبک', 'Shorabak'),
+    _District('AF2715', 'معروف', 'Maruf'),
+    _District('AF2716', 'ریگ ( شگه )', 'Reg'),
+  ];
 
   static const crops = <String, List<String>>{
     'Wheat': ['غنم', 'گندم', 'Wheat'],
@@ -153,8 +183,39 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
               labelText: en ? 'Select province' : fa ? 'انتخاب ولایت' : 'ولایت وټاکئ',
             ),
             items: provinces.map((p) => DropdownMenuItem(value: p.id, child: Text(_provinceName(p)))).toList(),
-            onChanged: (v) { if (v != null) setState(() => province = v); },
+            onChanged: (v) { if (v != null) setState(() { province = v; district = v == 'Kandahar' ? 'AF2701' : null; }); },
           ),
+          const SizedBox(height: 14),
+          Text(en ? 'District' : fa ? 'ولسوالی' : 'ولسوالۍ', style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 6),
+          DropdownButtonFormField<String>(
+            value: province == 'Kandahar' ? district : null,
+            isExpanded: true,
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.map_outlined),
+              labelText: en ? 'Select district' : fa ? 'انتخاب ولسوالی' : 'ولسوالۍ وټاکئ',
+            ),
+            items: province == 'Kandahar'
+                ? kandaharDistricts.map((d) => DropdownMenuItem(
+                    value: d.id,
+                    child: Text(en ? d.en : fa ? d.en : d.local),
+                  )).toList()
+                : const [],
+            onChanged: province == 'Kandahar'
+                ? (v) { if (v != null) setState(() => district = v); }
+                : null,
+          ),
+          if (province != 'Kandahar')
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text(
+                en ? 'District selection is currently available for the Kandahar pilot only.'
+                    : fa ? 'انتخاب ولسوالی فعلاً فقط برای ولایت کندهار فعال است.'
+                    : 'د ولسوالیو انتخاب اوس مهال یوازې د کندهار د ازمایښتي ولایت لپاره فعال دی.',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
           const SizedBox(height: 14),
           Text(en ? 'Season' : fa ? 'فصل' : 'موسم', style: const TextStyle(fontWeight: FontWeight.bold)),
           const SizedBox(height: 6),
