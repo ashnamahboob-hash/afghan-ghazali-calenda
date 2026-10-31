@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class _Province {
   final String id;
@@ -11,9 +14,16 @@ class _Province {
 
 class _District {
   final String id;
-  final String local;
+  final String ps;
+  final String? fa;
   final String en;
-  const _District(this.id, this.local, this.en);
+
+  const _District({
+    required this.id,
+    required this.ps,
+    required this.fa,
+    required this.en,
+  });
 }
 
 class AgricultureScreen extends StatefulWidget {
@@ -29,28 +39,35 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
   String season = 'Autumn';
   String crop = 'Wheat';
   String? district = 'AF2701';
+  late final Future<List<_District>> districtsFuture;
 
-  // Kandahar pilot district gazetteer. Local-script names and stable IDs
-  // are from Open Admin Data; English names are retained as supplied.
-  // Dari-specific spellings are not independently verified yet.
-  static const kandaharDistricts = <_District>[
-    _District('AF2701', 'کندهار', 'Kandahar'),
-    _District('AF2702', 'ارغنداب', 'Arghandab'),
-    _District('AF2703', 'دامان', 'Daman'),
-    _District('AF2704', 'پنجوائی', 'Panjwayi'),
-    _District('AF2705', 'ژړۍ', 'Zheray'),
-    _District('AF2706', 'شاه ولی کوت', 'Shah Wali Kot'),
-    _District('AF2707', 'خاکریز', 'Khakrez'),
-    _District('AF2708', 'ارغستان', 'Arghestan'),
-    _District('AF2709', 'غورک', 'Ghorak'),
-    _District('AF2710', 'میوند', 'Maywand'),
-    _District('AF2711', 'سپین بولدک', 'Spin Boldak'),
-    _District('AF2712', 'نیش', 'Nesh'),
-    _District('AF2713', 'میانشین', 'Miyanshin'),
-    _District('AF2714', 'شور آبک', 'Shorabak'),
-    _District('AF2715', 'معروف', 'Maruf'),
-    _District('AF2716', 'ریگ ( شگه )', 'Reg'),
-  ];
+  @override
+  void initState() {
+    super.initState();
+    districtsFuture = _loadKandaharDistricts();
+  }
+
+  Future<List<_District>> _loadKandaharDistricts() async {
+    final raw = await rootBundle.loadString(
+      'assets/data/kandahar_districts.json',
+    );
+    final dataset = jsonDecode(raw) as Map<String, dynamic>;
+    final records = dataset['districts'] as List<dynamic>;
+
+    return records.map((record) {
+      final item = record as Map<String, dynamic>;
+      final names = item['names'] as Map<String, dynamic>;
+      return _District(
+        id: item['id'] as String,
+        ps: names['ps'] as String,
+        fa: names['fa'] as String?,
+        en: names['en'] as String,
+      );
+    }).toList(growable: false);
+  }
+
+  String _districtName(_District item) =>
+      en ? item.en : fa ? (item.fa ?? item.en) : item.ps;
 
   static const crops = <String, List<String>>{
     'Wheat': ['غنم', 'گندم', 'Wheat'],
@@ -188,23 +205,56 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
           const SizedBox(height: 14),
           Text(en ? 'District' : fa ? 'ولسوالی' : 'ولسوالۍ', style: const TextStyle(fontWeight: FontWeight.bold)),
           const SizedBox(height: 6),
-          DropdownButtonFormField<String>(
-            value: province == 'Kandahar' ? district : null,
-            isExpanded: true,
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              prefixIcon: const Icon(Icons.map_outlined),
-              labelText: en ? 'Select district' : fa ? 'انتخاب ولسوالی' : 'ولسوالۍ وټاکئ',
-            ),
-            items: province == 'Kandahar'
-                ? kandaharDistricts.map((d) => DropdownMenuItem(
-                    value: d.id,
-                    child: Text(en ? d.en : fa ? d.en : d.local),
-                  )).toList()
-                : const [],
-            onChanged: province == 'Kandahar'
-                ? (v) { if (v != null) setState(() => district = v); }
-                : null,
+          FutureBuilder<List<_District>>(
+            future: districtsFuture,
+            builder: (context, snapshot) {
+              if (province != 'Kandahar') {
+                return DropdownButtonFormField<String>(
+                  value: null,
+                  isExpanded: true,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    prefixIcon: const Icon(Icons.map_outlined),
+                    labelText: en ? 'Select district' : fa ? 'انتخاب ولسوالی' : 'ولسوالۍ وټاکئ',
+                  ),
+                  items: const [],
+                  onChanged: null,
+                );
+              }
+              if (snapshot.hasError) {
+                return Text(
+                  en
+                      ? 'Could not load district data. Please restart the app.'
+                      : fa
+                          ? 'بارگذاری معلومات ولسوالی‌ها ناموفق بود؛ لطفاً برنامه را دوباره باز کنید.'
+                          : 'د ولسوالیو معلومات نه شول لوډ کېدای؛ مهرباني وکړئ اپلیکیشن بیا پرانیزئ.',
+                );
+              }
+              if (!snapshot.hasData) {
+                return const LinearProgressIndicator();
+              }
+              final districts = snapshot.data!;
+              return DropdownButtonFormField<String>(
+                value: districts.any((item) => item.id == district)
+                    ? district
+                    : districts.first.id,
+                isExpanded: true,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  prefixIcon: const Icon(Icons.map_outlined),
+                  labelText: en ? 'Select district' : fa ? 'انتخاب ولسوالی' : 'ولسوالۍ وټاکئ',
+                ),
+                items: districts
+                    .map((item) => DropdownMenuItem(
+                          value: item.id,
+                          child: Text(_districtName(item)),
+                        ))
+                    .toList(),
+                onChanged: (value) {
+                  if (value != null) setState(() => district = value);
+                },
+              );
+            },
           ),
           if (province == 'Kandahar')
             Padding(
