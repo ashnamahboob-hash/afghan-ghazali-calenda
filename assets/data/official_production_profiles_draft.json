@@ -1,0 +1,275 @@
+{
+  "database_name": "afghanistan_agriculture_official_production_db",
+  "ingestion_metadata": {
+    "received_at": "2026-10-31",
+    "user_supplied_data_status_claim": "MAIL_Verified",
+    "independent_verification_status": "pending_primary_source_documents",
+    "publication_status": "not_for_user_facing_advice",
+    "original_last_updated_claim": "2026-10",
+    "review_notes": [
+      "The user supplied this dataset and labels it MAIL_Verified; that label is preserved as a source claim, not independently confirmed.",
+      "Source references are descriptive titles only. No report files, URLs, publication identifiers, page numbers, tables, or dated extract were supplied.",
+      "The district IDs in this submission (for example KDH-01 and HRT-01) are source-local identifiers and have not been mapped to the app's stable administrative P-codes.",
+      "Do not mark crops, districts, forest products, seed repositories, or quality rankings as officially certified in the app until the underlying records are checked.",
+      "Distinguish crop production from wild forest products and from seed certification; these are different evidence categories.",
+      "The International Taste Institute quality-ranking claim is not equivalent to a global production ranking; retain the wording only as an unverified claim pending the exact award/test record.",
+      "The Badghis entry describes a wild pistachio woodland/forest reserve, not a crop-production quantity.",
+      "The Paktia Pine Nuts entry is a forest product and must not be categorized as an agricultural crop.",
+      "Climate-zone labels are user-supplied and need documented definitions before being used for agronomic recommendations."
+    ]
+  },
+  "submitted_database": {
+    "country_code": "AF",
+    "provinces": [
+      {
+        "province_id": "AF-KDH",
+        "province_name_pashto": "کندهار",
+        "climate_zone": "Warm_Arid",
+        "certified_agricultural_crops": [
+          {
+            "crop_id": "C-01",
+            "crop_name_en": "Pomegranate",
+            "crop_name_ps": "انار",
+            "top_producing_districts": [
+              {
+                "district_id": "KDH-01",
+                "name_pashto": "ارغنداب"
+              },
+              {
+                "district_id": "KDH-02",
+                "name_pashto": "خاکرېز"
+              }
+            ],
+            "source_reference": "MAIL Agricultural Statistical Yearbook - High density export quality"
+          },
+          {
+            "crop_id": "C-02",
+            "crop_name_en": "Figs",
+            "crop_name_ps": "انځر",
+            "top_producing_districts": [
+              {
+                "district_id": "KDH-03",
+                "name_pashto": "شاه‌ولیکوټ"
+              },
+              {
+                "district_id": "KDH-04",
+                "name_pashto": "میوند"
+              }
+            ],
+            "source_reference": "MAIL Horticultural Survey Statistics"
+          }
+        ],
+        "certified_wild_forest_products": []
+      },
+      {
+        "province_id": "AF-HRT",
+        "province_name_pashto": "هرات",
+        "climate_zone": "Temperate_SemiArid",
+        "certified_agricultural_crops": [
+          {
+            "crop_id": "C-03",
+            "crop_name_en": "Saffron",
+            "crop_name_ps": "زعفران",
+            "top_producing_districts": [
+              {
+                "district_id": "HRT-01",
+                "name_pashto": "غوریان"
+              },
+              {
+                "district_id": "HRT-02",
+                "name_pashto": "پښتون زرغون"
+              },
+              {
+                "district_id": "HRT-03",
+                "name_pashto": "ګذره"
+              }
+            ],
+            "source_reference": "International Taste Institute & MAIL Crop Assessment - Ranked 1st in global quality testing"
+          }
+        ],
+        "certified_wild_forest_products": []
+      },
+      {
+        "province_id": "AF-BAM",
+        "province_name_pashto": "بامیان",
+        "climate_zone": "Cold_Highlands",
+        "certified_agricultural_crops": [
+          {
+            "crop_id": "C-04",
+            "crop_name_en": "Potato",
+            "crop_name_ps": "کچالو",
+            "top_producing_districts": [
+              {
+                "district_id": "BAM-01",
+                "name_pashto": "مرکز بامیان"
+              },
+              {
+                "district_id": "BAM-02",
+                "name_pashto": "یکاولنګ"
+              },
+              {
+                "district_id": "BAM-03",
+                "name_pashto": "شیبر"
+              }
+            ],
+            "source_reference": "MAIL Seed Certification Directorate - Certified national seed repository source"
+          }
+        ],
+        "certified_wild_forest_products": []
+      },
+      {
+        "province_id": "AF-PST",
+        "province_name_pashto": "پکتیا",
+        "climate_zone": "Cold_Mountainous",
+        "certified_agricultural_crops": [
+          {
+            "crop_id": "C-04",
+            "crop_name_en": "Potato",
+            "crop_name_ps": "کچالو",
+            "top_producing_districts": [
+              {
+                "district_id": "PST-01",
+                "name_pashto": "ځاځي اریوب"
+              }
+            ],
+            "source_reference": "MAIL Core Regional Production Data"
+          }
+        ],
+        "certified_wild_forest_products": [
+          {
+            "product_id": "W-01",
+            "product_name_en": "Pine Nuts",
+            "product_name_ps": "تور جلغوزي",
+            "forest_zones_districts": [
+              {
+                "district_id": "PST-02",
+                "name_pashto": "ځدران"
+              },
+              {
+                "district_id": "PST-03",
+                "name_pashto": "احمدخېل"
+              }
+            ],
+            "source_reference": "MAIL General Directorate of Natural Resources & Forestry"
+          }
+        ]
+      },
+      {
+        "province_id": "AF-BDG",
+        "province_name_pashto": "بادغیس",
+        "climate_zone": "Temperate_Dry",
+        "certified_agricultural_crops": [],
+        "certified_wild_forest_products": [
+          {
+            "product_id": "W-02",
+            "product_name_en": "Pistachio Wood Forest",
+            "product_name_ps": "طبیعي پسته",
+            "forest_zones_districts": [
+              {
+                "district_id": "BDG-01",
+                "name_pashto": "قلعه نو"
+              },
+              {
+                "district_id": "BDG-02",
+                "name_pashto": "جوند"
+              }
+            ],
+            "source_reference": "MAIL Directorate of Forests - Largest wild pistachio canopy woodland reserve"
+          }
+        ]
+      },
+      {
+        "province_id": "AF-HLD",
+        "province_name_pashto": "هلمند",
+        "climate_zone": "Warm_Arid",
+        "certified_agricultural_crops": [
+          {
+            "crop_id": "C-05",
+            "crop_name_en": "Cotton",
+            "crop_name_ps": "پنبه",
+            "top_producing_districts": [
+              {
+                "district_id": "HLD-01",
+                "name_pashto": "نادعلي"
+              },
+              {
+                "district_id": "HLD-02",
+                "name_pashto": "مارجه"
+              }
+            ],
+            "source_reference": "MAIL Annual Cash Crop Survey"
+          },
+          {
+            "crop_id": "C-06",
+            "crop_name_en": "Wheat",
+            "crop_name_ps": "غنم",
+            "top_producing_districts": [
+              {
+                "district_id": "HLD-03",
+                "name_pashto": "ګرشک"
+              },
+              {
+                "district_id": "HLD-04",
+                "name_pashto": "ناوه"
+              }
+            ],
+            "source_reference": "MAIL Central Cereal Statistics Directorate"
+          }
+        ],
+        "certified_wild_forest_products": []
+      },
+      {
+        "province_id": "AF-NAN",
+        "province_name_pashto": "ننګرهار",
+        "climate_zone": "Subtropical",
+        "certified_agricultural_crops": [
+          {
+            "crop_id": "C-07",
+            "crop_name_en": "Citrus (Oranges & Lemons)",
+            "crop_name_ps": "ستروس (مالټې او لیمو)",
+            "top_producing_districts": [
+              {
+                "district_id": "NAN-01",
+                "name_pashto": "کامه"
+              },
+              {
+                "district_id": "NAN-02",
+                "name_pashto": "بهسود"
+              },
+              {
+                "district_id": "NAN-03",
+                "name_pashto": "کوز کنړ"
+              }
+            ],
+            "source_reference": "MAIL Eastern Agro-Ecological Zone Assessment"
+          }
+        ],
+        "certified_wild_forest_products": []
+      },
+      {
+        "province_id": "AF-KDZ",
+        "province_name_pashto": "کندز",
+        "climate_zone": "Temperate_Continental",
+        "certified_agricultural_crops": [
+          {
+            "crop_id": "C-08",
+            "crop_name_en": "Rice",
+            "crop_name_ps": "وریجې (شولې)",
+            "top_producing_districts": [
+              {
+                "district_id": "KDZ-01",
+                "name_pashto": "خان‌اباد"
+              },
+              {
+                "district_id": "KDZ-02",
+                "name_pashto": "امام صاحب"
+              }
+            ],
+            "source_reference": "MAIL Irrigation & Staple Food Output Registry"
+          }
+        ],
+        "certified_wild_forest_products": []
+      }
+    ]
+  }
+}
