@@ -1,0 +1,164 @@
+{
+  "country": "Afghanistan",
+  "app_data_version": "1.0",
+  "review_status": "draft_unverified",
+  "publication_status": "not_for_user_facing_advice",
+  "received_at": "2026-10-31",
+  "review_notes": [
+    "This is user-submitted reference material, not an independently verified agronomic dataset.",
+    "Do not import these dates or irrigation intervals into user-facing verified advisories until authoritative sources and local agronomist review support the crop, zone, and geographic scope.",
+    "Validate Afghan Solar Hijri month-name mappings against the Gregorian windows; some paired month labels may be inaccurate or ambiguous.",
+    "Climate-zone definitions and province/district applicability are not supplied.",
+    "Irrigation timing must be checked against crop variety, soil, planting date, rainfall, irrigation method, and local extension guidance."
+  ],
+  "submitted_data": {
+    "country": "Afghanistan",
+    "app_data_version": "1.0",
+    "crops": [
+      {
+        "crop_name_pashto": "غنم (Wheat)",
+        "category": "Cereals",
+        "zones": {
+          "warm_zone": {
+            "planting_window": "November 1 - November 30 (Lige/Aqrabi)",
+            "irrigation_stages": [
+              {
+                "stage": "Khak-ab (First Irrigation)",
+                "days_after_planting": 1
+              },
+              {
+                "stage": "Tillering (Panja Achawol)",
+                "days_after_planting": 35
+              },
+              {
+                "stage": "Stem Elongation",
+                "days_after_planting": 70
+              },
+              {
+                "stage": "Flowering/Heading (Wajay Estal)",
+                "days_after_planting": 105
+              },
+              {
+                "stage": "Milk/Grain Filling",
+                "days_after_planting": 130
+              }
+            ],
+            "harvest_window": "April 15 - May 30 (Gwayee/Thawr)"
+          },
+          "cold_zone": {
+            "planting_window": "September 20 - October 20 (Mizan)",
+            "irrigation_stages": [
+              {
+                "stage": "Khak-ab (First Irrigation)",
+                "days_after_planting": 1
+              },
+              {
+                "stage": "Pre-Winter Tillering",
+                "days_after_planting": 30
+              },
+              {
+                "stage": "Spring Growth Revival",
+                "days_after_planting": 150
+              },
+              {
+                "stage": "Flowering/Heading",
+                "days_after_planting": 190
+              },
+              {
+                "stage": "Grain Filling",
+                "days_after_planting": 220
+              }
+            ],
+            "harvest_window": "July 1 - August 15 (Saratan/Asad)"
+          },
+          "temperate_zone": {
+            "planting_window": "October 10 - November 10 (Mizan/Aqrab)",
+            "irrigation_stages": [
+              {
+                "stage": "Khak-ab",
+                "days_after_planting": 1
+              },
+              {
+                "stage": "Tillering",
+                "days_after_planting": 35
+              },
+              {
+                "stage": "Stem Elongation",
+                "days_after_planting": 90
+              },
+              {
+                "stage": "Flowering",
+                "days_after_planting": 140
+              },
+              {
+                "stage": "Grain Filling",
+                "days_after_planting": 165
+              }
+            ],
+            "harvest_window": "May 25 - June 30 (Jauza)"
+          }
+        }
+      },
+      {
+        "crop_name_pashto": "رومي بانجان (Tomatoes)",
+        "category": "Vegetables",
+        "zones": {
+          "warm_zone": {
+            "nursery_seed_sowing": "October - November (Under plastic tunnels)",
+            "field_transplantation": "February (Hoot)",
+            "harvest_window": "May - August"
+          },
+          "cold_zone": {
+            "nursery_seed_sowing": "April (Hamal)",
+            "field_transplantation": "Late May (Jauza)",
+            "harvest_window": "August - October"
+          },
+          "temperate_zone": {
+            "nursery_seed_sowing": "March (Hoot/Hamal)",
+            "field_transplantation": "April - May (Thawr)",
+            "harvest_window": "July - September"
+          }
+        }
+      },
+      {
+        "crop_name_pashto": "پیاز (Onions)",
+        "category": "Vegetables",
+        "zones": {
+          "warm_zone": {
+            "planting_window": "October - November (Autumn Cultivation)",
+            "harvest_window": "April - May"
+          },
+          "cold_zone": {
+            "planting_window": "March - April (Spring Cultivation)",
+            "harvest_window": "August - September"
+          },
+          "temperate_zone": {
+            "planting_window": "November (Late Autumn) OR March (Early Spring)",
+            "harvest_window": "June - August"
+          }
+        }
+      },
+      {
+        "crop_name_pashto": "مېوه لرونکې ونې / انځر، انار، مڼې (Fruit Trees & Orchards)",
+        "category": "Orchards",
+        "zones": {
+          "warm_zone": {
+            "sapling_planting_window": "Late January to February (Dalw/Hoot)",
+            "budding_grafting_season": "August - September (Asad/Sunbula)",
+            "harvest_season": "Varies (e.g., Figs/Pomegranates: August - October)"
+          },
+          "cold_zone": {
+            "sapling_planting_window": "March to Early April (Hoot/Hamal - Before bud break)",
+            "budding_grafting_season": "Spring (Cleft grafting) or Late Summer (T-budding)",
+            "harvest_season": "Varies (e.g., Apples/Apricots: July - October)"
+          },
+          "temperate_zone": {
+            "sapling_planting_window": "February to March (Hoot)",
+            "budding_grafting_season": "March (Scion) or August (Bud)",
+            "harvest_season": "Varies (e.g., Grapes/Melons: July - October)"
+          }
+        }
+      }
+    ]
+  }
+}
