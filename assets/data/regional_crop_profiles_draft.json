@@ -1,0 +1,435 @@
+{
+  "dataset_id": "AF-REGIONAL-CROP-PROFILES-DRAFT",
+  "submitted_at": "2026-10-31",
+  "status": "unverified_pending_primary_sources",
+  "publication_status": "not_for_user_facing_advice",
+  "source_claim": "User-submitted Pashto regional agriculture summary; no primary source documents supplied",
+  "review_notes": [
+    "All crop/province/district associations are stored as submitted research leads, not certified facts.",
+    "No report title, URL, page/table reference, survey method, or dated official dataset was supplied.",
+    "District names are not yet matched to stable administrative P-codes; do not replace the administrative master dataset.",
+    "High-production and global-ranking claims need dated evidence.",
+    "Clarify terms and source typos before publication; the original Herat district text contained a stray code> marker."
+  ],
+  "regions": [
+    {
+      "region": "South Zone",
+      "provinces": [
+        {
+          "name": "Kandahar",
+          "ps": "کندهار",
+          "districts": [
+            "ارغنداب",
+            "ژړۍ",
+            "پنجوايي",
+            "میوند",
+            "شاه‌ولیکوټ",
+            "دامان",
+            "معروف",
+            "ارغستان",
+            "سپین بولدک"
+          ],
+          "crops": [
+            "انار: ارغنداب، خاکرېز",
+            "انځر: شاه‌ولیکوټ، میوند",
+            "انګور او کشمش: ژړۍ، پنجوايي",
+            "رومیان او پیاز: دامان، ډنډ",
+            "اوبي غنم"
+          ]
+        },
+        {
+          "name": "Helmand",
+          "ps": "هلمند",
+          "districts": [
+            "لښکرګاه",
+            "نادعلي",
+            "ګرشک",
+            "مارجه",
+            "ناوه",
+            "کجکي",
+            "سنګین",
+            "ګرمسیر"
+          ],
+          "crops": [
+            "پنبه",
+            "اوبي غنم (د لوړ تولید ادعا)",
+            "جوار",
+            "هندواڼې او خټکي",
+            "ماش"
+          ]
+        },
+        {
+          "name": "Farah",
+          "ps": "فراه",
+          "districts": [
+            "بالابلوک",
+            "بکواه",
+            "پشترود",
+            "خاکسفید",
+            "اناردره"
+          ],
+          "crops": [
+            "د شنو خونو سبزیجات: رومیان، بېنډۍ، بادرنګ",
+            "عناب",
+            "زعفران",
+            "خټکي"
+          ]
+        },
+        {
+          "name": "Nimruz",
+          "ps": "نیمروز",
+          "districts": [
+            "زرنج",
+            "چخانسور",
+            "چهاربرجک",
+            "خاشرود",
+            "کانګ"
+          ],
+          "crops": [
+            "خرما",
+            "للمي او اوبي غنم",
+            "هندواڼې",
+            "خربوزې"
+          ]
+        },
+        {
+          "name": "Zabul",
+          "ps": "زابل",
+          "districts": [
+            "شاه‌جوی",
+            "قلات"
+          ],
+          "crops": [
+            "بادام",
+            "انځر",
+            "مميز او انګور",
+            "زعفران"
+          ]
+        },
+        {
+          "name": "Uruzgan",
+          "ps": "ارزګان",
+          "districts": [
+            "ترینکوټ",
+            "دهراود"
+          ],
+          "crops": [
+            "بادام",
+            "انځر",
+            "مميز او انګور",
+            "زعفران"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "East and South-East Zone",
+      "provinces": [
+        {
+          "name": "Nangarhar",
+          "ps": "ننګرهار",
+          "districts": [
+            "بهسود",
+            "کامه",
+            "کوز کنړ",
+            "رودات",
+            "خوږیاڼي",
+            "غني خېل",
+            "اچین",
+            "ښېوه"
+          ],
+          "crops": [
+            "ستروس مېوې: ملټې، لیمو، مالټې",
+            "وریجې: کامه، بهسود",
+            "شات",
+            "جوار",
+            "ژمني سبزیجات: کاهو، ګندنه، شلغم"
+          ]
+        },
+        {
+          "name": "Laghman",
+          "ps": "لغمان",
+          "districts": [
+            "قرغیو",
+            "علینګار"
+          ],
+          "crops": [
+            "وریجې",
+            "بانجان او بېنډۍ",
+            "جوار"
+          ]
+        },
+        {
+          "name": "Kunar",
+          "ps": "کنړ",
+          "districts": [
+            "اسداباد",
+            "خاص کنړ",
+            "وټه‌پور"
+          ],
+          "crops": [
+            "وریجې",
+            "بانجان او بېنډۍ",
+            "جوار",
+            "ځنګلي ونې: نښتر او ګورګورې"
+          ]
+        },
+        {
+          "name": "Paktia",
+          "ps": "پکتیا",
+          "districts": [
+            "ګردېز",
+            "ځاځي اریوب"
+          ],
+          "crops": [
+            "تور او سپین جلغوزي",
+            "کچالو",
+            "چارمغز",
+            "مڼې"
+          ]
+        },
+        {
+          "name": "Paktika",
+          "ps": "پکتیکا",
+          "districts": [
+            "ارګون",
+            "شرن"
+          ],
+          "crops": [
+            "تور او سپین جلغوزي",
+            "چارمغز",
+            "مڼې"
+          ]
+        },
+        {
+          "name": "Khost",
+          "ps": "خوست",
+          "districts": [
+            "تڼي"
+          ],
+          "crops": [
+            "تور او سپین جلغوزي",
+            "چارمغز",
+            "مڼې"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "North and North-East Zone",
+      "provinces": [
+        {
+          "name": "Balkh",
+          "ps": "بلخ",
+          "districts": [
+            "دهدادي",
+            "بلخ",
+            "خلم",
+            "چمتال",
+            "شولګره"
+          ],
+          "crops": [
+            "خټکي: امیري او چتري",
+            "پسته",
+            "وریجې او پنبه",
+            "انګور: خلم",
+            "قره‌قل"
+          ]
+        },
+        {
+          "name": "Jowzjan",
+          "ps": "جوزجان",
+          "districts": [
+            "شبرغان",
+            "اقچه"
+          ],
+          "crops": [
+            "خټکي: امیري او چتري",
+            "پسته",
+            "وریجې او پنبه",
+            "قره‌قل"
+          ]
+        },
+        {
+          "name": "Kunduz",
+          "ps": "کندز",
+          "districts": [
+            "خان‌اباد",
+            "امام صاحب"
+          ],
+          "crops": [
+            "وریجې: باره او لک",
+            "شړشم",
+            "پنبه",
+            "خټکي",
+            "شفتالو او خرمالو"
+          ]
+        },
+        {
+          "name": "Takhar",
+          "ps": "تخار",
+          "districts": [
+            "تالقان",
+            "فرخار"
+          ],
+          "crops": [
+            "وریجې",
+            "شړشم",
+            "پنبه",
+            "خټکي",
+            "شفتالو او خرمالو"
+          ]
+        },
+        {
+          "name": "Baghlan",
+          "ps": "بغلان",
+          "districts": [
+            "پلخمري",
+            "بغلان مرکزي"
+          ],
+          "crops": [
+            "وریجې",
+            "شړشم",
+            "پنبه",
+            "خټکي",
+            "شفتالو او خرمالو"
+          ]
+        },
+        {
+          "name": "Samangan",
+          "ps": "سمنګان",
+          "districts": [
+            "ایبک",
+            "حضرت سلطان"
+          ],
+          "crops": [
+            "بادام: ستاربايي او کاغذي"
+          ]
+        },
+        {
+          "name": "Badghis",
+          "ps": "بادغیس",
+          "districts": [
+            "قلعه نو",
+            "جوند"
+          ],
+          "crops": [
+            "پسته (د لوړ تولید ادعا)"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Central and West Highlands",
+      "provinces": [
+        {
+          "name": "Kabul",
+          "ps": "کابل",
+          "districts": [
+            "میربچه‌کوټ",
+            "استالف",
+            "چهاراسیاب"
+          ],
+          "crops": [
+            "انګور: حسینی، کشمشي، طایفي",
+            "سابه او ګندنه",
+            "شفتالو، الوچې او ګیلاس"
+          ]
+        },
+        {
+          "name": "Parwan",
+          "ps": "پروان",
+          "districts": [
+            "بګرام",
+            "جبل السراج"
+          ],
+          "crops": [
+            "انګور: حسینی، کشمشي، طایفي",
+            "سابه او ګندنه",
+            "شفتالو، الوچې او ګیلاس"
+          ]
+        },
+        {
+          "name": "Maidan Wardak",
+          "ps": "میدان وردګ",
+          "districts": [
+            "سیداباد",
+            "چک",
+            "نرخ"
+          ],
+          "crops": [
+            "مڼې: لبناني او سرخ",
+            "زردالو"
+          ]
+        },
+        {
+          "name": "Logar",
+          "ps": "لوګر",
+          "districts": [
+            "چرخ",
+            "برکي برک"
+          ],
+          "crops": [
+            "پیاز",
+            "کچالو",
+            "زردالو"
+          ]
+        },
+        {
+          "name": "Bamyan",
+          "ps": "بامیان",
+          "districts": [
+            "یکاولنګ",
+            "پنجاب"
+          ],
+          "crops": [
+            "کچالو",
+            "للمي غنم",
+            "باقلي"
+          ]
+        },
+        {
+          "name": "Ghor",
+          "ps": "غور",
+          "districts": [
+            "شهرستو",
+            "چغچران"
+          ],
+          "crops": [
+            "للمي غنم",
+            "باقلي"
+          ]
+        },
+        {
+          "name": "Daykundi",
+          "ps": "دایکندي",
+          "districts": [
+            "نیلي"
+          ],
+          "crops": [
+            "بادام",
+            "للمي غنم",
+            "باقلي"
+          ]
+        },
+        {
+          "name": "Herat",
+          "ps": "هرات",
+          "districts": [
+            "اوبه",
+            "پښتون زرغون (اصلي متن کې د code> نښه ورسره راغلې)",
+            "انجیل",
+            "ګذره",
+            "غوریان"
+          ],
+          "crops": [
+            "زعفران (د نړیوال لومړي مقام ادعا)",
+            "انګور: فخري او لعل",
+            "مرمرین خټکي",
+            "زیره"
+          ]
+        }
+      ]
+    }
+  ]
+}
