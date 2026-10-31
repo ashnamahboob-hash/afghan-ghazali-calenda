@@ -1,0 +1,398 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "AF-KDH-ADM2-PILOT",
+  "country": {
+    "id": "AF",
+    "name": "Afghanistan"
+  },
+  "province": {
+    "id": "AF27",
+    "names": {
+      "ps": "کندهار",
+      "fa": "قندهار",
+      "en": "Kandahar"
+    }
+  },
+  "dataset_status": "draft_pending_official_row_level_verification",
+  "source_policy": {
+    "primary_admin_reference": {
+      "name": "OCHA Afghanistan COD-AB",
+      "url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74",
+      "role": "Administrative hierarchy and P-code cross-check",
+      "status": "reference_identified_row_level_check_pending"
+    },
+    "multilingual_reference": {
+      "name": "Open Admin Data - Afghanistan Administrative Divisions",
+      "url": "https://github.com/open-admin-data/afghanistan-administrative-divisions",
+      "license": "CC-BY-4.0",
+      "role": "Candidate local-script and English name reference",
+      "status": "reference_identified_independent_validation_pending"
+    },
+    "legacy_reference": {
+      "name": "Existing AgricultureScreen district list",
+      "path": "lib/screens/agriculture_screen.dart",
+      "role": "Preserved existing app identifiers and Pashto labels",
+      "status": "copied_from_existing_project_code"
+    }
+  },
+  "fields": {
+    "id": "Stable district P-code carried forward from the existing app; verify against current OCHA COD-AB before marking verified.",
+    "province_id": "Parent province P-code.",
+    "names": "Localized display names. fa is null until Dari spelling is independently verified.",
+    "verification": "Per-field evidence status; do not treat pending values as official."
+  },
+  "districts": [
+    {
+      "id": "AF2701",
+      "province_id": "AF27",
+      "names": {
+        "ps": "کندهار",
+        "fa": null,
+        "en": "Kandahar"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2702",
+      "province_id": "AF27",
+      "names": {
+        "ps": "ارغنداب",
+        "fa": null,
+        "en": "Arghandab"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2703",
+      "province_id": "AF27",
+      "names": {
+        "ps": "دامان",
+        "fa": null,
+        "en": "Daman"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2704",
+      "province_id": "AF27",
+      "names": {
+        "ps": "پنجوائی",
+        "fa": null,
+        "en": "Panjwayi"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2705",
+      "province_id": "AF27",
+      "names": {
+        "ps": "ژړۍ",
+        "fa": null,
+        "en": "Zheray"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2706",
+      "province_id": "AF27",
+      "names": {
+        "ps": "شاه ولی کوت",
+        "fa": null,
+        "en": "Shah Wali Kot"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2707",
+      "province_id": "AF27",
+      "names": {
+        "ps": "خاکریز",
+        "fa": null,
+        "en": "Khakrez"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2708",
+      "province_id": "AF27",
+      "names": {
+        "ps": "ارغستان",
+        "fa": null,
+        "en": "Arghestan"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2709",
+      "province_id": "AF27",
+      "names": {
+        "ps": "غورک",
+        "fa": null,
+        "en": "Ghorak"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2710",
+      "province_id": "AF27",
+      "names": {
+        "ps": "میوند",
+        "fa": null,
+        "en": "Maywand"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2711",
+      "province_id": "AF27",
+      "names": {
+        "ps": "سپین بولدک",
+        "fa": null,
+        "en": "Spin Boldak"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2712",
+      "province_id": "AF27",
+      "names": {
+        "ps": "نیش",
+        "fa": null,
+        "en": "Nesh"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2713",
+      "province_id": "AF27",
+      "names": {
+        "ps": "میانشین",
+        "fa": null,
+        "en": "Miyanshin"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2714",
+      "province_id": "AF27",
+      "names": {
+        "ps": "شورابک",
+        "fa": null,
+        "en": "Shorabak"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2715",
+      "province_id": "AF27",
+      "names": {
+        "ps": "معروف",
+        "fa": null,
+        "en": "Maruf"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    },
+    {
+      "id": "AF2716",
+      "province_id": "AF27",
+      "names": {
+        "ps": "ریګ (شګه)",
+        "fa": null,
+        "en": "Reg"
+      },
+      "verification": {
+        "pcode": "pending_ocha_row_level_cross_check",
+        "ps": "pending_official_orthography_check",
+        "fa": "pending_official_orthography_check",
+        "en": "pending_ocha_name_cross_check"
+      },
+      "source_ids": [
+        "ocha_cod_ab_afghanistan",
+        "open_admin_data_afghanistan",
+        "legacy_agriculture_screen"
+      ],
+      "reviewed_at": null,
+      "record_status": "pending_official_verification"
+    }
+  ]
+}
