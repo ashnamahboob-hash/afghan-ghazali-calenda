@@ -28,8 +28,8 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
     _Province('Badghis','بادغیس','بادغیس','Badghis','west'),
     _Province('Baghlan','بغلان','بغلان','Baghlan','northeast'),
     _Province('Balkh','بلخ','بلخ','Balkh','north'),
-    _Province('Bamyan','بامیان','بامیان','Bamyan','central'),
-    _Province('Daykundi','دایکندي','دایکندی','Daykundi','central'),
+    _Province('Bamyan','بامیان','بامیان','Bamyan','unknown'),
+    _Province('Daykundi','دایکندي','دایکندی','Daykundi','unknown'),
     _Province('Farah','فراه','فراه','Farah','southwest'),
     _Province('Faryab','فاریاب','فاریاب','Faryab','north'),
     _Province('Ghazni','غزني','غزنی','Ghazni','cold'),
@@ -47,14 +47,14 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
     _Province('Logar','لوګر','لوگر','Logar','cold'),
     _Province('Nangarhar','ننګرهار','ننگرهار','Nangarhar','east'),
     _Province('Nimroz','نیمروز','نیمروز','Nimroz','southwest'),
-    _Province('Nuristan','نورستان','نورستان','Nuristan','east'),
+    _Province('Nuristan','نورستان','نورستان','Nuristan','unknown'),
     _Province('Uruzgan','ارزګان','ارزگان','Uruzgan','southwest'),
-    _Province('Paktia','پکتیا','پکتیا','Paktia','east'),
+    _Province('Paktia','پکتیا','پکتیا','Paktia','unknown'),
     _Province('Paktika','پکتیکا','پکتیکا','Paktika','cold'),
-    _Province('Panjshir','پنجشېر','پنجشیر','Panjshir','central'),
+    _Province('Panjshir','پنجشېر','پنجشیر','Panjshir','unknown'),
     _Province('Parwan','پروان','پروان','Parwan','cold'),
     _Province('Samangan','سمنګان','سمنگان','Samangan','north'),
-    _Province('Sar-e-Pul','سرپل','سرپل','Sar-e-Pul','north'),
+    _Province('Sar-e-Pul','سرپل','سرپل','Sar-e-Pul','unknown'),
     _Province('Takhar','تخار','تخار','Takhar','northeast'),
     _Province('Wardak','میدان وردګ','میدان وردک','Maidan Wardak','cold'),
     _Province('Zabul','زابل','زابل','Zabul','southwest'),
@@ -92,7 +92,11 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
       case 'east':
         return en ? 'Wheat sowing: 15 Aqrab–15 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱۵ عقرب تا ۱۵ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې تر ۱۵مې قوس.';
       default:
-        return en ? 'Wheat sowing: 15 Aqrab–15 Qaws.' : fa ? 'زمان مناسب کشت گندم: ۱۵ عقرب تا ۱۵ قوس.' : 'د غنمو د کرلو مناسب وخت: د عقرب له ۱۵مې تر ۱۵مې قوس.';
+        return en
+            ? 'No verified provincial sowing window is available for this province yet. Please consult the local agricultural extension office.'
+            : fa
+                ? 'زمان کشت تأییدشده برای این ولایت هنوز در دسترس نیست؛ لطفاً با ریاست ترویج زراعتی محل مشوره کنید.'
+                : 'د دې ولایت لپاره د کرلو تایید شوی وخت لا نه دی موندل شوی؛ مهرباني وکړئ د خپلې سیمې د کرنیز ترویج له ادارې سره مشوره وکړئ.';
     }
   }
 
