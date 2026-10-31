@@ -160,5 +160,80 @@
         }
       }
     ]
+  },
+  "submitted_province_profiles": {
+    "source_claim": "Ministry of Agriculture, Irrigation and Livestock (MAIL) - 2024 Survey",
+    "source_claim_status": "Verified",
+    "independent_verification_status": "pending_source_document",
+    "publication_status": "not_for_user_facing_advice",
+    "review_notes": [
+      "The user-provided data labels this dataset as verified and attributes it to a MAIL 2024 survey; no report title, URL, page number, table, or source document was supplied, so the attribution and certification claims have not been independently verified.",
+      "The district-level crop rankings and certified flags must not be treated as official facts until checked against the original MAIL survey or provincial agriculture records.",
+      "District names must be reconciled with the app's stable administrative IDs before import; spelling variants such as Maiwand/Maywand and Zhari/Zheray need normalization without losing the source wording.",
+      "The listed crop profiles are not planting calendars and do not establish sowing, irrigation, or harvest dates."
+    ],
+    "data": {
+      "afghanistan_agriculture_db": {
+        "data_source": "Ministry of Agriculture, Irrigation and Livestock (MAIL) - 2024 Survey",
+        "status": "Verified",
+        "provinces": [
+          {
+            "name": "Kandahar",
+            "name_pashto": "کندهار",
+            "zone": "South",
+            "primary_crops": [
+              {
+                "crop": "Pomegranate (انار)",
+                "top_districts": [
+                  "Arghandab",
+                  "Khakrez"
+                ],
+                "certified": true
+              },
+              {
+                "crop": "Figs (انځر)",
+                "top_districts": [
+                  "Shah Wali Kot",
+                  "Maiwand"
+                ],
+                "certified": true
+              },
+              {
+                "crop": "Grapes (انګور)",
+                "top_districts": [
+                  "Panjwayi",
+                  "Zhari"
+                ],
+                "certified": true
+              }
+            ]
+          },
+          {
+            "name": "Bamyan",
+            "name_pashto": "بامیان",
+            "zone": "Central_Highlands",
+            "primary_crops": [
+              {
+                "crop": "Potato (کچالو)",
+                "top_districts": [
+                  "Center",
+                  "Yakawlang",
+                  "Shibar"
+                ],
+                "certified": true
+              },
+              {
+                "crop": "Dryland Wheat (للمي غنم)",
+                "top_districts": [
+                  "Panjab",
+                  "Warast"
+                ],
+                "certified": true
+              }
+            ]
+          }
+        ]
+      }
+    }
   }
 }
