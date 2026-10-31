@@ -218,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.12),
+              color: Colors.white.withOpacity(0.12),
               borderRadius: BorderRadius.circular(14),
             ),
             child: Column(
