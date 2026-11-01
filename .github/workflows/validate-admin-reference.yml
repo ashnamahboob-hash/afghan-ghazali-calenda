@@ -1,0 +1,30 @@
+name: Validate Afghanistan administrative reference
+
+on:
+  push:
+    paths:
+      - "assets/data/afghanistan_admin_divisions_reference_draft.json"
+      - "tool/validate_admin_reference.py"
+      - ".github/workflows/validate-admin-reference.yml"
+  pull_request:
+    paths:
+      - "assets/data/afghanistan_admin_divisions_reference_draft.json"
+      - "tool/validate_admin_reference.py"
+      - ".github/workflows/validate-admin-reference.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-reference:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate draft dataset structure and audit counts
+        run: python tool/validate_admin_reference.py
