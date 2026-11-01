@@ -231,3 +231,22 @@ and version fields. The Afghanistan-filtered feature query could not be
 retrieved in this environment, so this is not yet row-level verification.
 The next source task is to obtain and archive the Afghanistan query response
 from this service (or the equivalent current COD Services API).
+
+### Reproducible OCHA ADM2 snapshot fetcher
+
+A standard-library Python utility is now available at
+`tool/fetch_ocha_cod_ab_afg_adm2.py`. It queries the OCHA global COD Admin2
+layer for `adm0_pcode='AFG'`, archives the returned source attributes, and
+checks the expected feature count, unique ADM2 P-codes, and parent P-code
+format. It does not update the app dataset or certify names.
+
+Run locally from the repository root:
+
+```bash
+python tool/fetch_ocha_cod_ab_afg_adm2.py
+```
+
+The default output is
+`artifacts/ocha_cod_ab_afg_adm2_snapshot.json`. Review the snapshot and its
+validity/version fields before performing a separate exact-P-code comparison.
+Offline parser tests run in the administrative-reference CI workflow.
