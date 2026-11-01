@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-class AdministrativeDistrict {
+class AdministrativeUnit {
   final String id;
   final String localName;
   final String englishName;
 
-  const AdministrativeDistrict({
+  const AdministrativeUnit({
     required this.id,
     required this.localName,
     required this.englishName,
@@ -18,13 +18,13 @@ class AdministrativeProvince {
   final String id;
   final String localName;
   final String englishName;
-  final List<AdministrativeDistrict> districts;
+  final List<AdministrativeUnit> units;
 
   const AdministrativeProvince({
     required this.id,
     required this.localName,
     required this.englishName,
-    required this.districts,
+    required this.units,
   });
 }
 
@@ -37,8 +37,8 @@ class AdministrativeReference {
     required this.status,
   });
 
-  int get districtCount =>
-      provinces.fold(0, (total, province) => total + province.districts.length);
+  int get adm2Count =>
+      provinces.fold(0, (total, province) => total + province.units.length);
 
   static Future<AdministrativeReference> load() async {
     final raw = await rootBundle.loadString(
@@ -49,11 +49,11 @@ class AdministrativeReference {
     final provinces = provinceRows.map((value) {
       final row = value as Map<String, dynamic>;
       final names = row['names'] as Map<String, dynamic>;
-      final districtRows = row['districts'] as List<dynamic>;
-      final districts = districtRows.map((districtValue) {
+      final districtRows = row['units'] as List<dynamic>;
+      final units = districtRows.map((districtValue) {
         final district = districtValue as Map<String, dynamic>;
         final districtNames = district['names'] as Map<String, dynamic>;
-        return AdministrativeDistrict(
+        return AdministrativeUnit(
           id: district['id'] as String,
           localName: districtNames['local'] as String,
           englishName: districtNames['en'] as String,
@@ -63,12 +63,12 @@ class AdministrativeReference {
         id: row['id'] as String,
         localName: names['local'] as String,
         englishName: names['en'] as String,
-        districts: districts,
+        units: units,
       );
     }).toList(growable: false);
 
     final allDistrictIds = provinces
-        .expand((province) => province.districts)
+        .expand((province) => province.units)
         .map((district) => district.id)
         .toList(growable: false);
     if (provinces.length != 34 ||
@@ -76,7 +76,7 @@ class AdministrativeReference {
         provinces.map((province) => province.id).toSet().length != 34 ||
         allDistrictIds.toSet().length != 401) {
       throw const FormatException(
-        'Administrative draft must contain 34 unique provinces and 401 unique districts.',
+        'Administrative draft must contain 34 unique provinces and 401 unique units.',
       );
     }
 
