@@ -1984,7 +1984,7 @@
       "id": "AF32",
       "names": {
         "local": "هرات",
-        "en": "Hirat"
+        "en": "Herat"
       },
       "slug": "hirat-af32",
       "districts": [
@@ -2121,7 +2121,7 @@
     {
       "id": "AF15",
       "names": {
-        "local": "کنر ها",
+        "local": "کونړ",
         "en": "Kunar"
       },
       "slug": "kunar-af15",
@@ -2382,7 +2382,7 @@
       "id": "AF30",
       "names": {
         "local": "هلمند",
-        "en": "Hilmand"
+        "en": "Helmand"
       },
       "slug": "hilmand-af30",
       "districts": [
@@ -2657,7 +2657,7 @@
     {
       "id": "AF04",
       "names": {
-        "local": "میدان وردک",
+        "local": "میدان وردگ",
         "en": "Maidan Wardak"
       },
       "slug": "maidan-wardak-af04",
@@ -3639,36 +3639,7 @@
       },
       "note": "These are additional workbook ADM2 records; they are not silently added to the candidate reference."
     },
-    "province_name_differences": [
-      {
-        "id": "AF32",
-        "field": "names.en",
-        "candidate": "Hirat",
-        "workbook": "Herat",
-        "status": "romanization_variant_pending_review"
-      },
-      {
-        "id": "AF30",
-        "field": "names.en",
-        "candidate": "Hilmand",
-        "workbook": "Helmand",
-        "status": "romanization_variant_pending_review"
-      },
-      {
-        "id": "AF15",
-        "field": "names.local",
-        "candidate": "کنر ها",
-        "workbook": "کونړ",
-        "status": "local_script_variant_pending_review"
-      },
-      {
-        "id": "AF04",
-        "field": "names.local",
-        "candidate": "میدان وردک",
-        "workbook": "میدان وردگ",
-        "status": "local_script_variant_pending_review"
-      }
-    ],
+    "province_name_differences": [],
     "district_name_review_status": "not_yet_completed",
     "official_verification_status": "not_ocha_row_level_certified",
     "runtime_enabled": false,
@@ -3680,7 +3651,9 @@
       "Province name differences are recorded as variants and have not been normalized or promoted to official spellings.",
       "District name-by-name comparison remains pending; P-code presence and parent-code matching do not certify names.",
       "This workbook comparison does not constitute independent OCHA/AGCHO certification.",
-      "The full 401-record candidate-to-workbook district-name comparison has not yet been completed; do not infer name equality from P-code and parent-code matches."
-    ]
+      "The full 401-record candidate-to-workbook district-name comparison has not yet been completed; do not infer name equality from P-code and parent-code matches.",
+      "The four province-name variants identified in the first workbook comparison were updated to the workbook spellings. Stable province IDs were unchanged."
+    ],
+    "province_name_review_status": "province_names_aligned_to_user_supplied_workbook_v04"
   }
 }
