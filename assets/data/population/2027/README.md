@@ -28,3 +28,22 @@ The three source CSVs were supplied in the conversation and independently inspec
 ## Current status
 
 Source-file inspection and checksum calculation were completed. Repository ingestion is pending because the exact original CSV payloads have not yet been copied into this repository. The metadata intentionally marks provenance fields that have not been verified as unknown.
+
+## Flutter data service
+
+The Flutter-side parser is implemented in
+`lib/services/population_2027_dataset.dart`. It reads ADM2 rows into an
+independent population model and supports exact P-code lookup. It does not
+modify or populate the 401-unit administrative selector.
+
+The parser keeps source cells as strings, including empty values, commas,
+whitespace-padded hyphen markers and quoted text. It skips the blank-ADM2-
+P-code aggregate row and rejects duplicate ADM2 P-codes, missing parent
+ADM1 P-codes, and malformed row widths.
+
+**Integration is intentionally pending:** the original CSV payloads are not
+yet committed, and the population CSV is not yet registered in
+`pubspec.yaml`. Do not call the asset loader or expose population figures in
+the app until the exact source file has been ingested and its checksum
+re-verified. Parser unit tests use synthetic fixtures only; they do not
+represent actual population observations.
