@@ -124,6 +124,25 @@ def validate(path: Path) -> list[str]:
         fail("independent_source_checks_completed does not match the evidence list")
     checks.append(f"{len(source_checks)} targeted independent-source checks are accounted for")
 
+    triage = review.get("review_triage", {})
+    triage_total = (
+        triage.get("orthographic_or_transliteration", 0)
+        + triage.get("material_name_or_code_conflicts", 0)
+        + triage.get("source_checked_or_alternate_name_pending_local_review", 0)
+    )
+    if triage.get("total_pending") != len(pending) or triage_total != len(pending):
+        fail("review triage categories must sum to all pending discrepancies")
+    checks.append(
+        f"review triage accounts for {triage_total} pending discrepancies without closing them"
+    )
+
+    dataset_checks = data.get("dataset_level_source_checks", [])
+    dataset_check_ids = [item.get("id", "") for item in dataset_checks]
+    unique(dataset_check_ids, "dataset-level source check IDs")
+    if not dataset_checks or any(not item.get("source_url") or not item.get("scope") for item in dataset_checks):
+        fail("dataset-level source checks must include unique IDs, source URLs, and scope notes")
+    checks.append(f"{len(dataset_checks)} dataset-level source checks are documented separately from row-level checks")
+
     return checks
 
 
