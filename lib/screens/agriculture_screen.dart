@@ -195,7 +195,7 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                             en
                                 ? 'Preview reference only: 34 provinces and 401 ADM2 records. The list includes mixed ADM2 unit types and remains under source review; do not treat it as an officially certified gazetteer.'
                                 : fa
-                                    ? 'این فهرست پیش‌نویس است: ۳۴ ولایت و ۴۰۱ واحد اداری در کچهٔ دویم. این فهرست شامل انواع مختلف واحدهای اداری سطح دوم است؛ نام‌ها و روابط آن هنوز بررسی می‌شوند و مرجع رسمی تأییدشده نیست.'
+                                    ? 'این فهرست پیش‌نویس است: ۳۴ ولایت و ۴۰۱ واحد اداری در سطح دوم. این فهرست شامل انواع مختلف واحدهای اداری سطح دوم است؛ نام‌ها و روابط آن هنوز بررسی می‌شوند و مرجع رسمی تأییدشده نیست.'
                                     : 'دا د ازمایښتي معلوماتو لېست دی: ۳۴ ولایتونه او ۴۰۱ د دویمې اداري کچې ریکارډونه. په دې لېست کې د دویمې کچې بېلابېل اداري واحدونه شامل دي؛ نومونه او اړیکې یې لا تر ارزونې لاندې دي او رسمي تایید شوی نوملړ نه دی.',
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
