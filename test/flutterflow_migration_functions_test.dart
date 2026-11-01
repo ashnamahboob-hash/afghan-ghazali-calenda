@@ -110,7 +110,12 @@ void main() {
         return result['asr'] as String;
       }
 
-      expect(asr(2), greaterThan(asr(1)));
+      int toMinutes(String clock) {
+        final parts = clock.split(':').map(int.parse).toList();
+        return parts[0] * 60 + parts[1];
+      }
+
+      expect(toMinutes(asr(2)), greaterThan(toMinutes(asr(1))));
     });
 
     test('rejects invalid coordinates and Asr factors', () {
