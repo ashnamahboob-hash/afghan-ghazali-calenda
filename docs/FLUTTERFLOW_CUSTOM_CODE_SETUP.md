@@ -89,6 +89,38 @@ The functions return a JSON string to keep their interface simple and serializab
 5. Afghanistan's local UTC offset is currently +4.5 hours. Keep it configurable and use an IANA timezone in any future timestamp-based scheduling.
 6. All returned times are local clock strings. They do not contain a date or timezone offset.
 
+## Population-safe helpers
+
+The portable helper file also includes functions for population and administrative joins:
+
+### Custom Function H — Population cell parser
+
+- Name: `populationCellJson`
+- Return type: String
+- Argument: `rawValue` String (nullable if FlutterFlow supports nullable String inputs)
+- Returns `sourceValueRaw`, `numericValue`, and `valueStatus`.
+- Missing blank cells, literal hyphens and literal NULL markers remain missing, never zero.
+
+### Custom Function I — Safe population sum
+
+- Name: `sumPopulationCellsJson`
+- Return type: String
+- Argument: `rawValuesJson` String containing a JSON array of original source values.
+- Returns a complete `value` only when every input is numeric. Otherwise `value=null`, with a separate `partialSumForAuditOnly` and missing count.
+
+### Custom Function J — P-code set comparison
+
+- Name: `comparePcodeSetsJson`
+- Return type: String
+- Arguments: `sourceCodesJson` String and `referenceCodesJson` String; each is a JSON array of P-code strings.
+- Returns matched, source-only and reference-only codes, and duplicate-code lists.
+- This helper does not alter either dataset or promote draft administrative codes to verified status.
+
+JSON paths:
+- Cell: `$.sourceValueRaw`, `$.numericValue`, `$.valueStatus`
+- Sum: `$.value`, `$.partialSumForAuditOnly`, `$.missingCount`, `$.valueStatus`
+- P-code compare: `$.matched`, `$.sourceOnly`, `$.referenceOnly`, `$.duplicateSourceCodes`, `$.duplicateReferenceCodes`
+
 ## Verification
 
 The source repository's Flutter validation workflow runs `flutter analyze` and `flutter test` on changes to `test/**`. The helper test file checks the known tabular Ramadan 1445 date, Solar round-trip behavior under the provisional algorithm, language labels, prayer-time ordering, Hanafi/Standard Asr difference and invalid input rejection.
