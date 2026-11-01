@@ -36,7 +36,7 @@
 
 ## Not yet done
 
-- [ ] Confirm Code File static methods appear in FlutterFlow action/variable pickers and run the smoke tests.
+- [ ] Confirm the new positional methods \`homeDashboardJson\` and \`prayerTimesForCityJson\` appear in the FlutterFlow Code File action picker and run the smoke tests.
 - [ ] Add and compile typed FlutterFlow wrappers if direct invocation of named-argument methods is unavailable.
 - [ ] Select and provision backend (Supabase/Firebase/local snapshot strategy).
 - [ ] Validate official Afghan Solar Hijri date algorithm and replace provisional logic if needed.
@@ -67,7 +67,7 @@
 
 ## Current status
 
-**Status:** Preparation in progress; Code File parse reported successful by owner; visual page generation and runtime integration remain.
+**Status:** Preparation in progress; Code File Validate/Parse reported successful by owner; repository tests for the new positional wrappers passed; actual FlutterFlow action-picker/runtime integration and visual page generation remain.
 
 ## Safety
 
