@@ -82,9 +82,6 @@ class Population2027Dataset {
       }
     }
 
-    final indexes = <String, int>{
-      for (var i = 0; i < headers.length; i++) headers[i]: i,
-    };
     final records = <Population2027Record>[];
     final seenPcodes = <String>{};
 
