@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "dataset_id": "AFGHANISTAN-ADMIN-REFERENCE-DRAFT-2026-10",
-  "last_updated": "2026-10-31",
+  "last_updated": "2026-11-01",
   "status": "secondary_reference_draft_pending_ocha_pcode_crosscheck",
   "counts": {
     "provinces": 34,
@@ -3594,5 +3594,92 @@
         }
       ]
     }
-  ]
+  ],
+  "excel_crosscheck": {
+    "workbook": "afg_admin_boundaries.xlsx",
+    "workbook_version": "v04",
+    "valid_on": "2026-06-23",
+    "inspected_at": "2026-11-01",
+    "sha256": "726774df112bb6419d5146f2170957a2a5a29294b94d9e271fb45d19d6175101",
+    "worksheets": {
+      "provinces": "afg_admin1",
+      "admin2": "afg_admin2"
+    },
+    "workbook_counts": {
+      "province_rows": 34,
+      "unique_province_pcodes": 34,
+      "admin2_rows": 457,
+      "unique_admin2_pcodes": 457,
+      "unit_type_counts": {
+        "District": 397,
+        "Temporaray District": 29,
+        "Provincial Capital": 30,
+        "Capital": 1
+      }
+    },
+    "candidate_reference_match": {
+      "candidate_provinces": 34,
+      "province_pcodes_found": 34,
+      "candidate_adm2_records": 401,
+      "unique_candidate_adm2_pcodes": 401,
+      "candidate_pcodes_found_in_workbook": 401,
+      "parent_province_pcodes_match": 401,
+      "candidate_records_by_workbook_unit_type": {
+        "District": 367,
+        "Temporaray District": 3,
+        "Provincial Capital": 30,
+        "Capital": 1
+      }
+    },
+    "workbook_records_not_in_candidate_reference": {
+      "count": 56,
+      "by_unit_type": {
+        "District": 30,
+        "Temporaray District": 26
+      },
+      "note": "These are additional workbook ADM2 records; they are not silently added to the candidate reference."
+    },
+    "province_name_differences": [
+      {
+        "id": "AF32",
+        "field": "names.en",
+        "candidate": "Hirat",
+        "workbook": "Herat",
+        "status": "romanization_variant_pending_review"
+      },
+      {
+        "id": "AF30",
+        "field": "names.en",
+        "candidate": "Hilmand",
+        "workbook": "Helmand",
+        "status": "romanization_variant_pending_review"
+      },
+      {
+        "id": "AF15",
+        "field": "names.local",
+        "candidate": "کنر ها",
+        "workbook": "کونړ",
+        "status": "local_script_variant_pending_review"
+      },
+      {
+        "id": "AF04",
+        "field": "names.local",
+        "candidate": "میدان وردک",
+        "workbook": "میدان وردگ",
+        "status": "local_script_variant_pending_review"
+      }
+    ],
+    "district_name_review_status": "pending_full_401_record_name_comparison",
+    "official_verification_status": "not_ocha_row_level_certified",
+    "runtime_enabled": false,
+    "notes": [
+      "All 401 candidate ADM2 P-codes are present in the supplied workbook and all 401 parent province P-codes match.",
+      "The 401 candidate ADM2 entries are not 401 ordinary districts: their workbook unit types are 367 District, 30 Provincial Capital, 3 Temporaray District, and 1 Capital.",
+      "The workbook has 56 additional ADM2 records outside the candidate reference: 30 District and 26 Temporaray District.",
+      "The 457 workbook ADM2 rows must not be described as 457 districts or equated directly with the OCHA metadata's declared 401-district coverage.",
+      "Province name differences are recorded as variants and have not been normalized or promoted to official spellings.",
+      "District name-by-name comparison remains pending; P-code presence and parent-code matching do not certify names.",
+      "This workbook comparison does not constitute independent OCHA/AGCHO certification."
+    ]
+  }
 }
