@@ -5762,5 +5762,19 @@
       ],
       "finding": "A secondary HDX-derived operational-presence dataset pairs AF3011 with Reg-i-Khan Nishin, supporting an expanded-name explanation for Khanshin."
     }
-  ]
+  ],
+  "runtime_preview": {
+    "enabled": true,
+    "enabled_on": "2026-11-01",
+    "surface": "Agriculture screen province and ADM2 administrative-unit selectors",
+    "purpose": "Allows users to preview and select candidate province/ADM2 labels during development.",
+    "production_official_data_enabled": false,
+    "source_verification_status": "pending",
+    "safeguards": [
+      "The UI must display a draft/unverified notice beside the selector.",
+      "Do not use these labels as officially certified names.",
+      "Do not infer agricultural recommendations or planting dates from this administrative reference.",
+      "Preserve all stable P-code-derived IDs."
+    ]
+  }
 }
