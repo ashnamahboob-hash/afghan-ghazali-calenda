@@ -20,32 +20,33 @@
 - [x] Added FlutterFlow custom-code setup and JSON field mapping instructions.
 - [x] Added staged FlutterFlow manual page-build guide.
 - [x] Added page-by-page FlutterFlow action-flow specification covering app state, Home, Calendar, Prayer Times, Settings, geography and data-release gates.
-- [x] Updated the integration instructions to prefer FlutterFlow Code File static-method calls and avoid unsupported Custom Function imports.
+- [x] Updated integration instructions to prefer FlutterFlow Code File static-method calls.
 - [x] Added a four-part Code File smoke-test guide with exact sample inputs and expected JSON fields.
-- [x] Added Code File / Custom Action integration workflow based on current FlutterFlow documentation.
+- [x] Added Code File / Custom Action integration workflow.
 - [x] Added population custom-function setup instructions and data-integrity tests.
-- [x] Kept `main` untouched; migration work is isolated on a new branch based on `preview/browser-review`.
+- [x] Added `docs/FLUTTERFLOW_AI_BUILD_PACK.md` with ready-to-paste FlutterFlow Designer prompts for the app shell and each page, reusable component breakdown, and implementation gates.
+- [x] Kept `main` untouched; migration work is isolated on `flutterflow/migration-prep`.
 
 ## Reported by owner, not independently verified in FlutterFlow
 
 - [x] New FlutterFlow project created.
 - [x] Theme colors entered.
 - [x] Localization languages configured.
+- [x] Owner reports that the Code File `my_class.dart` containing class `AfghanGhazaliFunctions` passed Validate and Parse. Static-method invocation and runtime outputs have not yet been independently tested.
 
 ## Not yet done
 
-- [ ] Connect FlutterFlow project to a dedicated GitHub repository/branch.
-- [ ] Create the Code File in FlutterFlow and verify the parser accepts the calculation class.
-- [ ] Add and compile typed FlutterFlow wrappers for the date and prayer methods.
+- [ ] Confirm Code File static methods appear in FlutterFlow action/variable pickers and run the smoke tests.
+- [ ] Add and compile typed FlutterFlow wrappers if direct invocation of named-argument methods is unavailable.
 - [ ] Select and provision backend (Supabase/Firebase/local snapshot strategy).
 - [ ] Validate official Afghan Solar Hijri date algorithm and replace provisional logic if needed.
 - [ ] Confirm population CSV publisher, source URL, publication date, licence and methodology.
 - [ ] Complete current primary-source administrative row-level reconciliation.
-- [ ] Rebuild Home Dashboard visually in FlutterFlow.
-- [ ] Configure and preview the documented page action flows in FlutterFlow.
-- [ ] Build calendar and prayer-time pages.
-- [ ] Build population, province/district and agriculture pages.
-- [ ] Add maps and exports after data-source readiness.
+- [ ] Generate/review Home Dashboard visually in FlutterFlow using the AI build pack.
+- [ ] Create reusable visual components and connect HomePage action flows.
+- [ ] Generate CalendarPage, PrayerTimesPage and SettingsPage; connect and test their actions.
+- [ ] Build province/district, population and agriculture pages with the documented data-release gates.
+- [ ] Add maps and exports after source and geometry readiness.
 - [ ] Execute functional, data-integrity, localization, RTL/LTR and responsive QA.
 - [x] Confirm migration helper, population ingestion-script syntax, Python data-tool tests, Flutter analyze and Flutter tests pass in GitHub Actions (run `41305136222`, 2026-11-01).
 - [ ] Owner review and approval before release.
@@ -58,18 +59,15 @@
 
 ## Latest migration-preparation update (2026-11-01)
 
-- Added `docs/FLUTTERFLOW_ACTION_FLOW_SPEC.md` with ordered action sequences and validation rules for the first implementation milestone.
-- Added `docs/FLUTTERFLOW_CODEFILE_SMOKE_TEST.md` with four reproducible preview checks (Solar, civil Hijri, Kandahar city configuration, and prayer-time JSON).
-- Checked the current official FlutterFlow Code File documentation: parsed Code Files expose static methods through the Variable dialog / Call Static Method action. Updated the guide to use that route first.
-- Clarified that Custom Functions cannot import arbitrary files; use a Custom Action fallback only if direct static method invocation is unavailable.
-- Linked the action-flow specification from the manual visual build guide.
-- The most important remaining practical step is still in the FlutterFlow project: create/parse the Code File, complete the smoke-test checklist, and configure the HomePage action flows. GitHub preparation alone cannot execute these builder actions.
+- Added `docs/FLUTTERFLOW_AI_BUILD_PACK.md` containing a consistent design system and paste-ready AI generation prompts for Home, Calendar, Prayer Times, Settings, Province Explorer, safe Population/Agriculture empty states, Maps/Reports shells and About.
+- The build pack recommends generating HomePage first, extracting reusable Components, then connecting the parsed Code File and expanding to the remaining pages.
+- FlutterFlow supports AI page/component generation and reusable Components. The generated visual UI still needs owner review, data binding and action configuration in the FlutterFlow project.
+- Owner reports successful Validate and Parse for `my_class.dart`; this is not yet proof that static methods compile in action flows or return correct runtime values.
+- The FlutterFlow canvas is not directly controlled by GitHub repository operations. The next practical milestone is to use the HomePage prompt in the AI Designer / page generator, review the generated layout, and then connect its date and prayer data.
 
 ## Current status
 
-**Status:** Preparation in progress
-
-The FlutterFlow UI itself has not been built by GitHub operations. The files in this branch are migration documentation and design contracts. No claim is made that the FlutterFlow project is connected to GitHub or that the app has been migrated.
+**Status:** Preparation in progress; Code File parse reported successful by owner; visual page generation and runtime integration remain.
 
 ## Safety
 
