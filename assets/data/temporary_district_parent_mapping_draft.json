@@ -24,7 +24,9 @@
     "records": 12,
     "unique_adm2_pcodes": 12,
     "verified_records": 0,
-    "pending_records": 12
+    "pending_records": 12,
+    "workbook_classified_temporary_districts": 11,
+    "workbook_classified_ordinary_districts": 1
   },
   "records": [
     {
@@ -34,9 +36,20 @@
       "province_en": "Helmand",
       "province_pcode": "AF30",
       "parent_mapping_supplied": "Nad-e-Ali",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF3018",
+        "adm2_ref_name": "Nad-e-Ali",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF3015",
@@ -45,10 +58,21 @@
       "province_en": "Helmand",
       "province_pcode": "AF30",
       "parent_mapping_supplied": "Nahr-e-Saraj",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "district_not_temporary_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "review_note": "Newly supplied record; not present in the earlier 27-row temporary-district excerpt.",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "review_note": "The supplied v04 workbook classifies Babaji as District, not Temporaray District. Do not include it in the temporary-district count without newer primary-source evidence.",
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF3015",
+        "adm2_ref_name": "Nahr-e-Saraj",
+        "unittype_source_spelling": "District",
+        "unit_type_normalized": "District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF2719",
@@ -57,9 +81,20 @@
       "province_en": "Kandahar",
       "province_pcode": "AF27",
       "parent_mapping_supplied": "Kandahar Capital",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF2719",
+        "adm2_ref_name": "Kandahar",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "label_variant_same_parent_candidate"
+      }
     },
     {
       "id": "AF2720",
@@ -68,9 +103,20 @@
       "province_en": "Kandahar",
       "province_pcode": "AF27",
       "parent_mapping_supplied": "Spin Boldak",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF2720",
+        "adm2_ref_name": "Spin Boldak",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF0623",
@@ -79,9 +125,20 @@
       "province_en": "Nangarhar",
       "province_pcode": "AF06",
       "parent_mapping_supplied": "Achin",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF0623",
+        "adm2_ref_name": "Achin",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF1516",
@@ -90,9 +147,20 @@
       "province_en": "Kunar",
       "province_pcode": "AF15",
       "parent_mapping_supplied": "Shigal",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF1516",
+        "adm2_ref_name": "Shigal",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF2409",
@@ -101,10 +169,21 @@
       "province_en": "Daykundi",
       "province_pcode": "AF24",
       "parent_mapping_supplied": "Gizab / Patoo",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
       "review_note": "Earlier supplied workbook excerpt maps Pato to parent Patoo. The new supplied mapping says Gizab / Patoo; preserve both claims pending source verification.",
-      "candidate_reference_membership": "present_in_401_candidate_reference"
+      "candidate_reference_membership": "present_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF2409",
+        "adm2_ref_name": "Patoo",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "source_difference_user_table_vs_workbook"
+      }
     },
     {
       "id": "AF1910",
@@ -113,9 +192,20 @@
       "province_en": "Kunduz",
       "province_pcode": "AF19",
       "parent_mapping_supplied": "Khan Abad",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF1910",
+        "adm2_ref_name": "Khan Abad",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF0808",
@@ -124,9 +214,20 @@
       "province_en": "Panjshir",
       "province_pcode": "AF08",
       "parent_mapping_supplied": "Dara",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF0808",
+        "adm2_ref_name": "Dara",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF0707",
@@ -135,9 +236,20 @@
       "province_en": "Laghman",
       "province_pcode": "AF07",
       "parent_mapping_supplied": "Mehtarlam",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF0707",
+        "adm2_ref_name": "Mehtarlam",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF3219",
@@ -146,9 +258,20 @@
       "province_en": "Herat",
       "province_pcode": "AF32",
       "parent_mapping_supplied": "Shindand",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF3219",
+        "adm2_ref_name": "Shindand",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     },
     {
       "id": "AF3220",
@@ -157,9 +280,20 @@
       "province_en": "Herat",
       "province_pcode": "AF32",
       "parent_mapping_supplied": "Shindand",
-      "record_classification": "temporary_district_candidate",
+      "record_classification": "temporary_district_in_supplied_v04_workbook",
       "verification_status": "pending",
-      "candidate_reference_membership": "not_in_401_candidate_reference"
+      "candidate_reference_membership": "not_in_401_candidate_reference",
+      "source_workbook_crosscheck": {
+        "source_file": "afg_admin_boundaries.xlsx",
+        "source_sheet": "afg_admin2",
+        "source_version": "v04",
+        "valid_on": "2026-06-23",
+        "adm2_pcode": "AF3220",
+        "adm2_ref_name": "Shindand",
+        "unittype_source_spelling": "Temporaray District",
+        "unit_type_normalized": "Temporary District",
+        "parent_mapping_comparison": "exact_match"
+      }
     }
   ],
   "cross_reference_audit": {
@@ -171,5 +305,39 @@
     "present_in_401_candidate_reference": 1,
     "not_in_401_candidate_reference": 11,
     "note": "Absence from the 401-candidate reference does not prove that a code is invalid or officially temporary. These records remain separate pending current COD-AB row-level verification."
+  },
+  "workbook_crosscheck": {
+    "source_file": "afg_admin_boundaries.xlsx",
+    "source_sheet": "afg_admin2",
+    "source_version": "v04",
+    "valid_on": "2026-06-23",
+    "checked_on": "2026-11-01",
+    "matching_pcodes": 12,
+    "temporary_districts": 11,
+    "ordinary_districts": 1,
+    "ordinary_district_record_ids": [
+      "AF3015"
+    ],
+    "temporary_district_record_ids": [
+      "AF3018",
+      "AF2719",
+      "AF2720",
+      "AF0623",
+      "AF1516",
+      "AF2409",
+      "AF1910",
+      "AF0808",
+      "AF0707",
+      "AF3219",
+      "AF3220"
+    ],
+    "parent_mapping_exact_matches": 10,
+    "parent_mapping_label_variants": [
+      "AF2719"
+    ],
+    "parent_mapping_source_differences": [
+      "AF2409"
+    ],
+    "note": "This is a cross-check against the user-supplied v04 workbook, not an independent confirmation that the workbook is the current official COD-AB gazetteer. The original unittype spelling 'Temporaray District' is preserved."
   }
 }
