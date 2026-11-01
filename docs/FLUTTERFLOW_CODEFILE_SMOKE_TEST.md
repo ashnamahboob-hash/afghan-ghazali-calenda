@@ -49,6 +49,24 @@ Keep the local moon-sighting disclaimer visible in the actual page.
 
 Coordinates are inherited from the existing app and still need independent geographic verification before public release.
 
+### Test 5 — One-call Home dashboard payload (recommended first integration)
+
+| Setting | Value |
+|---|---|
+| Static method | `homeDashboardJson` |
+| Inputs | `isoDate = 2026-04-01`, `cityId = kandahar`, `asrFactor = 2` |
+| Expected | Valid JSON containing nested `solar`, `gregorian`, `hijri`, `city`, `prayerTimes`, and `status` objects; Solar sample 1405/1/12; Kandahar city ID; Hanafi prayer metadata |
+
+This single positional call is the preferred HomePage integration because it avoids several separate action calls and does not require configuring named arguments.
+
+### Test 6 — Positional city prayer wrapper
+
+| Setting | Value |
+|---|---|
+| Static method | `prayerTimesForCityJson` |
+| Inputs | `isoDate = 2026-06-21`, `cityId = kandahar`, `asrFactor = 2` |
+| Expected | Six non-empty time fields and `asrMethod=Hanafi` |
+
 ### Test 4 — Prayer-time JSON
 
 | Setting | Value |
