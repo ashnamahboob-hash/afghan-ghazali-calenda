@@ -42,12 +42,11 @@ Persist preferences (language, theme, city and Asr method). Persisting a selecte
 
 1. Read `appLanguage`, `selectedDateIso`, `selectedCityId`, `asrFactor`, `fajrAngle`, `ishaAngle`, and `utcOffsetHours`.
 2. If `selectedDateIso` is empty or invalid, set it to today's local date.
-3. Use **Call Static Method** on `AfghanGhazaliFunctions.solarDateFromGregorianJson` with `selectedDateIso`.
-4. Use **Call Static Method** on `AfghanGhazaliFunctions.civilHijriFromGregorianJson` with `selectedDateIso`.
-5. Resolve city coordinates from the fixed six-city configuration using `selectedCityId`.
-6. Use **Call Static Method** on `AfghanGhazaliFunctions.calculatePrayerTimesJson` with the selected date, coordinates and calculation settings. If FlutterFlow cannot expose its named arguments, create a Custom Action wrapper using the editor-generated imports.
-7. Bind returned JSON fields to the date card and prayer summary.
-8. If any calculation fails, show a visible error/empty state; never display stale values as if they were current.
+3. Preferred: use **Call Static Method** on `AfghanGhazaliFunctions.homeDashboardJson` with three positional inputs: `selectedDateIso`, `selectedCityId`, and `asrFactor`. Save the returned String as the Home dashboard JSON result.
+4. Bind the nested JSON fields to the Home widgets: `$.solar.solarDay`, `$.solar.monthNamePs`, `$.solar.solarYear`, `$.gregorian.isoDate`, `$.hijri.hijriDay`, `$.hijri.monthNamePs`, `$.city.namePs`, `$.prayerTimes.fajr`, `$.prayerTimes.sunrise`, `$.prayerTimes.dhuhr`, `$.prayerTimes.asr`, `$.prayerTimes.maghrib`, and `$.prayerTimes.isha`.
+5. If a page needs prayer times separately, call the positional wrapper `AfghanGhazaliFunctions.prayerTimesForCityJson(isoDate, cityId, asrFactor)`; this avoids named-argument configuration in FlutterFlow.
+6. Keep the solar provisional, Hijri civil/tabular and prayer approximate disclaimers visible.
+7. If the call fails, show a visible error/empty state; never display stale values as if they were current.
 
 ### Language selector — On Change
 
