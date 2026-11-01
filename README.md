@@ -17,6 +17,49 @@ The current solar year boundary is provisionally set to March 21, and leap years
 
 Prayer times are approximate offline solar calculations. They depend on the selected city coordinates, timezone, calculation angles and jurisprudential method. Sunrise is displayed separately and is not a prayer. Confirm the chosen Fajr/Isha angles and Asr method with a trusted Afghan religious authority or local mosque. The app currently uses Kabul time offset (+04:30) for the preset Afghan cities.
 
+
+## Administrative reference workbook cross-check (2026-11-01)
+
+The draft administrative reference was cross-checked against the user-supplied
+`afg_admin_boundaries.xlsx` workbook (v04; `valid_on=2026-06-23`).
+The workbook contains 34 unique ADM1 P-codes and 457 unique ADM2 P-codes.
+Its 457 ADM2 rows are mixed unit types: 397 `District`, 29
+`Temporaray District` (spelling as present in the workbook), 30
+`Provincial Capital`, and 1 `Capital`.
+
+All 34 candidate province P-codes were found. All 401 candidate ADM2 P-codes
+were found in the workbook, and all 401 parent ADM1 P-codes match. This is a
+code/hierarchy cross-check only; it does not certify all district names.
+The 401 candidate ADM2 records comprise 367 `District`, 30
+`Provincial Capital`, 3 `Temporaray District`, and 1 `Capital`.
+The workbook also contains 56 ADM2 records outside the 401-record candidate
+reference (30 `District` and 26 `Temporaray District`); these have not been
+silently added.
+
+### Name review completed so far
+
+- Province labels were aligned to the workbook's English/local labels while
+  preserving stable province IDs.
+- The 16 Daykundi and Panjshir crosswalk labels were aligned to workbook rows:
+  Daykundi: Nili, Shahristan, Meramor, Ashtarlay, Kejran, Sang-e-Takht,
+  Khader, Kiti, Pato; Panjshir: Bazarak, Rukha, Onaba, Shutol, Paryan,
+  Hesa-e-Awal, Darah.
+- A source-name discrepancy remains for Panjshir code `AF0804`: the
+  secondary candidate record says `Hesa-e-Awal / حصه اول`, while the
+  crosswalk's source-local label is `خنج`. The source-local label and stable
+  identifier have not been overwritten; manual source reconciliation remains
+  required.
+
+### Outstanding verification
+
+The remaining 385 candidate ADM2 records still require a complete
+name-by-name comparison against the workbook. P-code presence and parent-code
+matching must not be treated as name verification. The workbook is a
+user-supplied secondary reference for this review and does not replace
+row-level OCHA/AGCHO certification. Do not mark the gazetteer official or
+enable it as runtime administrative data until the required primary-source
+verification and application tests are complete.
+
 ## Requirements
 - Flutter SDK 3.22 or later
 - Android Studio or VS Code with Flutter extension
