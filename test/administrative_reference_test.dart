@@ -49,7 +49,7 @@ void main() {
     expect(jaghori, isNotNull);
     expect(jaghori!.unit.localName, 'جاغوری');
     expect(jaghori.unit.englishName, 'Jaghori');
-    expect(jaghori.province.localName, 'غزني');
+    expect(jaghori.province.localName, 'غزنی');
   });
 
   test('keeps the administrative reference visibly marked as a draft', () async {
