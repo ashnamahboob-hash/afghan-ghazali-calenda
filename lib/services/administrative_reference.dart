@@ -50,6 +50,47 @@ class AdministrativeReference {
   int get adm2Count =>
       provinces.fold(0, (total, province) => total + province.units.length);
 
+  /// Normalizes common Arabic/Persian keyboard variants for matching only.
+  /// It never changes the stored or displayed administrative names.
+  static String normalizeSearchText(String value) {
+    final normalized = value
+        .toLowerCase()
+        .replaceAll('ك', 'ک')
+        .replaceAll('ي', 'ی')
+        .replaceAll('ى', 'ی')
+        .replaceAll(RegExp(r'[\\u064B-\\u065F\\u0670\\u0640]'), '')
+        .replaceAll(RegExp(r'[\\u200C\\u200D]'), ' ')
+        .replaceAll(RegExp(r'\\s+'), ' ')
+        .trim();
+    return normalized;
+  }
+
+  /// Searches local/English unit and province names plus stable P-codes.
+  /// Results retain the original labels and explicit parent province.
+  List<AdministrativeUnitMatch> searchUnits(String query) {
+    final needle = normalizeSearchText(query);
+    if (needle.isEmpty) return const [];
+
+    final matches = <AdministrativeUnitMatch>[];
+    for (final province in provinces) {
+      for (final unit in province.units) {
+        final searchable = <String>[
+          unit.id,
+          unit.localName,
+          unit.englishName,
+          province.localName,
+          province.englishName,
+        ].map(normalizeSearchText);
+        if (searchable.any((value) => value.contains(needle))) {
+          matches.add(
+            AdministrativeUnitMatch(province: province, unit: unit),
+          );
+        }
+      }
+    }
+    return matches;
+  }
+
   /// Resolves a district/unit by its stable ADM2 P-code, never by its label.
   /// The returned province is the explicit parent from the nested reference.
   AdministrativeUnitMatch? findByPcode(String pcode) {
