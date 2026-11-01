@@ -28,6 +28,16 @@ class AdministrativeProvince {
   });
 }
 
+class AdministrativeUnitMatch {
+  final AdministrativeProvince province;
+  final AdministrativeUnit unit;
+
+  const AdministrativeUnitMatch({
+    required this.province,
+    required this.unit,
+  });
+}
+
 class AdministrativeReference {
   final List<AdministrativeProvince> provinces;
   final String status;
@@ -39,6 +49,19 @@ class AdministrativeReference {
 
   int get adm2Count =>
       provinces.fold(0, (total, province) => total + province.units.length);
+
+  /// Resolves a district/unit by its stable ADM2 P-code, never by its label.
+  /// The returned province is the explicit parent from the nested reference.
+  AdministrativeUnitMatch? findByPcode(String pcode) {
+    for (final province in provinces) {
+      for (final unit in province.units) {
+        if (unit.id == pcode) {
+          return AdministrativeUnitMatch(province: province, unit: unit);
+        }
+      }
+    }
+    return null;
+  }
 
   static Future<AdministrativeReference> load() async {
     final raw = await rootBundle.loadString(
