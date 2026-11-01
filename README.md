@@ -60,19 +60,33 @@ Together with the 16 Daykundi/Panjshir crosswalk entries, all 16 Kandahar
 candidate records and Herat city, and a further 103 records across Badakhshan,
 Samangan, Logar, Paktika, Sar-e-Pul, Paktya, Nuristan and Balkh, all 401 candidate ADM2 English labels have now been checked by P-code against
 the workbook; 101 English labels were aligned to the Excel `adm2_name` field.
-The separate local-language name review remains partial: 136 of 401 labels
-checked, with 265 still pending.
+The separate local-language review was continued using the user's
+`afg_admin_boundaries2.csv` export of the `afg_admin2` sheet (v04;
+`valid_on=2026-06-23`). The file contains 457 ADM2 rows and 457 unique
+ADM2 P-codes. All 401 candidate P-codes were joined by exact code. Of the
+401 candidate local labels, 332 exactly match `adm2_name1`; 69 differ.
+The 136 previously reviewed records were retained, and 213 additional exact
+matches were recorded, bringing the reviewed count to 349 of 401. The
+remaining 52 discrepancies are listed in the JSON audit notes and have not
+been automatically overwritten. Across all 401 records, 69 local-script
+or name discrepancies are now documented.
 
-The remaining 265 candidate ADM2 local-language labels still require a complete
-name-by-name comparison against the workbook. P-code presence and parent-code
-matching must not be treated as name verification. English labels are aligned to the workbook strictly by ADM2 P-code, including
-spellings and longer/shorter English labels where the workbook differs. These
-are secondary-reference alignments only; they are not OCHA/AGCHO certification.
-Local-script labels are tracked separately and have not been mass-overwritten. The workbook is a
-user-supplied secondary reference for this review and does not replace
-row-level OCHA/AGCHO certification. Do not mark the gazetteer official or
-enable it as runtime administrative data until the required primary-source
-verification and application tests are complete.
+Several discrepancies appear substantive and require manual reconciliation,
+not transliteration cleanup. In particular, the workbook's local/English
+labels appear crossed between candidate codes `AF2506` and `AF2507` (Chinarto
+and Gizab); `AF0901`/`AF0905` also need careful review of the Baghlan city and
+district labels. These labels and all stable IDs remain unchanged pending
+reconciliation. The CSV contains 56 additional ADM2 codes outside the 401-record
+candidate reference; they have not been silently added. P-code presence and
+parent-code matching must not be treated as name verification. English labels
+are aligned to the workbook strictly by ADM2 P-code, including spellings and
+longer/shorter English labels where the workbook differs. These are
+secondary-reference alignments only; they are not OCHA/AGCHO certification.
+Local-script labels are tracked separately and have not been mass-overwritten.
+The workbook is a user-supplied secondary reference for this review and does
+not replace row-level OCHA/AGCHO certification. Do not mark the gazetteer
+official or enable it as runtime administrative data until the required
+primary-source verification and application tests are complete.
 
 ## Requirements
 - Flutter SDK 3.22 or later
