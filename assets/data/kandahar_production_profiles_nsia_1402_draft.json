@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "dataset_id": "AF-KDH-PRODUCTION-NSIA-1402-DRAFT",
-  "last_updated": "2026-10-31",
+  "last_updated": "2026-11-01",
   "status": "source_extracted_draft_pending_independent_numeric_review",
   "geography": {
     "country_id": "AF",
@@ -209,9 +209,17 @@
     }
   },
   "validation": {
-    "transcription_review": "pending_second_review",
+    "transcription_review": "second_review_completed_against_original_pdf_text",
     "source_row_crosscheck": "visually_and_textually_located_in_pdf",
     "district_allocation": "not_available_in_source",
-    "runtime_advisory_enabled": false
+    "runtime_advisory_enabled": false,
+    "second_review_date": "2026-11-01",
+    "second_review_scope": [
+      "Table 8-6 wheat row, Kandahar",
+      "Table 8-7 maize/rice/barley row, Kandahar",
+      "Table 8-13 major fruits row, Kandahar",
+      "Table 8-17 vegetables row, Kandahar"
+    ],
+    "second_review_note": "All transcribed Kandahar figures were rechecked against the user-provided NSIA Statistical Yearbook 1402 PDF text on the cited source pages. Blank apple cells remain null. This is a transcription check, not independent validation of NSIA methodology or district-level data."
   }
 }
