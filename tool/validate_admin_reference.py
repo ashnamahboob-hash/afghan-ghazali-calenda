@@ -34,8 +34,9 @@ def validate(path: Path) -> list[str]:
 
     if data.get("schema_version") != "1.0.0":
         fail("schema_version must be 1.0.0")
-    if "draft" not in str(data.get("status", "")).lower():
-        fail("dataset status must continue to identify this as a draft")
+    draft_identity = f"{data.get('dataset_id', '')} {data.get('purpose', '')}".lower()
+    if "draft" not in draft_identity:
+        fail("dataset ID or purpose must continue to identify this as a draft")
     checks.append("schema and draft status")
 
     provinces = data.get("provinces")
