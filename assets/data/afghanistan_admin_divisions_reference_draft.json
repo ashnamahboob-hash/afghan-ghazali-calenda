@@ -35,7 +35,31 @@
       },
       "license": "CC-BY-IGO",
       "verification_status": "metadata_confirmed_row_level_pcode_extraction_pending",
-      "notes": "The official metadata confirms the dataset and coverage, but this draft does not yet contain a verified row-by-row P-code comparison against its gazetteer."
+      "notes": "Official HDX/AGCHO dataset metadata confirms the historical COD-AB dataset and 34/401 coverage, but the accessible metadata describes a 2019-established dataset last reviewed in July 2024 and metadata last updated 2025-01-17. OCHA's separate status dashboard now reports Afghanistan COD-AB reference year 2026 with 34 ADM1/401 ADM2 features; its coverage dashboard lists the work status as In Progress. The 2026 dashboard summary does not expose row-level ADM2 P-code/name/parent data in the retrieved page. This draft therefore still lacks a verified 401-row comparison against the current COD-AB gazetteer."
+    },
+    "official_status_dashboard": {
+      "name": "OCHA COD Status Dashboard",
+      "url": "https://ocha-dap.github.io/cod-site/status/",
+      "checked_on": "2026-11-01",
+      "dashboard_last_updated": "2026-10-31",
+      "afghanistan": {
+        "iso3": "AFG",
+        "cod_ab_reference_year": 2026,
+        "cod_ab_adm1_features": 34,
+        "cod_ab_adm2_features": 401,
+        "cod_ps_reference_year": 2027,
+        "cod_ps_adm2_pcodes": 457,
+        "cod_ps_adm2_pcodes_not_in_cod_ab": 56
+      },
+      "work_status_dashboard": {
+        "url": "https://ocha-dap.github.io/cod-site/status/coverage/",
+        "observed_last_updated": "2026-10-23",
+        "status": "In Progress",
+        "expected_review_window": "In 5 months",
+        "published_in_gis": true
+      },
+      "interpretation": "The status dashboard reports Afghanistan COD-AB reference year 2026 and 401 ADM2 features, while the separate coverage/work dashboard lists the Afghanistan update as In Progress. The accessible HDX/AGCHO dataset metadata still describes a 2019-established dataset last reviewed in July 2024, with metadata last updated 2025-01-17. These dashboard summaries do not provide the 401 row-level P-code/name/parent records needed for a reproducible comparison. Do not infer that the user-supplied v04 workbook is the 2026 COD-AB gazetteer, and do not mark row-level verification complete.",
+      "row_level_gazetteer_retrieved": false
     }
   },
   "rules": [
