@@ -186,6 +186,13 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                   const SizedBox(height: 8),
                   DropdownButtonFormField<String>(
                     value: selectedDistrict,
+                    hint: Text(
+                      en
+                          ? 'No matching units'
+                          : fa
+                              ? 'واحدی یافت نشد'
+                              : 'برابر اداري واحد ونه موندل شو',
+                    ),
                     isExpanded: true,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
