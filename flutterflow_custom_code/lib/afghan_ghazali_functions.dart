@@ -475,4 +475,71 @@ class AfghanGhazaliFunctions {
     return jsonEncode(<String, dynamic>{'id': cityId, ...city});
   }
 
+  /// FlutterFlow-friendly positional wrapper for prayer calculations.
+  /// This avoids named-argument configuration in the Action editor.
+  static String prayerTimesForCityJson(
+    String isoDate,
+    String cityId,
+    int asrFactor,
+  ) {
+    final city = cityConfigurations[cityId];
+    if (city == null) throw ArgumentError('Unknown city ID: $cityId');
+    return calculatePrayerTimesJson(
+      isoDate: isoDate,
+      latitude: city['latitude'] as double,
+      longitude: city['longitude'] as double,
+      utcOffsetHours: 4.5,
+      fajrAngle: 18.0,
+      ishaAngle: 17.0,
+      asrFactor: asrFactor,
+    );
+  }
+
+  /// One-call HomePage payload for FlutterFlow.
+  /// The input date must be the user's local Gregorian date as YYYY-MM-DD.
+  /// Nested JSON values are decoded before encoding so FlutterFlow JSON paths
+  /// can address $.solar.solarDay, $.hijri.hijriDay and $.prayerTimes.fajr.
+  static String homeDashboardJson(
+    String isoDate,
+    String cityId,
+    int asrFactor,
+  ) {
+    final dateParts = isoDate.split('-').map(int.parse).toList();
+    if (dateParts.length != 3) {
+      throw ArgumentError('Expected YYYY-MM-DD.');
+    }
+    final gregorian = _dateOnlyUtc(
+      dateParts[0],
+      dateParts[1],
+      dateParts[2],
+    );
+    final city = cityConfigurations[cityId];
+    if (city == null) throw ArgumentError('Unknown city ID: $cityId');
+
+    final solar = jsonDecode(solarDateFromGregorianJson(isoDate));
+    final hijri = jsonDecode(civilHijriFromGregorianJson(isoDate));
+    final prayerTimes = jsonDecode(
+      prayerTimesForCityJson(isoDate, cityId, asrFactor),
+    );
+
+    return jsonEncode(<String, dynamic>{
+      'selectedDateIso': isoDate,
+      'solar': solar,
+      'gregorian': <String, dynamic>{
+        'year': gregorian.year,
+        'month': gregorian.month,
+        'day': gregorian.day,
+        'isoDate': _isoDate(gregorian),
+      },
+      'hijri': hijri,
+      'city': <String, dynamic>{'id': cityId, ...city},
+      'prayerTimes': prayerTimes,
+      'status': <String, dynamic>{
+        'solar': 'provisional',
+        'hijri': 'civil_tabular',
+        'prayerTimes': 'approximate',
+      },
+    });
+  }
+
 }
