@@ -199,3 +199,24 @@ The runtime loader and tests are in
 `lib/services/administrative_reference.dart` and
 `test/administrative_reference_test.dart`. Flutter validation runs through
 `.github/workflows/flutter-validation.yml`.
+
+## Independent secondary ADM2 cross-check (2026-11-01)
+
+A community-maintained bilingual administrative dataset
+([open-admin-data/afghanistan-administrative-divisions](https://github.com/open-admin-data/afghanistan-administrative-divisions),
+README-stated update 2026-09-08, CC-BY-4.0) was compared with the 401-record
+candidate reference using exact ADM2 ID/P-code strings.
+
+- 401/401 IDs joined.
+- 401/401 parent province IDs matched.
+- English labels: 289 exact; 20 additional differences are formatting-only
+  under conservative normalization; 92 remain different.
+- Local-script labels: 396 exact; 1 additional difference is spacing-only;
+  4 remain different after normalization.
+- No candidate labels were overwritten and no pending discrepancy was marked
+  resolved. The secondary source's sampled row-level `source` metadata is
+  empty, so this is corroboration only—not official COD-AB verification.
+
+The complete per-record comparison is recorded in
+`docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json`.
+The current OCHA/AGCHO row-level gazetteer comparison remains pending.
