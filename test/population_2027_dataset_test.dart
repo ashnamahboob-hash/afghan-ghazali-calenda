@@ -5,7 +5,7 @@ void main() {
   const header =
       'adm2_name,adm2_name1,adm2_pcode,adm1_name,adm1_name1,adm1_pcode,adm_type,Total Estimated Population 2027';
 
-  test('keeps population rows separate and excludes blank-P-code aggregate', () {
+  test('keeps ADM2 rows separate and retains the national aggregate', () {
     final dataset = Population2027Dataset.parse(
       '$header\n'
       'District A,ولسوالی الف,AF0101,Province A,ولایت الف,AF01,District," 1,234 "\n'
