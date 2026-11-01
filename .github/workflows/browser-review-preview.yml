@@ -28,6 +28,8 @@ jobs:
           cache: true
       - name: Enable Flutter Web
         run: flutter create --project-name=afghan_ghazali_calendar --platforms=web .
+      - name: Remove generated empty Flutter test scaffold
+        run: rm -f test/widget_test.dart
       - name: Install dependencies
         run: flutter pub get
       - name: Analyze
