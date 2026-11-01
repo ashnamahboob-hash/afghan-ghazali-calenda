@@ -5761,6 +5761,17 @@
         "https://huggingface.co/datasets/electricsheepasia/asia-operational-presence-afghanistan-who-does-what-where-october"
       ],
       "finding": "A secondary HDX-derived operational-presence dataset pairs AF3011 with Reg-i-Khan Nishin, supporting an expanded-name explanation for Khanshin."
+    },
+    {
+      "id": "OPEN_ADMIN_DATA_SECONDARY_CROSSCHECK_2026_11_01",
+      "scope": "Exact-ID crosscheck against a community-maintained bilingual administrative hierarchy; secondary reference only, not official COD-AB row-level evidence",
+      "source_urls": [
+        "https://github.com/open-admin-data/afghanistan-administrative-divisions",
+        "https://github.com/open-admin-data/afghanistan-administrative-divisions/blob/main/data/all-district.json"
+      ],
+      "checked_on": "2026-11-01",
+      "finding": "All 401 records joined by exact ID and all 401 parent province IDs matched. English labels: 289 exact, 20 normalization-only, 92 remaining differences. Local-script labels: 396 exact, 1 normalization-only, 4 remaining differences. No labels changed and no pending review status was resolved.",
+      "audit_file": "docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json"
     }
   ],
   "runtime_preview": {
