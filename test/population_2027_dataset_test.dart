@@ -16,6 +16,8 @@ void main() {
     expect(dataset.findByPcode('AF0101')!.provincePcode, 'AF01');
     expect(dataset.findByPcode('AF0101')!.sourceValue('Total Estimated Population 2027'), ' 1,234 ');
     expect(dataset.findByPcode('AF9999'), isNull);
+    expect(dataset.recordsForProvince('AF01').map((row) => row.pcode), ['AF0101']);
+    expect(dataset.recordsForProvince('AF02'), isEmpty);
   });
 
   test('preserves blank cells and whitespace-padded hyphen markers', () {
@@ -57,6 +59,25 @@ void main() {
     );
 
     expect(dataset.records.single.sourceValue('Note'), 'North, "old"');
+  });
+
+  test('groups rows by explicit parent province P-code', () {
+    final dataset = Population2027Dataset.parse(
+      '$header\\n'
+      'A,الف,AF0101,P1,ولایت۱,AF01,District,10\\n'
+      'B,ب,AF0201,P2,ولایت۲,AF02,District,20\\n'
+      'C,ج,AF0102,P1,ولایت۱,AF01,District,30\\n',
+    );
+
+    expect(
+      dataset.recordsForProvince('AF01').map((row) => row.pcode),
+      ['AF0101', 'AF0102'],
+    );
+    expect(
+      dataset.recordsForProvince('AF02').map((row) => row.pcode),
+      ['AF0201'],
+    );
+    expect(() => dataset.recordsForProvince('AF01').clear(), throwsUnsupportedError);
   });
 
   test('does not coerce missing parent P-code into a valid record', () {
