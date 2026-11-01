@@ -58,9 +58,9 @@ class AdministrativeReference {
         .replaceAll('ك', 'ک')
         .replaceAll('ي', 'ی')
         .replaceAll('ى', 'ی')
-        .replaceAll(RegExp(r'[\\u064B-\\u065F\\u0670\\u0640]'), '')
-        .replaceAll(RegExp(r'[\\u200C\\u200D]'), ' ')
-        .replaceAll(RegExp(r'\\s+'), ' ')
+        .replaceAll(RegExp(r'[\u064B-\u065F\u0670\u0640]'), '')
+        .replaceAll(RegExp(r'[\u200C\u200D]'), ' ')
+        .replaceAll(RegExp(r'\s+'), ' ')
         .trim();
     return normalized;
   }
