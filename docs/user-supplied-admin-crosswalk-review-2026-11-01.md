@@ -1,7 +1,7 @@
 # User-Supplied ADM2/ADM1 Crosswalk Review — 2026-11-01
 
 ## Evidence status
-This note records two consecutive CSV-like ADM2/ADM1 extracts pasted by the project owner on 2026-11-01. The first extract began at `AF0101` and ended at `AF2911`; the corrected second extract begins at `AF2911` and ends at `AF3406`. The latter contains 76 rows (75 unique P-codes after accounting for AF2911? No: 76 rows and 76 unique P-codes). No source organization, publication date, URL, version, or licensing metadata accompanied the pasted text.
+This note records two consecutive CSV-like ADM2/ADM1 extracts pasted by the project owner on 2026-11-01. The first extract began at `AF0101` and ended at `AF2911`; the corrected second extract begins at `AF2911` and ends at `AF3406`. The latter contains 76 rows and 76 unique P-codes. No source organization, publication date, URL, version, or licensing metadata accompanied the pasted text.
 
 **This is user-supplied evidence, not an independently verified primary source.** It must not be used to certify official district names or silently overwrite the draft runtime reference.
 
