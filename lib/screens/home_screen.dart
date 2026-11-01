@@ -186,6 +186,8 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
           _citySelector(),
           const SizedBox(height: 8),
+          _asrSelector(),
+          const SizedBox(height: 8),
           Card(
             child: ListTile(
               leading: const Icon(Icons.info_outline),
