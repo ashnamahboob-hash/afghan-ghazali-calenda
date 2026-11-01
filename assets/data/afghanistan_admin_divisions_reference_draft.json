@@ -4363,8 +4363,13 @@
         "candidate_en": "Alisher Aw Terizi",
         "workbook_en": "Alisher Aw Terizi",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "Secondary sources describe Ali Sher (Terezayi) / Tere Zayi. Candidate «تری زائی» and workbook «علیشیراوتریزي» may be short/expanded names; keep local-script reconciliation pending.",
+        "secondary_source_review": "EUAA/EASO 2021 lists Ali Sher (Terezayi); SATP lists Tere Zayi. This supports an alias explanation, not a current COD row-level P-code verification.",
+        "source_urls": [
+          "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+          "https://www.satp.org/documents/district/afghanistan"
+        ]
       },
       {
         "id": "AF1402",
@@ -4373,8 +4378,13 @@
         "candidate_en": "Esmail Khel Aw Mandozayi",
         "workbook_en": "Esmail Khel Aw Mandozayi",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "Secondary sources describe Mandozayi with Esmayel Khel as an alternate/expanded form. Candidate «مندوزائی» and workbook «اسماعیل خېل او مندوزي» may be short/expanded names; keep local-script reconciliation pending.",
+        "secondary_source_review": "EUAA/EASO 2021 lists Mandozayi (Esmayel Khel); SATP lists Mando Zayi. This supports an alias explanation, not a current COD row-level P-code verification.",
+        "source_urls": [
+          "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+          "https://www.satp.org/documents/district/afghanistan"
+        ]
       },
       {
         "id": "AF1407",
@@ -4383,8 +4393,13 @@
         "candidate_en": "Sabari Aw Yaqubi",
         "workbook_en": "Sabari Aw Yaqubi",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "Secondary sources describe Sabari with Yaqubi as an alternate/expanded form. Candidate «صبری» and workbook «صبری او یعقوبی» may be short/expanded names; keep local-script reconciliation pending.",
+        "secondary_source_review": "EUAA/EASO 2021 lists Sabari (Yaqubi); SATP lists Sabri. This supports an alias explanation, not a current COD row-level P-code verification.",
+        "source_urls": [
+          "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+          "https://www.satp.org/documents/district/afghanistan"
+        ]
       },
       {
         "id": "AF1401",
@@ -4393,8 +4408,13 @@
         "candidate_en": "Matun",
         "workbook_en": "Matun",
         "unit_type": "Provincial Capital",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "Secondary sources identify Khost (Matun) as the provincial capital and list Khost/Matun as a district name. The workbook's «متون» and candidate «خوست (متون)» may be short/expanded forms; keep local-script reconciliation pending.",
+        "secondary_source_review": "EUAA/EASO 2021 describes Khost (Matun) and says Khost city is locally known as Matun; SATP lists Khost / Matun. These sources support an alias explanation, not a current COD row-level P-code verification.",
+        "source_urls": [
+          "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+          "https://www.satp.org/documents/district/afghanistan"
+        ]
       },
       {
         "id": "AF3212",
@@ -4495,8 +4515,12 @@
         "candidate_en": "Khanshin",
         "workbook_en": "Khanshin",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "A secondary HDX-based operational-presence dataset lists AF3011 as Reg-i-Khan Nishin, supporting the expanded candidate «ریگ خان نشین» against workbook «خانشین». Current COD row-level verification remains pending.",
+        "secondary_source_review": "A secondary HDX-derived operational-presence dataset dated 2026-05-05 pairs AF3011 with Reg-i-Khan Nishin. This supports an expanded-name explanation, not primary-source certification.",
+        "source_urls": [
+          "https://huggingface.co/datasets/electricsheepasia/asia-operational-presence-afghanistan-who-does-what-where-october"
+        ]
       },
       {
         "id": "AF0409",
@@ -4565,8 +4589,12 @@
         "candidate_en": "Khak-e-Afghan",
         "workbook_en": "Khak-e-Afghan",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "GeoNames records Kakar and Khak-e-Afghan as alternate names for the same Zabul ADM2 place. This supports an alias explanation for candidate «کاکړ» and workbook «خاک افغان»; current COD row-level P-code verification remains pending.",
+        "secondary_source_review": "GeoNames identifies the feature as Kakar ADM2 in Zabul and records “Khāk-e Afghān” as a historical/alternate name. This is useful alias evidence but not an authoritative current P-code gazetteer.",
+        "source_urls": [
+          "https://www.geonames.org/7053347/kakar.html"
+        ]
       },
       {
         "id": "AF2608",
@@ -4665,8 +4693,12 @@
         "candidate_en": "Pul-e-Khumri",
         "workbook_en": "Pul-e-Khumri",
         "unit_type": "Provincial Capital",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "A FAO/CSO-sourced 2010 district table describes the provincial center as «مرکز بغلان - پلخمری» / Provincial Center of Baghlan (Pul-i-Khumri). This supports a local-name alias explanation for «پلخمری» versus «بغلان مرکزی»; current COD row-level P-code verification remains pending.",
+        "secondary_source_review": "FAO 2010 district list gives the Baghlan provincial center as «مرکز بغلان - پلخمری» and English “Provincial Center Of Baghlan (Pul-I-Khumri)”. This supports the name relationship but is not a current OCHA P-code row.",
+        "source_urls": [
+          "https://coin.fao.org/coin-static/cms/media/5/12825541120990/all_apr_may_10_v1_1.pdf"
+        ]
       },
       {
         "id": "AF0910",
@@ -5484,9 +5516,9 @@
       "last_reviewed": "2026-11-01",
       "total_pending": 52,
       "orthographic_or_transliteration": 37,
-      "material_name_or_code_conflicts": 7,
-      "source_checked_or_alternate_name_pending_local_review": 8,
-      "note": "Triage only. All listed records remain pending; categories prioritize review and do not certify or change any name."
+      "material_name_or_code_conflicts": 0,
+      "source_checked_or_alternate_name_pending_local_review": 15,
+      "note": "Triage only. All listed records remain pending; secondary alias evidence does not verify the current COD P-code mapping or certify local-script spelling."
     }
   },
   "english_name_review_status": {
@@ -5670,6 +5702,41 @@
       "scope": "Country-level workflow status only; not row-level name evidence",
       "finding": "Afghanistan is listed as In Progress, with work active for approximately five weeks at the time accessed.",
       "interpretation": "Treat current COD-AB update activity as a reason to obtain the latest row-level Afghanistan gazetteer before closing disputed labels. This status page is not itself a district gazetteer."
+    }
+  ],
+  "secondary_source_checks": [
+    {
+      "id": "KHOST_DISTRICT_ALIAS_REVIEW",
+      "scope": "District-name aliases only; not current COD P-code evidence",
+      "source_urls": [
+        "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+        "https://www.satp.org/documents/district/afghanistan"
+      ],
+      "finding": "EUAA/EASO 2021 and SATP list Khost/Matun, Mandozayi (Esmayel Khel), Sabari (Yaqubi), and Ali Sher (Terezayi)/Tere Zayi. Four workbook/candidate local-name differences may be short versus expanded forms."
+    },
+    {
+      "id": "BAGHLAN_PUL_E_KHUMRI_ALIAS_REVIEW",
+      "scope": "Historical local/English name evidence; not current COD P-code evidence",
+      "source_urls": [
+        "https://coin.fao.org/coin-static/cms/media/5/12825541120990/all_apr_may_10_v1_1.pdf"
+      ],
+      "finding": "FAO/CSO-sourced 2010 table describes the provincial center as «مرکز بغلان - پلخمری» / Provincial Center of Baghlan (Pul-I-Khumri), supporting an alias explanation for AF0901."
+    },
+    {
+      "id": "ZABUL_KAKAR_ALIAS_REVIEW",
+      "scope": "Alternate-name evidence; not current COD P-code evidence",
+      "source_urls": [
+        "https://www.geonames.org/7053347/kakar.html"
+      ],
+      "finding": "GeoNames lists Kakar and Khak-e-Afghan as alternate names for the same Zabul ADM2 place."
+    },
+    {
+      "id": "HELMAND_REG_E_KHAN_NISHIN_ALIAS_REVIEW",
+      "scope": "Secondary code/name evidence; not primary COD P-code evidence",
+      "source_urls": [
+        "https://huggingface.co/datasets/electricsheepasia/asia-operational-presence-afghanistan-who-does-what-where-october"
+      ],
+      "finding": "A secondary HDX-derived operational-presence dataset pairs AF3011 with Reg-i-Khan Nishin, supporting an expanded-name explanation for Khanshin."
     }
   ]
 }
