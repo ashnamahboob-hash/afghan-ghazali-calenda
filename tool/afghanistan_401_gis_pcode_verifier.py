@@ -16,8 +16,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
 
-ADM2_PATTERN = re.compile(r"^AF\\d{4}$")
-ADM1_PATTERN = re.compile(r"^AF\\d{2}$")
+ADM2_PATTERN = re.compile(r"^AF\d{4}$")
+ADM1_PATTERN = re.compile(r"^AF\d{2}$")
 
 # User-supplied review rules. These are not official-source determinations.
 CUSTOM_OVERRIDES = {
@@ -293,7 +293,7 @@ def main(argv: list[str] | None = None) -> int:
         )
         output = Path(args.output)
         output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n",
+        output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n",
                           encoding="utf-8")
         print(f"Audit report saved: {output}")
         print(
