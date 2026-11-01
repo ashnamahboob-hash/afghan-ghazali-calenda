@@ -72,9 +72,9 @@ class AdministrativeReference {
         .map((unit) => unit.id)
         .toList(growable: false);
     if (provinces.length != 34 ||
-        allDistrictIds.length != 401 ||
+        allAdm2Ids.length != 401 ||
         provinces.map((province) => province.id).toSet().length != 34 ||
-        allDistrictIds.toSet().length != 401) {
+        allAdm2Ids.toSet().length != 401) {
       throw const FormatException(
         'Administrative draft must contain 34 unique provinces and 401 unique units.',
       );
