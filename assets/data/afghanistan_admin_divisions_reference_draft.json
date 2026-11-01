@@ -2154,7 +2154,7 @@
           "id": "AF1501",
           "names": {
             "local": "اسد آباد",
-            "en": "Asad Abad"
+            "en": "Asadabad"
           },
           "slug": "asad-abad-af1501"
         },
@@ -2186,7 +2186,7 @@
           "id": "AF1507",
           "names": {
             "local": "دره پیچ",
-            "en": "Dara-e-Pech"
+            "en": "Darah-e-Pech"
           },
           "slug": "dara-e-pech-af1507"
         },
@@ -2308,7 +2308,7 @@
           "id": "AF0109",
           "names": {
             "local": "خاک جبار",
-            "en": "Khak-e-Jabbar"
+            "en": "Khak-e-Jabar"
           },
           "slug": "khak-e-jabbar-af0109"
         },
@@ -2422,7 +2422,7 @@
           "id": "AF3004",
           "names": {
             "local": "نهر سراج",
-            "en": "Nahr-e-Saraj"
+            "en": "Gereshk"
           },
           "slug": "nahr-e-saraj-af3004"
         },
@@ -2698,7 +2698,7 @@
           "id": "AF0404",
           "names": {
             "local": "چک",
-            "en": "Chak-e-Wardak"
+            "en": "Chak"
           },
           "slug": "chak-e-wardak-af0404"
         },
@@ -2706,7 +2706,7 @@
           "id": "AF0405",
           "names": {
             "local": "سید آباد",
-            "en": "Saydabad"
+            "en": "Sayedabad"
           },
           "slug": "saydabad-af0405"
         },
@@ -3024,7 +3024,7 @@
           "id": "AF2611",
           "names": {
             "local": "کاکړ",
-            "en": "Kakar"
+            "en": "Khak-e-Afghan"
           },
           "slug": "kakar-af2611"
         },
@@ -4531,6 +4531,48 @@
         "id": "AF1002",
         "from": "Shibar",
         "to": "Shebar",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1501",
+        "from": "Asad Abad",
+        "to": "Asadabad",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1507",
+        "from": "Dara-e-Pech",
+        "to": "Darah-e-Pech",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0109",
+        "from": "Khak-e-Jabbar",
+        "to": "Khak-e-Jabar",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3004",
+        "from": "Nahr-e-Saraj",
+        "to": "Gereshk",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0404",
+        "from": "Chak-e-Wardak",
+        "to": "Chak",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0405",
+        "from": "Saydabad",
+        "to": "Sayedabad",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2611",
+        "from": "Kakar",
+        "to": "Khak-e-Afghan",
         "updated_on": "2026-11-01"
       }
     ]
