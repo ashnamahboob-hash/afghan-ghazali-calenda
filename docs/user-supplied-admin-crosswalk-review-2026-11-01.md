@@ -50,3 +50,13 @@ The Flutter validation workflow for commit `435c2c83035c0098d1f8ee745575ef38d474
 
 ## Next verification required
 Obtain the complete source file or authoritative published dataset with provenance and version metadata. Then run a full row-level audit for duplicate P-codes, missing/extra P-codes, parent-code mismatches, nulls, and local/English label differences. Keep the draft dataset unchanged until discrepancies are resolved against the primary source.
+
+
+## Third pasted revision — 2026-11-01
+A further revision of the same 76-row extract was pasted after the comparison above. It retains the same 76 ADM2 P-codes and the same six ADM1 parent codes. Two text-level details require explicit handling:
+- AF2916 has `adm1_name1=faryab` (Latin script), while the other Faryab rows use Persian/Arabic-script `فاریاب`. The ADM1 P-code remains AF29.
+- AF3110 has `adm2_name1=تگاب আলম`. The second word uses Bengali-script characters (`আলম`), replacing the earlier pasted Latin `alam`. Preserve this exact supplied string in the audit; do not normalize it without confirmation.
+
+The column names and four-column layout are structurally consistent with the OCHA-style ADM2 crosswalk fields used in this project, and the supplied P-code strings follow the expected `AF` + four digits pattern. **Structural resemblance is not proof that the rows were downloaded from OCHA, are complete, or match the current official OCHA records.** The pasted extract still covers only AF29–AF34 (76 rows), not all 401 units in the candidate draft. The user's statement that a complete 401-row joined file has been loaded in a backend is recorded as an unverified user assertion; no such file or backend load result was supplied in this conversation.
+
+No runtime data was changed. Full-source provenance and a row-level comparison against the authoritative 401-row source remain required before official status can be assigned.
