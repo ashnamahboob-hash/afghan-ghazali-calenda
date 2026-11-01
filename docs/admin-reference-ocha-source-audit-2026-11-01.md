@@ -82,3 +82,23 @@ English name, local-language name where available, ADM1 P-code/name, unit
 type, and validity dates. Then compare by exact P-code, preserve source
 spellings verbatim, and write a row-level difference report before changing
 the draft dataset.
+
+## Additional independent secondary reference cross-check
+
+On 2026-11-01, the 401 candidate ADM2 records were also compared by exact
+ID/P-code string with the community-maintained
+[open-admin-data Afghanistan administrative divisions dataset](https://github.com/open-admin-data/afghanistan-administrative-divisions).
+Its README states an update date of 2026-09-08 and a CC-BY-4.0 license.
+
+Results:
+- 401/401 IDs joined exactly.
+- 401/401 parent province IDs matched.
+- English labels: 289 exact, 20 normalization-only differences, 92 remaining differences.
+- Local-script labels: 396 exact, 1 normalization-only difference, 4 remaining differences.
+
+This is useful independent secondary corroboration, but it is not an OCHA/AGCHO
+source. The sampled source records have empty row-level `source` metadata.
+No candidate label was changed and no review status was closed. The detailed
+record-by-record ledger is at
+`docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json`.
+The 2026 OCHA/AGCHO row-level verification remains pending.
