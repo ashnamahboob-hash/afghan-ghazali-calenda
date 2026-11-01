@@ -14,8 +14,10 @@
 - [x] Drafted logical database schema and data provenance rules.
 - [x] Recorded critical blockers and acceptance gates.
 - [x] Added a portable, Flutter-independent Dart calculation layer for Solar/Hijri date conversion and approximate prayer times.
+- [x] Added population missing-value handling, complete-only aggregation and P-code set comparison helpers.
 - [x] Added Flutter tests for the migration helper layer.
 - [x] Added FlutterFlow custom-code setup and JSON field mapping instructions.
+- [x] Added population custom-function setup instructions and data-integrity tests.
 - [x] Kept `main` untouched; migration work is isolated on a new branch based on `preview/browser-review`.
 
 ## Reported by owner, not independently verified in FlutterFlow
@@ -36,7 +38,7 @@
 - [ ] Build population, province/district and agriculture pages.
 - [ ] Add maps and exports after data-source readiness.
 - [ ] Execute functional, data-integrity, localization, RTL/LTR and responsive QA.
-- [ ] Confirm the new migration helper tests pass in GitHub Actions.
+- [ ] Confirm the latest migration helper and population integrity tests pass in GitHub Actions.
 - [ ] Owner review and approval before release.
 
 ## Current status
