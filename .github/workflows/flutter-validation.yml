@@ -15,6 +15,7 @@ on:
       - "lib/**"
       - "assets/data/**"
       - "test/**"
+      - "scripts/**"
       - "pubspec.yaml"
       - "pubspec.lock"
       - ".github/workflows/flutter-validation.yml"
