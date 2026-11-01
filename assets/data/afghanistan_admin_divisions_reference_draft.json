@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "dataset_id": "AFGHANISTAN-ADMIN-REFERENCE-DRAFT-2026-10",
   "last_updated": "2026-11-01",
-  "status": "secondary_reference_draft_pending_ocha_pcode_crosscheck",
+  "status": "secondary_reference_workbook_pcode_crosscheck_complete_pending_ocha_row_level_verification",
   "counts": {
     "provinces": 34,
     "districts": 401
@@ -3669,7 +3669,7 @@
         "status": "local_script_variant_pending_review"
       }
     ],
-    "district_name_review_status": "pending_full_401_record_name_comparison",
+    "district_name_review_status": "not_yet_completed",
     "official_verification_status": "not_ocha_row_level_certified",
     "runtime_enabled": false,
     "notes": [
@@ -3679,7 +3679,8 @@
       "The 457 workbook ADM2 rows must not be described as 457 districts or equated directly with the OCHA metadata's declared 401-district coverage.",
       "Province name differences are recorded as variants and have not been normalized or promoted to official spellings.",
       "District name-by-name comparison remains pending; P-code presence and parent-code matching do not certify names.",
-      "This workbook comparison does not constitute independent OCHA/AGCHO certification."
+      "This workbook comparison does not constitute independent OCHA/AGCHO certification.",
+      "The full 401-record candidate-to-workbook district-name comparison has not yet been completed; do not infer name equality from P-code and parent-code matches."
     ]
   }
 }
