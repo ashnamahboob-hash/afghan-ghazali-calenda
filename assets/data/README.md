@@ -115,3 +115,10 @@ Current exact-P-code comparison against the user-supplied v04 workbook:
 
 - Exact P-code membership audit against the 401-record candidate reference (2026-11-01): 1 of these 12 codes is present (`AF2409`); 11 are absent. Absence is not proof of invalidity or official temporary status. The 12 remain a separate review crosswalk.
 - AF2409 (Pato) has a source difference to resolve: the earlier supplied v04 excerpt gives parent `Patoo`, while the new supplied table gives `Gizab / Patoo`. Both are retained in the draft note pending primary-source verification.
+
+
+### v04 workbook cross-check for the 12 supplied P-codes
+- All 12 P-codes are present in the supplied `afg_admin_boundaries.xlsx`, sheet `afg_admin2`, version `v04`, valid on 2026-06-23.
+- The workbook classifies 11 as `Temporaray District` (source spelling retained; normalized in the draft) and Babaji (`AF3015`) as an ordinary `District`. Babaji is therefore excluded from the temporary-district count unless newer primary-source evidence supersedes this workbook.
+- Parent reference names agree exactly for 10 records. Dand (`AF2719`) has the source workbook value `Kandahar` versus the supplied table's `Kandahar Capital`; Pato (`AF2409`) has `Patoo` versus `Gizab / Patoo`. Both differences remain documented and pending.
+- This verifies what the supplied workbook contains; it does not independently certify that this v04 workbook is the current official COD-AB gazetteer. All 12 crosswalk records remain pending primary-source verification.
