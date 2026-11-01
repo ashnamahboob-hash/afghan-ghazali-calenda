@@ -112,4 +112,6 @@ Current exact-P-code comparison against the user-supplied v04 workbook:
 - `temporary_district_parent_mapping_draft.json` records 12 user-supplied ADM2 P-code/name/parent-label pairs, including Babaji (AF3015).
 - The parent labels are preserved verbatim as user-supplied candidate mappings. The supplied table describes them as OCHA's original cluster mapping, but no original row-level OCHA source file or current COD-AB gazetteer extract accompanied the table; all 12 records therefore remain `pending` and none is certified.
 - This is a crosswalk for review only. It must not be used to merge districts, change stable IDs, infer official administrative parentage, or activate new runtime district relationships.
+
+- Exact P-code membership audit against the 401-record candidate reference (2026-11-01): 1 of these 12 codes is present (`AF2409`); 11 are absent. Absence is not proof of invalidity or official temporary status. The 12 remain a separate review crosswalk.
 - AF2409 (Pato) has a source difference to resolve: the earlier supplied v04 excerpt gives parent `Patoo`, while the new supplied table gives `Gizab / Patoo`. Both are retained in the draft note pending primary-source verification.
