@@ -978,23 +978,23 @@
           "id": "AF0803",
           "names": {
             "local": "دره",
-            "en": "Dara"
+            "en": "Darah"
           },
           "slug": "dara-af0803"
         },
         {
           "id": "AF0805",
           "names": {
-            "local": "عنابه",
-            "en": "Anawa"
+            "local": "عُنابه",
+            "en": "Onaba"
           },
           "slug": "anawa-af0805"
         },
         {
           "id": "AF0806",
           "names": {
-            "local": "شُتل",
-            "en": "Shutul"
+            "local": "شتُل",
+            "en": "Shutol"
           },
           "slug": "shutul-af0806"
         },
@@ -1009,8 +1009,8 @@
         {
           "id": "AF0804",
           "names": {
-            "local": "خنج (حصه اول)",
-            "en": "Khenj"
+            "local": "حصه اول",
+            "en": "Hesa-e-Awal"
           },
           "slug": "khenj-af0804"
         }
@@ -1264,7 +1264,7 @@
           "id": "AF2402",
           "names": {
             "local": "شهرستان",
-            "en": "Shahrestan"
+            "en": "Shahristan"
           },
           "slug": "shahrestan-af2402"
         },
@@ -1288,7 +1288,7 @@
           "id": "AF2409",
           "names": {
             "local": "پاتو",
-            "en": "Patoo"
+            "en": "Pato"
           },
           "slug": "patoo-af2409"
         },
@@ -1296,7 +1296,7 @@
           "id": "AF2406",
           "names": {
             "local": "میرامور",
-            "en": "Miramor"
+            "en": "Meramor"
           },
           "slug": "miramor-af2406"
         },
@@ -1312,7 +1312,7 @@
           "id": "AF2404",
           "names": {
             "local": "خدیر",
-            "en": "Khadir"
+            "en": "Khader"
           },
           "slug": "khadir-af2404"
         },
@@ -1328,7 +1328,7 @@
           "id": "AF2408",
           "names": {
             "local": "کجران",
-            "en": "Kajran"
+            "en": "Kejran"
           },
           "slug": "kajran-af2408"
         }
@@ -3640,7 +3640,7 @@
       "note": "These are additional workbook ADM2 records; they are not silently added to the candidate reference."
     },
     "province_name_differences": [],
-    "district_name_review_status": "not_yet_completed",
+    "district_name_review_status": "daykundi_panjshir_16_record_names_aligned_to_workbook; remaining_385_candidate_records_pending",
     "official_verification_status": "not_ocha_row_level_certified",
     "runtime_enabled": false,
     "notes": [
