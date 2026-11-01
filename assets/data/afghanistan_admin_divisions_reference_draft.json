@@ -202,7 +202,7 @@
           "id": "AF1722",
           "names": {
             "local": "درواز پائین (ما می )",
-            "en": "Darwaz"
+            "en": "Darwaz-e-Payin"
           },
           "slug": "darwaz-e-payin-af1722"
         },
@@ -1378,7 +1378,7 @@
           "id": "AF2504",
           "names": {
             "local": "شهید حساس",
-            "en": "Chahar Chino"
+            "en": "Shahid-e-Hassas"
           },
           "slug": "shahid-e-hassas-af2504"
         },
@@ -1394,7 +1394,7 @@
           "id": "AF2501",
           "names": {
             "local": "تیرینکوت",
-            "en": "Tirenkot"
+            "en": "Tirinkot"
           },
           "slug": "tirinkot-af2501"
         }
@@ -1420,7 +1420,7 @@
           "id": "AF2304",
           "names": {
             "local": "چار صد ره",
-            "en": "Chaharsada"
+            "en": "Charsadra"
           },
           "slug": "charsadra-af2304"
         },
@@ -3448,7 +3448,7 @@
           "id": "AF0905",
           "names": {
             "local": "بغلان جدید",
-            "en": "Baghlan-e-Markazi"
+            "en": "Baghlan-e-Jadid"
           },
           "slug": "baghlan-e-jadid-af0905"
         },
@@ -4063,7 +4063,8 @@
         "workbook_en": "Darwaz",
         "workbook_local": "درواز",
         "type": "Specific vs broader label; retain pending source reconciliation",
-        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF1722 with Darwaz-e-Payin. English label corrected; local-script variant remains open."
       },
       {
         "id": "AF1724",
@@ -4208,7 +4209,8 @@
         "workbook_en": "Gizab",
         "unit_type": "District",
         "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2506 with Chinarto. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open."
       },
       {
         "id": "AF2507",
@@ -4218,7 +4220,8 @@
         "workbook_en": "Chinarto",
         "unit_type": "Temporaray District",
         "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2507 with Gizab. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open."
       },
       {
         "id": "AF2504",
@@ -4228,7 +4231,8 @@
         "workbook_en": "Chahar Chino",
         "unit_type": "District",
         "type": "Local-script spelling/transliteration discrepancy",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2504 with Shahid-e-Hassas. Candidate local label «شهید حساس» is retained; the previous workbook-aligned English label was corrected."
       },
       {
         "id": "AF2501",
@@ -4238,7 +4242,8 @@
         "workbook_en": "Tirenkot",
         "unit_type": "Provincial Capital",
         "type": "Local-script spelling/transliteration discrepancy",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF2501 with Tirinkot. English label corrected to the OCHA spelling; local-script orthographic variant remains open."
       },
       {
         "id": "AF2304",
@@ -4248,7 +4253,8 @@
         "workbook_en": "Chaharsada",
         "unit_type": "District",
         "type": "Local-script spelling/transliteration discrepancy",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF2304 with Charsadra. English label corrected; local-script variant remains open."
       },
       {
         "id": "AF2301",
@@ -4468,7 +4474,8 @@
         "workbook_en": "Gereshk",
         "unit_type": "District",
         "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA HAG February 2021 pairs AF3004 with Nahr-e-Saraj. This is an alternate/historical name for the Gereshk label in the workbook; do not treat as a confirmed code error without current COD row review."
       },
       {
         "id": "AF3003",
@@ -4478,7 +4485,8 @@
         "workbook_en": "Nawa",
         "unit_type": "District",
         "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA HAG February 2021 pairs AF3003 with Nawa-e-Barakzaiy. This is an alternate/expanded name for Nawa; do not treat as a confirmed code error without current COD row review."
       },
       {
         "id": "AF3011",
@@ -4678,7 +4686,8 @@
         "workbook_en": "Baghlan-e-Markazi",
         "unit_type": "District",
         "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF0905 with Baghlan-e-Jadid. The workbook's English label conflicts. Candidate local label «بغلان جدید» is retained; local-script discrepancy remains open pending direct local-language source."
       },
       {
         "id": "AF0915",
@@ -5375,7 +5384,102 @@
       "AF3310",
       "AF3404",
       "AF3405"
-    ]
+    ],
+    "independent_source_checks": [
+      {
+        "id": "AF0905",
+        "candidate": "Baghlan-e-Jadid",
+        "workbook": "Baghlan-e-Markazi",
+        "finding": "OCHA 2024 Annex 1 explicitly pairs AF0905 with Baghlan-e-Jadid. The workbook's English label conflicts. Candidate local label «بغلان جدید» is retained; local-script discrepancy remains open pending direct local-language source.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf"
+        ]
+      },
+      {
+        "id": "AF2504",
+        "candidate": "Shahid-e-Hassas",
+        "workbook": "Chahar Chino",
+        "finding": "OCHA HAG February 2021 explicitly pairs AF2504 with Shahid-e-Hassas. Candidate local label «شهید حساس» is retained; the previous workbook-aligned English label was corrected.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      },
+      {
+        "id": "AF2506",
+        "candidate": "Chinarto",
+        "workbook": "Gizab",
+        "finding": "OCHA HAG February 2021 explicitly pairs AF2506 with Chinarto. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      },
+      {
+        "id": "AF2507",
+        "candidate": "Gizab",
+        "workbook": "Chinarto",
+        "finding": "OCHA HAG February 2021 explicitly pairs AF2507 with Gizab. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      },
+      {
+        "id": "AF1722",
+        "candidate": "Darwaz-e-Payin",
+        "workbook": "Darwaz",
+        "finding": "OCHA 2024 Annex 1 explicitly pairs AF1722 with Darwaz-e-Payin. English label corrected; local-script variant remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf"
+        ]
+      },
+      {
+        "id": "AF2304",
+        "candidate": "Charsadra",
+        "workbook": "Chaharsada",
+        "finding": "OCHA 2024 Annex 1 explicitly pairs AF2304 with Charsadra. English label corrected; local-script variant remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf"
+        ]
+      },
+      {
+        "id": "AF2501",
+        "candidate": "Tirinkot",
+        "workbook": "Tirenkot",
+        "finding": "OCHA 2024 Annex 1 explicitly pairs AF2501 with Tirinkot. English label corrected to the OCHA spelling; local-script orthographic variant remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf"
+        ]
+      },
+      {
+        "id": "AF3004",
+        "candidate": "Nahr-e-Saraj",
+        "workbook": "Gereshk",
+        "finding": "OCHA HAG February 2021 pairs AF3004 with Nahr-e-Saraj. This is an alternate/historical name for the Gereshk label in the workbook; do not treat as a confirmed code error without current COD row review.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      },
+      {
+        "id": "AF3003",
+        "candidate": "Nawa-e-Barakzaiy",
+        "workbook": "Nawa",
+        "finding": "OCHA HAG February 2021 pairs AF3003 with Nawa-e-Barakzaiy. This is an alternate/expanded name for Nawa; do not treat as a confirmed code error without current COD row review.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      }
+    ],
+    "independent_source_checks_completed": 9,
+    "independent_source_checks_last_reviewed": "2026-11-01",
+    "english_label_corrections_from_ocha": 5
   },
   "english_name_review_status": {
     "method": "P-code keyed comparison of all candidate ADM2 English labels against the user-provided afg_admin_boundaries.xlsx v04 (valid_on 2026-06-23), using the workbook adm2_name field. This is secondary-reference alignment, not primary-source certification.",
@@ -5486,6 +5590,42 @@
       "AF3305",
       "AF3311",
       "AF3404"
-    ]
+    ],
+    "post_workbook_ocha_crosscheck": {
+      "reviewed_on": "2026-11-01",
+      "records_rechecked": 5,
+      "english_labels_revised": 5,
+      "revised_record_ids": [
+        "AF0905",
+        "AF2504",
+        "AF1722",
+        "AF2304",
+        "AF2501"
+      ],
+      "method": "Targeted exact-P-code cross-check against OCHA Afghanistan Humanitarian Fund Standard Allocation Strategy Annex 1 (2024) and OCHA Humanitarian Access Group Hard-to-Reach Districts (February 2021). OCHA labels take precedence over conflicting secondary workbook labels for these exact P-codes. This is not a full 401-row primary-source certification.",
+      "sources": [
+        {
+          "title": "OCHA Afghanistan Humanitarian Fund Standard Allocation Strategy, 2024, Annex 1",
+          "url": "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf",
+          "records": [
+            "AF0905",
+            "AF1722",
+            "AF2304",
+            "AF2501"
+          ]
+        },
+        {
+          "title": "OCHA Humanitarian Access Group, Hard-to-Reach Districts, February 2021",
+          "url": "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf",
+          "records": [
+            "AF2504",
+            "AF2506",
+            "AF2507",
+            "AF3003",
+            "AF3004"
+          ]
+        }
+      ]
+    }
   }
 }
