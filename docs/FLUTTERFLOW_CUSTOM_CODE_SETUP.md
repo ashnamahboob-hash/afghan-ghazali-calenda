@@ -11,9 +11,35 @@ These files are prepared in the `flutterflow/migration-prep` branch of the origi
 
 ## Recommended FlutterFlow setup
 
-Create the custom functions only after connecting FlutterFlow to its dedicated repository/branch. Keep the generated FlutterFlow repository separate from the original source repository.
+Create the Code File in the owner-created FlutterFlow project first. Keep the generated FlutterFlow repository separate from the original source repository. Prefer calling the parsed class's static methods with FlutterFlow's **Call Static Method** action; do not create Custom Functions that attempt to import the Code File, because Custom Functions cannot add arbitrary imports.
 
-### Custom Function A — Solar date JSON
+### Static method A — Solar date JSON (preferred)
+
+- Class: `AfghanGhazaliFunctions`
+- Method: `solarDateFromGregorianJson`
+- Input: `isoDate` String
+- Return: String (JSON)
+- Invoke through the FlutterFlow **Call Static Method** action.
+
+### Static method B — Solar date to Gregorian JSON (preferred)
+
+- Class: `AfghanGhazaliFunctions`
+- Method: `solarDateToGregorianJson`
+- Inputs: `solarYear`, `solarMonth`, `solarDay` integers
+- Return: String (JSON)
+
+### Static method C — Civil Hijri JSON (preferred)
+
+- Class: `AfghanGhazaliFunctions`
+- Method: `civilHijriFromGregorianJson`
+- Input: `isoDate` String
+- Return: String (JSON)
+
+### Legacy wrapper reference (only if direct static calls are unavailable)
+
+The following list describes method signatures, not instructions to create Custom Functions that import the Code File. If the action editor cannot invoke a particular method, use a generated Custom Action wrapper and verify its import path in FlutterFlow.
+
+### Custom Function A — Solar date JSON (legacy signature reference)
 
 - Name: `solarDateFromGregorianJson`
 - Return type: String
