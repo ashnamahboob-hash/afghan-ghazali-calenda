@@ -39,8 +39,14 @@
 - [ ] Build population, province/district and agriculture pages.
 - [ ] Add maps and exports after data-source readiness.
 - [ ] Execute functional, data-integrity, localization, RTL/LTR and responsive QA.
-- [ ] Confirm the latest migration helper and population integrity tests pass in GitHub Actions.
+- [x] Confirm migration helper, population ingestion-script syntax, Python data-tool tests, Flutter analyze and Flutter tests pass in GitHub Actions (run `41305136222`, 2026-11-01).
 - [ ] Owner review and approval before release.
+
+## Latest automated validation
+
+- Workflow run: `41305136222` — **success**.
+- Jobs/steps passed: population-ingestion script syntax check, Python data-tool tests, Flutter dependency setup, `flutter analyze`, and `flutter test`.
+- This validates code and synthetic fixtures only; it does not ingest the original population CSV payloads or verify their publisher provenance.
 
 ## Current status
 
