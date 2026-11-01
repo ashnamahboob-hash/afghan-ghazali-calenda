@@ -193,10 +193,10 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                         Expanded(
                           child: Text(
                             en
-                                ? 'Preview reference only: 34 provinces and 401 district entries. Names and some administrative relationships are still under source review; do not treat this list as an officially certified gazetteer.'
+                                ? 'Preview reference only: 34 provinces and 401 ADM2 records. Names and some administrative relationships are still under source review; do not treat this list as an officially certified gazetteer.'
                                 : fa
-                                    ? 'این فهرست پیش‌نویس است: ۳۴ ولایت و ۴۰۱ ولسوالی. نام‌ها و برخی روابط اداری هنوز بررسی منبع می‌شوند و نباید مرجع رسمی و تأییدشده تلقی شوند.'
-                                    : 'دا د ازمایښتي معلوماتو لېست دی: ۳۴ ولایتونه او ۴۰۱ ولسوالۍ. نومونه او ځینې اداري اړیکې لا د سرچینو له مخې تر ارزونې لاندې دي؛ د رسمي تایید شوي نوملړ په توګه یې مه کاروئ.',
+                                    ? 'این فهرست پیش‌نویس است: ۳۴ ولایت و ۴۰۱ واحد اداری در کچهٔ دویم. نام‌ها و برخی روابط اداری هنوز بررسی منبع می‌شوند و نباید مرجع رسمی و تأییدشده تلقی شوند.'
+                                    : 'دا د ازمایښتي معلوماتو لېست دی: ۳۴ ولایتونه او ۴۰۱ د دویمې اداري کچې ریکارډونه. نومونه او ځینې اداري اړیکې لا د سرچینو له مخې تر ارزونې لاندې دي؛ د رسمي تایید شوي نوملړ په توګه یې مه کاروئ.',
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
                         ),
