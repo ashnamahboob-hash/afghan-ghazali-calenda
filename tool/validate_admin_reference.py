@@ -209,6 +209,63 @@ def validate_parent_crosswalk(path: Path) -> list[str]:
     ]
 
 
+
+def validate_zone_crosswalk(path: Path, reference_path: Path) -> list[str]:
+    """Validate user-supplied regional groups against the candidate ADM2 IDs."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    reference = json.loads(reference_path.read_text(encoding="utf-8"))
+    if data.get("status") != "user_supplied_zone_grouping_pending_primary_source_verification":
+        fail("zone crosswalk must remain user-supplied and pending primary-source verification")
+    if data.get("source", {}).get("type") != "user_supplied":
+        fail("zone crosswalk provenance must remain user_supplied")
+    zones = data.get("zones")
+    if not isinstance(zones, list) or len(zones) != 4:
+        fail("zone crosswalk must contain exactly four supplied zones")
+    reference_units = {
+        district.get("id"): province.get("id")
+        for province in reference.get("provinces", [])
+        for district in province.get("districts", [])
+    }
+    zone_ids = [zone.get("id", "") for zone in zones]
+    unique(zone_ids, "zone IDs")
+    submitted_ids: list[str] = []
+    for zone in zones:
+        province_id = zone.get("province", {}).get("id", "")
+        if not PROVINCE_ID.fullmatch(province_id):
+            fail(f"invalid parent province ID in zone {zone.get('id')}: {province_id}")
+        units = zone.get("units")
+        if not isinstance(units, list) or not units:
+            fail(f"zone {zone.get('id')} must contain units")
+        for unit in units:
+            code = unit.get("id", "")
+            if not DISTRICT_ID.fullmatch(code):
+                fail(f"invalid ADM2 P-code in zone {zone.get('id')}: {code}")
+            if code not in reference_units:
+                fail(f"zone P-code {code} is absent from the candidate reference")
+            if reference_units[code] != province_id:
+                fail(f"zone P-code {code} has candidate parent {reference_units[code]}, not {province_id}")
+            if unit.get("source") != "user_supplied" or unit.get("verification_status") != "pending_primary_source_verification":
+                fail(f"zone unit {code} must retain user-supplied/pending provenance")
+            if not unit.get("display_name_ps"):
+                fail(f"zone unit {code} must preserve its supplied Pashto display label")
+            submitted_ids.append(code)
+    unique(submitted_ids, "zone ADM2 P-codes")
+    summary = data.get("summary", {})
+    if summary.get("zones") != len(zones) or summary.get("units") != len(submitted_ids):
+        fail("zone crosswalk summary counts do not match records")
+    if summary.get("unique_unit_ids") != len(set(submitted_ids)):
+        fail("zone crosswalk unique ID count is inconsistent")
+    if summary.get("matched_candidate_reference_ids") != len(submitted_ids):
+        fail("zone crosswalk candidate-reference match count is inconsistent")
+    if summary.get("wrong_parent_ids") != 0 or summary.get("missing_candidate_ids") != 0:
+        fail("zone crosswalk summary must not claim unresolved candidate joins")
+    return [
+        f"zone crosswalk contains {len(zones)} user-supplied groups and {len(submitted_ids)} unique ADM2 P-codes",
+        "all zone P-codes exist in the candidate reference and match their parent province IDs",
+        "zone labels remain aliases; no official administrative status or name certification is claimed",
+    ]
+
+
 def validate_secondary_audit(path: Path) -> list[str]:
     """Validate the recorded independent secondary ADM2 cross-check."""
     data = json.loads(path.read_text(encoding="utf-8"))
@@ -278,6 +335,9 @@ def main() -> int:
         crosswalk_path = Path("assets/data/temporary_district_parent_mapping_draft.json")
         if crosswalk_path.exists():
             checks.extend(validate_parent_crosswalk(crosswalk_path))
+        zone_crosswalk_path = Path("assets/data/administrative_zones_draft.json")
+        if zone_crosswalk_path.exists():
+            checks.extend(validate_zone_crosswalk(zone_crosswalk_path, Path(args.json_file)))
         secondary_audit_path = Path("docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json")
         if secondary_audit_path.exists():
             checks.extend(validate_secondary_audit(secondary_audit_path))
