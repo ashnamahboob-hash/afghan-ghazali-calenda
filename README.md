@@ -113,6 +113,13 @@ bookkeeping. GitHub Actions runs it when the draft JSON, validator, or workflow
 changes. A passing structural check does not certify district names or make
 the dataset an official gazetteer.
 
+## District reference review update (2026-11-01)
+
+- Current OCHA COD status dashboard: Afghanistan 34 ADM1 / 401 ADM2 COD-AB features; COD-PS lists 457 ADM2 P-codes, of which 56 are not in COD-AB. These are dataset-level counts, not district-name certification.
+- The 52 pending local-script discrepancies are triaged as 37 orthographic/transliteration variants, 7 material name/code conflicts, and 8 targeted-source or alternate-name cases still awaiting local-script verification.
+- Afghanistan is listed as **In Progress** on OCHA's COD-AB work-status dashboard. Obtain and check the latest row-level gazetteer before closing any remaining discrepancies.
+- All 52 remain pending; no local-script labels were changed by this triage. The reference remains draft-only.
+
 ## Requirements
 - Flutter SDK 3.22 or later
 - Android Studio or VS Code with Flutter extension
