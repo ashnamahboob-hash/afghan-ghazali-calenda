@@ -58,17 +58,17 @@ A further eight ADM2 labels were aligned by P-code for Kandahar and Herat:
 (local label normalized to the workbook's «ریگ»), and `AF3201` Herat.
 Together with the 16 Daykundi/Panjshir crosswalk entries, all 16 Kandahar
 candidate records and Herat city, and a further 103 records across Badakhshan,
-Samangan, Logar, Paktika, Sar-e-Pul, Paktya, Nuristan and Balkh, 136 of the
-401 candidate ADM2 names have now been checked by P-code against the workbook;
-265 candidate records remain.
+Samangan, Logar, Paktika, Sar-e-Pul, Paktya, Nuristan and Balkh, all 401 candidate ADM2 English labels have now been checked by P-code against
+the workbook; 101 English labels were aligned to the Excel `adm2_name` field.
+The separate local-language name review remains partial: 136 of 401 labels
+checked, with 265 still pending.
 
-The remaining 265 candidate ADM2 records still require a complete
+The remaining 265 candidate ADM2 local-language labels still require a complete
 name-by-name comparison against the workbook. P-code presence and parent-code
-matching must not be treated as name verification. The 103-record batch
-contains transliteration, local-script, and substantive label discrepancies;
-these are recorded by P-code in the draft JSON and have not been silently
-normalized. In particular, AF1307 (Jaji vs Zazi) and AF2116 (Sharak-e-Hayratan
-vs Chahi) require source reconciliation. The workbook is a
+matching must not be treated as name verification. English labels are aligned to the workbook strictly by ADM2 P-code, including
+spellings and longer/shorter English labels where the workbook differs. These
+are secondary-reference alignments only; they are not OCHA/AGCHO certification.
+Local-script labels are tracked separately and have not been mass-overwritten. The workbook is a
 user-supplied secondary reference for this review and does not replace
 row-level OCHA/AGCHO certification. Do not mark the gazetteer official or
 enable it as runtime administrative data until the required primary-source
