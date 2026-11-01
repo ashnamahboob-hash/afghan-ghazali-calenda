@@ -1150,7 +1150,7 @@
           "id": "AF2713",
           "names": {
             "local": "میانشین",
-            "en": "Miyanshin"
+            "en": "Meyanishin"
           },
           "slug": "miyanshin-af2713"
         },
@@ -1181,8 +1181,8 @@
         {
           "id": "AF2706",
           "names": {
-            "local": "شاه ولی کوت",
-            "en": "Shah Wali Kot"
+            "local": "شاه ولیکوت",
+            "en": "Shah Walikot"
           },
           "slug": "shah-wali-kot-af2706"
         },
@@ -1198,7 +1198,7 @@
           "id": "AF2715",
           "names": {
             "local": "معروف",
-            "en": "Maruf"
+            "en": "Marof"
           },
           "slug": "maruf-af2715"
         },
@@ -1222,14 +1222,14 @@
           "id": "AF2712",
           "names": {
             "local": "نیش",
-            "en": "Nesh"
+            "en": "Neash"
           },
           "slug": "nesh-af2712"
         },
         {
           "id": "AF2716",
           "names": {
-            "local": "ریگ ( شگه )",
+            "local": "ریگ",
             "en": "Reg"
           },
           "slug": "reg-af2716"
@@ -1238,7 +1238,7 @@
           "id": "AF2710",
           "names": {
             "local": "میوند",
-            "en": "Maywand"
+            "en": "Maiwand"
           },
           "slug": "maywand-af2710"
         },
@@ -1246,7 +1246,7 @@
           "id": "AF2708",
           "names": {
             "local": "ارغستان",
-            "en": "Arghestan"
+            "en": "Arghistan"
           },
           "slug": "arghestan-af2708"
         }
@@ -2016,7 +2016,7 @@
           "id": "AF3201",
           "names": {
             "local": "هرات",
-            "en": "Hirat"
+            "en": "Herat"
           },
           "slug": "hirat-af3201"
         },
@@ -3655,5 +3655,21 @@
       "The four province-name variants identified in the first workbook comparison were updated to the workbook spellings. Stable province IDs were unchanged."
     ],
     "province_name_review_status": "province_names_aligned_to_user_supplied_workbook_v04"
+  },
+  "district_name_review_status": {
+    "method": "P-code keyed comparison against user-supplied afg_admin_boundaries.xlsx v04 (valid_on 2026-06-23); name labels are secondary-reference aligned, not primary-source certified.",
+    "workbook_name_matches_completed": 33,
+    "workbook_name_matches_remaining": 368,
+    "completed_record_ids": [
+      "AF2713",
+      "AF2706",
+      "AF2715",
+      "AF2712",
+      "AF2716",
+      "AF2710",
+      "AF2708",
+      "AF3201"
+    ],
+    "last_reviewed": "2026-11-01"
   }
 }
