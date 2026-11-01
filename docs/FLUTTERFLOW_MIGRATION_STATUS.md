@@ -21,6 +21,7 @@
 - [x] Added staged FlutterFlow manual page-build guide.
 - [x] Added page-by-page FlutterFlow action-flow specification covering app state, Home, Calendar, Prayer Times, Settings, geography and data-release gates.
 - [x] Updated the integration instructions to prefer FlutterFlow Code File static-method calls and avoid unsupported Custom Function imports.
+- [x] Added a four-part Code File smoke-test guide with exact sample inputs and expected JSON fields.
 - [x] Added Code File / Custom Action integration workflow based on current FlutterFlow documentation.
 - [x] Added population custom-function setup instructions and data-integrity tests.
 - [x] Kept `main` untouched; migration work is isolated on a new branch based on `preview/browser-review`.
@@ -58,10 +59,11 @@
 ## Latest migration-preparation update (2026-11-01)
 
 - Added `docs/FLUTTERFLOW_ACTION_FLOW_SPEC.md` with ordered action sequences and validation rules for the first implementation milestone.
+- Added `docs/FLUTTERFLOW_CODEFILE_SMOKE_TEST.md` with four reproducible preview checks (Solar, civil Hijri, Kandahar city configuration, and prayer-time JSON).
 - Checked the current official FlutterFlow Code File documentation: parsed Code Files expose static methods through the Variable dialog / Call Static Method action. Updated the guide to use that route first.
 - Clarified that Custom Functions cannot import arbitrary files; use a Custom Action fallback only if direct static method invocation is unavailable.
 - Linked the action-flow specification from the manual visual build guide.
-- The most important remaining practical step is still in the FlutterFlow project: create/parse the Code File and configure the HomePage action flows. GitHub preparation alone cannot execute these builder actions.
+- The most important remaining practical step is still in the FlutterFlow project: create/parse the Code File, complete the smoke-test checklist, and configure the HomePage action flows. GitHub preparation alone cannot execute these builder actions.
 
 ## Current status
 
