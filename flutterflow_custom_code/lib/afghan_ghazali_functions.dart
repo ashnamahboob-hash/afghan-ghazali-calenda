@@ -291,4 +291,129 @@ class AfghanGhazaliFunctions {
       'disclaimer': 'Approximate offline solar calculation; verify against a trusted local timetable.',
     });
   }
+  /// Safely interprets one source cell without changing the original literal.
+  /// Missing markers remain missing; they are never converted to numeric zero.
+  static String populationCellJson(String? rawValue) {
+    if (rawValue == null) {
+      return jsonEncode(<String, dynamic>{
+        'sourceValueRaw': null,
+        'numericValue': null,
+        'valueStatus': 'missing_null',
+      });
+    }
+    final trimmed = rawValue.trim();
+    if (trimmed.isEmpty) {
+      return jsonEncode(<String, dynamic>{
+        'sourceValueRaw': rawValue,
+        'numericValue': null,
+        'valueStatus': 'missing_blank',
+      });
+    }
+    if (trimmed == '-') {
+      return jsonEncode(<String, dynamic>{
+        'sourceValueRaw': rawValue,
+        'numericValue': null,
+        'valueStatus': 'missing_marker',
+      });
+    }
+    if (trimmed.toLowerCase() == 'null') {
+      return jsonEncode(<String, dynamic>{
+        'sourceValueRaw': rawValue,
+        'numericValue': null,
+        'valueStatus': 'missing_null_literal',
+      });
+    }
+    final numeric = num.tryParse(trimmed.replaceAll(',', ''));
+    if (numeric == null || !numeric.isFinite) {
+      return jsonEncode(<String, dynamic>{
+        'sourceValueRaw': rawValue,
+        'numericValue': null,
+        'valueStatus': 'unparsed_source_value',
+      });
+    }
+    return jsonEncode(<String, dynamic>{
+      'sourceValueRaw': rawValue,
+      'numericValue': numeric,
+      'valueStatus': 'source_numeric_value',
+    });
+  }
+
+  /// Aggregates a JSON array of source cell strings.
+  /// A partial sum is provided for diagnostics, but value is null unless every
+  /// row contains a numeric value. This prevents incomplete totals looking
+  /// like complete population totals.
+  static String sumPopulationCellsJson(String rawValuesJson) {
+    final decoded = jsonDecode(rawValuesJson);
+    if (decoded is! List) throw ArgumentError('Expected a JSON array of source values.');
+    num partialSum = 0;
+    var included = 0;
+    var missing = 0;
+    final rawValues = <String?>[];
+    for (final item in decoded) {
+      if (item == null) {
+        rawValues.add(null);
+        missing++;
+        continue;
+      }
+      if (item is! String && item is! num) {
+        throw ArgumentError('Population source values must be strings or numbers.');
+      }
+      final raw = item.toString();
+      rawValues.add(raw);
+      final parsed = num.tryParse(raw.trim().replaceAll(',', ''));
+      if (parsed == null || !parsed.isFinite) {
+        missing++;
+      } else {
+        partialSum += parsed;
+        included++;
+      }
+    }
+    final complete = missing == 0;
+    return jsonEncode(<String, dynamic>{
+      'value': complete ? partialSum : null,
+      'partialSumForAuditOnly': partialSum,
+      'includedCount': included,
+      'missingCount': missing,
+      'rowCount': decoded.length,
+      'valueStatus': complete ? 'calculated_complete' : 'incomplete_missing_values',
+      'rawValuesPreserved': rawValues,
+    });
+  }
+
+  /// Compares two JSON arrays of P-codes without modifying either input set.
+  /// Source-only codes are retained for review, not silently discarded.
+  static String comparePcodeSetsJson(String sourceCodesJson, String referenceCodesJson) {
+    final sourceDecoded = jsonDecode(sourceCodesJson);
+    final referenceDecoded = jsonDecode(referenceCodesJson);
+    if (sourceDecoded is! List || referenceDecoded is! List) {
+      throw ArgumentError('Both P-code inputs must be JSON arrays.');
+    }
+    if (sourceDecoded.any((value) => value is! String) ||
+        referenceDecoded.any((value) => value is! String)) {
+      throw ArgumentError('Every P-code must be a string.');
+    }
+    final source = sourceDecoded.cast<String>();
+    final reference = referenceDecoded.cast<String>();
+    final sourceSet = source.toSet();
+    final referenceSet = reference.toSet();
+    final duplicatesSource = source.where((code) => source.where((x) => x == code).length > 1).toSet().toList()..sort();
+    final duplicatesReference = reference.where((code) => reference.where((x) => x == code).length > 1).toSet().toList()..sort();
+    final matched = sourceSet.intersection(referenceSet).toList()..sort();
+    final sourceOnly = sourceSet.difference(referenceSet).toList()..sort();
+    final referenceOnly = referenceSet.difference(sourceSet).toList()..sort();
+    return jsonEncode(<String, dynamic>{
+      'matched': matched,
+      'sourceOnly': sourceOnly,
+      'referenceOnly': referenceOnly,
+      'duplicateSourceCodes': duplicatesSource,
+      'duplicateReferenceCodes': duplicatesReference,
+      'sourceCount': source.length,
+      'referenceCount': reference.length,
+      'matchedCount': matched.length,
+      'sourceOnlyCount': sourceOnly.length,
+      'referenceOnlyCount': referenceOnly.length,
+      'status': duplicatesSource.isEmpty && duplicatesReference.isEmpty ? 'compared' : 'duplicates_found',
+    });
+  }
+
 }
