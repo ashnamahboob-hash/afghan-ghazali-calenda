@@ -42,10 +42,10 @@ Persist preferences (language, theme, city and Asr method). Persisting a selecte
 
 1. Read `appLanguage`, `selectedDateIso`, `selectedCityId`, `asrFactor`, `fajrAngle`, `ishaAngle`, and `utcOffsetHours`.
 2. If `selectedDateIso` is empty or invalid, set it to today's local date.
-3. Call the Solar date JSON function with `selectedDateIso`.
-4. Call the civil Hijri JSON function with `selectedDateIso`.
+3. Use **Call Static Method** on `AfghanGhazaliFunctions.solarDateFromGregorianJson` with `selectedDateIso`.
+4. Use **Call Static Method** on `AfghanGhazaliFunctions.civilHijriFromGregorianJson` with `selectedDateIso`.
 5. Resolve city coordinates from the fixed six-city configuration using `selectedCityId`.
-6. Call the prayer-time JSON function with the selected date, coordinates and calculation settings.
+6. Use **Call Static Method** on `AfghanGhazaliFunctions.calculatePrayerTimesJson` with the selected date, coordinates and calculation settings. If FlutterFlow cannot expose its named arguments, create a Custom Action wrapper using the editor-generated imports.
 7. Bind returned JSON fields to the date card and prayer summary.
 8. If any calculation fails, show a visible error/empty state; never display stale values as if they were current.
 
