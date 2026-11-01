@@ -28,3 +28,34 @@ The current `AgricultureScreen` contains province-level wheat sowing windows sel
 
 ## Initial scope
 Start with Kandahar as the district-data pilot. Add crop/activity records only after the source and geographic coverage are documented. An empty `records` array is intentional until suitable source-backed records are entered.
+
+
+## HDX Afghanistan data catalogue review (2026-11-01)
+
+The HDX Afghanistan group page is a **catalogue of datasets**, not one unified agricultural dataset:
+https://data.humdata.org/group/afg
+
+The group page itself returned HTTP 403 during this review, so dataset references were cross-checked against indexed HDX metadata and related source pages. Do not infer that every dataset below is currently downloadable or suitable for a production advisory without inspecting its actual resource, date, geographic resolution and licence.
+
+Relevant candidate datasets/resources identified:
+
+- **Afghanistan - Subnational Administrative Boundaries (COD-AB)**: https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74  
+  The indexed metadata describes AGCHO-sourced ADM0–ADM2 boundaries, 34 ADM1 and 401 ADM2 features, and a July 2024 accuracy review. Treat this as an important row-level P-code verification source, but compare the actual gazetteer rows and unit types before replacing the app's draft reference.
+- **Afghanistan subnational rainfall**: https://data.humdata.org/dataset/afg-rainfall-subnational  
+  Candidate for rainfall context and historical climate indicators; not by itself a crop sowing-date recommendation.
+- **Afghanistan subnational NDVI**: https://data.humdata.org/dataset/afg-ndvi-subnational  
+  Candidate for vegetation-condition monitoring; NDVI is an indicator of vegetation greenness/density, not a direct crop identity or yield measurement.
+- **CHIRPS rainfall data**: the Centre for Humanitarian Data's 2026 State of Open Humanitarian Data describes WFP aggregation of CHIRPS precipitation by administrative region, with preliminary estimates every five days and finalized monthly updates. Use only after confirming the specific Afghanistan resource, time coverage, spatial unit, update cadence and reuse terms.
+
+Implementation guidance:
+1. Keep administrative boundaries/P-codes, climate observations, vegetation indices, food prices and agronomic recommendations in separate datasets/tables.
+2. Store source dataset ID, resource ID, source organisation, licence, retrieval date, temporal coverage, spatial resolution and original field names with every imported resource.
+3. Do not convert rainfall or NDVI anomalies directly into fertilizer, irrigation or planting advice. Such advice needs agronomic interpretation and a traceable crop/locality-specific source.
+4. Preserve raw source files unchanged; perform normalization in a separate derived dataset and retain provenance.
+5. The HDX group page is a discovery index. Production imports must point to a specific dataset and resource, not just the group URL.
+
+Related references:
+- OCHA/HDX COD-AB metadata mirror: https://data.amerigeoss.org/dataset/cod-ab-afg
+- OCHA COD portal: https://ocha-dap.github.io/cod-site/
+- HDX 2026 State of Open Humanitarian Data: https://data.humdata.org/dataset/2048a947-5714-4220-905b-e662cbcd14c8
+- Centre for Humanitarian Data guidance on vegetation indices: https://data.humdata.org/dataset/2048a947-5714-4220-905b-e662cbcd14c8/resource/bcf2fce8-9359-4eda-a892-76cc480fb26f/download/climate-guidance-on-vegetation-indices.pdf
