@@ -10,6 +10,7 @@ Draft dataset. It preserves the 16 district identifiers and Pashto labels alread
 - `agricultural_advisory.json`: source-backed agricultural guidance records (currently empty by design).
 - `agricultural_advisory.schema.json`: validation contract for agricultural guidance records.
 - `AGRICULTURE_DATA_POLICY.md`: sourcing, review and publication rules for agricultural guidance.
+- `USER_SUPPLIED_AGRICULTURAL_MATRIX_AUDIT.md`: audit of the supplied 34-province matrix; documents P-code collisions, differences from the app's secondary-reference draft, district-count discrepancies and agronomic evidence gaps. Audit only; not production data.
 
 ## Schema
 - `schema_version`: data contract version.
