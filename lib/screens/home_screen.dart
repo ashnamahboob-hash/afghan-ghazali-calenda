@@ -296,8 +296,9 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         IconButton(
           onPressed: () {
-            final first = DateTime(selectedDate.year, selectedDate.month, 1);
-            setState(() => selectedDate = DateTime(first.year, first.month - 1, 15));
+            final previousMonth = selectedSolar.month == 1 ? 12 : selectedSolar.month - 1;
+            final previousYear = selectedSolar.month == 1 ? selectedSolar.year - 1 : selectedSolar.year;
+            setState(() => selectedDate = AfghanCalendar.toGregorian(previousYear, previousMonth, 15));
           },
           icon: const Icon(Icons.chevron_left),
         ),
@@ -310,8 +311,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         IconButton(
           onPressed: () {
-            final first = DateTime(selectedDate.year, selectedDate.month, 1);
-            setState(() => selectedDate = DateTime(first.year, first.month + 1, 1));
+            final nextMonth = selectedSolar.month == 12 ? 1 : selectedSolar.month + 1;
+            final nextYear = selectedSolar.month == 12 ? selectedSolar.year + 1 : selectedSolar.year;
+            setState(() => selectedDate = AfghanCalendar.toGregorian(nextYear, nextMonth, 15));
           },
           icon: const Icon(Icons.chevron_right),
         ),
