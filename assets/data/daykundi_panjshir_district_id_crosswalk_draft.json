@@ -67,7 +67,7 @@
       "candidate_district_id": "AF2401",
       "reference_name_local": "نیلی",
       "reference_name_en": "Nili",
-      "name_review": "center_label_not_in_reference_name",
+      "name_review": "source_label_variant_preserved_workbook_reference_aligned",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -76,8 +76,8 @@
         "workbook_name_en": "Nili",
         "workbook_name_local": "نیلی",
         "workbook_unit_type": "Provincial Capital",
-        "review": "province_match_name_variant",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -87,8 +87,8 @@
       "source_name_pashto": "شهرستان",
       "candidate_district_id": "AF2402",
       "reference_name_local": "شهرستان",
-      "reference_name_en": "Shahrestan",
-      "name_review": "name_match",
+      "reference_name_en": "Shahristan",
+      "name_review": "source_label_matches_workbook_label",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -97,8 +97,8 @@
         "workbook_name_en": "Shahristan",
         "workbook_name_local": "شهرستان",
         "workbook_unit_type": "District",
-        "review": "name_match",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -108,8 +108,8 @@
       "source_name_pashto": "میرامور",
       "candidate_district_id": "AF2406",
       "reference_name_local": "میرامور",
-      "reference_name_en": "Miramor",
-      "name_review": "name_match",
+      "reference_name_en": "Meramor",
+      "name_review": "source_label_matches_workbook_label",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -118,8 +118,8 @@
         "workbook_name_en": "Meramor",
         "workbook_name_local": "میرامور",
         "workbook_unit_type": "District",
-        "review": "name_match",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -130,7 +130,7 @@
       "candidate_district_id": "AF2403",
       "reference_name_local": "اشترلی",
       "reference_name_en": "Ashtarlay",
-      "name_review": "orthographic_variant",
+      "name_review": "source_label_variant_preserved_workbook_reference_aligned",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -139,8 +139,8 @@
         "workbook_name_en": "Ashtarlay",
         "workbook_name_local": "اشترلی",
         "workbook_unit_type": "District",
-        "review": "name_match",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -150,8 +150,8 @@
       "source_name_pashto": "کجران",
       "candidate_district_id": "AF2408",
       "reference_name_local": "کجران",
-      "reference_name_en": "Kajran",
-      "name_review": "name_match",
+      "reference_name_en": "Kejran",
+      "name_review": "source_label_matches_workbook_label",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -160,8 +160,8 @@
         "workbook_name_en": "Kejran",
         "workbook_name_local": "کجران",
         "workbook_unit_type": "District",
-        "review": "name_match",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -172,7 +172,7 @@
       "candidate_district_id": "AF2407",
       "reference_name_local": "سنگ تخت",
       "reference_name_en": "Sang-e-Takht",
-      "name_review": "spacing_variant",
+      "name_review": "source_label_variant_preserved_workbook_reference_aligned",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -181,8 +181,8 @@
         "workbook_name_en": "Sang-e-Takht",
         "workbook_name_local": "سنگ تخت",
         "workbook_unit_type": "District",
-        "review": "spacing_and_script_variant",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -192,8 +192,8 @@
       "source_name_pashto": "خدیر",
       "candidate_district_id": "AF2404",
       "reference_name_local": "خدیر",
-      "reference_name_en": "Khadir",
-      "name_review": "name_match",
+      "reference_name_en": "Khader",
+      "name_review": "source_label_matches_workbook_label",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -202,8 +202,8 @@
         "workbook_name_en": "Khader",
         "workbook_name_local": "خدیر",
         "workbook_unit_type": "District",
-        "review": "name_match",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -214,7 +214,7 @@
       "candidate_district_id": "AF2405",
       "reference_name_local": "کیتی",
       "reference_name_en": "Kiti",
-      "name_review": "pashto_spelling_requires_review",
+      "name_review": "source_label_variant_preserved_workbook_reference_aligned",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -223,8 +223,8 @@
         "workbook_name_en": "Kiti",
         "workbook_name_local": "کیتی",
         "workbook_unit_type": "District",
-        "review": "pashto_label_variant_requires_review",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -234,8 +234,8 @@
       "source_name_pashto": "پاتو",
       "candidate_district_id": "AF2409",
       "reference_name_local": "پاتو",
-      "reference_name_en": "Patoo",
-      "name_review": "name_match",
+      "reference_name_en": "Pato",
+      "name_review": "source_label_matches_workbook_label",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -244,8 +244,8 @@
         "workbook_name_en": "Pato",
         "workbook_name_local": "پاتو",
         "workbook_unit_type": "Temporaray District",
-        "review": "name_match",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -256,7 +256,7 @@
       "candidate_district_id": "AF0801",
       "reference_name_local": "بازارک",
       "reference_name_en": "Bazarak",
-      "name_review": "center_label_not_in_reference_name",
+      "name_review": "source_label_variant_preserved_workbook_reference_aligned",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -265,8 +265,8 @@
         "workbook_name_en": "Bazarak",
         "workbook_name_local": "بازارک",
         "workbook_unit_type": "District",
-        "review": "province_center_label_variant",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -277,7 +277,7 @@
       "candidate_district_id": "AF0802",
       "reference_name_local": "رُخه",
       "reference_name_en": "Rukha",
-      "name_review": "orthographic_variant",
+      "name_review": "source_label_variant_preserved_workbook_reference_aligned",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -286,8 +286,8 @@
         "workbook_name_en": "Rukha",
         "workbook_name_local": "رُخه",
         "workbook_unit_type": "District",
-        "review": "pashto_orthographic_variant",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -296,9 +296,9 @@
       "source_district_id": "PJR-03",
       "source_name_pashto": "عنابه",
       "candidate_district_id": "AF0805",
-      "reference_name_local": "عنابه",
-      "reference_name_en": "Anawa",
-      "name_review": "name_match",
+      "reference_name_local": "عُنابه",
+      "reference_name_en": "Onaba",
+      "name_review": "source_label_variant_preserved_workbook_reference_aligned",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -307,8 +307,8 @@
         "workbook_name_en": "Onaba",
         "workbook_name_local": "عُنابه",
         "workbook_unit_type": "District",
-        "review": "diacritic_variant",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -317,9 +317,9 @@
       "source_district_id": "PJR-04",
       "source_name_pashto": "شتل",
       "candidate_district_id": "AF0806",
-      "reference_name_local": "شُتل",
-      "reference_name_en": "Shutul",
-      "name_review": "name_match",
+      "reference_name_local": "شتُل",
+      "reference_name_en": "Shutol",
+      "name_review": "source_label_variant_preserved_workbook_reference_aligned",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -328,8 +328,8 @@
         "workbook_name_en": "Shutol",
         "workbook_name_local": "شتُل",
         "workbook_unit_type": "District",
-        "review": "orthographic_variant",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -340,7 +340,7 @@
       "candidate_district_id": "AF0807",
       "reference_name_local": "پریان",
       "reference_name_en": "Paryan",
-      "name_review": "name_match",
+      "name_review": "source_label_matches_workbook_label",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -349,8 +349,8 @@
         "workbook_name_en": "Paryan",
         "workbook_name_local": "پریان",
         "workbook_unit_type": "District",
-        "review": "name_match",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     },
     {
@@ -359,9 +359,9 @@
       "source_district_id": "PJR-06",
       "source_name_pashto": "خنج",
       "candidate_district_id": "AF0804",
-      "reference_name_local": "خنج (حصه اول)",
-      "reference_name_en": "Khenj",
-      "name_review": "conflict_open_admin_data_candidate_calls_this_Khenj_but_COD_AB_workbook_row_is_Hesa_e_Awal",
+      "reference_name_local": "حصه اول",
+      "reference_name_en": "Hesa-e-Awal",
+      "name_review": "workbook_label_Hesa-e-Awal_conflicts_with_source_local_label_Khenj_manual_reconciliation_required",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -370,8 +370,8 @@
         "workbook_name_en": "Hesa-e-Awal",
         "workbook_name_local": "حصه اول",
         "workbook_unit_type": "District",
-        "review": "name_conflict_with_candidate_reference_label_Khenj",
-        "status": "disputed_name_requires_manual_resolution"
+        "review": "workbook_name_Hesa-e-Awal_conflicts_with_source_local_label_Khenj",
+        "status": "candidate_code_and_parent_match_workbook_label_but_source_name_conflict_pending_resolution"
       }
     },
     {
@@ -381,8 +381,8 @@
       "source_name_pashto": "دره",
       "candidate_district_id": "AF0803",
       "reference_name_local": "دره",
-      "reference_name_en": "Dara",
-      "name_review": "name_match",
+      "reference_name_en": "Darah",
+      "name_review": "source_label_matches_workbook_label",
       "status": "pending_ocha_verification",
       "excel_crosscheck": {
         "candidate_pcode_present": true,
@@ -391,8 +391,8 @@
         "workbook_name_en": "Darah",
         "workbook_name_local": "دره",
         "workbook_unit_type": "District",
-        "review": "name_match",
-        "status": "candidate_code_and_parent_match_name_review_pending"
+        "review": "reference_name_aligned_to_workbook_label",
+        "status": "candidate_code_parent_and_workbook_name_match_pending_ocha_verification"
       }
     }
   ],
@@ -413,7 +413,7 @@
       "candidate_pcodes_found": 16,
       "parent_province_pcodes_match": 16,
       "name_conflicts_requiring_manual_resolution": 1,
-      "unresolved_name_reviews": 16,
+      "unresolved_name_reviews": 1,
       "ocha_verified_mappings": 0,
       "runtime_enabled": false,
       "notes": [
@@ -421,7 +421,8 @@
         "PJR-06 is a material name conflict: the candidate Open Admin Data mapping AF0804 is labelled Khenj (Hesa-e-Awal) in that source, while the supplied COD-AB workbook row AF0804 is Hesa-e-Awal / حصه اول. Do not silently treat Khenj and Hesa-e-Awal as interchangeable.",
         "Other local-script differences remain spelling, spacing, diacritic, or label-review items and have not been promoted to official Pashto spellings.",
         "The P-code comparison is a workbook cross-check only; all mappings remain pending OCHA/AGCHO row-level verification and manual name review.",
-        "The source-local IDs DYK-01..DYK-09 and PJR-01..PJR-07 are preserved unchanged."
+        "The source-local IDs DYK-01..DYK-09 and PJR-01..PJR-07 are preserved unchanged.",
+        "For all 16 Daykundi/Panjshir candidate P-codes, reference_name_en/local fields are aligned to the exact v04 workbook labels. Source-local IDs and source_name_pashto labels are preserved unchanged. PJR-06 remains a material source-label conflict: source label خنج versus workbook AF0804 Hesa-e-Awal / حصه اول; the candidate P-code was not changed."
       ]
     }
   }
