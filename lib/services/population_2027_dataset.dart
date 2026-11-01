@@ -44,11 +44,15 @@ class Population2027Dataset {
   ];
 
   final List<Population2027Record> records;
+  /// National aggregate is kept separately and never mixed into ADM2 rows.
+  final Population2027Record? nationalAggregate;
   final Map<String, Population2027Record> _byPcode;
   final Map<String, List<Population2027Record>> _byProvincePcode;
 
-  Population2027Dataset._(List<Population2027Record> rows)
-      : records = List.unmodifiable(rows),
+  Population2027Dataset._(
+    List<Population2027Record> rows, {
+    required this.nationalAggregate,
+  })  : records = List.unmodifiable(rows),
         _byPcode = UnmodifiableMapView({
           for (final row in rows) row.pcode: row,
         }),
@@ -97,6 +101,7 @@ class Population2027Dataset {
 
     final records = <Population2027Record>[];
     final seenPcodes = <String>{};
+    Population2027Record? nationalAggregate;
 
     for (var rowIndex = 1; rowIndex < rows.length; rowIndex++) {
       final row = rows[rowIndex];
@@ -110,8 +115,16 @@ class Population2027Dataset {
         for (var i = 0; i < headers.length; i++) headers[i]: row[i],
       };
       final pcode = values['adm2_pcode']!;
-      // The source's national aggregate row has a blank ADM2 P-code.
-      if (pcode.isEmpty) continue;
+      // Keep the source's national aggregate separately from ADM2 records.
+      if (pcode.isEmpty) {
+        if (nationalAggregate != null) {
+          throw const FormatException(
+            'Population CSV contains more than one blank-P-code aggregate row.',
+          );
+        }
+        nationalAggregate = Population2027Record(values);
+        continue;
+      }
       if (pcode.trim() != pcode) {
         throw FormatException('ADM2 P-code contains surrounding whitespace: "$pcode".');
       }
@@ -124,7 +137,10 @@ class Population2027Dataset {
       records.add(Population2027Record(values));
     }
 
-    return Population2027Dataset._(records);
+    return Population2027Dataset._(
+      records,
+      nationalAggregate: nationalAggregate,
+    );
   }
 
   /// Small RFC-4180-compatible parser supporting escaped quotes and newlines.
