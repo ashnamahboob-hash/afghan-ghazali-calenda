@@ -60,6 +60,35 @@
       },
       "interpretation": "The status dashboard reports Afghanistan COD-AB reference year 2026 and 401 ADM2 features, while the separate coverage/work dashboard lists the Afghanistan update as In Progress. The accessible HDX/AGCHO dataset metadata still describes a 2019-established dataset last reviewed in July 2024, with metadata last updated 2025-01-17. These dashboard summaries do not provide the 401 row-level P-code/name/parent records needed for a reproducible comparison. Do not infer that the user-supplied v04 workbook is the 2026 COD-AB gazetteer, and do not mark row-level verification complete.",
       "row_level_gazetteer_retrieved": false
+    },
+    "official_gis_service_candidate": {
+      "id": "OCHA_GLOBAL_COD_ADMIN2_ARCGIS_LAYER",
+      "name": "OCHA COD Global Admin2 Feature Layer",
+      "service_url": "https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0",
+      "query_endpoint": "https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0/query",
+      "checked_on": "2026-11-01",
+      "observed_fields": [
+        "adm2_pcode",
+        "adm2_name",
+        "adm2_name1",
+        "adm2_name2",
+        "adm2_name3",
+        "adm1_pcode",
+        "adm1_name",
+        "adm1_name1",
+        "adm0_pcode",
+        "valid_on",
+        "valid_to",
+        "version_no",
+        "lang",
+        "lang1",
+        "lang2",
+        "lang3"
+      ],
+      "source_evidence": "OCHA GIS REST layer metadata exposes an Admin2 feature layer with P-code, parent P-code, multilingual name, validity-date and version fields. OCHA COD documentation identifies live geoservices as a COD-AB distribution format.",
+      "row_level_query_status": "not_retrieved",
+      "query_attempt": "The Afghanistan-filtered feature query was attempted, but the web retrieval interface returned an access/cache-miss error; no features were obtained or inspected.",
+      "interpretation": "This is a strong official-service retrieval lead, not yet a completed Afghanistan row-level verification. Do not use service schema alone to confirm any district record or update candidate labels."
     }
   },
   "rules": [
@@ -5726,6 +5755,13 @@
       "scope": "Country-level workflow status only; not row-level name evidence",
       "finding": "Afghanistan is listed as In Progress, with work active for approximately five weeks at the time accessed.",
       "interpretation": "Treat current COD-AB update activity as a reason to obtain the latest row-level Afghanistan gazetteer before closing disputed labels. This status page is not itself a district gazetteer."
+    },
+    {
+      "id": "OCHA_GLOBAL_COD_ADMIN2_SERVICE_SCHEMA",
+      "source_url": "https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0",
+      "scope": "OCHA GIS global Admin2 service schema only; no Afghanistan row-level features retrieved",
+      "finding": "The layer exposes ADM2 P-code, ADM1 parent P-code, multilingual names, validity dates and version fields. Afghanistan-filtered query could not be retrieved in this environment; schema metadata is not row-level verification.",
+      "checked_on": "2026-11-01"
     }
   ],
   "secondary_source_checks": [
