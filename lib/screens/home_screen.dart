@@ -15,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   DateTime selectedDate = DateTime.now();
   String language = 'ps';
   String city = 'Kabul';
+  int asrFactor = 2;
   int tab = 0;
 
   static const cities = <String, List<double>>{
@@ -47,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
       date: selectedDate,
       latitude: cities[city]![0],
       longitude: cities[city]![1],
+      asrFactor: asrFactor,
     );
     final isToday = DateUtils.isSameDay(selectedDate, DateTime.now());
 
@@ -133,6 +135,8 @@ class _HomeScreenState extends State<HomeScreen> {
           _sectionTitle(language == 'en' ? 'Prayer times' : language == 'fa' ? 'اوقات نماز' : 'د لمانځه وختونه'),
           const SizedBox(height: 8),
           _citySelector(),
+          const SizedBox(height: 8),
+          _asrSelector(),
           const SizedBox(height: 12),
           _prayerCard(prayer),
           const SizedBox(height: 12),
@@ -177,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Card(child: ListTile(
             leading: const Icon(Icons.location_on_outlined),
             title: Text(language == 'en' ? 'Selected city' : language == 'fa' ? 'شهر انتخاب‌شده' : 'ټاکل شوی ښار'),
-            subtitle: Text(city),
+            subtitle: Text(_cityLabel(city)),
             trailing: const Icon(Icons.location_city),
           )),
           _citySelector(),
@@ -273,6 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   final picked = await showDatePicker(
                     context: context,
                     initialDate: selectedDate,
+                    locale: Locale(language),
                     firstDate: DateTime(1900),
                     lastDate: DateTime(2100),
                   );
@@ -420,18 +425,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _prayerCard(PrayerTimes times) {
     final entries = [
-      ['فجر', 'Fajr', times.fajr],
-      ['لمر خاته', 'Sunrise', times.sunrise],
-      ['ماسپښین', 'Dhuhr', times.dhuhr],
-      ['مازدیګر', 'Asr', times.asr],
-      ['ماښام', 'Maghrib', times.maghrib],
-      ['ماخوستن', 'Isha', times.isha],
+      ['سهار', 'صبح', 'Fajr', times.fajr],
+      ['لمر خاته', 'طلوع آفتاب', 'Sunrise', times.sunrise],
+      ['ماسپښین', 'ظهر', 'Dhuhr', times.dhuhr],
+      ['مازدیګر', 'عصر', 'Asr', times.asr],
+      ['ماښام', 'مغرب', 'Maghrib', times.maghrib],
+      ['ماخوستن', 'عشاء', 'Isha', times.isha],
     ];
     return Card(
       child: Column(
         children: entries.map((e) {
-          final label = language == 'en' ? e[1] as String : e[0] as String;
-          final time = e[2] as DateTime;
+          final label = e[language == 'en' ? 2 : language == 'fa' ? 1 : 0] as String;
+          final time = e[3] as DateTime;
           return ListTile(
             dense: true,
             leading: const Icon(Icons.access_time, color: Color(0xFFD4AF37)),
@@ -442,6 +447,57 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           );
         }).toList(),
+      ),
+    );
+  }
+
+  String _cityLabel(String value) {
+    const labels = <String, List<String>>{
+      'Kabul': ['کابل', 'کابل', 'Kabul'],
+      'Kandahar': ['کندهار', 'قندهار', 'Kandahar'],
+      'Herat': ['هرات', 'هرات', 'Herat'],
+      'Mazar-e-Sharif': ['مزارشریف', 'مزارشریف', 'Mazar-e-Sharif'],
+      'Jalalabad': ['جلال‌آباد', 'جلال‌آباد', 'Jalalabad'],
+      'Kunduz': ['کندز', 'کندز', 'Kunduz'],
+    };
+    return labels[value]![language == 'en' ? 2 : language == 'fa' ? 1 : 0];
+  }
+
+  Widget _asrSelector() {
+    final title = language == 'en'
+        ? 'Asr calculation'
+        : language == 'fa'
+            ? 'روش محاسبه عصر'
+            : 'د مازدیګر د لمانځه طریقه';
+    final standard = language == 'en'
+        ? 'Standard (Shafi‘i)'
+        : language == 'fa'
+            ? 'معیاری (شافعی)'
+            : 'معیاري (شافعي)';
+    final hanafi = language == 'en'
+        ? 'Hanafi'
+        : language == 'fa'
+            ? 'حنفی'
+            : 'حنفي';
+    return Card(
+      child: ListTile(
+        leading: const Icon(Icons.tune, color: Color(0xFF145A42)),
+        title: Text(title),
+        subtitle: Text(language == 'en'
+            ? 'Choose the method used for Asr'
+            : language == 'fa'
+                ? 'روش مورد نظر را انتخاب کنید'
+                : 'د مازدیګر د وخت د محاسبې طریقه وټاکئ'),
+        trailing: DropdownButton<int>(
+          value: asrFactor,
+          items: [
+            DropdownMenuItem(value: 1, child: Text(standard)),
+            DropdownMenuItem(value: 2, child: Text(hanafi)),
+          ],
+          onChanged: (value) {
+            if (value != null) setState(() => asrFactor = value);
+          },
+        ),
       ),
     );
   }
@@ -457,7 +513,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: DropdownButton<String>(
             isExpanded: true,
             value: city,
-            items: cities.keys.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
+            items: cities.keys.map((c) => DropdownMenuItem(value: c, child: Text(_cityLabel(c)))).toList(),
             onChanged: (v) { if (v != null) setState(() => city = v); },
           ),
         ),
