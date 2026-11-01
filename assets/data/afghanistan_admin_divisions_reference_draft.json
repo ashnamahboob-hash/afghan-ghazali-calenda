@@ -4062,8 +4062,8 @@
         "candidate_local": "درواز پائین (ما می )",
         "workbook_en": "Darwaz",
         "workbook_local": "درواز",
-        "type": "Specific vs broader label; retain pending source reconciliation",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "OCHA code/name corroborates extended candidate label",
+        "status": "OCHA 2024 Annex 1 identifies AF1722 as Darwaz-e-Payin; English label corrected. Local-script variant remains open.",
         "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF1722 with Darwaz-e-Payin. English label corrected; local-script variant remains open."
       },
       {
@@ -4208,8 +4208,8 @@
         "candidate_en": "Chinarto",
         "workbook_en": "Gizab",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "Secondary workbook code/name conflict; OCHA corroborates candidate",
+        "status": "OCHA HAG February 2021 identifies AF2506 as Chinarto; candidate name retained. Workbook v04 appears to swap the Chinarto/Gizab names across AF2506 and AF2507. Local-script exact form remains open.",
         "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2506 with Chinarto. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open."
       },
       {
@@ -4219,8 +4219,8 @@
         "candidate_en": "Gizab",
         "workbook_en": "Chinarto",
         "unit_type": "Temporaray District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "Secondary workbook code/name conflict; OCHA corroborates candidate",
+        "status": "OCHA HAG February 2021 identifies AF2507 as Gizab; candidate name retained. Workbook v04 appears to swap the Chinarto/Gizab names across AF2506 and AF2507. Local-script exact form remains open.",
         "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2507 with Gizab. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open."
       },
       {
@@ -4230,8 +4230,8 @@
         "candidate_en": "Chahar Chino",
         "workbook_en": "Chahar Chino",
         "unit_type": "District",
-        "type": "Local-script spelling/transliteration discrepancy",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "OCHA code/name conflict with secondary workbook",
+        "status": "OCHA HAG February 2021 explicitly identifies AF2504 as Shahid-e-Hassas; candidate local label retained and English label corrected. Workbook v04's Chahar Chino label is not accepted for this P-code. Local-script verification remains open.",
         "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2504 with Shahid-e-Hassas. Candidate local label «شهید حساس» is retained; the previous workbook-aligned English label was corrected."
       },
       {
@@ -4241,8 +4241,8 @@
         "candidate_en": "Tirenkot",
         "workbook_en": "Tirenkot",
         "unit_type": "Provincial Capital",
-        "type": "Local-script spelling/transliteration discrepancy",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "OCHA orthographic spelling preferred",
+        "status": "OCHA 2024 Annex 1 spells AF2501 as Tirinkot; English label corrected. Local-script orthographic variant remains open.",
         "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF2501 with Tirinkot. English label corrected to the OCHA spelling; local-script orthographic variant remains open."
       },
       {
@@ -4252,8 +4252,8 @@
         "candidate_en": "Chaharsada",
         "workbook_en": "Chaharsada",
         "unit_type": "District",
-        "type": "Local-script spelling/transliteration discrepancy",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "OCHA code/name corroborates alternate candidate spelling",
+        "status": "OCHA 2024 Annex 1 identifies AF2304 as Charsadra; English label corrected. Local-script variant remains open.",
         "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF2304 with Charsadra. English label corrected; local-script variant remains open."
       },
       {
@@ -4473,8 +4473,8 @@
         "candidate_en": "Gereshk",
         "workbook_en": "Gereshk",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "OCHA HAG February 2021 uses Nahr-e-Saraj for AF3004 while the workbook uses Gereshk. Treat as an alternate/expanded name pending current COD row review.",
         "independent_source_review": "OCHA HAG February 2021 pairs AF3004 with Nahr-e-Saraj. This is an alternate/historical name for the Gereshk label in the workbook; do not treat as a confirmed code error without current COD row review."
       },
       {
@@ -4484,8 +4484,8 @@
         "candidate_en": "Nawa",
         "workbook_en": "Nawa",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "OCHA HAG February 2021 uses Nawa-e-Barakzaiy for AF3003 while the workbook uses Nawa. Treat as an alternate/expanded name pending current COD row review.",
         "independent_source_review": "OCHA HAG February 2021 pairs AF3003 with Nawa-e-Barakzaiy. This is an alternate/expanded name for Nawa; do not treat as a confirmed code error without current COD row review."
       },
       {
@@ -4685,8 +4685,8 @@
         "candidate_en": "Baghlan-e-Markazi",
         "workbook_en": "Baghlan-e-Markazi",
         "unit_type": "District",
-        "type": "Substantive local-name or P-code/name discrepancy; do not overwrite automatically",
-        "status": "Compared against user-supplied CSV and targeted OCHA code/name evidence on 2026-11-01; local-script mismatch remains open unless directly corroborated.",
+        "type": "OCHA code/name evidence conflicts with secondary workbook",
+        "status": "OCHA 2024 Annex 1 identifies AF0905 as Baghlan-e-Jadid; English label corrected. Candidate local label retained; local-script mismatch remains open.",
         "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF0905 with Baghlan-e-Jadid. The workbook's English label conflicts. Candidate local label «بغلان جدید» is retained; local-script discrepancy remains open pending direct local-language source."
       },
       {
@@ -5626,6 +5626,15 @@
           ]
         }
       ]
-    }
+    },
+    "labels_subsequently_overridden_by_ocha": 5,
+    "subsequently_overridden_record_ids": [
+      "AF0905",
+      "AF1722",
+      "AF2304",
+      "AF2501",
+      "AF2504"
+    ],
+    "labels_currently_matching_workbook_from_initial_alignment": 96
   }
 }
