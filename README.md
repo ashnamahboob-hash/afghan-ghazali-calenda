@@ -155,3 +155,33 @@ The default Flutter package name can be changed with Android Studio's refactor t
 4. Add local notifications and user reminders.
 5. Add app icon, splash screen, accessibility and device-size testing.
 6. Complete full Dari and English translations and RTL/LTR layout review.
+
+### OCHA 2026 status and source-version reconciliation (2026-11-01)
+
+A fresh check of OCHA's COD Status Dashboard (dashboard last updated
+2026-10-31) reports Afghanistan COD-AB reference year 2026, with 34 ADM1
+and 401 ADM2 features. It reports COD-PS reference year 2027 with 457 ADM2
+P-codes, 56 of which do not join to the COD-AB. The separate COD-AB
+coverage/work dashboard (observed 2026-10-23) lists Afghanistan as
+**In Progress**, with a review window shown as five months and GIS
+publication marked Yes.
+
+This needs to be distinguished from the accessible HDX/AGCHO dataset
+metadata, which still describes the COD-AB as established in 2019, last
+reviewed for accuracy in July 2024, and metadata last updated 2025-01-17.
+The public dashboard's 2026 summary gives feature counts and reference year,
+but the retrieved page does not expose the 401 row-level ADM2 P-code/name/
+parent records. Therefore:
+
+- The 2026 dashboard figures are recorded as official dataset-level status,
+  not as row-level name verification.
+- The user-supplied v04 workbook (valid_on=2026-06-23) is not assumed to be
+  the 2026 COD-AB gazetteer.
+- The complete 401-row primary-source comparison remains pending.
+- Do not change stable IDs, local-script labels, or parent mappings based
+  only on dashboard counts or the 457-row COD-PS table.
+
+The source-version evidence and the remaining retrieval gap are recorded in
+assets/data/afghanistan_admin_divisions_reference_draft.json under
+sources.official_status_dashboard. A concise investigation log is in
+docs/admin-reference-ocha-source-audit-2026-11-01.md.
