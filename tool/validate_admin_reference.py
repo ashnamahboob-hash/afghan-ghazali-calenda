@@ -14,8 +14,8 @@ import sys
 from pathlib import Path
 
 
-PROVINCE_ID = re.compile(r"^AF\\d{2}$")
-DISTRICT_ID = re.compile(r"^AF\\d{4}$")
+PROVINCE_ID = re.compile(r"^AF\d{2}$")
+DISTRICT_ID = re.compile(r"^AF\d{4}$")
 
 
 def fail(message: str) -> None:
