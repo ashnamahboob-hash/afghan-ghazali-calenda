@@ -132,3 +132,11 @@ Current exact-P-code comparison against the user-supplied v04 workbook:
 - The selector does not generate crop calendars, sowing dates, seed rates, or district-level agricultural statistics.
 - `runtime_preview.enabled=true` records this limited UI activation; `production_official_data_enabled=false` keeps official production use disabled.
 - A Flutter loader validates 34 unique province IDs and 401 unique ADM2 IDs. Dedicated Flutter analysis and test CI was added.
+
+## User-supplied administrative zone grouping (2026-11-01)
+- `administrative_zones_draft.json` stores four regional groupings supplied by the user: Central (Kabul), Southern (Kandahar), Eastern (Nangarhar), and Southeastern (Ghazni).
+- The crosswalk contains 72 unique ADM2 P-codes. All 72 codes were matched by exact P-code to the existing 401-record candidate administrative reference, and all four groups' parent province IDs match the candidate hierarchy (Kabul AF01, Kandahar AF27, Nangarhar AF06, Ghazni AF11).
+- User-supplied Pashto display labels are preserved separately as aliases. They do not overwrite the candidate reference's existing local or English labels.
+- Zone names and memberships are treated as a user-supplied regional grouping, not an officially verified administrative level. All records remain pending primary-source verification.
+- This file does not add or change ADM2 IDs, change parent relationships, or enable district-level agricultural recommendations.
+
