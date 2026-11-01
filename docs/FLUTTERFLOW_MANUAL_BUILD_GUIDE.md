@@ -16,6 +16,8 @@ This guide is intentionally staged: make a working read-only shell first, then a
 
 ## 1. Build order
 
+For exact page-load, selector-change, navigation, error and data-release action sequences, follow [`FLUTTERFLOW_ACTION_FLOW_SPEC.md`](FLUTTERFLOW_ACTION_FLOW_SPEC.md) alongside this visual widget guide.
+
 Build and preview one page at a time in this order:
 
 1. **App shell + HomePage** — header, date card, prayer summary, navigation.
