@@ -110,3 +110,8 @@ The five local-script differences are limited to these P-codes: `AF2706`, `AF080
 **Interpretation:** the linked repository provides a reproducible secondary cross-check for the 401 P-code set and parent hierarchy used by the app draft. It does not establish that the 457-row population CSVs are published by this repository, nor does it certify the 56 additional population P-codes. The repository's CC-BY-4.0 licence and declared coverage are not proof of official OCHA/AGCHO status.
 
 **Implementation decision:** keep the current 401-unit app reference unchanged. Retain the linked repository as a separately attributed secondary source snapshot. Keep name differences in an audit/crosswalk report until reviewed against an attributable primary gazetteer; do not silently overwrite local or English labels. The 457-row population dataset remains a separate source dataset.
+
+
+## 6. Detailed district-name review
+
+The complete P-code-keyed list of all 113 label differences (5 local-script and 112 English) is recorded in [Administrative District Name Crosswalk Review](admin-name-crosswalk-review-2026-11-01.md). The crosswalk is review-only: it does not change the app's 401-unit reference or approve either source's labels as authoritative.
