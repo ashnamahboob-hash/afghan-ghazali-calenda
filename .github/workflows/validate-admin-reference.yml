@@ -8,7 +8,9 @@ on:
       - "assets/data/administrative_zones_draft.json"
       - "tool/validate_admin_reference.py"
       - "tool/fetch_ocha_cod_ab_afg_adm2.py"
+      - "tool/afghanistan_401_gis_pcode_verifier.py"
       - "test/test_ocha_cod_fetcher.py"
+      - "test/test_afghanistan_401_gis_pcode_verifier.py"
       - "docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json"
       - ".github/workflows/validate-admin-reference.yml"
   pull_request:
@@ -18,7 +20,9 @@ on:
       - "assets/data/administrative_zones_draft.json"
       - "tool/validate_admin_reference.py"
       - "tool/fetch_ocha_cod_ab_afg_adm2.py"
+      - "tool/afghanistan_401_gis_pcode_verifier.py"
       - "test/test_ocha_cod_fetcher.py"
+      - "test/test_afghanistan_401_gis_pcode_verifier.py"
       - "docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json"
       - ".github/workflows/validate-admin-reference.yml"
   workflow_dispatch:
@@ -36,7 +40,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run OCHA snapshot parser unit tests
-        run: python -m unittest discover -s test -p "test_ocha_cod_fetcher.py"
+      - name: Run administrative GIS audit and OCHA parser unit tests
+        run: python -m unittest discover -s test -p "test_*.py"
       - name: Validate draft dataset structure and audit counts
         run: python tool/validate_admin_reference.py
