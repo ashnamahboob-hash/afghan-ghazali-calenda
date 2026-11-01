@@ -13,6 +13,7 @@ on:
       - "assets/data/afghanistan_admin_divisions_reference_draft.json"
       - "assets/data/temporary_district_parent_mapping_draft.json"
       - "tool/validate_admin_reference.py"
+      - "docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json"
       - ".github/workflows/validate-admin-reference.yml"
   workflow_dispatch:
 
