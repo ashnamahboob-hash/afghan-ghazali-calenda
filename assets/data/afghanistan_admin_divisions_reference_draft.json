@@ -5479,7 +5479,15 @@
     ],
     "independent_source_checks_completed": 9,
     "independent_source_checks_last_reviewed": "2026-11-01",
-    "english_label_corrections_from_ocha": 5
+    "english_label_corrections_from_ocha": 5,
+    "review_triage": {
+      "last_reviewed": "2026-11-01",
+      "total_pending": 52,
+      "orthographic_or_transliteration": 37,
+      "material_name_or_code_conflicts": 7,
+      "source_checked_or_alternate_name_pending_local_review": 8,
+      "note": "Triage only. All listed records remain pending; categories prioritize review and do not certify or change any name."
+    }
   },
   "english_name_review_status": {
     "method": "P-code keyed comparison of all candidate ADM2 English labels against the user-provided afg_admin_boundaries.xlsx v04 (valid_on 2026-06-23), using the workbook adm2_name field. This is secondary-reference alignment, not primary-source certification.",
@@ -5636,5 +5644,32 @@
       "AF2504"
     ],
     "labels_currently_matching_workbook_from_initial_alignment": 96
-  }
+  },
+  "dataset_level_source_checks": [
+    {
+      "id": "OCHA_COD_STATUS_DASHBOARD_2026-11-01",
+      "source_name": "OCHA Common Operational Datasets status dashboard",
+      "source_url": "https://ocha-dap.github.io/cod-site/status/",
+      "accessed_on": "2026-11-01",
+      "scope": "Afghanistan dataset-level status only; not row-level name evidence",
+      "findings": {
+        "adm1_features": 34,
+        "adm2_features": 401,
+        "cod_ab_reference_year": 2026,
+        "cod_ps_reference_year": 2027,
+        "cod_ps_adm2_pcodes": 457,
+        "cod_ps_adm2_pcodes_not_in_cod_ab": 56
+      },
+      "interpretation": "The dashboard reports 401 Afghanistan ADM2 COD-AB features and 56 of 457 ADM2 COD-PS P-codes not in COD-AB. This supports keeping the 56 unmatched workbook/PS records separate from the 401-record candidate reference until row-level reconciliation. It does not verify any individual district name or P-code mapping."
+    },
+    {
+      "id": "OCHA_COD_AB_WORK_STATUS_2026-11-01",
+      "source_name": "OCHA COD-AB work status dashboard",
+      "source_url": "https://ocha-dap.github.io/hdx-cod-ab-status/",
+      "accessed_on": "2026-11-01",
+      "scope": "Country-level workflow status only; not row-level name evidence",
+      "finding": "Afghanistan is listed as In Progress, with work active for approximately five weeks at the time accessed.",
+      "interpretation": "Treat current COD-AB update activity as a reason to obtain the latest row-level Afghanistan gazetteer before closing disputed labels. This status page is not itself a district gazetteer."
+    }
+  ]
 }
