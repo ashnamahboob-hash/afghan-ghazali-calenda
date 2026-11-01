@@ -16,13 +16,13 @@ void main() {
 
     await tester.tap(find.byIcon(Icons.chevron_right));
     await tester.pumpAndSettle();
-    expect(find.text(nextLabel), findsOneWidget);
+    expect(find.text(nextLabel), findsNWidgets(2));
 
     final previousLabel =
         '${AfghanCalendar.monthName(current.month, 'ps')} '
         '${AfghanCalendar.formatNumber(current.year, 'ps')}';
     await tester.tap(find.byIcon(Icons.chevron_left));
     await tester.pumpAndSettle();
-    expect(find.text(previousLabel), findsOneWidget);
+    expect(find.text(previousLabel), findsNWidgets(2));
   });
 }
