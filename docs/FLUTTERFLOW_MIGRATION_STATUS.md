@@ -19,6 +19,7 @@
 - [x] Added Flutter tests for the migration helper layer.
 - [x] Added FlutterFlow custom-code setup and JSON field mapping instructions.
 - [x] Added staged FlutterFlow manual page-build guide.
+- [x] Added page-by-page FlutterFlow action-flow specification covering app state, Home, Calendar, Prayer Times, Settings, geography and data-release gates.
 - [x] Added Code File / Custom Action integration workflow based on current FlutterFlow documentation.
 - [x] Added population custom-function setup instructions and data-integrity tests.
 - [x] Kept `main` untouched; migration work is isolated on a new branch based on `preview/browser-review`.
@@ -39,6 +40,7 @@
 - [ ] Confirm population CSV publisher, source URL, publication date, licence and methodology.
 - [ ] Complete current primary-source administrative row-level reconciliation.
 - [ ] Rebuild Home Dashboard visually in FlutterFlow.
+- [ ] Configure and preview the documented page action flows in FlutterFlow.
 - [ ] Build calendar and prayer-time pages.
 - [ ] Build population, province/district and agriculture pages.
 - [ ] Add maps and exports after data-source readiness.
@@ -51,6 +53,12 @@
 - Workflow run: `41305136222` — **success**.
 - Jobs/steps passed: population-ingestion script syntax check, Python data-tool tests, Flutter dependency setup, `flutter analyze`, and `flutter test`.
 - This validates code and synthetic fixtures only; it does not ingest the original population CSV payloads or verify their publisher provenance.
+
+## Latest migration-preparation update (2026-11-01)
+
+- Added `docs/FLUTTERFLOW_ACTION_FLOW_SPEC.md` with ordered action sequences and validation rules for the first implementation milestone.
+- Linked the action-flow specification from the manual visual build guide.
+- The most important remaining practical step is still in the FlutterFlow project: create/parse the Code File and configure the HomePage action flows. GitHub preparation alone cannot execute these builder actions.
 
 ## Current status
 
