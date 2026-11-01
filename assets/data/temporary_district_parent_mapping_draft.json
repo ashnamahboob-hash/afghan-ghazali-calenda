@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "AFGHANISTAN-TEMPORARY-DISTRICT-PARENT-MAPPING-DRAFT-2026-11",
+  "last_updated": "2026-11-01",
+  "status": "user_supplied_candidate_mapping_pending_primary_source_verification",
+  "purpose": "Draft crosswalk of selected temporary/new ADM2 units to proposed parent or cluster labels. This file records user-supplied mapping claims for review; it does not certify OCHA/AGCHO administrative status, mergers, boundary changes, or current COD-AB relationships.",
+  "provenance": {
+    "supplied_by": "User in conversation on 2026-11-01",
+    "claimed_mapping_basis": "User labels the parent mapping column as the original OCHA cluster mapping.",
+    "source_document_url": null,
+    "source_document_version": null,
+    "source_row_level_evidence_available": false,
+    "verification_status": "pending",
+    "verification_note": "No original OCHA row-level source document or current COD-AB gazetteer extract was attached with this table. Preserve the supplied parent labels verbatim and verify each P-code/name/parent relationship before runtime use."
+  },
+  "rules": [
+    "Keep each ADM2 P-code unchanged; it is the join key for this draft.",
+    "Treat parent_mapping_supplied as a user-supplied candidate label, not as a verified administrative parent or merger instruction.",
+    "Do not merge, delete, rename, or re-parent an ADM2 record based only on this crosswalk.",
+    "Keep unresolved source differences explicit; in particular, AF2409 has a competing parent label in the earlier supplied workbook excerpt (Patoo).",
+    "Do not infer that all records in this file are currently classified as Temporary District in the supplied v04 workbook."
+  ],
+  "counts": {
+    "records": 12,
+    "unique_adm2_pcodes": 12,
+    "verified_records": 0,
+    "pending_records": 12
+  },
+  "records": [
+    {
+      "id": "AF3018",
+      "district_name_ps": "مارجه",
+      "district_name_en": "Marja",
+      "province_en": "Helmand",
+      "province_pcode": "AF30",
+      "parent_mapping_supplied": "Nad-e-Ali",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF3015",
+      "district_name_ps": "باباجي",
+      "district_name_en": "Babaji",
+      "province_en": "Helmand",
+      "province_pcode": "AF30",
+      "parent_mapping_supplied": "Nahr-e-Saraj",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending",
+      "review_note": "Newly supplied record; not present in the earlier 27-row temporary-district excerpt."
+    },
+    {
+      "id": "AF2719",
+      "district_name_ps": "ډنډ",
+      "district_name_en": "Dand",
+      "province_en": "Kandahar",
+      "province_pcode": "AF27",
+      "parent_mapping_supplied": "Kandahar Capital",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF2720",
+      "district_name_ps": "تختهپل",
+      "district_name_en": "Takhtapul",
+      "province_en": "Kandahar",
+      "province_pcode": "AF27",
+      "parent_mapping_supplied": "Spin Boldak",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF0623",
+      "district_name_ps": "سپین غر",
+      "district_name_en": "Spinghar",
+      "province_en": "Nangarhar",
+      "province_pcode": "AF06",
+      "parent_mapping_supplied": "Achin",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF1516",
+      "district_name_ps": "شلتن",
+      "district_name_en": "Sheltan",
+      "province_en": "Kunar",
+      "province_pcode": "AF15",
+      "parent_mapping_supplied": "Shigal",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF2409",
+      "district_name_ps": "پاتو",
+      "district_name_en": "Pato",
+      "province_en": "Daykundi",
+      "province_pcode": "AF24",
+      "parent_mapping_supplied": "Gizab / Patoo",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending",
+      "review_note": "Earlier supplied workbook excerpt maps Pato to parent Patoo. The new supplied mapping says Gizab / Patoo; preserve both claims pending source verification."
+    },
+    {
+      "id": "AF1910",
+      "district_name_ps": "آقتاش",
+      "district_name_en": "Aqtash",
+      "province_en": "Kunduz",
+      "province_pcode": "AF19",
+      "parent_mapping_supplied": "Khan Abad",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF0808",
+      "district_name_ps": "آبشار",
+      "district_name_en": "Abshar",
+      "province_en": "Panjshir",
+      "province_pcode": "AF08",
+      "parent_mapping_supplied": "Dara",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF0707",
+      "district_name_ps": "بادپښ",
+      "district_name_en": "Badpash",
+      "province_en": "Laghman",
+      "province_pcode": "AF07",
+      "parent_mapping_supplied": "Mehtarlam",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF3219",
+      "district_name_ps": "کوه زور",
+      "district_name_en": "Kohezor",
+      "province_en": "Herat",
+      "province_pcode": "AF32",
+      "parent_mapping_supplied": "Shindand",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    },
+    {
+      "id": "AF3220",
+      "district_name_ps": "زاول",
+      "district_name_en": "Zawal",
+      "province_en": "Herat",
+      "province_pcode": "AF32",
+      "parent_mapping_supplied": "Shindand",
+      "record_classification": "temporary_district_candidate",
+      "verification_status": "pending"
+    }
+  ]
+}
