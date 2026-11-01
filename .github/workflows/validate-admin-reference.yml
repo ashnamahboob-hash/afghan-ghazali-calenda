@@ -5,6 +5,7 @@ on:
     paths:
       - "assets/data/afghanistan_admin_divisions_reference_draft.json"
       - "assets/data/temporary_district_parent_mapping_draft.json"
+      - "assets/data/administrative_zones_draft.json"
       - "tool/validate_admin_reference.py"
       - "tool/fetch_ocha_cod_ab_afg_adm2.py"
       - "test/test_ocha_cod_fetcher.py"
@@ -14,6 +15,7 @@ on:
     paths:
       - "assets/data/afghanistan_admin_divisions_reference_draft.json"
       - "assets/data/temporary_district_parent_mapping_draft.json"
+      - "assets/data/administrative_zones_draft.json"
       - "tool/validate_admin_reference.py"
       - "tool/fetch_ocha_cod_ab_afg_adm2.py"
       - "test/test_ocha_cod_fetcher.py"
