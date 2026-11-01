@@ -105,3 +105,12 @@ Port or reproduce tests for:
 - agricultural advice source/geographic validity;
 - Pashto/Dari RTL and English LTR;
 - responsive navigation and all interactive controls.
+
+### Population integrity helpers added for FlutterFlow
+
+Portable functions in `flutterflow_custom_code/lib/afghan_ghazali_functions.dart`:
+- `populationCellJson(rawValue)`: retains exact raw literal and distinguishes blank, hyphen, NULL, numeric and unparsed values.
+- `sumPopulationCellsJson(rawValuesJson)`: returns a publishable total only if every supplied value is numeric; partial sums are marked audit-only.
+- `comparePcodeSetsJson(sourceCodesJson, referenceCodesJson)`: exposes matched, source-only, reference-only and duplicate codes without silently discarding rows.
+
+These functions support data integrity but do not resolve provenance or verify the supplied 2027 estimates.
