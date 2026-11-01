@@ -3658,9 +3658,119 @@
   },
   "district_name_review_status": {
     "method": "P-code keyed comparison against user-supplied afg_admin_boundaries.xlsx v04 (valid_on 2026-06-23); labels are secondary-reference aligned, not primary-source certified.",
-    "workbook_name_matches_completed": 33,
-    "workbook_name_matches_remaining": 368,
+    "workbook_name_matches_completed": 136,
+    "workbook_name_matches_remaining": 265,
     "completed_record_ids": [
+      "AF0501",
+      "AF0502",
+      "AF0503",
+      "AF0504",
+      "AF0505",
+      "AF0506",
+      "AF0507",
+      "AF0801",
+      "AF0802",
+      "AF0803",
+      "AF0804",
+      "AF0805",
+      "AF0806",
+      "AF0807",
+      "AF1201",
+      "AF1202",
+      "AF1203",
+      "AF1204",
+      "AF1205",
+      "AF1206",
+      "AF1207",
+      "AF1208",
+      "AF1209",
+      "AF1210",
+      "AF1211",
+      "AF1212",
+      "AF1213",
+      "AF1214",
+      "AF1215",
+      "AF1216",
+      "AF1217",
+      "AF1218",
+      "AF1219",
+      "AF1301",
+      "AF1302",
+      "AF1303",
+      "AF1304",
+      "AF1305",
+      "AF1306",
+      "AF1307",
+      "AF1308",
+      "AF1309",
+      "AF1310",
+      "AF1311",
+      "AF1601",
+      "AF1602",
+      "AF1603",
+      "AF1604",
+      "AF1605",
+      "AF1606",
+      "AF1607",
+      "AF1608",
+      "AF1701",
+      "AF1702",
+      "AF1703",
+      "AF1704",
+      "AF1705",
+      "AF1706",
+      "AF1707",
+      "AF1708",
+      "AF1709",
+      "AF1710",
+      "AF1711",
+      "AF1712",
+      "AF1713",
+      "AF1714",
+      "AF1715",
+      "AF1716",
+      "AF1717",
+      "AF1718",
+      "AF1719",
+      "AF1720",
+      "AF1721",
+      "AF1722",
+      "AF1723",
+      "AF1724",
+      "AF1725",
+      "AF1726",
+      "AF1727",
+      "AF1728",
+      "AF2001",
+      "AF2002",
+      "AF2003",
+      "AF2004",
+      "AF2005",
+      "AF2006",
+      "AF2007",
+      "AF2008",
+      "AF2101",
+      "AF2102",
+      "AF2103",
+      "AF2104",
+      "AF2105",
+      "AF2106",
+      "AF2107",
+      "AF2108",
+      "AF2109",
+      "AF2111",
+      "AF2112",
+      "AF2113",
+      "AF2114",
+      "AF2115",
+      "AF2116",
+      "AF2201",
+      "AF2202",
+      "AF2203",
+      "AF2204",
+      "AF2205",
+      "AF2206",
+      "AF2207",
       "AF2401",
       "AF2402",
       "AF2403",
@@ -3670,13 +3780,6 @@
       "AF2407",
       "AF2408",
       "AF2409",
-      "AF0801",
-      "AF0802",
-      "AF0803",
-      "AF0804",
-      "AF0805",
-      "AF0806",
-      "AF0807",
       "AF2701",
       "AF2702",
       "AF2703",
@@ -3695,6 +3798,157 @@
       "AF2716",
       "AF3201"
     ],
-    "last_reviewed": "2026-11-01"
+    "last_reviewed": "2026-11-01",
+    "comparison_batches": [
+      {
+        "reviewed_on": "2026-11-01",
+        "province_pcodes": [
+          "AF17",
+          "AF20",
+          "AF05",
+          "AF12",
+          "AF22",
+          "AF13",
+          "AF16",
+          "AF21"
+        ],
+        "records_checked": 103,
+        "method": "Manual P-code keyed comparison of candidate English/local labels against afg_admin2 workbook columns adm2_name, adm2_name1; no automatic normalization of disputed labels."
+      }
+    ],
+    "discrepancy_notes": [
+      {
+        "id": "AF1703",
+        "candidate_en": "Arghanj Khwah",
+        "workbook_en": "Arghanchkhwah",
+        "type": "English spelling variant"
+      },
+      {
+        "id": "AF1704",
+        "candidate_en": "Yaftal-e-Sufla",
+        "candidate_local": "یفتل سفلی",
+        "workbook_en": "Yaftal",
+        "workbook_local": "یفتل",
+        "type": "Potentially broader/different label; retain pending source reconciliation"
+      },
+      {
+        "id": "AF1722",
+        "candidate_en": "Darwaz-e-Payin",
+        "candidate_local": "درواز پائین (ما می )",
+        "workbook_en": "Darwaz",
+        "workbook_local": "درواز",
+        "type": "Specific vs broader label; retain pending source reconciliation"
+      },
+      {
+        "id": "AF1724",
+        "candidate_en": "Shaki",
+        "workbook_en": "Shakai",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF1727",
+        "candidate_local": "دروازبالا ( نیسی)",
+        "workbook_local": "درواز بالا",
+        "type": "Local-script spacing/parenthetical variant"
+      },
+      {
+        "id": "AF1213",
+        "candidate_en": "Nika",
+        "workbook_en": "Neka",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF1205",
+        "candidate_en": "Sar Rawzah",
+        "workbook_en": "Sar Rawza",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF1216",
+        "candidate_en": "Dila",
+        "workbook_en": "Delah",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF1217",
+        "candidate_en": "Wazakhah",
+        "workbook_en": "Wazakhwa",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF1207",
+        "candidate_local": "زرغون شهر",
+        "workbook_local": "زرغون ښار",
+        "type": "Local-script label discrepancy"
+      },
+      {
+        "id": "AF1307",
+        "candidate_en": "Jaji",
+        "candidate_local": "علی خیل",
+        "workbook_en": "Zazi",
+        "workbook_local": "آریوب ځاځۍ",
+        "type": "Substantive name discrepancy; do not overwrite"
+      },
+      {
+        "id": "AF1308",
+        "candidate_en": "Lija Ahmad Khel",
+        "workbook_en": "Laj-e-Ahmadkhel",
+        "type": "Transliteration/spacing variant"
+      },
+      {
+        "id": "AF1305",
+        "candidate_en": "Zadran",
+        "workbook_en": "Waza Zadran",
+        "type": "Specific vs broader label; retain pending source reconciliation"
+      },
+      {
+        "id": "AF1302",
+        "candidate_en": "Ahmadaba",
+        "workbook_en": "Ahmad Abad",
+        "type": "Spacing variant"
+      },
+      {
+        "id": "AF1311",
+        "candidate_en": "Dand Wa Patan",
+        "workbook_en": "Dand-e-Patan",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF1604",
+        "candidate_en": "Nurgaram",
+        "workbook_en": "Nurgeram",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF1605",
+        "candidate_en": "Duab",
+        "workbook_en": "Dowab",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF1601",
+        "candidate_local": "پرونس",
+        "workbook_local": "پارون",
+        "type": "Local-script discrepancy"
+      },
+      {
+        "id": "AF2116",
+        "candidate_en": "Sharak-e-Hayratan",
+        "workbook_en": "Chahi",
+        "type": "Substantive name discrepancy; do not overwrite"
+      },
+      {
+        "id": "AF2114",
+        "candidate_en": "Keshendeh",
+        "workbook_en": "Kushenda",
+        "type": "Transliteration variant"
+      },
+      {
+        "id": "AF2107",
+        "candidate_en": "Sholgareh",
+        "workbook_en": "Sholgarah",
+        "type": "Transliteration variant"
+      }
+    ]
   }
 }
