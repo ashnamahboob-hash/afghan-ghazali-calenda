@@ -416,4 +416,63 @@ class AfghanGhazaliFunctions {
     });
   }
 
+  /// Current six-city configuration copied from the existing source app.
+  /// Coordinates must be checked against a trusted geographic source before
+  /// production prayer-time publication.
+  static const Map<String, Map<String, dynamic>> cityConfigurations = {
+    'kabul': {
+      'latitude': 34.5553,
+      'longitude': 69.2075,
+      'namePs': 'کابل',
+      'nameFa': 'کابل',
+      'nameEn': 'Kabul',
+    },
+    'kandahar': {
+      'latitude': 31.6289,
+      'longitude': 65.7372,
+      'namePs': 'کندهار',
+      'nameFa': 'قندهار',
+      'nameEn': 'Kandahar',
+    },
+    'herat': {
+      'latitude': 34.3529,
+      'longitude': 62.2040,
+      'namePs': 'هرات',
+      'nameFa': 'هرات',
+      'nameEn': 'Herat',
+    },
+    'mazar_e_sharif': {
+      'latitude': 36.7069,
+      'longitude': 67.1122,
+      'namePs': 'مزار شریف',
+      'nameFa': 'مزار شریف',
+      'nameEn': 'Mazar-e-Sharif',
+    },
+    'jalalabad': {
+      'latitude': 34.4342,
+      'longitude': 70.4478,
+      'namePs': 'جلال‌آباد',
+      'nameFa': 'جلال‌آباد',
+      'nameEn': 'Jalalabad',
+    },
+    'kunduz': {
+      'latitude': 36.7286,
+      'longitude': 68.8681,
+      'namePs': 'کندز',
+      'nameFa': 'کندز',
+      'nameEn': 'Kunduz',
+    },
+  };
+
+  static String supportedCitiesJson() =>
+      jsonEncode(cityConfigurations.entries.map((entry) {
+        return <String, dynamic>{'id': entry.key, ...entry.value};
+      }).toList());
+
+  static String cityConfigurationJson(String cityId) {
+    final city = cityConfigurations[cityId];
+    if (city == null) throw ArgumentError('Unknown city ID: $cityId');
+    return jsonEncode(<String, dynamic>{'id': cityId, ...city});
+  }
+
 }
