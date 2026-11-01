@@ -13,6 +13,8 @@ void main() {
     );
 
     expect(dataset.recordCount, 1);
+    expect(dataset.nationalAggregate?.sourceValue('Total Estimated Population 2027'), '50,489,104');
+    expect(dataset.nationalAggregate?.sourceValue('adm2_pcode'), '');
     expect(dataset.findByPcode('AF0101')!.provincePcode, 'AF01');
     expect(dataset.findByPcode('AF0101')!.sourceValue('Total Estimated Population 2027'), ' 1,234 ');
     expect(dataset.findByPcode('AF9999'), isNull);
@@ -29,6 +31,17 @@ void main() {
 
     expect(dataset.records[0].sourceValue('Urban Total'), ' -   ');
     expect(dataset.records[1].sourceValue('Urban Total'), '');
+  });
+
+  test('rejects more than one blank-P-code aggregate row', () {
+    expect(
+      () => Population2027Dataset.parse(
+        '$header\n'
+        ',,,,,,,100\n'
+        ',,,,,,,200\n',
+      ),
+      throwsFormatException,
+    );
   });
 
   test('rejects duplicate stable ADM2 P-codes', () {
