@@ -50,3 +50,16 @@ OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is
 - Source PDF: user-provided `سالنامه-احصائیوی-1402نسخه-وبسایت.pdf`. Printed pages 209, 210, 211, 216, 220 correspond to PDF pages 248, 249, 250, 255, 259 in the file reader.
 - All records are province-level; the source does not provide district breakdowns here. Blank source cells remain null, not zero. The extract is draft pending a second numeric transcription review and is not enabled for runtime advice.
 - Keep NSIA 1402 figures separate from MAIL 1402 figures; do not merge or average the two sources.
+
+
+## COD-AB workbook cross-check update (2026-11-01)
+- The supplied v04 workbook contains 34 unique ADM1 P-codes and 457 unique ADM2 P-codes across mixed unit types.
+- All 401 candidate ADM2 records in `afghanistan_admin_divisions_reference_draft.json` have a matching P-code in the workbook, and all 401 parent ADM1 P-codes match.
+- The 401 candidate records correspond in the workbook to 367 `District`, 30 `Provincial Capital`, 3 `Temporaray District`, and 1 `Capital` records. This explains why the candidate hierarchy's 401 ADM2 entries must not automatically be called 401 ordinary districts.
+- The workbook has 56 additional ADM2 P-codes absent from the candidate hierarchy (30 `District`, 26 `Temporaray District`). They are not added to the candidate hierarchy without further source review.
+- Province-name variants are recorded in the JSON cross-check metadata: `Hirat/Herat`, `Hilmand/Helmand`, `کنر ها/کونړ`, and `میدان وردک/میدان وردگ`. No spelling has been silently normalized.
+- The complete 401-row district-name comparison remains pending. P-code presence and parent-code agreement do not establish name equivalence or official status.
+- This comparison used the user-supplied workbook and does not constitute independent OCHA/AGCHO certification. Runtime remains disabled pending official row-level verification and name review.
+
+## NSIA 1402 review status correction
+- The Kandahar NSIA 1402 extract's second transcription review was completed against the original PDF text on 2026-11-01 for Tables 8-6, 8-7, 8-13 and 8-17. Blank source cells remain null; the extract remains province-level and is not enabled for runtime advice.
