@@ -178,7 +178,7 @@
           "id": "AF1704",
           "names": {
             "local": "یفتل سفلی",
-            "en": "Yaftal-e-Sufla"
+            "en": "Yaftal"
           },
           "slug": "yaftal-e-sufla-af1704"
         },
@@ -202,7 +202,7 @@
           "id": "AF1722",
           "names": {
             "local": "درواز پائین (ما می )",
-            "en": "Darwaz-e-Payin"
+            "en": "Darwaz"
           },
           "slug": "darwaz-e-payin-af1722"
         },
@@ -218,7 +218,7 @@
           "id": "AF1703",
           "names": {
             "local": "ارغنچخواه",
-            "en": "Arghanj Khwah"
+            "en": "Arghanchkhwah"
           },
           "slug": "arghanj-khwah-af1703"
         },
@@ -266,7 +266,7 @@
           "id": "AF1724",
           "names": {
             "local": "شکی",
-            "en": "Shaki"
+            "en": "Shakai"
           },
           "slug": "shaki-af1724"
         },
@@ -448,7 +448,7 @@
           "id": "AF1213",
           "names": {
             "local": "نیکه",
-            "en": "Nika"
+            "en": "Neka"
           },
           "slug": "nika-af1213"
         },
@@ -512,7 +512,7 @@
           "id": "AF1205",
           "names": {
             "local": "سرروضه (سرحوضه)",
-            "en": "Sar Rawzah"
+            "en": "Sar Rawza"
           },
           "slug": "sar-rawzah-af1205"
         },
@@ -520,7 +520,7 @@
           "id": "AF1216",
           "names": {
             "local": "دیله",
-            "en": "Dila"
+            "en": "Delah"
           },
           "slug": "dila-af1216"
         },
@@ -560,7 +560,7 @@
           "id": "AF1217",
           "names": {
             "local": "وازه خواه",
-            "en": "Wazakhah"
+            "en": "Wazakhwa"
           },
           "slug": "wazakhah-af1217"
         },
@@ -668,7 +668,7 @@
           "id": "AF1307",
           "names": {
             "local": "علی خیل",
-            "en": "Jaji"
+            "en": "Zazi"
           },
           "slug": "jaji-af1307"
         },
@@ -676,7 +676,7 @@
           "id": "AF1308",
           "names": {
             "local": "لجه احمد خیل",
-            "en": "Lija Ahmad Khel"
+            "en": "Laj-e-Ahmadkhel"
           },
           "slug": "lija-ahmad-khel-af1308"
         },
@@ -700,7 +700,7 @@
           "id": "AF1305",
           "names": {
             "local": "حّدران",
-            "en": "Zadran"
+            "en": "Waza Zadran"
           },
           "slug": "zadran-af1305"
         },
@@ -708,7 +708,7 @@
           "id": "AF1302",
           "names": {
             "local": "احمد آبا",
-            "en": "Ahmadaba"
+            "en": "Ahmad Abad"
           },
           "slug": "ahmadaba-af1302"
         },
@@ -724,7 +724,7 @@
           "id": "AF1311",
           "names": {
             "local": "دند وپټان",
-            "en": "Dand Wa Patan"
+            "en": "Dand-e-Patan"
           },
           "slug": "dand-wa-patan-af1311"
         },
@@ -766,7 +766,7 @@
           "id": "AF1604",
           "names": {
             "local": "نورگرام",
-            "en": "Nurgaram"
+            "en": "Nurgeram"
           },
           "slug": "nurgaram-af1604"
         },
@@ -774,7 +774,7 @@
           "id": "AF1605",
           "names": {
             "local": "دو آب",
-            "en": "Duab"
+            "en": "Dowab"
           },
           "slug": "duab-af1605"
         },
@@ -840,7 +840,7 @@
           "id": "AF2116",
           "names": {
             "local": "شهرک حیرتان",
-            "en": "Sharak-e-Hayratan"
+            "en": "Chahi"
           },
           "slug": "sharak-e-hayratan-af2116"
         },
@@ -888,7 +888,7 @@
           "id": "AF2111",
           "names": {
             "local": "چار بولک",
-            "en": "Char Bolak"
+            "en": "Chaharbolak"
           },
           "slug": "char-bolak-af2111"
         },
@@ -920,7 +920,7 @@
           "id": "AF2114",
           "names": {
             "local": "کشنده",
-            "en": "Keshendeh"
+            "en": "Kushenda"
           },
           "slug": "keshendeh-af2114"
         },
@@ -936,7 +936,7 @@
           "id": "AF2107",
           "names": {
             "local": "شولگره",
-            "en": "Sholgareh"
+            "en": "Sholgarah"
           },
           "slug": "sholgareh-af2107"
         },
@@ -3821,7 +3821,8 @@
         "id": "AF1703",
         "candidate_en": "Arghanj Khwah",
         "workbook_en": "Arghanchkhwah",
-        "type": "English spelling variant"
+        "type": "English spelling variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1704",
@@ -3829,7 +3830,8 @@
         "candidate_local": "یفتل سفلی",
         "workbook_en": "Yaftal",
         "workbook_local": "یفتل",
-        "type": "Potentially broader/different label; retain pending source reconciliation"
+        "type": "Potentially broader/different label; retain pending source reconciliation",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1722",
@@ -3837,13 +3839,15 @@
         "candidate_local": "درواز پائین (ما می )",
         "workbook_en": "Darwaz",
         "workbook_local": "درواز",
-        "type": "Specific vs broader label; retain pending source reconciliation"
+        "type": "Specific vs broader label; retain pending source reconciliation",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1724",
         "candidate_en": "Shaki",
         "workbook_en": "Shakai",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1727",
@@ -3855,25 +3859,29 @@
         "id": "AF1213",
         "candidate_en": "Nika",
         "workbook_en": "Neka",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1205",
         "candidate_en": "Sar Rawzah",
         "workbook_en": "Sar Rawza",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1216",
         "candidate_en": "Dila",
         "workbook_en": "Delah",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1217",
         "candidate_en": "Wazakhah",
         "workbook_en": "Wazakhwa",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1207",
@@ -3887,43 +3895,50 @@
         "candidate_local": "علی خیل",
         "workbook_en": "Zazi",
         "workbook_local": "آریوب ځاځۍ",
-        "type": "Substantive name discrepancy; do not overwrite"
+        "type": "Substantive name discrepancy; do not overwrite",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1308",
         "candidate_en": "Lija Ahmad Khel",
         "workbook_en": "Laj-e-Ahmadkhel",
-        "type": "Transliteration/spacing variant"
+        "type": "Transliteration/spacing variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1305",
         "candidate_en": "Zadran",
         "workbook_en": "Waza Zadran",
-        "type": "Specific vs broader label; retain pending source reconciliation"
+        "type": "Specific vs broader label; retain pending source reconciliation",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1302",
         "candidate_en": "Ahmadaba",
         "workbook_en": "Ahmad Abad",
-        "type": "Spacing variant"
+        "type": "Spacing variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1311",
         "candidate_en": "Dand Wa Patan",
         "workbook_en": "Dand-e-Patan",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1604",
         "candidate_en": "Nurgaram",
         "workbook_en": "Nurgeram",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1605",
         "candidate_en": "Duab",
         "workbook_en": "Dowab",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF1601",
@@ -3935,19 +3950,138 @@
         "id": "AF2116",
         "candidate_en": "Sharak-e-Hayratan",
         "workbook_en": "Chahi",
-        "type": "Substantive name discrepancy; do not overwrite"
+        "type": "Substantive name discrepancy; do not overwrite",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF2114",
         "candidate_en": "Keshendeh",
         "workbook_en": "Kushenda",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
       },
       {
         "id": "AF2107",
         "candidate_en": "Sholgareh",
         "workbook_en": "Sholgarah",
-        "type": "Transliteration variant"
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      }
+    ],
+    "english_name_fixes_from_excel": [
+      {
+        "id": "AF1704",
+        "from": "Yaftal-e-Sufla",
+        "to": "Yaftal",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1722",
+        "from": "Darwaz-e-Payin",
+        "to": "Darwaz",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1703",
+        "from": "Arghanj Khwah",
+        "to": "Arghanchkhwah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1724",
+        "from": "Shaki",
+        "to": "Shakai",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1213",
+        "from": "Nika",
+        "to": "Neka",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1205",
+        "from": "Sar Rawzah",
+        "to": "Sar Rawza",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1216",
+        "from": "Dila",
+        "to": "Delah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1217",
+        "from": "Wazakhah",
+        "to": "Wazakhwa",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1307",
+        "from": "Jaji",
+        "to": "Zazi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1308",
+        "from": "Lija Ahmad Khel",
+        "to": "Laj-e-Ahmadkhel",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1305",
+        "from": "Zadran",
+        "to": "Waza Zadran",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1302",
+        "from": "Ahmadaba",
+        "to": "Ahmad Abad",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1311",
+        "from": "Dand Wa Patan",
+        "to": "Dand-e-Patan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1604",
+        "from": "Nurgaram",
+        "to": "Nurgeram",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1605",
+        "from": "Duab",
+        "to": "Dowab",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2116",
+        "from": "Sharak-e-Hayratan",
+        "to": "Chahi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2111",
+        "from": "Char Bolak",
+        "to": "Chaharbolak",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2114",
+        "from": "Keshendeh",
+        "to": "Kushenda",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2107",
+        "from": "Sholgareh",
+        "to": "Sholgarah",
+        "updated_on": "2026-11-01"
       }
     ]
   }
