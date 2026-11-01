@@ -15,8 +15,8 @@ void main() {
     );
 
     final adm2Ids = reference.provinces
-        .expand((province) => province.districts)
-        .map((unit) => district.id)
+        .expand((province) => province.units)
+        .map((unit) => unit.id)
         .toList();
     expect(adm2Ids.toSet(), hasLength(401));
     expect(adm2Ids, contains('AF2701'));
