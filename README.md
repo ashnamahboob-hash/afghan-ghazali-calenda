@@ -220,3 +220,14 @@ candidate reference using exact ADM2 ID/P-code strings.
 The complete per-record comparison is recorded in
 `docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json`.
 The current OCHA/AGCHO row-level gazetteer comparison remains pending.
+
+### OCHA GIS service retrieval lead
+
+An OCHA global COD Admin2 ArcGIS layer has been identified:
+https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0
+
+Its schema exposes ADM2 and ADM1 P-codes, multilingual names, validity dates,
+and version fields. The Afghanistan-filtered feature query could not be
+retrieved in this environment, so this is not yet row-level verification.
+The next source task is to obtain and archive the Afghanistan query response
+from this service (or the equivalent current COD Services API).
