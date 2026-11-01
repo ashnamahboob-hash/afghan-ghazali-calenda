@@ -71,6 +71,13 @@ Create the custom functions only after connecting FlutterFlow to its dedicated r
 
 The exact FlutterFlow custom-code editor may wrap function bodies in generated boilerplate. Keep the portable helper class in a custom-code file supported by the connected FlutterFlow project, then add a supported import to the generated custom-functions/actions file. Do not hand-edit generated files unless the FlutterFlow GitHub integration explicitly supports that workflow; generated files may be overwritten by subsequent syncs.
 
+### City configuration helpers
+
+- `supportedCitiesJson()` — returns the six city IDs, localized labels and source-app coordinates.
+- `cityConfigurationJson(cityId)` — returns one city configuration by stable ID.
+
+Use the stable IDs `kabul`, `kandahar`, `herat`, `mazar_e_sharif`, `jalalabad`, and `kunduz` in App State and database relations. The coordinates are copied from the existing app and still require geographic verification before production.
+
 ## Reading JSON results in FlutterFlow
 
 The functions return a JSON string to keep their interface simple and serializable. Use FlutterFlow's JSON parsing / Get JSON Field actions with these paths:
