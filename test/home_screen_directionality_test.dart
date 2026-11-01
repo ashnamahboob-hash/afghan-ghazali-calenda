@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:afghan_ghazali_calendar/screens/home_screen.dart';
 
 void main() {
-  testWidgets('Pashto and Dari use RTL while English uses LTR', (tester) async {
+  testWidgets('Pashto and Dari use right-to-left direction; English uses left-to-right', (tester) async {
     await tester.pumpWidget(
       const MaterialApp(home: HomeScreen()),
     );
