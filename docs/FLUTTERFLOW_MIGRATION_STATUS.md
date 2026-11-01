@@ -25,6 +25,8 @@
 - [x] Added Code File / Custom Action integration workflow.
 - [x] Added population custom-function setup instructions and data-integrity tests.
 - [x] Added `docs/FLUTTERFLOW_AI_BUILD_PACK.md` with ready-to-paste FlutterFlow Designer prompts for the app shell and each page, reusable component breakdown, and implementation gates.
+- [x] Added FlutterFlow-friendly positional wrappers `prayerTimesForCityJson` and `homeDashboardJson` so HomePage can retrieve date, city and prayer data with one static-method call.
+- [x] Added tests for the combined Home payload and positional prayer wrapper; GitHub Actions run `41315138725` completed successfully.
 - [x] Kept `main` untouched; migration work is isolated on `flutterflow/migration-prep`.
 
 ## Reported by owner, not independently verified in FlutterFlow
@@ -36,7 +38,7 @@
 
 ## Not yet done
 
-- [ ] Confirm the new positional methods \`homeDashboardJson\` and \`prayerTimesForCityJson\` appear in the FlutterFlow Code File action picker and run the smoke tests.
+- [ ] Confirm the new positional methods `homeDashboardJson` and `prayerTimesForCityJson` appear in the FlutterFlow Code File action picker and run the smoke tests.
 - [ ] Add and compile typed FlutterFlow wrappers if direct invocation of named-argument methods is unavailable.
 - [ ] Select and provision backend (Supabase/Firebase/local snapshot strategy).
 - [ ] Validate official Afghan Solar Hijri date algorithm and replace provisional logic if needed.
@@ -53,14 +55,15 @@
 
 ## Latest automated validation
 
-- Workflow run: `41305136222` — **success**.
-- Jobs/steps passed: population-ingestion script syntax check, Python data-tool tests, Flutter dependency setup, `flutter analyze`, and `flutter test`.
+- Workflow run: `41315138725` — **success** (includes new Home dashboard payload and positional prayer-wrapper tests).
+- Jobs/steps passed: population-ingestion script syntax check, Python data-tool tests, Flutter dependency setup, `flutter analyze`, and `flutter test`. The new wrapper tests are included in this successful run.
 - This validates code and synthetic fixtures only; it does not ingest the original population CSV payloads or verify their publisher provenance.
 
 ## Latest migration-preparation update (2026-11-01)
 
 - Added `docs/FLUTTERFLOW_AI_BUILD_PACK.md` containing a consistent design system and paste-ready AI generation prompts for Home, Calendar, Prayer Times, Settings, Province Explorer, safe Population/Agriculture empty states, Maps/Reports shells and About.
 - The build pack recommends generating HomePage first, extracting reusable Components, then connecting the parsed Code File and expanding to the remaining pages.
+- Added positional static methods `homeDashboardJson(isoDate, cityId, asrFactor)` and `prayerTimesForCityJson(isoDate, cityId, asrFactor)`. Updated action-flow and smoke-test documents to prefer the one-call HomePage method.
 - FlutterFlow supports AI page/component generation and reusable Components. The generated visual UI still needs owner review, data binding and action configuration in the FlutterFlow project.
 - Owner reports successful Validate and Parse for `my_class.dart`; this is not yet proof that static methods compile in action flows or return correct runtime values.
 - The FlutterFlow canvas is not directly controlled by GitHub repository operations. The next practical milestone is to use the HomePage prompt in the AI Designer / page generator, review the generated layout, and then connect its date and prayer data.
