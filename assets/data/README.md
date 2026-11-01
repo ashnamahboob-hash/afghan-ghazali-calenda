@@ -106,3 +106,10 @@ Current exact-P-code comparison against the user-supplied v04 workbook:
 - 332 exact local-name matches across the full 401-record comparison; 69 total local-name discrepancies were identified, of which 52 remain open.
 - No unresolved local-script label was auto-normalized. English labels also have a separate review history, including five targeted OCHA overrides.
 - This comparison establishes alignment to the supplied workbook only; it does not certify the workbook as the current official OCHA/AGCHO gazetteer.
+
+
+## Temporary-district parent mapping (draft)
+- `temporary_district_parent_mapping_draft.json` records 12 user-supplied ADM2 P-code/name/parent-label pairs, including Babaji (AF3015).
+- The parent labels are preserved verbatim as user-supplied candidate mappings. The supplied table describes them as OCHA's original cluster mapping, but no original row-level OCHA source file or current COD-AB gazetteer extract accompanied the table; all 12 records therefore remain `pending` and none is certified.
+- This is a crosswalk for review only. It must not be used to merge districts, change stable IDs, infer official administrative parentage, or activate new runtime district relationships.
+- AF2409 (Pato) has a source difference to resolve: the earlier supplied v04 excerpt gives parent `Patoo`, while the new supplied table gives `Gizab / Patoo`. Both are retained in the draft note pending primary-source verification.
