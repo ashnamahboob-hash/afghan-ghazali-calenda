@@ -45,12 +45,12 @@ def build_snapshot(payload: dict, retrieved_at: str, expected_count: int = 401) 
         code = attributes.get("adm2_pcode")
         parent = attributes.get("adm1_pcode")
         country = attributes.get("adm0_pcode")
-        if not isinstance(code, str) or not re.fullmatch(r"AF\\d{4}", code):
+        if not isinstance(code, str) or not re.fullmatch(r"AF\d{4}", code):
             raise ValueError(f"feature {index} has invalid/missing ADM2 P-code: {code!r}")
         if code in seen:
             raise ValueError(f"duplicate ADM2 P-code in OCHA response: {code}")
         seen.add(code)
-        if not isinstance(parent, str) or not re.fullmatch(r"AF\\d{2}", parent):
+        if not isinstance(parent, str) or not re.fullmatch(r"AF\d{2}", parent):
             raise ValueError(f"{code} has invalid/missing ADM1 parent P-code: {parent!r}")
         if country != "AFG":
             raise ValueError(f"{code} is not tagged with adm0_pcode=AFG")
@@ -119,7 +119,7 @@ def main() -> int:
         output = Path(args.output)
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(
-            json.dumps(snapshot, ensure_ascii=False, indent=2) + "\\n",
+            json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
         print(f"Saved OCHA source snapshot: {output}")
