@@ -209,13 +209,15 @@ candidate reference using exact ADM2 ID/P-code strings.
 
 - 401/401 IDs joined.
 - 401/401 parent province IDs matched.
-- English labels: 289 exact; 20 additional differences are formatting-only
-  under conservative normalization; 92 remain different.
+- English labels: 289 exact; 20 formatting-only; 67 minor spelling/
+  transliteration variants are non-blocking under the user's instruction; 25
+  more divergent labels are retained for a later manual glance. No English
+  spelling difference blocks the draft selector.
 - Local-script labels: 396 exact; 1 additional difference is spacing-only;
-  4 remain different after normalization.
-- No candidate labels were overwritten and no pending discrepancy was marked
-  resolved. The secondary source's sampled row-level `source` metadata is
-  empty, so this is corroboration only—not official COD-AB verification.
+  4 remain different after normalization and stay pending.
+- Existing candidate labels were retained; none were overwritten from the
+  secondary source. The source's sampled row-level `source` metadata is empty,
+  so this is corroboration only—not official COD-AB verification.
 
 The complete per-record comparison is recorded in
 `docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json`.
