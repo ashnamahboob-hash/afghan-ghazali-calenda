@@ -9,6 +9,12 @@ void main() {
 
     expect(find.text('افغاني لمریز  ·  عیسوي میلادي  ·  اسلامي قمري'),
         findsOneWidget);
-    expect(find.textContaining('·'), findsWidgets);
+
+    final dateLabels = find.byWidgetPredicate(
+      (widget) =>
+          widget is Text && (widget.data?.contains(' · ') ?? false),
+    );
+    // Each populated day cell shows the Gregorian and Islamic day numbers.
+    expect(dateLabels, findsAtLeastNWidgets(29));
   });
 }
