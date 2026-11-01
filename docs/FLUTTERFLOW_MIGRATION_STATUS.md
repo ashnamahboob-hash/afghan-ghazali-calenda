@@ -18,6 +18,8 @@
 - [x] Added six-city prayer configuration with stable IDs and localized labels, preserving source coordinates.
 - [x] Added Flutter tests for the migration helper layer.
 - [x] Added FlutterFlow custom-code setup and JSON field mapping instructions.
+- [x] Added staged FlutterFlow manual page-build guide.
+- [x] Added Code File / Custom Action integration workflow based on current FlutterFlow documentation.
 - [x] Added population custom-function setup instructions and data-integrity tests.
 - [x] Kept `main` untouched; migration work is isolated on a new branch based on `preview/browser-review`.
 
@@ -30,6 +32,8 @@
 ## Not yet done
 
 - [ ] Connect FlutterFlow project to a dedicated GitHub repository/branch.
+- [ ] Create the Code File in FlutterFlow and verify the parser accepts the calculation class.
+- [ ] Add and compile typed FlutterFlow wrappers for the date and prayer methods.
 - [ ] Select and provision backend (Supabase/Firebase/local snapshot strategy).
 - [ ] Validate official Afghan Solar Hijri date algorithm and replace provisional logic if needed.
 - [ ] Confirm population CSV publisher, source URL, publication date, licence and methodology.
