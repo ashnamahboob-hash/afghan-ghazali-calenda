@@ -15,6 +15,7 @@
 - [x] Recorded critical blockers and acceptance gates.
 - [x] Added a portable, Flutter-independent Dart calculation layer for Solar/Hijri date conversion and approximate prayer times.
 - [x] Added population missing-value handling, complete-only aggregation and P-code set comparison helpers.
+- [x] Added six-city prayer configuration with stable IDs and localized labels, preserving source coordinates.
 - [x] Added Flutter tests for the migration helper layer.
 - [x] Added FlutterFlow custom-code setup and JSON field mapping instructions.
 - [x] Added population custom-function setup instructions and data-integrity tests.
