@@ -208,6 +208,44 @@ def validate_parent_crosswalk(path: Path) -> list[str]:
         "all parent crosswalk records remain pending; no primary-source verification is claimed",
     ]
 
+
+def validate_secondary_audit(path: Path) -> list[str]:
+    """Validate the recorded independent secondary ADM2 cross-check."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    counts = data.get("counts", {})
+    if data.get("classification") != "secondary independent reference only; not official COD-AB evidence":
+        fail("secondary cross-check must remain explicitly classified as non-official")
+    if counts.get("source_records") != 401 or counts.get("candidate_records") != 401:
+        fail("secondary cross-check must compare 401 source and candidate records")
+    if counts.get("exact_id_matches") != 401 or counts.get("missing_candidate_ids") != []:
+        fail("secondary cross-check must preserve the complete exact-ID join")
+    if counts.get("exact_parent_province_id_matches") != 401 or counts.get("parent_province_id_differences") != 0:
+        fail("secondary cross-check parent-province match counts are inconsistent")
+    english = data.get("english_differences", [])
+    local = data.get("local_script_differences", [])
+    parents = data.get("parent_differences", [])
+    if len(english) != counts.get("english_total_different_strings"):
+        fail("English difference rows do not match the summary count")
+    if len(local) != counts.get("local_script_total_different_strings"):
+        fail("local-script difference rows do not match the summary count")
+    if len(parents) != counts.get("parent_province_id_differences"):
+        fail("parent difference rows do not match the summary count")
+    if counts.get("english_exact_matches", 0) + counts.get("english_total_different_strings", 0) != 401:
+        fail("English exact and differing labels must account for all 401 ADM2 records")
+    if counts.get("local_script_exact_matches", 0) + counts.get("local_script_total_different_strings", 0) != 401:
+        fail("local-script exact and differing labels must account for all 401 ADM2 records")
+    method = data.get("comparison_method", {})
+    if method.get("no_candidate_labels_changed") is not True or method.get("no_discrepancy_status_changed") is not True:
+        fail("secondary cross-check must not claim candidate labels or review statuses were changed")
+    if not data.get("source", {}).get("url") or not data.get("source", {}).get("raw_url"):
+        fail("secondary cross-check must retain source and raw data URLs")
+    return [
+        "secondary reference cross-check covers 401 exact IDs and 401 parent IDs",
+        f"secondary label difference ledgers are internally consistent ({len(english)} English, {len(local)} local-script)",
+        "secondary cross-check remains non-official and does not close pending review records",
+    ]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -222,6 +260,9 @@ def main() -> int:
         crosswalk_path = Path("assets/data/temporary_district_parent_mapping_draft.json")
         if crosswalk_path.exists():
             checks.extend(validate_parent_crosswalk(crosswalk_path))
+        secondary_audit_path = Path("docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json")
+        if secondary_audit_path.exists():
+            checks.extend(validate_secondary_audit(secondary_audit_path))
     except (OSError, json.JSONDecodeError, ValueError, TypeError) as exc:
         print(f"FAIL: {exc}", file=sys.stderr)
         return 1
