@@ -234,6 +234,24 @@ def validate_secondary_audit(path: Path) -> list[str]:
         fail("English exact and differing labels must account for all 401 ADM2 records")
     if counts.get("local_script_exact_matches", 0) + counts.get("local_script_total_different_strings", 0) != 401:
         fail("local-script exact and differing labels must account for all 401 ADM2 records")
+    triage = data.get("english_review_triage", {})
+    triage_counts = triage.get("counts", {})
+    triage_rows = triage.get("records", [])
+    expected_triage = {
+        "exact_match": 289,
+        "formatting_only": 20,
+        "minor_variant_non_blocking": 67,
+        "manual_glance_recommended": 25,
+        "total": 401,
+    }
+    if triage_counts != expected_triage or len(triage_rows) != 112:
+        fail("English spelling-variation triage counts/ledger are inconsistent")
+    if triage.get("candidate_labels_changed") is not False:
+        fail("English secondary-source triage must not claim candidate labels were changed")
+    if triage.get("official_certification") is not False:
+        fail("English secondary-source triage must not claim official certification")
+    if triage.get("draft_preview_blocked_by_english_spelling") is not False:
+        fail("user-approved minor English spelling differences must remain non-blocking")
     method = data.get("comparison_method", {})
     if method.get("no_candidate_labels_changed") is not True or method.get("no_discrepancy_status_changed") is not True:
         fail("secondary cross-check must not claim candidate labels or review statuses were changed")
