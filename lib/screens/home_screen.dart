@@ -50,7 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
     final isToday = DateUtils.isSameDay(selectedDate, DateTime.now());
 
-    return Scaffold(
+    return Directionality(
+      key: const ValueKey('home-content-direction'),
+      textDirection: language == 'en' ? TextDirection.ltr : TextDirection.rtl,
+      child: Scaffold(
       appBar: AppBar(
         title: Text(trTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
         actions: [
@@ -118,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
           NavigationDestination(icon: const Icon(Icons.settings), label: language == 'en' ? 'Settings' : language == 'fa' ? 'تنظیمات' : 'تنظیمات'),
         ],
       ),
-    );
+    ));
   }
 
 
