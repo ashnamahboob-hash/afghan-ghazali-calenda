@@ -99,6 +99,20 @@ local-script differences still need direct source review. Do not mark the
 gazetteer official or enable it as runtime administrative data until the
 complete primary-source verification and application tests are complete.
 
+## Draft ADM2 structural validation
+
+Run the dependency-free audit check from the repository root:
+
+```bash
+python tool/validate_admin_reference.py
+```
+
+The check validates the draft's 34 province / 401 ADM2 structure, unique stable
+IDs and slugs, parent-code hierarchy, bilingual labels, and review-audit
+bookkeeping. GitHub Actions runs it when the draft JSON, validator, or workflow
+changes. A passing structural check does not certify district names or make
+the dataset an official gazetteer.
+
 ## Requirements
 - Flutter SDK 3.22 or later
 - Android Studio or VS Code with Flutter extension
