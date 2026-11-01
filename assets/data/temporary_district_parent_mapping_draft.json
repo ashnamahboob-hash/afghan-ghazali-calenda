@@ -35,7 +35,8 @@
       "province_pcode": "AF30",
       "parent_mapping_supplied": "Nad-e-Ali",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF3015",
@@ -46,7 +47,8 @@
       "parent_mapping_supplied": "Nahr-e-Saraj",
       "record_classification": "temporary_district_candidate",
       "verification_status": "pending",
-      "review_note": "Newly supplied record; not present in the earlier 27-row temporary-district excerpt."
+      "review_note": "Newly supplied record; not present in the earlier 27-row temporary-district excerpt.",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF2719",
@@ -56,7 +58,8 @@
       "province_pcode": "AF27",
       "parent_mapping_supplied": "Kandahar Capital",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF2720",
@@ -66,7 +69,8 @@
       "province_pcode": "AF27",
       "parent_mapping_supplied": "Spin Boldak",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF0623",
@@ -76,7 +80,8 @@
       "province_pcode": "AF06",
       "parent_mapping_supplied": "Achin",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF1516",
@@ -86,7 +91,8 @@
       "province_pcode": "AF15",
       "parent_mapping_supplied": "Shigal",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF2409",
@@ -97,7 +103,8 @@
       "parent_mapping_supplied": "Gizab / Patoo",
       "record_classification": "temporary_district_candidate",
       "verification_status": "pending",
-      "review_note": "Earlier supplied workbook excerpt maps Pato to parent Patoo. The new supplied mapping says Gizab / Patoo; preserve both claims pending source verification."
+      "review_note": "Earlier supplied workbook excerpt maps Pato to parent Patoo. The new supplied mapping says Gizab / Patoo; preserve both claims pending source verification.",
+      "candidate_reference_membership": "present_in_401_candidate_reference"
     },
     {
       "id": "AF1910",
@@ -107,7 +114,8 @@
       "province_pcode": "AF19",
       "parent_mapping_supplied": "Khan Abad",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF0808",
@@ -117,7 +125,8 @@
       "province_pcode": "AF08",
       "parent_mapping_supplied": "Dara",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF0707",
@@ -127,7 +136,8 @@
       "province_pcode": "AF07",
       "parent_mapping_supplied": "Mehtarlam",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF3219",
@@ -137,7 +147,8 @@
       "province_pcode": "AF32",
       "parent_mapping_supplied": "Shindand",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     },
     {
       "id": "AF3220",
@@ -147,7 +158,18 @@
       "province_pcode": "AF32",
       "parent_mapping_supplied": "Shindand",
       "record_classification": "temporary_district_candidate",
-      "verification_status": "pending"
+      "verification_status": "pending",
+      "candidate_reference_membership": "not_in_401_candidate_reference"
     }
-  ]
+  ],
+  "cross_reference_audit": {
+    "compared_on": "2026-11-01",
+    "comparison_target": "afghanistan_admin_divisions_reference_draft.json",
+    "comparison_target_scope": "401 candidate ADM2 records",
+    "method": "Exact ADM2 P-code membership check; no name-based matching.",
+    "records_compared": 12,
+    "present_in_401_candidate_reference": 1,
+    "not_in_401_candidate_reference": 11,
+    "note": "Absence from the 401-candidate reference does not prove that a code is invalid or officially temporary. These records remain separate pending current COD-AB row-level verification."
+  }
 }
