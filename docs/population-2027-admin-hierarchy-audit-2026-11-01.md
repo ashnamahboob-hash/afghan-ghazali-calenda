@@ -80,3 +80,33 @@ All numeric population measures also reconcile from ADM2 to ADM1 and from ADM1 t
 6. Keep district-level agriculture advisory calculations disabled unless the population/admin hierarchy is separately reviewed for that use.
 
 **Conclusion:** The three files are internally coherent: their ADM0/ADM1/ADM2 population totals reconcile exactly, and the 457 ADM2 P-code set is a superset of the app's 401-code draft reference by exactly 56 codes. This is a valuable crosswalk finding, not completion of official row-level COD-AB verification.
+
+
+## 2A. Independent snapshot comparison against the linked Open Admin Data repository
+
+**Repository:** https://github.com/open-admin-data/afghanistan-administrative-divisions  
+**Dataset file:** `data/all-district.json`  
+**Snapshot:** `main` at commit `9ceec68cc8f3eb66116b304f8ceaa6c7330d6266` (2026-09-08)  
+**Declared licence:** CC-BY-4.0 (retain attribution when redistributing or adapting this dataset).
+
+A fresh row-level comparison was performed between that 401-record district file and the app's existing 401-unit draft reference:
+
+| Check | Result |
+|---|---:|
+| Source district records | 401 |
+| Unique source P-codes | 401 |
+| Draft-reference records | 401 |
+| Draft P-codes absent from source | 0 |
+| Source P-codes absent from draft | 0 |
+| Exact P-code matches | 401 / 401 |
+| Parent-province P-code mismatches | 0 |
+| Local-script name differences | 5 |
+| English-name differences | 112 |
+| Records with both local and English differences | 4 |
+| Records with at least one name difference | 113 |
+
+The five local-script differences are limited to these P-codes: `AF2706`, `AF0805`, `AF0806`, `AF2716`, and `AF0804`. English transliteration differences are more numerous. These are comparison findings only: neither source's labels are automatically preferred, and no names or IDs were changed.
+
+**Interpretation:** the linked repository provides a reproducible secondary cross-check for the 401 P-code set and parent hierarchy used by the app draft. It does not establish that the 457-row population CSVs are published by this repository, nor does it certify the 56 additional population P-codes. The repository's CC-BY-4.0 licence and declared coverage are not proof of official OCHA/AGCHO status.
+
+**Implementation decision:** keep the current 401-unit app reference unchanged. Retain the linked repository as a separately attributed secondary source snapshot. Keep name differences in an audit/crosswalk report until reviewed against an attributable primary gazetteer; do not silently overwrite local or English labels. The 457-row population dataset remains a separate source dataset.
