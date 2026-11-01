@@ -37,7 +37,7 @@
 
 ## Current status
 
-<badge>Preparation in progress</badge>
+**Status:** Preparation in progress
 
 The FlutterFlow UI itself has not been built by GitHub operations. The files in this branch are migration documentation and design contracts. No claim is made that the FlutterFlow project is connected to GitHub or that the app has been migrated.
 
