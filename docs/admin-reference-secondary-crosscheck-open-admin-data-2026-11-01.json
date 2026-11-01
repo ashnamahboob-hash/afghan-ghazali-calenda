@@ -631,5 +631,813 @@
     "This comparison does not establish that either dataset is correct. The secondary repository's README states its update date and license, but sampled row-level source metadata is empty.",
     "The results are not a replacement for current OCHA/AGCHO COD-AB gazetteer verification."
   ],
-  "decision": "Record as secondary corroboration only. Keep all existing local-name discrepancies and official verification statuses pending. Do not overwrite the 401 candidate records from this source."
+  "decision": "Record as secondary corroboration only. Keep all existing local-name discrepancies and official verification statuses pending. Do not overwrite the 401 candidate records from this source.",
+  "english_review_triage": {
+    "method": "Conservative text-normalization and normalized Levenshtein similarity; similarity threshold 0.80 is a triage heuristic only, not a correctness test.",
+    "user_policy_recorded_on": "2026-11-01",
+    "user_policy": "The user confirmed that small English spelling/transliteration differences are acceptable and should not block continued work.",
+    "counts": {
+      "exact_match": 289,
+      "formatting_only": 20,
+      "minor_variant_non_blocking": 67,
+      "manual_glance_recommended": 25,
+      "total": 401
+    },
+    "records": [
+      {
+        "id": "AF2804",
+        "draft": "Mingajek",
+        "secondary": "Mingajik",
+        "normalized_similarity": 0.875,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2402",
+        "draft": "Shahristan",
+        "secondary": "Shahrestan",
+        "normalized_similarity": 0.9,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2116",
+        "draft": "Chahi",
+        "secondary": "Sharak-e-Hayratan",
+        "normalized_similarity": 0.2,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF3013",
+        "draft": "Disho",
+        "secondary": "Deh-e-Shu",
+        "normalized_similarity": 0.429,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1604",
+        "draft": "Nurgeram",
+        "secondary": "Nurgaram",
+        "normalized_similarity": 0.875,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1513",
+        "draft": "Chapa Darah",
+        "secondary": "Chapa Dara",
+        "normalized_similarity": 0.9,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2505",
+        "draft": "Khas Urozgan",
+        "secondary": "Khas Uruzgan",
+        "normalized_similarity": 0.909,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1412",
+        "draft": "Shumul",
+        "secondary": "Shamal",
+        "normalized_similarity": 0.667,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1307",
+        "draft": "Zazi",
+        "secondary": "Jaji",
+        "normalized_similarity": 0.5,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1308",
+        "draft": "Laj-e-Ahmadkhel",
+        "secondary": "Lija Ahmad Khel",
+        "normalized_similarity": 0.846,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2610",
+        "draft": "Shamolzai",
+        "secondary": "Shamul Zayi",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0617",
+        "draft": "Momand Darah",
+        "secondary": "Muhmand Dara",
+        "normalized_similarity": 0.727,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF2811",
+        "draft": "Darz Ab",
+        "secondary": "Darzab",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF1503",
+        "draft": "Watapor",
+        "secondary": "Watapur",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1114",
+        "draft": "Jaghori",
+        "secondary": "Jaghuri",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1605",
+        "draft": "Dowab",
+        "secondary": "Duab",
+        "normalized_similarity": 0.6,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF0106",
+        "draft": "Shakardara",
+        "secondary": "Shakar Dara",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF1413",
+        "draft": "Zazi Maydan",
+        "secondary": "Jaji Maydan",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2409",
+        "draft": "Pato",
+        "secondary": "Patoo",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1501",
+        "draft": "Asadabad",
+        "secondary": "Asad Abad",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF3302",
+        "draft": "Pushterod",
+        "secondary": "Pushtrod",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0909",
+        "draft": "Jelgah",
+        "secondary": "Khwaja Hejran",
+        "normalized_similarity": 0.25,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF2713",
+        "draft": "Meyanishin",
+        "secondary": "Miyanshin",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0914",
+        "draft": "Guzargah-e-Noor",
+        "secondary": "Guzargah-e-Nur",
+        "normalized_similarity": 0.846,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF3304",
+        "draft": "Qalah-e-Kah",
+        "secondary": "Qala-e-Kah",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2503",
+        "draft": "Chorah",
+        "secondary": "Chora",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1213",
+        "draft": "Neka",
+        "secondary": "Nika",
+        "normalized_similarity": 0.75,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF0406",
+        "draft": "Daimirdad",
+        "secondary": "Daymirdad",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0705",
+        "draft": "Dawlat Shah",
+        "secondary": "Dawlatshah",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF2911",
+        "draft": "Qaramqul",
+        "secondary": "Qaram Qul",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF0702",
+        "draft": "Qarghayee",
+        "secondary": "Qarghayi",
+        "normalized_similarity": 0.778,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF3201",
+        "draft": "Herat",
+        "secondary": "Hirat",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2611",
+        "draft": "Khak-e-Afghan",
+        "secondary": "Kakar",
+        "normalized_similarity": 0.364,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF0408",
+        "draft": "Jaghato",
+        "secondary": "Jaghatu",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0107",
+        "draft": "Mosahi",
+        "secondary": "Musahi",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2406",
+        "draft": "Meramor",
+        "secondary": "Miramor",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0109",
+        "draft": "Khak-e-Jabar",
+        "secondary": "Khak-e-Jabbar",
+        "normalized_similarity": 0.909,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1514",
+        "draft": "Noorgal",
+        "secondary": "Nurgal",
+        "normalized_similarity": 0.714,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1305",
+        "draft": "Waza Zadran",
+        "secondary": "Zadran",
+        "normalized_similarity": 0.6,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF2908",
+        "draft": "Garziwan",
+        "secondary": "Garzewan",
+        "normalized_similarity": 0.875,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1302",
+        "draft": "Ahmad Abad",
+        "secondary": "Ahmadaba",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF3404",
+        "draft": "Chahar Burjak",
+        "secondary": "Char Burjak",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2806",
+        "draft": "Kham Ab",
+        "secondary": "Khamyab",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF3305",
+        "draft": "Shebkoh",
+        "secondary": "Shibkoh",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF3311",
+        "draft": "Purchaman",
+        "secondary": "Pur Chaman",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF1311",
+        "draft": "Dand-e-Patan",
+        "secondary": "Dand Wa Patan",
+        "normalized_similarity": 0.818,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2302",
+        "draft": "Do Layna",
+        "secondary": "DoLayna",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF0803",
+        "draft": "Darah",
+        "secondary": "Dara",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF3004",
+        "draft": "Gereshk",
+        "secondary": "Nahr-e-Saraj",
+        "normalized_similarity": 0.3,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF3003",
+        "draft": "Nawa",
+        "secondary": "Nawa-e-Barakzaiy",
+        "normalized_similarity": 0.286,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF2111",
+        "draft": "Chaharbolak",
+        "secondary": "Char Bolak",
+        "normalized_similarity": 0.818,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0618",
+        "draft": "Lalpura",
+        "secondary": "Lalpur",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2903",
+        "draft": "Khwaja Sabzposh",
+        "secondary": "Khwaja Sabz Posh",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF1816",
+        "draft": "Chah Ab",
+        "secondary": "Chahab",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF3210",
+        "draft": "Kushk-e-Kohna",
+        "secondary": "Kushk-e-Kuhna",
+        "normalized_similarity": 0.909,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1205",
+        "draft": "Sar Rawza",
+        "secondary": "Sar Rawzah",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2706",
+        "draft": "Shah Walikot",
+        "secondary": "Shah Wali Kot",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF2901",
+        "draft": "Maimana",
+        "secondary": "Maymana",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0805",
+        "draft": "Onaba",
+        "secondary": "Anawa",
+        "normalized_similarity": 0.6,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF3005",
+        "draft": "Washir",
+        "secondary": "Washer",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1403",
+        "draft": "Gurbaz",
+        "secondary": "Gurbuz",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1216",
+        "draft": "Delah",
+        "secondary": "Dila",
+        "normalized_similarity": 0.6,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1108",
+        "draft": "Zana Khan",
+        "secondary": "Zanakhan",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF1408",
+        "draft": "Alisher Aw Terizi",
+        "secondary": "Terezayi",
+        "normalized_similarity": 0.267,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF3011",
+        "draft": "Khanshin",
+        "secondary": "Reg-i-Khan Nishin",
+        "normalized_similarity": 0.571,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1507",
+        "draft": "Darah-e-Pech",
+        "secondary": "Dara-e-Pech",
+        "normalized_similarity": 0.9,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1907",
+        "draft": "Qala-e-zal",
+        "secondary": "Qala-e-Zal",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF2404",
+        "draft": "Khader",
+        "secondary": "Khadir",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1002",
+        "draft": "Shebar",
+        "secondary": "Shibar",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1704",
+        "draft": "Yaftal",
+        "secondary": "Yaftal-e-Sufla",
+        "normalized_similarity": 0.5,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF0404",
+        "draft": "Chak",
+        "secondary": "Chak-e-Wardak",
+        "normalized_similarity": 0.364,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF2715",
+        "draft": "Marof",
+        "secondary": "Maruf",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0906",
+        "draft": "Khenjan",
+        "secondary": "Khinjan",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2810",
+        "draft": "Qarqen",
+        "secondary": "Qarqin",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2606",
+        "draft": "Shahjoy",
+        "secondary": "Shah Joi",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1406",
+        "draft": "Nadershahkot",
+        "secondary": "Nadir Shah Kot",
+        "normalized_similarity": 0.917,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1811",
+        "draft": "Eshkamesh",
+        "secondary": "Eshkmesh",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1111",
+        "draft": "Qarabagh",
+        "secondary": "Qara Bagh",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF0405",
+        "draft": "Sayedabad",
+        "secondary": "Saydabad",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1703",
+        "draft": "Arghanchkhwah",
+        "secondary": "Arghanj Khwah",
+        "normalized_similarity": 0.846,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0806",
+        "draft": "Shutol",
+        "secondary": "Shutul",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0611",
+        "draft": "Pachiragam",
+        "secondary": "Pachir Wa Agam",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2114",
+        "draft": "Kushenda",
+        "secondary": "Keshendeh",
+        "normalized_similarity": 0.667,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1103",
+        "draft": "Khwaja Omari",
+        "secondary": "Khwaja Umari",
+        "normalized_similarity": 0.909,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1817",
+        "draft": "Yangi Qalah",
+        "secondary": "Yangi Qala",
+        "normalized_similarity": 0.9,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0911",
+        "draft": "Tala-Wa-Barfak",
+        "secondary": "Tala Wa Barfak",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF2107",
+        "draft": "Sholgarah",
+        "secondary": "Sholgareh",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1402",
+        "draft": "Esmail Khel Aw Mandozayi",
+        "secondary": "Mandozayi",
+        "normalized_similarity": 0.429,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1515",
+        "draft": "Narai",
+        "secondary": "Nari",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1407",
+        "draft": "Sabari Aw Yaqubi",
+        "secondary": "Sabari",
+        "normalized_similarity": 0.429,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF0908",
+        "draft": "Dehsalah",
+        "secondary": "Deh Salah",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF3101",
+        "draft": "Qala-e Naw",
+        "secondary": "Qala-e-Naw",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF3216",
+        "draft": "Chesht-e-Sharif",
+        "secondary": "Chisht-e-Sharif",
+        "normalized_similarity": 0.923,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF3303",
+        "draft": "Khak-e-Safid",
+        "secondary": "Khak-e-Safed",
+        "normalized_similarity": 0.9,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2712",
+        "draft": "Neash",
+        "secondary": "Nesh",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2710",
+        "draft": "Maiwand",
+        "secondary": "Maywand",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0804",
+        "draft": "Hesa-e-Awal",
+        "secondary": "Khenj",
+        "normalized_similarity": 0.111,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF1217",
+        "draft": "Wazakhwa",
+        "secondary": "Wazakhah",
+        "normalized_similarity": 0.75,
+        "triage": "manual_glance_recommended"
+      },
+      {
+        "id": "AF2408",
+        "draft": "Kejran",
+        "secondary": "Kajran",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0910",
+        "draft": "Borka",
+        "secondary": "Burka",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1505",
+        "draft": "Sarkani",
+        "secondary": "Sar Kani",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF2708",
+        "draft": "Arghistan",
+        "secondary": "Arghestan",
+        "normalized_similarity": 0.889,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2801",
+        "draft": "Sheberghan",
+        "secondary": "Shiberghan",
+        "normalized_similarity": 0.9,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0113",
+        "draft": "Istalef",
+        "secondary": "Estalef",
+        "normalized_similarity": 0.857,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1810",
+        "draft": "Rustaq",
+        "secondary": "Rostaq",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1724",
+        "draft": "Shakai",
+        "secondary": "Shaki",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF3104",
+        "draft": "Qades",
+        "secondary": "Qadis",
+        "normalized_similarity": 0.8,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF2907",
+        "draft": "Qaisar",
+        "secondary": "Qaysar",
+        "normalized_similarity": 0.833,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF0915",
+        "draft": "Fereng-o-Gharu",
+        "secondary": "Fereng Wa Gharu",
+        "normalized_similarity": 0.846,
+        "triage": "minor_variant_non_blocking"
+      },
+      {
+        "id": "AF1405",
+        "draft": "Musakhel",
+        "secondary": "Musa Khel",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF0114",
+        "draft": "Qarabagh",
+        "secondary": "Qara Bagh",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      },
+      {
+        "id": "AF3102",
+        "draft": "Abkamari",
+        "secondary": "Ab Kamari",
+        "normalized_similarity": 1,
+        "triage": "formatting_only"
+      }
+    ],
+    "interpretation": [
+      "Keep the existing candidate English labels; do not overwrite them merely to match the community-maintained secondary source.",
+      "Formatting-only and minor spelling/transliteration variants are non-blocking for the draft selector under the user's instruction.",
+      "The manual-glance group is a shortlist for later review, not a finding that labels are wrong. It does not block draft preview.",
+      "Exact P-code and parent-province matches are stronger structural checks than literal English spelling equality.",
+      "This policy does not certify English names against OCHA/AGCHO COD-AB and does not change local-script review status."
+    ],
+    "candidate_labels_changed": false,
+    "official_certification": false,
+    "draft_preview_blocked_by_english_spelling": false
+  }
 }
