@@ -30,7 +30,38 @@ Use the Code File route for the calculation class, then expose only small, typed
 
 FlutterFlow's Code File parser has documented limitations (for example, generic classes, function-typed fields/parameters and extension methods). The current helper intentionally uses ordinary classes and static methods, but parser compatibility still needs an in-project compile check.
 
-### B. Add small callable wrappers
+### B. Prefer direct static-method calls before creating wrappers
+
+The current helper is a stateless utility class with static methods. FlutterFlow Code Files support static members, and the official editor documentation describes accessing static methods through the Variable dialog and the **Call Static Method** action.
+
+After the Code File parses successfully:
+
+1. Open a temporary test page and add a button named `Test Solar Date`.
+2. In its Action Flow, add **Call Static Method** and select `AfghanGhazaliFunctions`.
+3. Select `solarDateFromGregorianJson`, pass a fixed test date such as `2026-04-01`, and store the returned String in a page-state String variable.
+4. Add a Text widget bound to that state variable and preview the result.
+5. Repeat for `civilHijriFromGregorianJson` and `cityConfigurationJson`.
+6. Test `calculatePrayerTimesJson` using the named arguments shown in the method signature. If the FlutterFlow action editor does not expose those named arguments correctly, use the Custom Action fallback below rather than changing the calculation method.
+
+**Important:** Do not try to call this Code File from a Custom Function by adding an import. FlutterFlow Custom Functions do not permit arbitrary imports. Use the Code File's static-method action support, or a Custom Action when an import/async integration is genuinely needed.
+
+### C. Add small callable wrappers only when needed
+
+Create a Custom Action wrapper only if a method cannot be called directly from the Action Flow Editor, or if a page needs an asynchronous orchestration step. Do not create duplicate wrappers for methods already callable as static methods. If a wrapper is required, use the FlutterFlow-generated boilerplate and its supported import mechanism; do not guess or hand-write generated import paths.
+
+Suggested fallback wrappers:
+
+| FlutterFlow resource | Inputs | Output | Calls |
+|---|---|---|---|
+| `getSolarDateJson` | `isoDate: String` | String (JSON) | `solarDateFromGregorianJson` |
+| `getGregorianDateJson` | `solarYear, solarMonth, solarDay: int` | String (JSON) | `solarDateToGregorianJson` |
+| `getCivilHijriJson` | `isoDate: String` | String (JSON) | `civilHijriFromGregorianJson` |
+| `getPrayerTimesJson` | date, lat, lon, offset, Fajr/Isha angles, Asr factor | String (JSON) | `calculatePrayerTimesJson` |
+| `getCityConfigJson` | `cityId: String` | String (JSON) | city configuration lookup |
+
+Do not expose a wrapper until its argument names, nullability, return type and generated imports are confirmed in the target project.
+
+### D. Connect page actions
 
 Create Custom Functions or Custom Actions that call the Code File methods. Prefer returning a JSON string for complex results, then decode it in FlutterFlow using JSON paths.
 
@@ -56,7 +87,7 @@ Do not expose a wrapper until its argument names, nullability, return type and g
 - SettingsPage: persist stable city ID and Asr factor; default factor remains 2 (Hanafi).
 - PopulationPage: do not connect until exact source CSVs are restored and checksums match.
 
-### D. Compile and test in FlutterFlow
+### E. Compile and test in FlutterFlow
 
 1. Compile Custom Functions.
 2. Compile Custom Actions/Widgets if the editor requires it for preview.
