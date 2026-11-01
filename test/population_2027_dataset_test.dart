@@ -63,10 +63,10 @@ void main() {
 
   test('groups rows by explicit parent province P-code', () {
     final dataset = Population2027Dataset.parse(
-      '$header\\n'
-      'A,الف,AF0101,P1,ولایت۱,AF01,District,10\\n'
-      'B,ب,AF0201,P2,ولایت۲,AF02,District,20\\n'
-      'C,ج,AF0102,P1,ولایت۱,AF01,District,30\\n',
+      '$header\n'
+      'A,الف,AF0101,P1,ولایت۱,AF01,District,10\n'
+      'B,ب,AF0201,P2,ولایت۲,AF02,District,20\n'
+      'C,ج,AF0102,P1,ولایت۱,AF01,District,30\n',
     );
 
     expect(
