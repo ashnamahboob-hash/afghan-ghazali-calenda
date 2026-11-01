@@ -1028,7 +1028,7 @@
           "id": "AF2804",
           "names": {
             "local": "منگجک",
-            "en": "Mingajik"
+            "en": "Mingajek"
           },
           "slug": "mingajik-af2804"
         },
@@ -1036,7 +1036,7 @@
           "id": "AF2811",
           "names": {
             "local": "درز آب",
-            "en": "Darzab"
+            "en": "Darz Ab"
           },
           "slug": "darzab-af2811"
         },
@@ -1044,7 +1044,7 @@
           "id": "AF2806",
           "names": {
             "local": "خمیاب",
-            "en": "Khamyab"
+            "en": "Kham Ab"
           },
           "slug": "khamyab-af2806"
         },
@@ -1068,7 +1068,7 @@
           "id": "AF2810",
           "names": {
             "local": "قرقین",
-            "en": "Qarqin"
+            "en": "Qarqen"
           },
           "slug": "qarqin-af2810"
         },
@@ -1108,7 +1108,7 @@
           "id": "AF2801",
           "names": {
             "local": "شبرغان",
-            "en": "Shiberghan"
+            "en": "Sheberghan"
           },
           "slug": "shiberghan-af2801"
         }
@@ -1354,7 +1354,7 @@
           "id": "AF2505",
           "names": {
             "local": "خاص ارزگان",
-            "en": "Khas Uruzgan"
+            "en": "Khas Urozgan"
           },
           "slug": "khas-uruzgan-af2505"
         },
@@ -1370,7 +1370,7 @@
           "id": "AF2503",
           "names": {
             "local": "چوره",
-            "en": "Chora"
+            "en": "Chorah"
           },
           "slug": "chora-af2503"
         },
@@ -1378,7 +1378,7 @@
           "id": "AF2504",
           "names": {
             "local": "شهید حساس",
-            "en": "Shahid-e-Hassas"
+            "en": "Chahar Chino"
           },
           "slug": "shahid-e-hassas-af2504"
         },
@@ -1394,7 +1394,7 @@
           "id": "AF2501",
           "names": {
             "local": "تیرینکوت",
-            "en": "Tirinkot"
+            "en": "Tirenkot"
           },
           "slug": "tirinkot-af2501"
         }
@@ -1420,7 +1420,7 @@
           "id": "AF2304",
           "names": {
             "local": "چار صد ره",
-            "en": "Charsadra"
+            "en": "Chaharsada"
           },
           "slug": "charsadra-af2304"
         },
@@ -1428,7 +1428,7 @@
           "id": "AF2302",
           "names": {
             "local": "دو لینه",
-            "en": "DoLayna"
+            "en": "Do Layna"
           },
           "slug": "dolayna-af2302"
         },
@@ -1510,7 +1510,7 @@
           "id": "AF3302",
           "names": {
             "local": "پشترود",
-            "en": "Pushtrod"
+            "en": "Pushterod"
           },
           "slug": "pushtrod-af3302"
         },
@@ -1518,7 +1518,7 @@
           "id": "AF3304",
           "names": {
             "local": "قلعه کاه",
-            "en": "Qala-e-Kah"
+            "en": "Qalah-e-Kah"
           },
           "slug": "qala-e-kah-af3304"
         },
@@ -1558,7 +1558,7 @@
           "id": "AF3305",
           "names": {
             "local": "شیب کوه",
-            "en": "Shibkoh"
+            "en": "Shebkoh"
           },
           "slug": "shibkoh-af3305"
         },
@@ -1566,7 +1566,7 @@
           "id": "AF3311",
           "names": {
             "local": "پُرچمن",
-            "en": "Pur Chaman"
+            "en": "Purchaman"
           },
           "slug": "pur-chaman-af3311"
         },
@@ -1574,7 +1574,7 @@
           "id": "AF3303",
           "names": {
             "local": "خاک سفید",
-            "en": "Khak-e-Safed"
+            "en": "Khak-e-Safid"
           },
           "slug": "khak-e-safed-af3303"
         },
@@ -1706,7 +1706,7 @@
           "id": "AF2911",
           "names": {
             "local": "قرم قل",
-            "en": "Qaram Qul"
+            "en": "Qaramqul"
           },
           "slug": "qaram-qul-af2911"
         },
@@ -1714,7 +1714,7 @@
           "id": "AF2908",
           "names": {
             "local": "گرزیوان",
-            "en": "Garzewan"
+            "en": "Garziwan"
           },
           "slug": "garzewan-af2908"
         },
@@ -1730,7 +1730,7 @@
           "id": "AF2903",
           "names": {
             "local": "خواجه سبزپوش",
-            "en": "Khwaja Sabz Posh"
+            "en": "Khwaja Sabzposh"
           },
           "slug": "khwaja-sabz-posh-af2903"
         },
@@ -1738,7 +1738,7 @@
           "id": "AF2901",
           "names": {
             "local": "میمنه",
-            "en": "Maymana"
+            "en": "Maimana"
           },
           "slug": "maymana-af2901"
         },
@@ -1786,7 +1786,7 @@
           "id": "AF2907",
           "names": {
             "local": "قیصار",
-            "en": "Qaysar"
+            "en": "Qaisar"
           },
           "slug": "qaysar-af2907"
         },
@@ -1844,7 +1844,7 @@
           "id": "AF1907",
           "names": {
             "local": "قلعه ذال",
-            "en": "Qala-e-Zal"
+            "en": "Qala-e-zal"
           },
           "slug": "qala-e-zal-af1907"
         },
@@ -1894,7 +1894,7 @@
           "id": "AF1412",
           "names": {
             "local": "شمل",
-            "en": "Shamal"
+            "en": "Shumul"
           },
           "slug": "shamal-af1412"
         },
@@ -1902,7 +1902,7 @@
           "id": "AF1413",
           "names": {
             "local": "جاجی میدان",
-            "en": "Jaji Maydan"
+            "en": "Zazi Maydan"
           },
           "slug": "jaji-maydan-af1413"
         },
@@ -1918,7 +1918,7 @@
           "id": "AF1403",
           "names": {
             "local": "گربز",
-            "en": "Gurbuz"
+            "en": "Gurbaz"
           },
           "slug": "gurbuz-af1403"
         },
@@ -1926,7 +1926,7 @@
           "id": "AF1408",
           "names": {
             "local": "تری زائی",
-            "en": "Terezayi"
+            "en": "Alisher Aw Terizi"
           },
           "slug": "terezayi-af1408"
         },
@@ -1934,7 +1934,7 @@
           "id": "AF1406",
           "names": {
             "local": "نادرشاه کوت",
-            "en": "Nadir Shah Kot"
+            "en": "Nadershahkot"
           },
           "slug": "nadir-shah-kot-af1406"
         },
@@ -1942,7 +1942,7 @@
           "id": "AF1402",
           "names": {
             "local": "مندوزائی",
-            "en": "Mandozayi"
+            "en": "Esmail Khel Aw Mandozayi"
           },
           "slug": "mandozayi-af1402"
         },
@@ -1958,7 +1958,7 @@
           "id": "AF1407",
           "names": {
             "local": "صبری",
-            "en": "Sabari"
+            "en": "Sabari Aw Yaqubi"
           },
           "slug": "sabari-af1407"
         },
@@ -1974,7 +1974,7 @@
           "id": "AF1405",
           "names": {
             "local": "موسی خیل",
-            "en": "Musa Khel"
+            "en": "Musakhel"
           },
           "slug": "musa-khel-af1405"
         }
@@ -2024,7 +2024,7 @@
           "id": "AF3210",
           "names": {
             "local": "کُشک کهنه",
-            "en": "Kushk-e-Kuhna"
+            "en": "Kushk-e-Kohna"
           },
           "slug": "kushk-e-kuhna-af3210"
         },
@@ -2080,7 +2080,7 @@
           "id": "AF3216",
           "names": {
             "local": "چشت شریف",
-            "en": "Chisht-e-Sharif"
+            "en": "Chesht-e-Sharif"
           },
           "slug": "chisht-e-sharif-af3216"
         },
@@ -2138,7 +2138,7 @@
           "id": "AF1513",
           "names": {
             "local": "چپه دره",
-            "en": "Chapa Dara"
+            "en": "Chapa Darah"
           },
           "slug": "chapa-dara-af1513"
         },
@@ -2146,7 +2146,7 @@
           "id": "AF1503",
           "names": {
             "local": "وته پور",
-            "en": "Watapur"
+            "en": "Watapor"
           },
           "slug": "watapur-af1503"
         },
@@ -2162,7 +2162,7 @@
           "id": "AF1514",
           "names": {
             "local": "نورگل",
-            "en": "Nurgal"
+            "en": "Noorgal"
           },
           "slug": "nurgal-af1514"
         },
@@ -2218,7 +2218,7 @@
           "id": "AF1515",
           "names": {
             "local": "ناړی",
-            "en": "Nari"
+            "en": "Narai"
           },
           "slug": "nari-af1515"
         },
@@ -2242,7 +2242,7 @@
           "id": "AF1505",
           "names": {
             "local": "سرکانی",
-            "en": "Sar Kani"
+            "en": "Sarkani"
           },
           "slug": "sar-kani-af1505"
         }
@@ -2284,7 +2284,7 @@
           "id": "AF0106",
           "names": {
             "local": "شکردره",
-            "en": "Shakar Dara"
+            "en": "Shakardara"
           },
           "slug": "shakar-dara-af0106"
         },
@@ -2300,7 +2300,7 @@
           "id": "AF0107",
           "names": {
             "local": "موسهی",
-            "en": "Musahi"
+            "en": "Mosahi"
           },
           "slug": "musahi-af0107"
         },
@@ -2340,7 +2340,7 @@
           "id": "AF0113",
           "names": {
             "local": "استالف",
-            "en": "Estalef"
+            "en": "Istalef"
           },
           "slug": "estalef-af0113"
         },
@@ -2372,7 +2372,7 @@
           "id": "AF0114",
           "names": {
             "local": "قره باغ",
-            "en": "Qara Bagh"
+            "en": "Qarabagh"
           },
           "slug": "qara-bagh-af0114"
         }
@@ -2390,7 +2390,7 @@
           "id": "AF3013",
           "names": {
             "local": "دیشو",
-            "en": "Deh-e-Shu"
+            "en": "Disho"
           },
           "slug": "deh-e-shu-af3013"
         },
@@ -2430,7 +2430,7 @@
           "id": "AF3003",
           "names": {
             "local": "ناوه بارکزائی",
-            "en": "Nawa-e-Barakzaiy"
+            "en": "Nawa"
           },
           "slug": "nawa-e-barakzaiy-af3003"
         },
@@ -2446,7 +2446,7 @@
           "id": "AF3005",
           "names": {
             "local": "واشیر",
-            "en": "Washer"
+            "en": "Washir"
           },
           "slug": "washer-af3005"
         },
@@ -2454,7 +2454,7 @@
           "id": "AF3011",
           "names": {
             "local": "ریگ خان نشین",
-            "en": "Reg-i-Khan Nishin"
+            "en": "Khanshin"
           },
           "slug": "reg-i-khan-nishin-af3011"
         },
@@ -2536,7 +2536,7 @@
           "id": "AF1114",
           "names": {
             "local": "جاغوری",
-            "en": "Jaghuri"
+            "en": "Jaghori"
           },
           "slug": "jaghuri-af1114"
         },
@@ -2592,7 +2592,7 @@
           "id": "AF1108",
           "names": {
             "local": "زنه خان",
-            "en": "Zanakhan"
+            "en": "Zana Khan"
           },
           "slug": "zanakhan-af1108"
         },
@@ -2608,7 +2608,7 @@
           "id": "AF1111",
           "names": {
             "local": "قره باغ",
-            "en": "Qara Bagh"
+            "en": "Qarabagh"
           },
           "slug": "qara-bagh-af1111"
         },
@@ -2616,7 +2616,7 @@
           "id": "AF1103",
           "names": {
             "local": "خواجه عمری",
-            "en": "Khwaja Umari"
+            "en": "Khwaja Omari"
           },
           "slug": "khwaja-umari-af1103"
         },
@@ -2682,7 +2682,7 @@
           "id": "AF0406",
           "names": {
             "local": "دایمیرداد",
-            "en": "Daymirdad"
+            "en": "Daimirdad"
           },
           "slug": "daymirdad-af0406"
         },
@@ -2690,7 +2690,7 @@
           "id": "AF0408",
           "names": {
             "local": "جغتو",
-            "en": "Jaghatu"
+            "en": "Jaghato"
           },
           "slug": "jaghatu-af0408"
         },
@@ -2822,7 +2822,7 @@
           "id": "AF0617",
           "names": {
             "local": "مهمند دره",
-            "en": "Muhmand Dara"
+            "en": "Momand Darah"
           },
           "slug": "muhmand-dara-af0617"
         },
@@ -2902,7 +2902,7 @@
           "id": "AF0618",
           "names": {
             "local": "لعل پور",
-            "en": "Lalpur"
+            "en": "Lalpura"
           },
           "slug": "lalpur-af0618"
         },
@@ -2934,7 +2934,7 @@
           "id": "AF0611",
           "names": {
             "local": "پچیراگام",
-            "en": "Pachir Wa Agam"
+            "en": "Pachiragam"
           },
           "slug": "pachir-wa-agam-af0611"
         },
@@ -3000,7 +3000,7 @@
           "id": "AF2610",
           "names": {
             "local": "شملزائی",
-            "en": "Shamul Zayi"
+            "en": "Shamolzai"
           },
           "slug": "shamul-zayi-af2610"
         },
@@ -3048,7 +3048,7 @@
           "id": "AF2606",
           "names": {
             "local": "شاه جوی",
-            "en": "Shah Joi"
+            "en": "Shahjoy"
           },
           "slug": "shah-joi-af2606"
         },
@@ -3162,7 +3162,7 @@
           "id": "AF1816",
           "names": {
             "local": "چاه آب",
-            "en": "Chahab"
+            "en": "Chah Ab"
           },
           "slug": "chahab-af1816"
         },
@@ -3194,7 +3194,7 @@
           "id": "AF1811",
           "names": {
             "local": "اشکمش",
-            "en": "Eshkmesh"
+            "en": "Eshkamesh"
           },
           "slug": "eshkmesh-af1811"
         },
@@ -3202,7 +3202,7 @@
           "id": "AF1817",
           "names": {
             "local": "ینگی قلعه",
-            "en": "Yangi Qala"
+            "en": "Yangi Qalah"
           },
           "slug": "yangi-qala-af1817"
         },
@@ -3226,7 +3226,7 @@
           "id": "AF1810",
           "names": {
             "local": "رُستاق",
-            "en": "Rostaq"
+            "en": "Rustaq"
           },
           "slug": "rostaq-af1810"
         }
@@ -3252,7 +3252,7 @@
           "id": "AF3404",
           "names": {
             "local": "چاربرجک",
-            "en": "Char Burjak"
+            "en": "Chahar Burjak"
           },
           "slug": "char-burjak-af3404"
         },
@@ -3310,7 +3310,7 @@
           "id": "AF0705",
           "names": {
             "local": "دولت شاه",
-            "en": "Dawlatshah"
+            "en": "Dawlat Shah"
           },
           "slug": "dawlatshah-af0705"
         },
@@ -3326,7 +3326,7 @@
           "id": "AF0702",
           "names": {
             "local": "قرغه ئی",
-            "en": "Qarghayi"
+            "en": "Qarghayee"
           },
           "slug": "qarghayi-af0702"
         }
@@ -3344,7 +3344,7 @@
           "id": "AF0909",
           "names": {
             "local": "خواجه هجران",
-            "en": "Khwaja Hejran"
+            "en": "Jelgah"
           },
           "slug": "khwaja-hejran-af0909"
         },
@@ -3352,7 +3352,7 @@
           "id": "AF0914",
           "names": {
             "local": "گذرگاه نور",
-            "en": "Guzargah-e-Nur"
+            "en": "Guzargah-e-Noor"
           },
           "slug": "guzargah-e-nur-af0914"
         },
@@ -3400,7 +3400,7 @@
           "id": "AF0906",
           "names": {
             "local": "خنجان",
-            "en": "Khinjan"
+            "en": "Khenjan"
           },
           "slug": "khinjan-af0906"
         },
@@ -3408,7 +3408,7 @@
           "id": "AF0911",
           "names": {
             "local": "تاله وبرفک",
-            "en": "Tala Wa Barfak"
+            "en": "Tala-Wa-Barfak"
           },
           "slug": "tala-wa-barfak-af0911"
         },
@@ -3432,7 +3432,7 @@
           "id": "AF0908",
           "names": {
             "local": "ده صلاح",
-            "en": "Deh Salah"
+            "en": "Dehsalah"
           },
           "slug": "deh-salah-af0908"
         },
@@ -3440,7 +3440,7 @@
           "id": "AF0910",
           "names": {
             "local": "بورکه",
-            "en": "Burka"
+            "en": "Borka"
           },
           "slug": "burka-af0910"
         },
@@ -3448,7 +3448,7 @@
           "id": "AF0905",
           "names": {
             "local": "بغلان جدید",
-            "en": "Baghlan-e-Jadid"
+            "en": "Baghlan-e-Markazi"
           },
           "slug": "baghlan-e-jadid-af0905"
         },
@@ -3456,7 +3456,7 @@
           "id": "AF0915",
           "names": {
             "local": "فرنگ وغارو",
-            "en": "Fereng Wa Gharu"
+            "en": "Fereng-o-Gharu"
           },
           "slug": "fereng-wa-gharu-af0915"
         }
@@ -3498,7 +3498,7 @@
           "id": "AF3101",
           "names": {
             "local": "قلعه نو",
-            "en": "Qala-e-Naw"
+            "en": "Qala-e Naw"
           },
           "slug": "qala-e-naw-af3101"
         },
@@ -3514,7 +3514,7 @@
           "id": "AF3104",
           "names": {
             "local": "قادیس",
-            "en": "Qadis"
+            "en": "Qades"
           },
           "slug": "qadis-af3104"
         },
@@ -3522,7 +3522,7 @@
           "id": "AF3102",
           "names": {
             "local": "آب کمری",
-            "en": "Ab Kamari"
+            "en": "Abkamari"
           },
           "slug": "ab-kamari-af3102"
         }
@@ -3540,7 +3540,7 @@
           "id": "AF1002",
           "names": {
             "local": "شیبر",
-            "en": "Shibar"
+            "en": "Shebar"
           },
           "slug": "shibar-af1002"
         },
@@ -4081,6 +4081,456 @@
         "id": "AF2107",
         "from": "Sholgareh",
         "to": "Sholgarah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2804",
+        "from": "Mingajik",
+        "to": "Mingajek",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2811",
+        "from": "Darzab",
+        "to": "Darz Ab",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2806",
+        "from": "Khamyab",
+        "to": "Kham Ab",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2810",
+        "from": "Qarqin",
+        "to": "Qarqen",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2801",
+        "from": "Shiberghan",
+        "to": "Sheberghan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2505",
+        "from": "Khas Uruzgan",
+        "to": "Khas Urozgan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2503",
+        "from": "Chora",
+        "to": "Chorah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2504",
+        "from": "Shahid-e-Hassas",
+        "to": "Chahar Chino",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2501",
+        "from": "Tirinkot",
+        "to": "Tirenkot",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2304",
+        "from": "Charsadra",
+        "to": "Chaharsada",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2302",
+        "from": "DoLayna",
+        "to": "Do Layna",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3302",
+        "from": "Pushtrod",
+        "to": "Pushterod",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3304",
+        "from": "Qala-e-Kah",
+        "to": "Qalah-e-Kah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3305",
+        "from": "Shibkoh",
+        "to": "Shebkoh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3311",
+        "from": "Pur Chaman",
+        "to": "Purchaman",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3303",
+        "from": "Khak-e-Safed",
+        "to": "Khak-e-Safid",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2911",
+        "from": "Qaram Qul",
+        "to": "Qaramqul",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2908",
+        "from": "Garzewan",
+        "to": "Garziwan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2903",
+        "from": "Khwaja Sabz Posh",
+        "to": "Khwaja Sabzposh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2901",
+        "from": "Maymana",
+        "to": "Maimana",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2907",
+        "from": "Qaysar",
+        "to": "Qaisar",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1907",
+        "from": "Qala-e-Zal",
+        "to": "Qala-e-zal",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1412",
+        "from": "Shamal",
+        "to": "Shumul",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1413",
+        "from": "Jaji Maydan",
+        "to": "Zazi Maydan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1403",
+        "from": "Gurbuz",
+        "to": "Gurbaz",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1408",
+        "from": "Terezayi",
+        "to": "Alisher Aw Terizi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1406",
+        "from": "Nadir Shah Kot",
+        "to": "Nadershahkot",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1402",
+        "from": "Mandozayi",
+        "to": "Esmail Khel Aw Mandozayi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1407",
+        "from": "Sabari",
+        "to": "Sabari Aw Yaqubi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1405",
+        "from": "Musa Khel",
+        "to": "Musakhel",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3210",
+        "from": "Kushk-e-Kuhna",
+        "to": "Kushk-e-Kohna",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3216",
+        "from": "Chisht-e-Sharif",
+        "to": "Chesht-e-Sharif",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1513",
+        "from": "Chapa Dara",
+        "to": "Chapa Darah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1503",
+        "from": "Watapur",
+        "to": "Watapor",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1514",
+        "from": "Nurgal",
+        "to": "Noorgal",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1515",
+        "from": "Nari",
+        "to": "Narai",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1505",
+        "from": "Sar Kani",
+        "to": "Sarkani",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0106",
+        "from": "Shakar Dara",
+        "to": "Shakardara",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0107",
+        "from": "Musahi",
+        "to": "Mosahi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0113",
+        "from": "Estalef",
+        "to": "Istalef",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0114",
+        "from": "Qara Bagh",
+        "to": "Qarabagh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3013",
+        "from": "Deh-e-Shu",
+        "to": "Disho",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3003",
+        "from": "Nawa-e-Barakzaiy",
+        "to": "Nawa",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3005",
+        "from": "Washer",
+        "to": "Washir",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3011",
+        "from": "Reg-i-Khan Nishin",
+        "to": "Khanshin",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1114",
+        "from": "Jaghuri",
+        "to": "Jaghori",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1108",
+        "from": "Zanakhan",
+        "to": "Zana Khan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1111",
+        "from": "Qara Bagh",
+        "to": "Qarabagh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1103",
+        "from": "Khwaja Umari",
+        "to": "Khwaja Omari",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0406",
+        "from": "Daymirdad",
+        "to": "Daimirdad",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0408",
+        "from": "Jaghatu",
+        "to": "Jaghato",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0617",
+        "from": "Muhmand Dara",
+        "to": "Momand Darah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0618",
+        "from": "Lalpur",
+        "to": "Lalpura",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0611",
+        "from": "Pachir Wa Agam",
+        "to": "Pachiragam",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2610",
+        "from": "Shamul Zayi",
+        "to": "Shamolzai",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2606",
+        "from": "Shah Joi",
+        "to": "Shahjoy",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1816",
+        "from": "Chahab",
+        "to": "Chah Ab",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1811",
+        "from": "Eshkmesh",
+        "to": "Eshkamesh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1817",
+        "from": "Yangi Qala",
+        "to": "Yangi Qalah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1810",
+        "from": "Rostaq",
+        "to": "Rustaq",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3404",
+        "from": "Char Burjak",
+        "to": "Chahar Burjak",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0705",
+        "from": "Dawlatshah",
+        "to": "Dawlat Shah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0702",
+        "from": "Qarghayi",
+        "to": "Qarghayee",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0909",
+        "from": "Khwaja Hejran",
+        "to": "Jelgah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0914",
+        "from": "Guzargah-e-Nur",
+        "to": "Guzargah-e-Noor",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0906",
+        "from": "Khinjan",
+        "to": "Khenjan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0911",
+        "from": "Tala Wa Barfak",
+        "to": "Tala-Wa-Barfak",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0908",
+        "from": "Deh Salah",
+        "to": "Dehsalah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0910",
+        "from": "Burka",
+        "to": "Borka",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0905",
+        "from": "Baghlan-e-Jadid",
+        "to": "Baghlan-e-Markazi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0915",
+        "from": "Fereng Wa Gharu",
+        "to": "Fereng-o-Gharu",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3101",
+        "from": "Qala-e-Naw",
+        "to": "Qala-e Naw",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3104",
+        "from": "Qadis",
+        "to": "Qades",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3102",
+        "from": "Ab Kamari",
+        "to": "Abkamari",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1002",
+        "from": "Shibar",
+        "to": "Shebar",
         "updated_on": "2026-11-01"
       }
     ]
