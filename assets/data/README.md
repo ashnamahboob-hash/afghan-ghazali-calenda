@@ -65,13 +65,13 @@ OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is
 - The Kandahar NSIA 1402 extract's second transcription review was completed against the original PDF text on 2026-11-01 for Tables 8-6, 8-7, 8-13 and 8-17. Blank source cells remain null; the extract remains province-level and is not enabled for runtime advice.
 
 - Province-name variants found in the v04 workbook comparison have now been aligned to workbook spellings for AF32 (Herat), AF30 (Helmand), AF15 (کونړ), and AF04 (میدان وردگ). Province P-codes were not changed. This is a secondary-reference spelling alignment, not independent OCHA/AGCHO certification.
-- The 401-row ADM2 name-by-name comparison is still pending; only ADM2 P-code presence and parent ADM1 code matching have been established so far.
+- Historical note (superseded by the 2026-11-01 review below): at that point, the 401-row ADM2 name-by-name comparison had not yet been completed; only ADM2 P-code presence and parent ADM1 code matching had been established.
 
 ## District-name alignment against supplied COD-AB workbook (2026-11-01)
 - The four province-name variants identified in the earlier workbook comparison were aligned to the v04 workbook spellings; province IDs were preserved.
 - The 16 Daykundi/Panjshir crosswalk reference labels were aligned to the exact workbook `adm2_name` / `adm2_name1` values, and the same 16 entries in the administrative reference draft were aligned. Source-local IDs and source-submitted Pashto labels were not changed.
 - One material source-label conflict remains: `PJR-06` retains source label `خنج`, while workbook P-code `AF0804` is labelled `Hesa-e-Awal / حصه اول`. The stable candidate P-code was not changed; this mapping remains flagged for manual reconciliation.
-- The remaining 385 candidate ADM2 records have not yet had their names compared one by one with the workbook. The workbook P-code presence and parent-code matches do not certify district names or official status.
+- Historical note (superseded by the 2026-11-01 review below): 385 candidate ADM2 records were still awaiting name comparison at that earlier checkpoint. The full 401-row comparison has since been completed as summarized below.
 - All of these edits remain secondary-reference alignments only. OCHA/AGCHO row-level verification is still pending and runtime remains disabled.
 
 
@@ -93,3 +93,16 @@ OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is
 - Consequently, no district labels, IDs, or aliases were changed as a result of this API investigation. The 52 local-script discrepancies remain pending. The 56 COD-PS P-codes outside COD-AB remain a separate population-statistics mismatch set and must not be imported into the 401-record ADM2 reference.
 - Next verification gate: obtain the current Afghanistan COD-AB XLSX gazetteer or a successful versioned COD Services API response; preserve the source file/version and compare every ADM2 row by P-code before resolving any district record.
 
+
+
+## Review progress correction (2026-11-01)
+
+The earlier statements in this file that the 401-row comparison was pending or that 385 records remained unchecked are historical checkpoints and are superseded by the completed review recorded in `afghanistan_admin_divisions_reference_draft.json`.
+
+Current exact-P-code comparison against the user-supplied v04 workbook:
+- 401 candidate ADM2 records compared.
+- 349 records reviewed and closed as exact workbook local-name matches or separately documented review outcomes.
+- 52 local-script discrepancies remain pending.
+- 332 exact local-name matches across the full 401-record comparison; 69 total local-name discrepancies were identified, of which 52 remain open.
+- No unresolved local-script label was auto-normalized. English labels also have a separate review history, including five targeted OCHA overrides.
+- This comparison establishes alignment to the supplied workbook only; it does not certify the workbook as the current official OCHA/AGCHO gazetteer.
