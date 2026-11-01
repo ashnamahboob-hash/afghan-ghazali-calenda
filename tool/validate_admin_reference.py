@@ -153,6 +153,61 @@ def validate(path: Path) -> list[str]:
     return checks
 
 
+
+def validate_parent_crosswalk(path: Path) -> list[str]:
+    """Validate the separate user-supplied temporary-district parent crosswalk."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    records = data.get("records")
+    if not isinstance(records, list) or not records:
+        fail("parent crosswalk records must be a non-empty list")
+
+    ids = [item.get("id", "") for item in records]
+    unique(ids, "parent crosswalk ADM2 P-codes")
+    if any(not DISTRICT_ID.fullmatch(code) for code in ids):
+        fail("parent crosswalk contains an invalid ADM2 P-code")
+    if any(not item.get("district_name_en") or not item.get("district_name_ps") for item in records):
+        fail("every parent crosswalk record must have English and local names")
+    if any(not item.get("parent_mapping_supplied") for item in records):
+        fail("every parent crosswalk record must preserve its supplied parent label")
+    if any(item.get("verification_status") != "pending" for item in records):
+        fail("crosswalk records must remain pending until primary-source verification")
+
+    workbook = data.get("workbook_crosscheck", {})
+    if workbook.get("matching_pcodes") != len(records):
+        fail("workbook cross-check count must equal crosswalk record count")
+    if workbook.get("temporary_districts") != 11 or workbook.get("ordinary_districts") != 1:
+        fail("v04 workbook classification must remain 11 temporary and 1 ordinary district")
+    if workbook.get("ordinary_district_record_ids") != ["AF3015"]:
+        fail("Babaji (AF3015) must remain the sole ordinary district in the supplied v04 cross-check")
+
+    source_records = [item.get("source_workbook_crosscheck", {}) for item in records]
+    if any(
+        source.get("source_sheet") != "afg_admin2"
+        or source.get("source_version") != "v04"
+        or source.get("valid_on") != "2026-06-23"
+        or source.get("adm2_pcode") != item.get("id")
+        or not source.get("unittype_source_spelling")
+        or not source.get("adm2_ref_name")
+        for item, source in zip(records, source_records)
+    ):
+        fail("each crosswalk record must include its row-level v04 workbook cross-check")
+    if sum(source.get("unit_type_normalized") == "Temporary District" for source in source_records) != 11:
+        fail("row-level workbook classifications must contain exactly 11 temporary districts")
+    if sum(source.get("unit_type_normalized") == "District" for source in source_records) != 1:
+        fail("row-level workbook classifications must contain exactly one ordinary district")
+
+    if data.get("counts", {}).get("records") != len(records):
+        fail("crosswalk counts.records does not match records")
+    if data.get("counts", {}).get("pending_records") != len(records):
+        fail("all crosswalk records must be counted as pending")
+    if data.get("counts", {}).get("verified_records") != 0:
+        fail("crosswalk must not claim primary-source verification")
+    return [
+        f"parent crosswalk has {len(records)} unique ADM2 P-codes with row-level v04 workbook evidence",
+        "parent crosswalk preserves 11 temporary-district classifications and Babaji as 1 ordinary district",
+        "all parent crosswalk records remain pending; no primary-source verification is claimed",
+    ]
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -164,6 +219,9 @@ def main() -> int:
     args = parser.parse_args()
     try:
         checks = validate(Path(args.json_file))
+        crosswalk_path = Path("assets/data/temporary_district_parent_mapping_draft.json")
+        if crosswalk_path.exists():
+            checks.extend(validate_parent_crosswalk(crosswalk_path))
     except (OSError, json.JSONDecodeError, ValueError, TypeError) as exc:
         print(f"FAIL: {exc}", file=sys.stderr)
         return 1
