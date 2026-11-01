@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "dataset_id": "AF-DYK-PJR-DISTRICT-CROSSWALK-DRAFT-2026-10",
-  "last_updated": "2026-10-31",
+  "last_updated": "2026-11-01",
   "dataset_status": "draft_pending_official_ocha_row_level_verification",
   "purpose": "Map the user-supplied source-local district identifiers in the Daykundi and Panjshir production profile supplement to stable administrative identifiers in the Open Admin Data Afghanistan hierarchy.",
   "source_policy": {
@@ -25,6 +25,31 @@
       "path": "assets/data/daykundi_panjshir_production_profiles_user_confirmed.json",
       "commit": "10ff63d24174a1ceed27c4167a9b1a003442f86d",
       "role": "Source-local district IDs and user-confirmed Pashto district labels."
+    },
+    "excel_crosscheck": {
+      "name": "OCHA/HDX Afghanistan COD-AB ADM1/ADM2 workbook supplied by the user",
+      "resource_name": "afg_admin_boundaries.xlsx",
+      "resource_url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74/resource/45f2ff90-13c0-46bf-a46e-7d443e9b9fdd/download/afg_admin_boundaries.xlsx",
+      "workbook_version": "v04",
+      "valid_on": "2026-06-23",
+      "inspected_at": "2026-11-01",
+      "sha256": "726774df112bb6419d5146f2170957a2a5a29294b94d9e271fb45d19d6175101",
+      "role": "User-supplied copy of the COD-AB administrative boundaries workbook; used for a secondary row-level cross-check of candidate P-codes and names. This comparison does not constitute independent OCHA certification.",
+      "worksheet": "afg_admin2",
+      "province_worksheet": "afg_admin1",
+      "observed_admin1_rows": 34,
+      "observed_admin2_rows": 457,
+      "admin2_unit_type_counts": {
+        "District": 397,
+        "Temporaray District": 29,
+        "Provincial Capital": 30,
+        "Capital": 1
+      },
+      "limitations": [
+        "The workbook contains 457 ADM2 records across multiple unit types; this total must not be described as 457 districts.",
+        "Workbook ADM2 rows are not a direct one-to-one equivalence to the 401-district coverage stated in OCHA metadata.",
+        "The supplied workbook was compared locally; official status remains subject to source provenance and OCHA/AGCHO confirmation."
+      ]
     }
   },
   "mapping_rules": [
@@ -34,22 +59,342 @@
     "Do not enable district-specific agricultural advice from this crosswalk until the OCHA row-level check and name review are complete."
   ],
   "mappings": [
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-01", "source_name_pashto": "نیلي (مرکز)", "candidate_district_id": "AF2401", "reference_name_local": "نیلی", "reference_name_en": "Nili", "name_review": "center_label_not_in_reference_name", "status": "pending_ocha_verification" },
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-02", "source_name_pashto": "شهرستان", "candidate_district_id": "AF2402", "reference_name_local": "شهرستان", "reference_name_en": "Shahrestan", "name_review": "name_match", "status": "pending_ocha_verification" },
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-03", "source_name_pashto": "میرامور", "candidate_district_id": "AF2406", "reference_name_local": "میرامور", "reference_name_en": "Miramor", "name_review": "name_match", "status": "pending_ocha_verification" },
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-04", "source_name_pashto": "اشترلي", "candidate_district_id": "AF2403", "reference_name_local": "اشترلی", "reference_name_en": "Ashtarlay", "name_review": "orthographic_variant", "status": "pending_ocha_verification" },
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-05", "source_name_pashto": "کجران", "candidate_district_id": "AF2408", "reference_name_local": "کجران", "reference_name_en": "Kajran", "name_review": "name_match", "status": "pending_ocha_verification" },
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-06", "source_name_pashto": "سنګتخت", "candidate_district_id": "AF2407", "reference_name_local": "سنگ تخت", "reference_name_en": "Sang-e-Takht", "name_review": "spacing_variant", "status": "pending_ocha_verification" },
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-07", "source_name_pashto": "خدیر", "candidate_district_id": "AF2404", "reference_name_local": "خدیر", "reference_name_en": "Khadir", "name_review": "name_match", "status": "pending_ocha_verification" },
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-08", "source_name_pashto": "ګيتي", "candidate_district_id": "AF2405", "reference_name_local": "کیتی", "reference_name_en": "Kiti", "name_review": "pashto_spelling_requires_review", "status": "pending_ocha_verification" },
-    { "province_id": "AF24", "province_name": "Daykundi", "source_district_id": "DYK-09", "source_name_pashto": "پاتو", "candidate_district_id": "AF2409", "reference_name_local": "پاتو", "reference_name_en": "Patoo", "name_review": "name_match", "status": "pending_ocha_verification" },
-    { "province_id": "AF08", "province_name": "Panjshir", "source_district_id": "PJR-01", "source_name_pashto": "بازارک (مرکز)", "candidate_district_id": "AF0801", "reference_name_local": "بازارک", "reference_name_en": "Bazarak", "name_review": "center_label_not_in_reference_name", "status": "pending_ocha_verification" },
-    { "province_id": "AF08", "province_name": "Panjshir", "source_district_id": "PJR-02", "source_name_pashto": "رخو", "candidate_district_id": "AF0802", "reference_name_local": "رُخه", "reference_name_en": "Rukha", "name_review": "orthographic_variant", "status": "pending_ocha_verification" },
-    { "province_id": "AF08", "province_name": "Panjshir", "source_district_id": "PJR-03", "source_name_pashto": "عنابه", "candidate_district_id": "AF0805", "reference_name_local": "عنابه", "reference_name_en": "Anawa", "name_review": "name_match", "status": "pending_ocha_verification" },
-    { "province_id": "AF08", "province_name": "Panjshir", "source_district_id": "PJR-04", "source_name_pashto": "شتل", "candidate_district_id": "AF0806", "reference_name_local": "شُتل", "reference_name_en": "Shutul", "name_review": "name_match", "status": "pending_ocha_verification" },
-    { "province_id": "AF08", "province_name": "Panjshir", "source_district_id": "PJR-05", "source_name_pashto": "پریان", "candidate_district_id": "AF0807", "reference_name_local": "پریان", "reference_name_en": "Paryan", "name_review": "name_match", "status": "pending_ocha_verification" },
-    { "province_id": "AF08", "province_name": "Panjshir", "source_district_id": "PJR-06", "source_name_pashto": "خنج", "candidate_district_id": "AF0804", "reference_name_local": "خنج (حصه اول)", "reference_name_en": "Khenj", "name_review": "reference_includes_subdivision_qualifier", "status": "pending_ocha_verification" },
-    { "province_id": "AF08", "province_name": "Panjshir", "source_district_id": "PJR-07", "source_name_pashto": "دره", "candidate_district_id": "AF0803", "reference_name_local": "دره", "reference_name_en": "Dara", "name_review": "name_match", "status": "pending_ocha_verification" }
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-01",
+      "source_name_pashto": "نیلي (مرکز)",
+      "candidate_district_id": "AF2401",
+      "reference_name_local": "نیلی",
+      "reference_name_en": "Nili",
+      "name_review": "center_label_not_in_reference_name",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2401",
+        "workbook_name_en": "Nili",
+        "workbook_name_local": "نیلی",
+        "workbook_unit_type": "Provincial Capital",
+        "review": "province_match_name_variant",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-02",
+      "source_name_pashto": "شهرستان",
+      "candidate_district_id": "AF2402",
+      "reference_name_local": "شهرستان",
+      "reference_name_en": "Shahrestan",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2402",
+        "workbook_name_en": "Shahristan",
+        "workbook_name_local": "شهرستان",
+        "workbook_unit_type": "District",
+        "review": "name_match",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-03",
+      "source_name_pashto": "میرامور",
+      "candidate_district_id": "AF2406",
+      "reference_name_local": "میرامور",
+      "reference_name_en": "Miramor",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2406",
+        "workbook_name_en": "Meramor",
+        "workbook_name_local": "میرامور",
+        "workbook_unit_type": "District",
+        "review": "name_match",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-04",
+      "source_name_pashto": "اشترلي",
+      "candidate_district_id": "AF2403",
+      "reference_name_local": "اشترلی",
+      "reference_name_en": "Ashtarlay",
+      "name_review": "orthographic_variant",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2403",
+        "workbook_name_en": "Ashtarlay",
+        "workbook_name_local": "اشترلی",
+        "workbook_unit_type": "District",
+        "review": "name_match",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-05",
+      "source_name_pashto": "کجران",
+      "candidate_district_id": "AF2408",
+      "reference_name_local": "کجران",
+      "reference_name_en": "Kajran",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2408",
+        "workbook_name_en": "Kejran",
+        "workbook_name_local": "کجران",
+        "workbook_unit_type": "District",
+        "review": "name_match",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-06",
+      "source_name_pashto": "سنګتخت",
+      "candidate_district_id": "AF2407",
+      "reference_name_local": "سنگ تخت",
+      "reference_name_en": "Sang-e-Takht",
+      "name_review": "spacing_variant",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2407",
+        "workbook_name_en": "Sang-e-Takht",
+        "workbook_name_local": "سنگ تخت",
+        "workbook_unit_type": "District",
+        "review": "spacing_and_script_variant",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-07",
+      "source_name_pashto": "خدیر",
+      "candidate_district_id": "AF2404",
+      "reference_name_local": "خدیر",
+      "reference_name_en": "Khadir",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2404",
+        "workbook_name_en": "Khader",
+        "workbook_name_local": "خدیر",
+        "workbook_unit_type": "District",
+        "review": "name_match",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-08",
+      "source_name_pashto": "ګيتي",
+      "candidate_district_id": "AF2405",
+      "reference_name_local": "کیتی",
+      "reference_name_en": "Kiti",
+      "name_review": "pashto_spelling_requires_review",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2405",
+        "workbook_name_en": "Kiti",
+        "workbook_name_local": "کیتی",
+        "workbook_unit_type": "District",
+        "review": "pashto_label_variant_requires_review",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF24",
+      "province_name": "Daykundi",
+      "source_district_id": "DYK-09",
+      "source_name_pashto": "پاتو",
+      "candidate_district_id": "AF2409",
+      "reference_name_local": "پاتو",
+      "reference_name_en": "Patoo",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF2409",
+        "workbook_name_en": "Pato",
+        "workbook_name_local": "پاتو",
+        "workbook_unit_type": "Temporaray District",
+        "review": "name_match",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF08",
+      "province_name": "Panjshir",
+      "source_district_id": "PJR-01",
+      "source_name_pashto": "بازارک (مرکز)",
+      "candidate_district_id": "AF0801",
+      "reference_name_local": "بازارک",
+      "reference_name_en": "Bazarak",
+      "name_review": "center_label_not_in_reference_name",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF0801",
+        "workbook_name_en": "Bazarak",
+        "workbook_name_local": "بازارک",
+        "workbook_unit_type": "District",
+        "review": "province_center_label_variant",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF08",
+      "province_name": "Panjshir",
+      "source_district_id": "PJR-02",
+      "source_name_pashto": "رخو",
+      "candidate_district_id": "AF0802",
+      "reference_name_local": "رُخه",
+      "reference_name_en": "Rukha",
+      "name_review": "orthographic_variant",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF0802",
+        "workbook_name_en": "Rukha",
+        "workbook_name_local": "رُخه",
+        "workbook_unit_type": "District",
+        "review": "pashto_orthographic_variant",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF08",
+      "province_name": "Panjshir",
+      "source_district_id": "PJR-03",
+      "source_name_pashto": "عنابه",
+      "candidate_district_id": "AF0805",
+      "reference_name_local": "عنابه",
+      "reference_name_en": "Anawa",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF0805",
+        "workbook_name_en": "Onaba",
+        "workbook_name_local": "عُنابه",
+        "workbook_unit_type": "District",
+        "review": "diacritic_variant",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF08",
+      "province_name": "Panjshir",
+      "source_district_id": "PJR-04",
+      "source_name_pashto": "شتل",
+      "candidate_district_id": "AF0806",
+      "reference_name_local": "شُتل",
+      "reference_name_en": "Shutul",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF0806",
+        "workbook_name_en": "Shutol",
+        "workbook_name_local": "شتُل",
+        "workbook_unit_type": "District",
+        "review": "orthographic_variant",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF08",
+      "province_name": "Panjshir",
+      "source_district_id": "PJR-05",
+      "source_name_pashto": "پریان",
+      "candidate_district_id": "AF0807",
+      "reference_name_local": "پریان",
+      "reference_name_en": "Paryan",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF0807",
+        "workbook_name_en": "Paryan",
+        "workbook_name_local": "پریان",
+        "workbook_unit_type": "District",
+        "review": "name_match",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    },
+    {
+      "province_id": "AF08",
+      "province_name": "Panjshir",
+      "source_district_id": "PJR-06",
+      "source_name_pashto": "خنج",
+      "candidate_district_id": "AF0804",
+      "reference_name_local": "خنج (حصه اول)",
+      "reference_name_en": "Khenj",
+      "name_review": "conflict_open_admin_data_candidate_calls_this_Khenj_but_COD_AB_workbook_row_is_Hesa_e_Awal",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF0804",
+        "workbook_name_en": "Hesa-e-Awal",
+        "workbook_name_local": "حصه اول",
+        "workbook_unit_type": "District",
+        "review": "name_conflict_with_candidate_reference_label_Khenj",
+        "status": "disputed_name_requires_manual_resolution"
+      }
+    },
+    {
+      "province_id": "AF08",
+      "province_name": "Panjshir",
+      "source_district_id": "PJR-07",
+      "source_name_pashto": "دره",
+      "candidate_district_id": "AF0803",
+      "reference_name_local": "دره",
+      "reference_name_en": "Dara",
+      "name_review": "name_match",
+      "status": "pending_ocha_verification",
+      "excel_crosscheck": {
+        "candidate_pcode_present": true,
+        "parent_province_pcode_matches": true,
+        "workbook_pcode": "AF0803",
+        "workbook_name_en": "Darah",
+        "workbook_name_local": "دره",
+        "workbook_unit_type": "District",
+        "review": "name_match",
+        "status": "candidate_code_and_parent_match_name_review_pending"
+      }
+    }
   ],
   "summary": {
     "province_count": 2,
@@ -61,6 +406,23 @@
       "All 16 source-local identifiers have a candidate match in the cited secondary administrative dataset.",
       "The candidate IDs are stable within the referenced Open Admin Data dataset, but remain provisional for this application until checked against the OCHA COD-AB source.",
       "The local-script names in the reference are not automatically treated as Pashto spellings; Pashto orthography needs a separate review."
-    ]
+    ],
+    "excel_crosscheck": {
+      "workbook_admin1_rows": 34,
+      "workbook_admin2_rows": 457,
+      "candidate_pcodes_found": 16,
+      "parent_province_pcodes_match": 16,
+      "name_conflicts_requiring_manual_resolution": 1,
+      "unresolved_name_reviews": 16,
+      "ocha_verified_mappings": 0,
+      "runtime_enabled": false,
+      "notes": [
+        "All 16 candidate district P-codes are present in the supplied COD-AB workbook and all 16 carry the expected parent province P-code.",
+        "PJR-06 is a material name conflict: the candidate Open Admin Data mapping AF0804 is labelled Khenj (Hesa-e-Awal) in that source, while the supplied COD-AB workbook row AF0804 is Hesa-e-Awal / حصه اول. Do not silently treat Khenj and Hesa-e-Awal as interchangeable.",
+        "Other local-script differences remain spelling, spacing, diacritic, or label-review items and have not been promoted to official Pashto spellings.",
+        "The P-code comparison is a workbook cross-check only; all mappings remain pending OCHA/AGCHO row-level verification and manual name review.",
+        "The source-local IDs DYK-01..DYK-09 and PJR-01..PJR-07 are preserved unchanged."
+      ]
+    }
   }
 }
