@@ -48,7 +48,7 @@ OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is
 ## NSIA 1402 Kandahar production extract (draft)
 - `kandahar_production_profiles_nsia_1402_draft.json`: source-transcribed Kandahar province rows from NSIA Statistical Yearbook 1402 (2023-24), covering wheat (Table 8-6), maize/rice/barley (8-7), major fruits (8-13), and potatoes/onions/carrots (8-17), plus national cultivated-area context from Table 8-5.
 - Source PDF: user-provided `سالنامه-احصائیوی-1402نسخه-وبسایت.pdf`. Printed pages 209, 210, 211, 216, 220 correspond to PDF pages 248, 249, 250, 255, 259 in the file reader.
-- All records are province-level; the source does not provide district breakdowns here. Blank source cells remain null, not zero. The extract is draft pending a second numeric transcription review and is not enabled for runtime advice.
+- All records are province-level; the source does not provide district breakdowns here. Blank source cells remain null, not zero. The second transcription review against the original PDF text was completed on 2026-11-01 for Tables 8-6, 8-7, 8-13 and 8-17; the extract remains a draft and is not enabled for runtime advice.
 - Keep NSIA 1402 figures separate from MAIL 1402 figures; do not merge or average the two sources.
 
 
