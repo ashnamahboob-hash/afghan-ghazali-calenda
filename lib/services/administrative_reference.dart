@@ -49,7 +49,7 @@ class AdministrativeReference {
     final provinces = provinceRows.map((value) {
       final row = value as Map<String, dynamic>;
       final names = row['names'] as Map<String, dynamic>;
-      final districtRows = row['units'] as List<dynamic>;
+      final districtRows = row['districts'] as List<dynamic>;
       final units = districtRows.map((districtValue) {
         final district = districtValue as Map<String, dynamic>;
         final districtNames = district['names'] as Map<String, dynamic>;
@@ -67,9 +67,9 @@ class AdministrativeReference {
       );
     }).toList(growable: false);
 
-    final allDistrictIds = provinces
+    final allAdm2Ids = provinces
         .expand((province) => province.units)
-        .map((district) => district.id)
+        .map((unit) => unit.id)
         .toList(growable: false);
     if (provinces.length != 34 ||
         allDistrictIds.length != 401 ||
