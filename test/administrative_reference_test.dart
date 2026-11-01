@@ -52,6 +52,40 @@ void main() {
     expect(jaghori.province.localName, 'غزنی');
   });
 
+
+  test('normalizes Arabic and Persian keyboard variants for search only', () {
+    expect(
+      AdministrativeReference.normalizeSearchText('جاغوري'),
+      AdministrativeReference.normalizeSearchText('جاغوری'),
+    );
+    expect(
+      AdministrativeReference.normalizeSearchText('كوز كُنړ'),
+      AdministrativeReference.normalizeSearchText('کوز کنړ'),
+    );
+    // Pashto-specific letters remain distinct; normalization is not transliteration.
+    expect(
+      AdministrativeReference.normalizeSearchText('ښ'),
+      isNot(AdministrativeReference.normalizeSearchText('ش')),
+    );
+  });
+
+  test('search matches keyboard variants and preserves stored display names', () async {
+    final reference = await AdministrativeReference.load();
+    final matches = reference.searchUnits('جاغوري');
+
+    expect(matches, isNotEmpty);
+    expect(matches.first.unit.id, 'AF1114');
+    expect(matches.first.unit.localName, 'جاغوری');
+    expect(matches.first.province.localName, 'غزنی');
+  });
+
+  test('search supports stable P-codes and returns no results for empty input', () async {
+    final reference = await AdministrativeReference.load();
+
+    expect(reference.searchUnits('AF1114').single.unit.localName, 'جاغوری');
+    expect(reference.searchUnits('   '), isEmpty);
+  });
+
   test('keeps the administrative reference visibly marked as a draft', () async {
     final reference = await AdministrativeReference.load();
 
