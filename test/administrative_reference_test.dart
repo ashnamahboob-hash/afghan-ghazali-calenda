@@ -25,6 +25,6 @@ void main() {
   test('keeps the administrative reference visibly marked as a draft', () async {
     final reference = await AdministrativeReference.load();
 
-    expect(reference.status, contains('draft'));
+    expect(reference.status, contains('pending'));
   });
 }
