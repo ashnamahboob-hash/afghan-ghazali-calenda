@@ -133,4 +133,70 @@ void main() {
       );
     });
   });
+  group('AfghanGhazaliFunctions population safety', () {
+    test('keeps blank, hyphen and NULL source markers missing', () {
+      final blank = jsonDecode(AfghanGhazaliFunctions.populationCellJson('  ')) as Map<String, dynamic>;
+      final hyphen = jsonDecode(AfghanGhazaliFunctions.populationCellJson(' -   ')) as Map<String, dynamic>;
+      final nullLiteral = jsonDecode(AfghanGhazaliFunctions.populationCellJson('NULL')) as Map<String, dynamic>;
+      final numeric = jsonDecode(AfghanGhazaliFunctions.populationCellJson(' 1,234 ')) as Map<String, dynamic>;
+
+      expect(blank['numericValue'], isNull);
+      expect(blank['valueStatus'], 'missing_blank');
+      expect(hyphen['sourceValueRaw'], ' -   ');
+      expect(hyphen['numericValue'], isNull);
+      expect(hyphen['valueStatus'], 'missing_marker');
+      expect(nullLiteral['numericValue'], isNull);
+      expect(nullLiteral['valueStatus'], 'missing_null_literal');
+      expect(numeric['numericValue'], 1234);
+    });
+
+    test('does not publish a partial sum as a complete total', () {
+      final result = jsonDecode(
+        AfghanGhazaliFunctions.sumPopulationCellsJson('["100", " - ", "200"]'),
+      ) as Map<String, dynamic>;
+
+      expect(result['value'], isNull);
+      expect(result['partialSumForAuditOnly'], 300);
+      expect(result['includedCount'], 2);
+      expect(result['missingCount'], 1);
+      expect(result['valueStatus'], 'incomplete_missing_values');
+      expect(result['rawValuesPreserved'], ['100', ' - ', '200']);
+    });
+
+    test('returns a complete sum only when every cell is numeric', () {
+      final result = jsonDecode(
+        AfghanGhazaliFunctions.sumPopulationCellsJson('["100", "200"]'),
+      ) as Map<String, dynamic>;
+
+      expect(result['value'], 300);
+      expect(result['valueStatus'], 'calculated_complete');
+    });
+
+    test('compares P-code sets without dropping unmatched codes', () {
+      final result = jsonDecode(
+        AfghanGhazaliFunctions.comparePcodeSetsJson(
+          '["AF01", "AF02", "AF03"]',
+          '["AF01", "AF02", "AF04"]',
+        ),
+      ) as Map<String, dynamic>;
+
+      expect(result['matched'], ['AF01', 'AF02']);
+      expect(result['sourceOnly'], ['AF03']);
+      expect(result['referenceOnly'], ['AF04']);
+      expect(result['status'], 'compared');
+    });
+
+    test('flags duplicate P-codes in either input set', () {
+      final result = jsonDecode(
+        AfghanGhazaliFunctions.comparePcodeSetsJson(
+          '["AF01", "AF01"]',
+          '["AF01"]',
+        ),
+      ) as Map<String, dynamic>;
+
+      expect(result['duplicateSourceCodes'], ['AF01']);
+      expect(result['status'], 'duplicates_found');
+    });
+  });
+
 }
