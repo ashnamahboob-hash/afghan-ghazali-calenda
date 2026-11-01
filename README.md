@@ -185,3 +185,17 @@ The source-version evidence and the remaining retrieval gap are recorded in
 assets/data/afghanistan_admin_divisions_reference_draft.json under
 sources.official_status_dashboard. A concise investigation log is in
 docs/admin-reference-ocha-source-audit-2026-11-01.md.
+
+## National administrative selector preview
+
+The Agriculture screen now includes a draft-only selector for all 34 provinces
+and 401 ADM2 administrative-unit records. This is a development preview, not
+an officially certified gazetteer. The UI displays a warning, and the selector
+does not produce district-level agricultural advice or planting dates. Official
+production use remains disabled until current OCHA row-level P-code/name/parent
+verification and local-name review are complete.
+
+The runtime loader and tests are in
+`lib/services/administrative_reference.dart` and
+`test/administrative_reference_test.dart`. Flutter validation runs through
+`.github/workflows/flutter-validation.yml`.
