@@ -14,6 +14,7 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
   String season = 'Autumn';
   String crop = 'Wheat';
   String? district = 'AF2701';
+  String districtQuery = '';
   late final Future<AdministrativeReference> referenceFuture;
 
   @override
@@ -104,7 +105,19 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                 (item) => item.id == province,
                 orElse: () => reference.provinces.first,
               );
-              final selectedDistrict = selectedProvince.units.any(
+              final normalizedQuery =
+                  AdministrativeReference.normalizeSearchText(districtQuery);
+              final visibleUnits = selectedProvince.units.where((item) {
+                if (normalizedQuery.isEmpty) return true;
+                return <String>[
+                  item.id,
+                  item.localName,
+                  item.englishName,
+                ].map(AdministrativeReference.normalizeSearchText).any(
+                      (name) => name.contains(normalizedQuery),
+                    );
+              }).toList(growable: false);
+              final selectedDistrict = visibleUnits.any(
                 (item) => item.id == district,
               )
                   ? district
@@ -140,6 +153,7 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                         setState(() {
                           province = value;
                           district = null;
+                          districtQuery = '';
                         });
                       }
                     },
@@ -150,6 +164,26 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 6),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      prefixIcon: const Icon(Icons.search),
+                      labelText: en
+                          ? 'Search administrative unit'
+                          : fa
+                              ? 'جستجوی واحد اداری'
+                              : 'د اداري واحد لټون',
+                      suffixIcon: districtQuery.isEmpty
+                          ? null
+                          : IconButton(
+                              tooltip: en ? 'Clear search' : fa ? 'پاک کردن' : 'لټون پاکول',
+                              icon: const Icon(Icons.clear),
+                              onPressed: () => setState(() => districtQuery = ''),
+                            ),
+                    ),
+                    onChanged: (value) => setState(() => districtQuery = value),
+                  ),
+                  const SizedBox(height: 8),
                   DropdownButtonFormField<String>(
                     value: selectedDistrict,
                     isExpanded: true,
@@ -162,7 +196,7 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                               ? 'انتخاب واحد اداری'
                                : 'اداري واحد وټاکئ',
                     ),
-                    items: selectedProvince.units
+                    items: visibleUnits
                         .map((item) => DropdownMenuItem(
                               value: item.id,
                               child: Text(_districtName(item)),
