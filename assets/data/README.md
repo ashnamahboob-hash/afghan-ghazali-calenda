@@ -63,3 +63,6 @@ OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is
 
 ## NSIA 1402 review status correction
 - The Kandahar NSIA 1402 extract's second transcription review was completed against the original PDF text on 2026-11-01 for Tables 8-6, 8-7, 8-13 and 8-17. Blank source cells remain null; the extract remains province-level and is not enabled for runtime advice.
+
+- Province-name variants found in the v04 workbook comparison have now been aligned to workbook spellings for AF32 (Herat), AF30 (Helmand), AF15 (کونړ), and AF04 (میدان وردگ). Province P-codes were not changed. This is a secondary-reference spelling alignment, not independent OCHA/AGCHO certification.
+- The 401-row ADM2 name-by-name comparison is still pending; only ADM2 P-code presence and parent ADM1 code matching have been established so far.
