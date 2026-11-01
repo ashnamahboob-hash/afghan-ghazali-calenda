@@ -59,7 +59,7 @@ OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is
 - The workbook has 56 additional ADM2 P-codes absent from the candidate hierarchy (30 `District`, 26 `Temporaray District`). They are not added to the candidate hierarchy without further source review.
 - Province-name variants are recorded in the JSON cross-check metadata: `Hirat/Herat`, `Hilmand/Helmand`, `کنر ها/کونړ`, and `میدان وردک/میدان وردگ`. No spelling has been silently normalized.
 - The complete 401-row district-name comparison remains pending. P-code presence and parent-code agreement do not establish name equivalence or official status.
-- This comparison used the user-supplied workbook and does not constitute independent OCHA/AGCHO certification. Runtime remains disabled pending official row-level verification and name review.
+- This comparison used the user-supplied workbook and does not constitute independent OCHA/AGCHO certification. A draft-only runtime preview is now enabled in the Agriculture screen: users can select the candidate 34-province / 401-ADM2 hierarchy. The UI must show a clear draft warning. Official/production administrative data remains disabled pending current OCHA row-level verification and name review; no agricultural advice is derived from this selector.
 
 ## NSIA 1402 review status correction
 - The Kandahar NSIA 1402 extract's second transcription review was completed against the original PDF text on 2026-11-01 for Tables 8-6, 8-7, 8-13 and 8-17. Blank source cells remain null; the extract remains province-level and is not enabled for runtime advice.
@@ -122,3 +122,13 @@ Current exact-P-code comparison against the user-supplied v04 workbook:
 - The workbook classifies 11 as `Temporaray District` (source spelling retained; normalized in the draft) and Babaji (`AF3015`) as an ordinary `District`. Babaji is therefore excluded from the temporary-district count unless newer primary-source evidence supersedes this workbook.
 - Parent reference names agree exactly for 10 records. Dand (`AF2719`) has the source workbook value `Kandahar` versus the supplied table's `Kandahar Capital`; Pato (`AF2409`) has `Patoo` versus `Gizab / Patoo`. Both differences remain documented and pending.
 - This verifies what the supplied workbook contains; it does not independently certify that this v04 workbook is the current official COD-AB gazetteer. All 12 crosswalk records remain pending primary-source verification.
+
+
+## Draft-only administrative selector activation (2026-11-01)
+- The Agriculture screen now loads the 34-province / 401-ADM2 candidate hierarchy from `afghanistan_admin_divisions_reference_draft.json`.
+- The selector is explicitly a **preview**. It uses the label “administrative unit” because the candidate 401 ADM2 entries include mixed unit types; they must not all be represented as ordinary districts.
+- A visible warning explains that names and administrative relationships remain under source review.
+- The national reference remains unverified and must not be treated as an official production gazetteer.
+- The selector does not generate crop calendars, sowing dates, seed rates, or district-level agricultural statistics.
+- `runtime_preview.enabled=true` records this limited UI activation; `production_official_data_enabled=false` keeps official production use disabled.
+- A Flutter loader validates 34 unique province IDs and 401 unique ADM2 IDs. Dedicated Flutter analysis and test CI was added.
