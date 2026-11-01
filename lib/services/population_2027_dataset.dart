@@ -45,16 +45,29 @@ class Population2027Dataset {
 
   final List<Population2027Record> records;
   final Map<String, Population2027Record> _byPcode;
+  final Map<String, List<Population2027Record>> _byProvincePcode;
 
   Population2027Dataset._(List<Population2027Record> rows)
       : records = List.unmodifiable(rows),
         _byPcode = UnmodifiableMapView({
           for (final row in rows) row.pcode: row,
+        }),
+        _byProvincePcode = UnmodifiableMapView({
+          for (final provincePcode in rows.map((row) => row.provincePcode).toSet())
+            provincePcode: List.unmodifiable(
+              rows.where((row) => row.provincePcode == provincePcode),
+            ),
         });
 
   int get recordCount => records.length;
 
+  /// Exact stable ADM2 P-code lookup; does not fall back to name matching.
   Population2027Record? findByPcode(String pcode) => _byPcode[pcode];
+
+  /// Returns only population rows whose source parent ADM1 P-code matches.
+  /// The returned list is immutable and retains source order.
+  List<Population2027Record> recordsForProvince(String provincePcode) =>
+      _byProvincePcode[provincePcode] ?? const [];
 
   static Future<Population2027Dataset> load() async {
     final csv = await rootBundle.loadString(assetPath);
