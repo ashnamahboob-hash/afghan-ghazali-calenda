@@ -204,4 +204,36 @@ void main() {
     });
   });
 
+  group('AfghanGhazaliFunctions city configuration', () {
+    test('exposes all six configured Afghan cities with stable IDs', () {
+      final cities = jsonDecode(
+        AfghanGhazaliFunctions.supportedCitiesJson(),
+      ) as List<dynamic>;
+
+      expect(cities.length, 6);
+      final ids = cities.map((city) => (city as Map<String, dynamic>)['id']).toSet();
+      expect(ids, containsAll([
+        'kabul', 'kandahar', 'herat',
+        'mazar_e_sharif', 'jalalabad', 'kunduz',
+      ]));
+    });
+
+    test('returns Kandahar coordinates from the existing source app', () {
+      final city = jsonDecode(
+        AfghanGhazaliFunctions.cityConfigurationJson('kandahar'),
+      ) as Map<String, dynamic>;
+
+      expect(city['latitude'], 31.6289);
+      expect(city['longitude'], 65.7372);
+      expect(city['namePs'], 'کندهار');
+    });
+
+    test('rejects an unknown city key', () {
+      expect(
+        () => AfghanGhazaliFunctions.cityConfigurationJson('unknown'),
+        throwsArgumentError,
+      );
+    });
+  });
+
 }
