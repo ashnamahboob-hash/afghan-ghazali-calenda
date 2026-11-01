@@ -143,6 +143,13 @@ def validate(path: Path) -> list[str]:
         fail("dataset-level source checks must include unique IDs, source URLs, and scope notes")
     checks.append(f"{len(dataset_checks)} dataset-level source checks are documented separately from row-level checks")
 
+    secondary_checks = data.get("secondary_source_checks", [])
+    secondary_ids = [item.get("id", "") for item in secondary_checks]
+    unique(secondary_ids, "secondary source check IDs")
+    if any(not item.get("source_urls") or not item.get("scope") or not item.get("finding") for item in secondary_checks):
+        fail("secondary source checks must include source URLs, scope notes, and findings")
+    checks.append(f"{len(secondary_checks)} secondary alias/name checks are documented without treating them as primary COD verification")
+
     return checks
 
 
