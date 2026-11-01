@@ -37,9 +37,10 @@ independent population model and supports exact P-code lookup. It does not
 modify or populate the 401-unit administrative selector.
 
 The parser keeps source cells as strings, including empty values, commas,
-whitespace-padded hyphen markers and quoted text. It skips the blank-ADM2-
-P-code aggregate row and rejects duplicate ADM2 P-codes, missing parent
-ADM1 P-codes, and malformed row widths.
+whitespace-padded hyphen markers and quoted text. It exposes the blank-ADM2-
+P-code national aggregate separately from ADM2 records, and rejects multiple
+aggregate rows, duplicate ADM2 P-codes, missing parent ADM1 P-codes, and
+malformed row widths. Province lookups use the source parent ADM1 P-code.
 
 **Integration is intentionally pending:** the original CSV payloads are not
 yet committed, and the population CSV is not yet registered in
