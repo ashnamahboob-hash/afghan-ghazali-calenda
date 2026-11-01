@@ -325,12 +325,29 @@ class _HomeScreenState extends State<HomeScreen> {
     final count = AfghanCalendar.daysInMonth(selectedSolar.year, selectedSolar.month);
     final rows = ((offset + count) / 7).ceil();
     final weekdays = AfghanCalendar.weekdayNames(language);
+    final legend = language == 'en'
+        ? 'Afghan solar  ·  Gregorian  ·  Islamic lunar'
+        : language == 'fa'
+            ? 'شمسی افغانستان  ·  میلادی  ·  قمری'
+            : 'افغاني لمریز  ·  عیسوي میلادي  ·  اسلامي قمري';
     return Card(
       margin: EdgeInsets.zero,
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                legend,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF527064),
+                ),
+              ),
+            ),
             Row(
               children: weekdays.map((d) => Expanded(
                 child: Center(child: Padding(
@@ -347,6 +364,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   final date = AfghanCalendar.toGregorian(selectedSolar.year, selectedSolar.month, day);
                   final selected = DateUtils.isSameDay(date, selectedDate);
                   final today = DateUtils.isSameDay(date, DateTime.now());
+                  final hijriDate = IslamicCalendar.fromGregorian(date);
                   return Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(2),
@@ -354,19 +372,34 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(12),
                         onTap: () => setState(() => selectedDate = date),
                         child: Container(
-                          height: 42,
+                          height: 54,
                           decoration: BoxDecoration(
                             color: selected ? const Color(0xFF145A42) : today ? const Color(0xFFFFF2C7) : Colors.transparent,
                             borderRadius: BorderRadius.circular(12),
                             border: today && !selected ? Border.all(color: const Color(0xFFD4AF37)) : null,
                           ),
                           alignment: Alignment.center,
-                          child: Text(
-                            AfghanCalendar.formatNumber(day, language),
-                            style: TextStyle(
-                              fontWeight: selected || today ? FontWeight.bold : FontWeight.normal,
-                              color: selected ? Colors.white : const Color(0xFF25352D),
-                            ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                AfghanCalendar.formatNumber(day, language),
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: selected || today ? FontWeight.bold : FontWeight.normal,
+                                  color: selected ? Colors.white : const Color(0xFF25352D),
+                                ),
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                '${AfghanCalendar.formatNumber(date.day, language)} · ${AfghanCalendar.formatNumber(hijriDate.day, language)}',
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  height: 1,
+                                  color: selected ? Colors.white70 : const Color(0xFF64756D),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
