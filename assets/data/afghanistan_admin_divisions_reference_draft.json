@@ -5728,7 +5728,22 @@
       "AF2501",
       "AF2504"
     ],
-    "labels_currently_matching_workbook_from_initial_alignment": 96
+    "labels_currently_matching_workbook_from_initial_alignment": 96,
+    "user_accepted_variation_policy": {
+      "recorded_on": "2026-11-01",
+      "user_instruction": "Small English spelling/transliteration differences are acceptable and should not block continued work.",
+      "policy": "Retain current candidate English labels when exact ADM2 P-code and parent province IDs match. Treat formatting and minor orthographic variants as non-blocking for draft preview. Keep a short manual-glance list for more divergent aliases; do not automatically overwrite labels from a secondary source.",
+      "secondary_crosscheck_counts": {
+        "exact_match": 289,
+        "formatting_only": 20,
+        "minor_variant_non_blocking": 67,
+        "manual_glance_recommended": 25,
+        "total": 401
+      },
+      "source_audit_file": "docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json",
+      "candidate_labels_changed": false,
+      "official_cod_ab_certified": false
+    }
   },
   "dataset_level_source_checks": [
     {
