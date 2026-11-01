@@ -67,26 +67,37 @@ ADM2 P-codes. All 401 candidate P-codes were joined by exact code. Of the
 401 candidate local labels, 332 exactly match `adm2_name1`; 69 differ.
 The 136 previously reviewed records were retained, and 213 additional exact
 matches were recorded, bringing the reviewed count to 349 of 401. The
-remaining 52 discrepancies are listed in the JSON audit notes and have not
-been automatically overwritten. Across all 401 records, 69 local-script
-or name discrepancies are now documented.
+remaining 52 local-script discrepancies are listed in the JSON audit notes
+and have not been automatically overwritten. Across all 401 records, 69
+local-script or name discrepancies are documented.
 
-Several discrepancies appear substantive and require manual reconciliation,
-not transliteration cleanup. In particular, the workbook's local/English
-labels appear crossed between candidate codes `AF2506` and `AF2507` (Chinarto
-and Gizab); `AF0901`/`AF0905` also need careful review of the Baghlan city and
-district labels. These labels and all stable IDs remain unchanged pending
-reconciliation. The CSV contains 56 additional ADM2 codes outside the 401-record
-candidate reference; they have not been silently added. P-code presence and
-parent-code matching must not be treated as name verification. English labels
-are aligned to the workbook strictly by ADM2 P-code, including spellings and
-longer/shorter English labels where the workbook differs. These are
-secondary-reference alignments only; they are not OCHA/AGCHO certification.
-Local-script labels are tracked separately and have not been mass-overwritten.
-The workbook is a user-supplied secondary reference for this review and does
-not replace row-level OCHA/AGCHO certification. Do not mark the gazetteer
-official or enable it as runtime administrative data until the required
-primary-source verification and application tests are complete.
+### Targeted OCHA source checks
+
+A targeted review of OCHA publications found exact P-code/name evidence for
+nine disputed records. OCHA's February 2021 Humanitarian Access Group list
+pairs `AF2504` with Shahid-e-Hassas, `AF2506` with Chinarto, `AF2507` with
+Gizab, `AF3004` with Nahr-e-Saraj, and `AF3003` with Nawa-e-Barakzaiy.
+This supports the candidate code/name mapping for the Uruzgan records and
+shows that the user's v04 workbook's `AF2506`/`AF2507` names are crossed.
+OCHA's 2024 Afghanistan Humanitarian Fund Annex 1 pairs `AF0905` with
+Baghlan-e-Jadid, `AF1722` with Darwaz-e-Payin, `AF2304` with Charsadra,
+and `AF2501` with Tirinkot. Five candidate English labels were corrected
+to the OCHA spellings/names: `AF0905`, `AF2504`, `AF1722`, `AF2304`, and
+`AF2501`. The relevant source references and per-record findings are stored
+in `district_name_review_status.independent_source_checks` and
+`english_name_review_status.post_workbook_ocha_crosscheck` in the JSON.
+
+These targeted OCHA documents are not the complete COD gazetteer, and some
+records show alternate/expanded names (for example `AF3004` Nahr-e-Saraj /
+Gereshk and `AF3003` Nawa-e-Barakzaiy / Nawa). Such variants are not treated
+as confirmed code errors. The CSV contains 56 additional ADM2 codes outside
+the 401-record candidate reference; they have not been silently added. P-code
+presence and parent-code matching must not be treated as name verification.
+The workbook remains a user-supplied secondary reference; targeted OCHA
+publications provide evidence only for the listed P-codes. The remaining
+local-script differences still need direct source review. Do not mark the
+gazetteer official or enable it as runtime administrative data until the
+complete primary-source verification and application tests are complete.
 
 ## Requirements
 - Flutter SDK 3.22 or later
