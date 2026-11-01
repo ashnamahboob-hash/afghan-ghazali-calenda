@@ -52,7 +52,15 @@ silently added.
 
 ### Outstanding verification
 
-The remaining 385 candidate ADM2 records still require a complete
+A further eight ADM2 labels were aligned by P-code for Kandahar and Herat:
+`AF2706` Shah Walikot, `AF2708` Arghistan, `AF2710` Maiwand,
+`AF2712` Neash, `AF2713` Meyanishin, `AF2715` Marof, `AF2716` Reg
+(local label normalized to the workbook's «ریگ»), and `AF3201` Herat.
+Together with the 16 Daykundi/Panjshir crosswalk entries, 24 of the 401
+candidate ADM2 names have now been checked by P-code against the workbook;
+377 candidate records remain for name-by-name comparison.
+
+The remaining 377 candidate ADM2 records still require a complete
 name-by-name comparison against the workbook. P-code presence and parent-code
 matching must not be treated as name verification. The workbook is a
 user-supplied secondary reference for this review and does not replace
