@@ -102,3 +102,14 @@ No candidate label was changed and no review status was closed. The detailed
 record-by-record ledger is at
 `docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json`.
 The 2026 OCHA/AGCHO row-level verification remains pending.
+
+## OCHA GIS service lead (schema inspected; rows not retrieved)
+
+A global OCHA COD Admin2 ArcGIS REST layer was located:
+
+- Layer: https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0
+- Query endpoint: https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0/query
+- The published layer schema includes `adm2_pcode`, `adm1_pcode`, multilingual ADM2/ADM1 name fields, `valid_on`, `valid_to`, `version_no`, and language metadata.
+- OCHA's COD documentation confirms that live geoservices are one of the COD-AB distribution formats.
+
+An Afghanistan-filtered feature query was attempted, but the retrieval interface returned an access/cache-miss error. No Afghanistan features were obtained. This is therefore a strong official retrieval lead, not completed row-level evidence. The service schema alone must not be used to alter district labels or mark any P-code verified.
