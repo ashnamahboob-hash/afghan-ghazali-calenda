@@ -66,3 +66,10 @@ OCHA COD-AB metadata describes Afghanistan ADM1/ADM2 administrative units and is
 
 - Province-name variants found in the v04 workbook comparison have now been aligned to workbook spellings for AF32 (Herat), AF30 (Helmand), AF15 (کونړ), and AF04 (میدان وردگ). Province P-codes were not changed. This is a secondary-reference spelling alignment, not independent OCHA/AGCHO certification.
 - The 401-row ADM2 name-by-name comparison is still pending; only ADM2 P-code presence and parent ADM1 code matching have been established so far.
+
+## District-name alignment against supplied COD-AB workbook (2026-11-01)
+- The four province-name variants identified in the earlier workbook comparison were aligned to the v04 workbook spellings; province IDs were preserved.
+- The 16 Daykundi/Panjshir crosswalk reference labels were aligned to the exact workbook `adm2_name` / `adm2_name1` values, and the same 16 entries in the administrative reference draft were aligned. Source-local IDs and source-submitted Pashto labels were not changed.
+- One material source-label conflict remains: `PJR-06` retains source label `خنج`, while workbook P-code `AF0804` is labelled `Hesa-e-Awal / حصه اول`. The stable candidate P-code was not changed; this mapping remains flagged for manual reconciliation.
+- The remaining 385 candidate ADM2 records have not yet had their names compared one by one with the workbook. The workbook P-code presence and parent-code matches do not certify district names or official status.
+- All of these edits remain secondary-reference alignments only. OCHA/AGCHO row-level verification is still pending and runtime remains disabled.
