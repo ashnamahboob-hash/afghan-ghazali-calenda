@@ -1,0 +1,635 @@
+{
+  "audit_id": "OPEN_ADMIN_DATA_SECONDARY_CROSSCHECK_2026_11_01",
+  "checked_on": "2026-11-01",
+  "classification": "secondary independent reference only; not official COD-AB evidence",
+  "source": {
+    "repository": "open-admin-data/afghanistan-administrative-divisions",
+    "url": "https://github.com/open-admin-data/afghanistan-administrative-divisions",
+    "file_url": "https://github.com/open-admin-data/afghanistan-administrative-divisions/blob/main/data/all-district.json",
+    "raw_url": "https://raw.githubusercontent.com/open-admin-data/afghanistan-administrative-divisions/main/data/all-district.json",
+    "stated_last_updated": "2026-09-08",
+    "stated_license": "CC-BY-4.0",
+    "description": "Community-maintained bilingual administrative hierarchy dataset. The retrieved records contain P-code-like IDs, local and English labels, and parent province IDs; the row-level source field is empty in the sampled records."
+  },
+  "comparison_method": {
+    "join_key": "exact ADM2 ID/P-code string",
+    "normalization": "NFKC, remove whitespace, hyphen, Arabic tatweel, comma and parentheses; lowercase for English comparisons",
+    "no_candidate_labels_changed": true,
+    "no_discrepancy_status_changed": true
+  },
+  "counts": {
+    "source_records": 401,
+    "candidate_records": 401,
+    "exact_id_matches": 401,
+    "missing_candidate_ids": [],
+    "exact_parent_province_id_matches": 401,
+    "parent_province_id_differences": 0,
+    "english_exact_matches": 289,
+    "english_normalization_only_matches": 20,
+    "english_remaining_differences": 92,
+    "english_total_different_strings": 112,
+    "local_script_exact_matches": 396,
+    "local_script_normalization_only_matches": 1,
+    "local_script_remaining_differences": 4,
+    "local_script_total_different_strings": 5
+  },
+  "english_differences": [
+    {
+      "id": "AF2804",
+      "draft": "Mingajek",
+      "secondary": "Mingajik"
+    },
+    {
+      "id": "AF2402",
+      "draft": "Shahristan",
+      "secondary": "Shahrestan"
+    },
+    {
+      "id": "AF2116",
+      "draft": "Chahi",
+      "secondary": "Sharak-e-Hayratan"
+    },
+    {
+      "id": "AF3013",
+      "draft": "Disho",
+      "secondary": "Deh-e-Shu"
+    },
+    {
+      "id": "AF1604",
+      "draft": "Nurgeram",
+      "secondary": "Nurgaram"
+    },
+    {
+      "id": "AF1513",
+      "draft": "Chapa Darah",
+      "secondary": "Chapa Dara"
+    },
+    {
+      "id": "AF2505",
+      "draft": "Khas Urozgan",
+      "secondary": "Khas Uruzgan"
+    },
+    {
+      "id": "AF1412",
+      "draft": "Shumul",
+      "secondary": "Shamal"
+    },
+    {
+      "id": "AF1307",
+      "draft": "Zazi",
+      "secondary": "Jaji"
+    },
+    {
+      "id": "AF1308",
+      "draft": "Laj-e-Ahmadkhel",
+      "secondary": "Lija Ahmad Khel"
+    },
+    {
+      "id": "AF2610",
+      "draft": "Shamolzai",
+      "secondary": "Shamul Zayi"
+    },
+    {
+      "id": "AF0617",
+      "draft": "Momand Darah",
+      "secondary": "Muhmand Dara"
+    },
+    {
+      "id": "AF2811",
+      "draft": "Darz Ab",
+      "secondary": "Darzab"
+    },
+    {
+      "id": "AF1503",
+      "draft": "Watapor",
+      "secondary": "Watapur"
+    },
+    {
+      "id": "AF1114",
+      "draft": "Jaghori",
+      "secondary": "Jaghuri"
+    },
+    {
+      "id": "AF1605",
+      "draft": "Dowab",
+      "secondary": "Duab"
+    },
+    {
+      "id": "AF0106",
+      "draft": "Shakardara",
+      "secondary": "Shakar Dara"
+    },
+    {
+      "id": "AF1413",
+      "draft": "Zazi Maydan",
+      "secondary": "Jaji Maydan"
+    },
+    {
+      "id": "AF2409",
+      "draft": "Pato",
+      "secondary": "Patoo"
+    },
+    {
+      "id": "AF1501",
+      "draft": "Asadabad",
+      "secondary": "Asad Abad"
+    },
+    {
+      "id": "AF3302",
+      "draft": "Pushterod",
+      "secondary": "Pushtrod"
+    },
+    {
+      "id": "AF0909",
+      "draft": "Jelgah",
+      "secondary": "Khwaja Hejran"
+    },
+    {
+      "id": "AF2713",
+      "draft": "Meyanishin",
+      "secondary": "Miyanshin"
+    },
+    {
+      "id": "AF0914",
+      "draft": "Guzargah-e-Noor",
+      "secondary": "Guzargah-e-Nur"
+    },
+    {
+      "id": "AF3304",
+      "draft": "Qalah-e-Kah",
+      "secondary": "Qala-e-Kah"
+    },
+    {
+      "id": "AF2503",
+      "draft": "Chorah",
+      "secondary": "Chora"
+    },
+    {
+      "id": "AF1213",
+      "draft": "Neka",
+      "secondary": "Nika"
+    },
+    {
+      "id": "AF0406",
+      "draft": "Daimirdad",
+      "secondary": "Daymirdad"
+    },
+    {
+      "id": "AF0705",
+      "draft": "Dawlat Shah",
+      "secondary": "Dawlatshah"
+    },
+    {
+      "id": "AF2911",
+      "draft": "Qaramqul",
+      "secondary": "Qaram Qul"
+    },
+    {
+      "id": "AF0702",
+      "draft": "Qarghayee",
+      "secondary": "Qarghayi"
+    },
+    {
+      "id": "AF3201",
+      "draft": "Herat",
+      "secondary": "Hirat"
+    },
+    {
+      "id": "AF2611",
+      "draft": "Khak-e-Afghan",
+      "secondary": "Kakar"
+    },
+    {
+      "id": "AF0408",
+      "draft": "Jaghato",
+      "secondary": "Jaghatu"
+    },
+    {
+      "id": "AF0107",
+      "draft": "Mosahi",
+      "secondary": "Musahi"
+    },
+    {
+      "id": "AF2406",
+      "draft": "Meramor",
+      "secondary": "Miramor"
+    },
+    {
+      "id": "AF0109",
+      "draft": "Khak-e-Jabar",
+      "secondary": "Khak-e-Jabbar"
+    },
+    {
+      "id": "AF1514",
+      "draft": "Noorgal",
+      "secondary": "Nurgal"
+    },
+    {
+      "id": "AF1305",
+      "draft": "Waza Zadran",
+      "secondary": "Zadran"
+    },
+    {
+      "id": "AF2908",
+      "draft": "Garziwan",
+      "secondary": "Garzewan"
+    },
+    {
+      "id": "AF1302",
+      "draft": "Ahmad Abad",
+      "secondary": "Ahmadaba"
+    },
+    {
+      "id": "AF3404",
+      "draft": "Chahar Burjak",
+      "secondary": "Char Burjak"
+    },
+    {
+      "id": "AF2806",
+      "draft": "Kham Ab",
+      "secondary": "Khamyab"
+    },
+    {
+      "id": "AF3305",
+      "draft": "Shebkoh",
+      "secondary": "Shibkoh"
+    },
+    {
+      "id": "AF3311",
+      "draft": "Purchaman",
+      "secondary": "Pur Chaman"
+    },
+    {
+      "id": "AF1311",
+      "draft": "Dand-e-Patan",
+      "secondary": "Dand Wa Patan"
+    },
+    {
+      "id": "AF2302",
+      "draft": "Do Layna",
+      "secondary": "DoLayna"
+    },
+    {
+      "id": "AF0803",
+      "draft": "Darah",
+      "secondary": "Dara"
+    },
+    {
+      "id": "AF3004",
+      "draft": "Gereshk",
+      "secondary": "Nahr-e-Saraj"
+    },
+    {
+      "id": "AF3003",
+      "draft": "Nawa",
+      "secondary": "Nawa-e-Barakzaiy"
+    },
+    {
+      "id": "AF2111",
+      "draft": "Chaharbolak",
+      "secondary": "Char Bolak"
+    },
+    {
+      "id": "AF0618",
+      "draft": "Lalpura",
+      "secondary": "Lalpur"
+    },
+    {
+      "id": "AF2903",
+      "draft": "Khwaja Sabzposh",
+      "secondary": "Khwaja Sabz Posh"
+    },
+    {
+      "id": "AF1816",
+      "draft": "Chah Ab",
+      "secondary": "Chahab"
+    },
+    {
+      "id": "AF3210",
+      "draft": "Kushk-e-Kohna",
+      "secondary": "Kushk-e-Kuhna"
+    },
+    {
+      "id": "AF1205",
+      "draft": "Sar Rawza",
+      "secondary": "Sar Rawzah"
+    },
+    {
+      "id": "AF2706",
+      "draft": "Shah Walikot",
+      "secondary": "Shah Wali Kot"
+    },
+    {
+      "id": "AF2901",
+      "draft": "Maimana",
+      "secondary": "Maymana"
+    },
+    {
+      "id": "AF0805",
+      "draft": "Onaba",
+      "secondary": "Anawa"
+    },
+    {
+      "id": "AF3005",
+      "draft": "Washir",
+      "secondary": "Washer"
+    },
+    {
+      "id": "AF1403",
+      "draft": "Gurbaz",
+      "secondary": "Gurbuz"
+    },
+    {
+      "id": "AF1216",
+      "draft": "Delah",
+      "secondary": "Dila"
+    },
+    {
+      "id": "AF1108",
+      "draft": "Zana Khan",
+      "secondary": "Zanakhan"
+    },
+    {
+      "id": "AF1408",
+      "draft": "Alisher Aw Terizi",
+      "secondary": "Terezayi"
+    },
+    {
+      "id": "AF3011",
+      "draft": "Khanshin",
+      "secondary": "Reg-i-Khan Nishin"
+    },
+    {
+      "id": "AF1507",
+      "draft": "Darah-e-Pech",
+      "secondary": "Dara-e-Pech"
+    },
+    {
+      "id": "AF1907",
+      "draft": "Qala-e-zal",
+      "secondary": "Qala-e-Zal"
+    },
+    {
+      "id": "AF2404",
+      "draft": "Khader",
+      "secondary": "Khadir"
+    },
+    {
+      "id": "AF1002",
+      "draft": "Shebar",
+      "secondary": "Shibar"
+    },
+    {
+      "id": "AF1704",
+      "draft": "Yaftal",
+      "secondary": "Yaftal-e-Sufla"
+    },
+    {
+      "id": "AF0404",
+      "draft": "Chak",
+      "secondary": "Chak-e-Wardak"
+    },
+    {
+      "id": "AF2715",
+      "draft": "Marof",
+      "secondary": "Maruf"
+    },
+    {
+      "id": "AF0906",
+      "draft": "Khenjan",
+      "secondary": "Khinjan"
+    },
+    {
+      "id": "AF2810",
+      "draft": "Qarqen",
+      "secondary": "Qarqin"
+    },
+    {
+      "id": "AF2606",
+      "draft": "Shahjoy",
+      "secondary": "Shah Joi"
+    },
+    {
+      "id": "AF1406",
+      "draft": "Nadershahkot",
+      "secondary": "Nadir Shah Kot"
+    },
+    {
+      "id": "AF1811",
+      "draft": "Eshkamesh",
+      "secondary": "Eshkmesh"
+    },
+    {
+      "id": "AF1111",
+      "draft": "Qarabagh",
+      "secondary": "Qara Bagh"
+    },
+    {
+      "id": "AF0405",
+      "draft": "Sayedabad",
+      "secondary": "Saydabad"
+    },
+    {
+      "id": "AF1703",
+      "draft": "Arghanchkhwah",
+      "secondary": "Arghanj Khwah"
+    },
+    {
+      "id": "AF0806",
+      "draft": "Shutol",
+      "secondary": "Shutul"
+    },
+    {
+      "id": "AF0611",
+      "draft": "Pachiragam",
+      "secondary": "Pachir Wa Agam"
+    },
+    {
+      "id": "AF2114",
+      "draft": "Kushenda",
+      "secondary": "Keshendeh"
+    },
+    {
+      "id": "AF1103",
+      "draft": "Khwaja Omari",
+      "secondary": "Khwaja Umari"
+    },
+    {
+      "id": "AF1817",
+      "draft": "Yangi Qalah",
+      "secondary": "Yangi Qala"
+    },
+    {
+      "id": "AF0911",
+      "draft": "Tala-Wa-Barfak",
+      "secondary": "Tala Wa Barfak"
+    },
+    {
+      "id": "AF2107",
+      "draft": "Sholgarah",
+      "secondary": "Sholgareh"
+    },
+    {
+      "id": "AF1402",
+      "draft": "Esmail Khel Aw Mandozayi",
+      "secondary": "Mandozayi"
+    },
+    {
+      "id": "AF1515",
+      "draft": "Narai",
+      "secondary": "Nari"
+    },
+    {
+      "id": "AF1407",
+      "draft": "Sabari Aw Yaqubi",
+      "secondary": "Sabari"
+    },
+    {
+      "id": "AF0908",
+      "draft": "Dehsalah",
+      "secondary": "Deh Salah"
+    },
+    {
+      "id": "AF3101",
+      "draft": "Qala-e Naw",
+      "secondary": "Qala-e-Naw"
+    },
+    {
+      "id": "AF3216",
+      "draft": "Chesht-e-Sharif",
+      "secondary": "Chisht-e-Sharif"
+    },
+    {
+      "id": "AF3303",
+      "draft": "Khak-e-Safid",
+      "secondary": "Khak-e-Safed"
+    },
+    {
+      "id": "AF2712",
+      "draft": "Neash",
+      "secondary": "Nesh"
+    },
+    {
+      "id": "AF2710",
+      "draft": "Maiwand",
+      "secondary": "Maywand"
+    },
+    {
+      "id": "AF0804",
+      "draft": "Hesa-e-Awal",
+      "secondary": "Khenj"
+    },
+    {
+      "id": "AF1217",
+      "draft": "Wazakhwa",
+      "secondary": "Wazakhah"
+    },
+    {
+      "id": "AF2408",
+      "draft": "Kejran",
+      "secondary": "Kajran"
+    },
+    {
+      "id": "AF0910",
+      "draft": "Borka",
+      "secondary": "Burka"
+    },
+    {
+      "id": "AF1505",
+      "draft": "Sarkani",
+      "secondary": "Sar Kani"
+    },
+    {
+      "id": "AF2708",
+      "draft": "Arghistan",
+      "secondary": "Arghestan"
+    },
+    {
+      "id": "AF2801",
+      "draft": "Sheberghan",
+      "secondary": "Shiberghan"
+    },
+    {
+      "id": "AF0113",
+      "draft": "Istalef",
+      "secondary": "Estalef"
+    },
+    {
+      "id": "AF1810",
+      "draft": "Rustaq",
+      "secondary": "Rostaq"
+    },
+    {
+      "id": "AF1724",
+      "draft": "Shakai",
+      "secondary": "Shaki"
+    },
+    {
+      "id": "AF3104",
+      "draft": "Qades",
+      "secondary": "Qadis"
+    },
+    {
+      "id": "AF2907",
+      "draft": "Qaisar",
+      "secondary": "Qaysar"
+    },
+    {
+      "id": "AF0915",
+      "draft": "Fereng-o-Gharu",
+      "secondary": "Fereng Wa Gharu"
+    },
+    {
+      "id": "AF1405",
+      "draft": "Musakhel",
+      "secondary": "Musa Khel"
+    },
+    {
+      "id": "AF0114",
+      "draft": "Qarabagh",
+      "secondary": "Qara Bagh"
+    },
+    {
+      "id": "AF3102",
+      "draft": "Abkamari",
+      "secondary": "Ab Kamari"
+    }
+  ],
+  "local_script_differences": [
+    {
+      "id": "AF2706",
+      "draft": "شاه ولیکوت",
+      "secondary": "شاه ولی کوت"
+    },
+    {
+      "id": "AF0805",
+      "draft": "عُنابه",
+      "secondary": "عنابه"
+    },
+    {
+      "id": "AF0806",
+      "draft": "شتُل",
+      "secondary": "شُتل"
+    },
+    {
+      "id": "AF2716",
+      "draft": "ریگ",
+      "secondary": "ریگ ( شگه )"
+    },
+    {
+      "id": "AF0804",
+      "draft": "حصه اول",
+      "secondary": "خنج (حصه اول)"
+    }
+  ],
+  "parent_differences": [],
+  "interpretation": [
+    "All 401 source records join to candidate records by exact ID/P-code string.",
+    "All 401 parent province IDs match the candidate hierarchy.",
+    "English labels differ as literal strings in 112 records; 20 are normalization-only variants and 92 remain different after conservative normalization.",
+    "Local-script labels differ as literal strings in 5 records; 1 is a normalization-only spacing variant and 4 remain different after conservative normalization.",
+    "This comparison does not establish that either dataset is correct. The secondary repository's README states its update date and license, but sampled row-level source metadata is empty.",
+    "The results are not a replacement for current OCHA/AGCHO COD-AB gazetteer verification."
+  ],
+  "decision": "Record as secondary corroboration only. Keep all existing local-name discrepancies and official verification statuses pending. Do not overwrite the 401 candidate records from this source."
+}
