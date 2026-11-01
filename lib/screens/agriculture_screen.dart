@@ -22,7 +22,7 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
     referenceFuture = AdministrativeReference.load();
   }
 
-  String _districtName(AdministrativeDistrict item) =>
+  String _districtName(AdministrativeUnit item) =>
       en ? item.englishName : item.localName;
 
   String _provinceName(AdministrativeProvince item) =>
@@ -104,7 +104,7 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                 (item) => item.id == province,
                 orElse: () => reference.provinces.first,
               );
-              final selectedDistrict = selectedProvince.districts.any(
+              final selectedDistrict = selectedProvince.units.any(
                 (item) => item.id == district,
               )
                   ? district
@@ -146,7 +146,7 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                   ),
                   const SizedBox(height: 14),
                   Text(
-                    en ? 'District' : fa ? 'ولسوالی' : 'ولسوالۍ',
+                    en ? 'Administrative unit' : fa ? 'واحد اداری' : 'اداري واحد',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 6),
@@ -157,12 +157,12 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                       border: const OutlineInputBorder(),
                       prefixIcon: const Icon(Icons.map_outlined),
                       labelText: en
-                          ? 'Select district'
+                          ? 'Select administrative unit'
                           : fa
-                              ? 'انتخاب ولسوالی'
-                              : 'ولسوالۍ وټاکئ',
+                              ? 'انتخاب واحد اداری'
+                               : 'اداري واحد وټاکئ',
                     ),
-                    items: selectedProvince.districts
+                    items: selectedProvince.units
                         .map((item) => DropdownMenuItem(
                               value: item.id,
                               child: Text(_districtName(item)),
@@ -193,10 +193,10 @@ class _AgricultureScreenState extends State<AgricultureScreen> {
                         Expanded(
                           child: Text(
                             en
-                                ? 'Preview reference only: 34 provinces and 401 ADM2 records. Names and some administrative relationships are still under source review; do not treat this list as an officially certified gazetteer.'
+                                ? 'Preview reference only: 34 provinces and 401 ADM2 records. The list includes mixed ADM2 unit types and remains under source review; do not treat it as an officially certified gazetteer.'
                                 : fa
-                                    ? 'این فهرست پیش‌نویس است: ۳۴ ولایت و ۴۰۱ واحد اداری در کچهٔ دویم. نام‌ها و برخی روابط اداری هنوز بررسی منبع می‌شوند و نباید مرجع رسمی و تأییدشده تلقی شوند.'
-                                    : 'دا د ازمایښتي معلوماتو لېست دی: ۳۴ ولایتونه او ۴۰۱ د دویمې اداري کچې ریکارډونه. نومونه او ځینې اداري اړیکې لا د سرچینو له مخې تر ارزونې لاندې دي؛ د رسمي تایید شوي نوملړ په توګه یې مه کاروئ.',
+                                    ? 'این فهرست پیش‌نویس است: ۳۴ ولایت و ۴۰۱ واحد اداری در کچهٔ دویم. این فهرست شامل انواع مختلف واحدهای اداری سطح دوم است؛ نام‌ها و روابط آن هنوز بررسی می‌شوند و مرجع رسمی تأییدشده نیست.'
+                                    : 'دا د ازمایښتي معلوماتو لېست دی: ۳۴ ولایتونه او ۴۰۱ د دویمې اداري کچې ریکارډونه. په دې لېست کې د دویمې کچې بېلابېل اداري واحدونه شامل دي؛ نومونه او اړیکې یې لا تر ارزونې لاندې دي او رسمي تایید شوی نوملړ نه دی.',
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
                         ),
