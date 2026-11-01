@@ -234,6 +234,48 @@ void main() {
         throwsArgumentError,
       );
     });
+
+    test('positional city prayer wrapper returns all six time fields', () {
+      final result = jsonDecode(
+        AfghanGhazaliFunctions.prayerTimesForCityJson(
+          '2026-06-21',
+          'kandahar',
+          2,
+        ),
+      ) as Map<String, dynamic>;
+
+      expect(result['fajr'], isA<String>());
+      expect(result['sunrise'], isA<String>());
+      expect(result['dhuhr'], isA<String>());
+      expect(result['asr'], isA<String>());
+      expect(result['maghrib'], isA<String>());
+      expect(result['isha'], isA<String>());
+      expect(result['asrMethod'], 'Hanafi');
+    });
+
+    test('HomePage payload combines date, city and prayer data', () {
+      final result = jsonDecode(
+        AfghanGhazaliFunctions.homeDashboardJson(
+          '2026-04-01',
+          'kandahar',
+          2,
+        ),
+      ) as Map<String, dynamic>;
+
+      final solar = result['solar'] as Map<String, dynamic>;
+      final gregorian = result['gregorian'] as Map<String, dynamic>;
+      final hijri = result['hijri'] as Map<String, dynamic>;
+      final city = result['city'] as Map<String, dynamic>;
+      final prayer = result['prayerTimes'] as Map<String, dynamic>;
+
+      expect(result['selectedDateIso'], '2026-04-01');
+      expect(solar['solarYear'], 1405);
+      expect(gregorian['isoDate'], '2026-04-01');
+      expect(hijri['calendarType'], 'civil_tabular');
+      expect(city['id'], 'kandahar');
+      expect(prayer['asrMethod'], 'Hanafi');
+      expect((result['status'] as Map<String, dynamic>)['solar'], 'provisional');
+    });
   });
 
 }
