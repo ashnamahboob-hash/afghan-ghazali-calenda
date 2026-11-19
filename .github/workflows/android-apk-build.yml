@@ -27,6 +27,9 @@ jobs:
         run: |
           if [ ! -d android ]; then
             flutter create --platforms=android --project-name afghan_ghazali_calendar .
+            # flutter create adds a generic sample test that targets MyApp;
+            # this repository has its own application and test suite.
+            rm -f test/widget_test.dart
           fi
 
       - name: Install dependencies
