@@ -1,0 +1,68 @@
+{
+  "dataset_id": "afghanistan_estimated_population_2027_dwg_202607",
+  "title": "Afghanistan Estimated Population 2027",
+  "reference_year": 2027,
+  "source_release_identifier": "202607",
+  "source_organization": null,
+  "source_url": null,
+  "publication_date": null,
+  "retrieval_date": "2026-11-01",
+  "license": null,
+  "provenance_status": "partially_verified_source_files_inspected_repository_ingestion_pending",
+  "admin_levels": {
+    "ADM0": {
+      "record_rows": 1,
+      "columns": 44,
+      "includes_national_aggregate": true
+    },
+    "ADM1": {
+      "record_rows": 35,
+      "columns": 50,
+      "includes_national_aggregate": true,
+      "province_records": 34
+    },
+    "ADM2": {
+      "record_rows": 458,
+      "columns": 56,
+      "includes_national_aggregate": true,
+      "administrative_unit_records": 457
+    }
+  },
+  "files": [
+    {
+      "level": "ADM0",
+      "filename": "afg_estimated_population_2027_dwg_202607_admin0(2).csv",
+      "size_bytes": 1330,
+      "sha256": "772ea6f2aa323df95e7e76adf42e05236b83baa8ea9274d1abd436c6086bd5b5",
+      "repository_ingested": false
+    },
+    {
+      "level": "ADM1",
+      "filename": "afg_estimated_population_2027_dwg_202607_admin1(2).csv",
+      "size_bytes": 19436,
+      "sha256": "ae8daf50bd930b2e4eeb7be8affc041ab2a8fd4dd2228158ee9e06fe63c1f411",
+      "repository_ingested": false
+    },
+    {
+      "level": "ADM2",
+      "filename": "afg_estimated_population_2027_dwg_202607_admin2.csv",
+      "size_bytes": 224169,
+      "sha256": "06eed4523cd2ba83342c25d1cd82fab36ea06cf3165994162fc9fa87bcea71dc",
+      "repository_ingested": false
+    }
+  ],
+  "handling_rules": {
+    "preserve_original_csv_bytes": true,
+    "preserve_blank_cells": true,
+    "preserve_literal_hyphen_markers": true,
+    "do_not_convert_missing_values_to_zero": true,
+    "do_not_infer_district_values_from_province_values": true,
+    "do_not_merge_different_source_datasets": true,
+    "do_not_add_457_population_rows_to_401_unit_selector": true
+  },
+  "notes": [
+    "The source files were inspected and checksummed, but their original payloads are not yet present in this repository.",
+    "Source organization, publication date, source URL and licence remain unknown until verified from the original publisher.",
+    "The source dataset must remain separate from the app's 401-unit administrative draft reference."
+  ]
+}

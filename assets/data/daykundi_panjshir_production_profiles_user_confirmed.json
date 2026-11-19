@@ -1,0 +1,191 @@
+{
+  "database_name": "afghanistan_agriculture_official_production_db",
+  "dataset_id": "USER-CONFIRMED-DYK-PJR-SUPPLEMENT-2026-10",
+  "last_updated": "2026-10",
+  "data_status": "user_confirmed_source_claim_MAIL_Verified",
+  "user_confirmation": {
+    "received_at": "2026-10-31",
+    "statement": "The user confirms that the submitted Daykundi and Panjshir information is correct and requests continuation of the project work.",
+    "scope": "The supplied records are preserved as submitted. This confirmation records the user's assertion; it is not an independent audit of the referenced MAIL/NSIA source documents."
+  },
+  "ingestion_metadata": {
+    "independent_source_document_verification": "pending_source_documents",
+    "publication_status": "draft_not_yet_enabled_for_runtime_advisory",
+    "notes": [
+      "This supplemental file contains only the two province records supplied in the user's latest message.",
+      "Source labels and MAIL_Verified status are preserved as user-supplied claims.",
+      "District IDs are preserved exactly as supplied and remain source-local until mapped to the application's canonical administrative IDs.",
+      "Agricultural crops and wild forest products are kept in separate arrays.",
+      "Climate zones and water sources are preserved as submitted; they are not used to generate planting-date recommendations without validated agronomic rules."
+    ]
+  },
+  "target_provinces": [
+    {
+      "province_id": "AF-DYK",
+      "province_name_pashto": "دایکندي",
+      "climate_zone": "Cold_Highlands_SemiArid",
+      "primary_water_sources": [
+        "Springs",
+        "Karez Systems",
+        "Helmand River Tributaries"
+      ],
+      "certified_agricultural_crops": [
+        {
+          "crop_id": "C-09",
+          "crop_name_en": "Almonds (Premium Varieties: Kaghazi, Starbai, Sangak)",
+          "crop_name_ps": "بادام (کاغذي، ستاربایي او سنګک)",
+          "top_producing_districts": [
+            {
+              "district_id": "DYK-01",
+              "name_pashto": "نیلي (مرکز)"
+            },
+            {
+              "district_id": "DYK-02",
+              "name_pashto": "شهرستان"
+            },
+            {
+              "district_id": "DYK-03",
+              "name_pashto": "میرامور"
+            },
+            {
+              "district_id": "DYK-04",
+              "name_pashto": "اشترلي"
+            },
+            {
+              "district_id": "DYK-07",
+              "name_pashto": "خدیر"
+            },
+            {
+              "district_id": "DYK-08",
+              "name_pashto": "ګيتي"
+            }
+          ],
+          "source_reference": "MAIL Horticultural Survey Statistics - Leading national almond exporter node"
+        },
+        {
+          "crop_id": "C-06",
+          "crop_name_en": "Irrigated & Dryland Wheat",
+          "crop_name_ps": "اوبي او للمي غنم",
+          "top_producing_districts": [
+            {
+              "district_id": "DYK-05",
+              "name_pashto": "کجران"
+            },
+            {
+              "district_id": "DYK-06",
+              "name_pashto": "سنګتخت"
+            },
+            {
+              "district_id": "DYK-09",
+              "name_pashto": "پاتو"
+            }
+          ],
+          "source_reference": "NSIA Annual Agricultural Cereal Output Data Sheet"
+        }
+      ],
+      "certified_wild_forest_products": [
+        {
+          "product_id": "W-03",
+          "product_name_en": "Asafoetida / Hing (Wild Hillside Harvest)",
+          "product_name_ps": "غرنی هنګ",
+          "forest_zones_districts": [
+            {
+              "district_id": "DYK-02",
+              "name_pashto": "شهرستان"
+            },
+            {
+              "district_id": "DYK-03",
+              "name_pashto": "میرامور"
+            }
+          ],
+          "source_reference": "MAIL Directorate of Natural Resources & Protected Species Register"
+        },
+        {
+          "product_id": "W-04",
+          "product_name_en": "Wild Mountain Pistachio Shrublands",
+          "product_name_ps": "طبیعي غرنۍ پسته",
+          "forest_zones_districts": [
+            {
+              "district_id": "DYK-05",
+              "name_pashto": "کجران"
+            }
+          ],
+          "source_reference": "MAIL Rangeland & Forest Cover Mapping"
+        }
+      ]
+    },
+    {
+      "province_id": "AF-PJR",
+      "province_name_pashto": "پنجشېر",
+      "climate_zone": "Alpine_Glacial_Valley",
+      "primary_water_sources": [
+        "Panjshir River",
+        "Glacial Meltwaters"
+      ],
+      "certified_agricultural_crops": [
+        {
+          "crop_id": "C-10",
+          "crop_name_en": "Apples, Apricots & Berries (Orchards)",
+          "crop_name_ps": "مڼې، زردالو او توت",
+          "top_producing_districts": [
+            {
+              "district_id": "PJR-01",
+              "name_pashto": "بازارک (مرکز)"
+            },
+            {
+              "district_id": "PJR-02",
+              "name_pashto": "رخو"
+            },
+            {
+              "district_id": "PJR-03",
+              "name_pashto": "عنابه"
+            },
+            {
+              "district_id": "PJR-04",
+              "name_pashto": "شتل"
+            }
+          ],
+          "source_reference": "MAIL Provincial Horticulture Development Registry"
+        },
+        {
+          "crop_id": "C-04",
+          "crop_name_en": "High-Altitude Potatoes & Vegetables",
+          "crop_name_ps": "کچالو او تازه سابه",
+          "top_producing_districts": [
+            {
+              "district_id": "PJR-05",
+              "name_pashto": "پریان"
+            },
+            {
+              "district_id": "PJR-06",
+              "name_pashto": "خنج"
+            },
+            {
+              "district_id": "PJR-07",
+              "name_pashto": "دره"
+            }
+          ],
+          "source_reference": "MAIL Crop Production Statistics - Climate-resilient high-altitude tuber nodes"
+        }
+      ],
+      "certified_wild_forest_products": [
+        {
+          "product_id": "W-05",
+          "product_name_en": "Wild Medicinal Mountain Herbs (Black Cumin, Alpine Mint)",
+          "product_name_ps": "غرني طبي بوټي (توره زیره او د غره پودینه)",
+          "forest_zones_districts": [
+            {
+              "district_id": "PJR-05",
+              "name_pashto": "پریان"
+            },
+            {
+              "district_id": "PJR-06",
+              "name_pashto": "خنج"
+            }
+          ],
+          "source_reference": "MAIL Botany and Medicinal Plants Database"
+        }
+      ]
+    }
+  ]
+}

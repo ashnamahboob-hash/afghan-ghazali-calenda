@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "AF-AGRI-ADVISORY",
+  "country": "AF",
+  "calendar_system": "afghan_solar_hijri",
+  "source_policy": {
+    "minimum_sources_for_verified": 1,
+    "notes": "A record must cite a credible agricultural source. Do not publish unverified dates as official advice. Add more than one source when recommendations conflict or vary by locality."
+  },
+  "records": []
+}

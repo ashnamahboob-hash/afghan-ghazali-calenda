@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../services/afghan_calendar.dart';
+import '../services/islamic_calendar.dart';
 import '../services/prayer_times.dart';
+import 'agriculture_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -40,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final solar = AfghanCalendar.fromGregorian(selectedDate);
     final nowSolar = AfghanCalendar.fromGregorian(DateTime.now());
+    final hijri = IslamicCalendar.fromGregorian(selectedDate);
     final prayer = PrayerTimes.calculate(
       date: selectedDate,
       latitude: cities[city]![0],
@@ -47,7 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
     final isToday = DateUtils.isSameDay(selectedDate, DateTime.now());
 
-    return Scaffold(
+    return Directionality(
+      key: const ValueKey('home-content-direction'),
+      textDirection: language == 'en' ? TextDirection.ltr : TextDirection.rtl,
+      child: Scaffold(
       appBar: AppBar(
         title: Text(trTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
         actions: [
@@ -62,11 +68,17 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: SafeArea(
+      body: tab == 2
+          ? AgricultureScreen(language: language)
+          : tab == 1
+              ? _prayerPage(prayer)
+              : tab == 3
+                  ? _settingsPage()
+                  : SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
           children: [
-            _todayCard(solar, isToday),
+            _todayCard(solar, isToday, hijri),
             const SizedBox(height: 16),
             _monthHeader(solar),
             const SizedBox(height: 8),
@@ -105,13 +117,84 @@ class _HomeScreenState extends State<HomeScreen> {
         destinations: [
           NavigationDestination(icon: const Icon(Icons.calendar_month), label: language == 'en' ? 'Calendar' : language == 'fa' ? 'تقویم' : 'کلیز'),
           NavigationDestination(icon: const Icon(Icons.access_time), label: language == 'en' ? 'Prayer' : language == 'fa' ? 'نماز' : 'لمونځ'),
+          NavigationDestination(icon: const Icon(Icons.agriculture), label: language == 'en' ? 'Farming' : language == 'fa' ? 'زراعت' : 'کرنه'),
           NavigationDestination(icon: const Icon(Icons.settings), label: language == 'en' ? 'Settings' : language == 'fa' ? 'تنظیمات' : 'تنظیمات'),
+        ],
+      ),
+    ));
+  }
+
+
+  Widget _prayerPage(PrayerTimes prayer) {
+    return SafeArea(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          _sectionTitle(language == 'en' ? 'Prayer times' : language == 'fa' ? 'اوقات نماز' : 'د لمانځه وختونه'),
+          const SizedBox(height: 8),
+          _citySelector(),
+          const SizedBox(height: 12),
+          _prayerCard(prayer),
+          const SizedBox(height: 12),
+          Text(
+            language == 'en'
+                ? 'Times are calculated offline and are approximate. Select your city and verify with your local mosque.'
+                : language == 'fa'
+                    ? 'اوقات به‌صورت آفلاین و تقریبی محاسبه می‌شود. شهر خود را انتخاب کنید و با مسجد محل بررسی نمایید.'
+                    : 'وختونه په آفلاین ډول اټکلي محاسبه کېږي. خپل ښار وټاکئ او د خپل محل له جومات سره یې پرتله کړئ.',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
         ],
       ),
     );
   }
 
-  Widget _todayCard(dynamic solar, bool isToday) {
+  Widget _settingsPage() {
+    return SafeArea(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          _sectionTitle(language == 'en' ? 'Settings' : language == 'fa' ? 'تنظیمات' : 'تنظیمات'),
+          const SizedBox(height: 12),
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.language),
+              title: Text(language == 'en' ? 'App language' : language == 'fa' ? 'زبان برنامه' : 'د اپلیکیشن ژبه'),
+              subtitle: Text(language == 'en' ? 'Pashto, Dari, English' : language == 'fa' ? 'پشتو، دری، انگلیسی' : 'پښتو، دري، انګلیسي'),
+              trailing: DropdownButton<String>(
+                value: language,
+                items: const [
+                  DropdownMenuItem(value: 'ps', child: Text('پښتو')),
+                  DropdownMenuItem(value: 'fa', child: Text('دري')),
+                  DropdownMenuItem(value: 'en', child: Text('English')),
+                ],
+                onChanged: (value) { if (value != null) setState(() => language = value); },
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Card(child: ListTile(
+            leading: const Icon(Icons.location_on_outlined),
+            title: Text(language == 'en' ? 'Selected city' : language == 'fa' ? 'شهر انتخاب‌شده' : 'ټاکل شوی ښار'),
+            subtitle: Text(city),
+            trailing: const Icon(Icons.location_city),
+          )),
+          _citySelector(),
+          const SizedBox(height: 8),
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.info_outline),
+              title: Text(language == 'en' ? 'About this app' : language == 'fa' ? 'درباره برنامه' : 'د اپلیکیشن په اړه'),
+              subtitle: const Text('Afghan Ghazali Calendar'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _todayCard(dynamic solar, bool isToday, IslamicDate hijri) {
     final month = AfghanCalendar.monthName(solar.month, language);
     final day = AfghanCalendar.formatNumber(solar.day, language);
     final year = AfghanCalendar.formatNumber(solar.year, language);
@@ -133,6 +216,47 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 8),
           Text(day, style: const TextStyle(color: Color(0xFFFFD76A), fontSize: 52, fontWeight: FontWeight.w800)),
           Text('$month $year', style: const TextStyle(color: Colors.white, fontSize: 23, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.12),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  language == 'en'
+                      ? 'Islamic: ${IslamicCalendar.monthName(hijri.month, language)} ${hijri.day} ${hijri.year} AH'
+                      : language == 'fa'
+                          ? 'قمری: ${IslamicCalendar.monthName(hijri.month, language)} ${AfghanCalendar.formatNumber(hijri.day, language)} ${AfghanCalendar.formatNumber(hijri.year, language)}'
+                          : 'قمري: ${IslamicCalendar.monthName(hijri.month, language)} ${AfghanCalendar.formatNumber(hijri.day, language)} ${AfghanCalendar.formatNumber(hijri.year, language)}',
+                  style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  language == 'en'
+                      ? 'Gregorian: ${_gregorian(selectedDate)}'
+                      : language == 'fa'
+                          ? 'میلادی: ${_gregorian(selectedDate)}'
+                          : 'میلادي: ${_gregorian(selectedDate)}',
+                  style: const TextStyle(color: Colors.white70, fontSize: 13),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  language == 'en'
+                      ? 'Tabular estimate; local moon sighting may differ by one day.'
+                      : language == 'fa'
+                          ? 'تاریخ محاسباتی است؛ ممکن است با رؤیت محلی هلال یک روز تفاوت داشته باشد.'
+                          : 'دا محاسبوي قمري نېټه ده؛ د سپوږمۍ د رسمي لیدنې له مخې یوه ورځ توپیر کولای شي.',
+                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
           const SizedBox(height: 14),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -201,12 +325,29 @@ class _HomeScreenState extends State<HomeScreen> {
     final count = AfghanCalendar.daysInMonth(selectedSolar.year, selectedSolar.month);
     final rows = ((offset + count) / 7).ceil();
     final weekdays = AfghanCalendar.weekdayNames(language);
+    final legend = language == 'en'
+        ? 'Afghan solar  ·  Gregorian  ·  Islamic lunar'
+        : language == 'fa'
+            ? 'شمسی افغانستان  ·  میلادی  ·  قمری'
+            : 'افغاني لمریز  ·  عیسوي میلادي  ·  اسلامي قمري';
     return Card(
       margin: EdgeInsets.zero,
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                legend,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF527064),
+                ),
+              ),
+            ),
             Row(
               children: weekdays.map((d) => Expanded(
                 child: Center(child: Padding(
@@ -223,6 +364,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   final date = AfghanCalendar.toGregorian(selectedSolar.year, selectedSolar.month, day);
                   final selected = DateUtils.isSameDay(date, selectedDate);
                   final today = DateUtils.isSameDay(date, DateTime.now());
+                  final hijriDate = IslamicCalendar.fromGregorian(date);
                   return Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(2),
@@ -230,19 +372,34 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(12),
                         onTap: () => setState(() => selectedDate = date),
                         child: Container(
-                          height: 42,
+                          height: 54,
                           decoration: BoxDecoration(
                             color: selected ? const Color(0xFF145A42) : today ? const Color(0xFFFFF2C7) : Colors.transparent,
                             borderRadius: BorderRadius.circular(12),
                             border: today && !selected ? Border.all(color: const Color(0xFFD4AF37)) : null,
                           ),
                           alignment: Alignment.center,
-                          child: Text(
-                            AfghanCalendar.formatNumber(day, language),
-                            style: TextStyle(
-                              fontWeight: selected || today ? FontWeight.bold : FontWeight.normal,
-                              color: selected ? Colors.white : const Color(0xFF25352D),
-                            ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                AfghanCalendar.formatNumber(day, language),
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: selected || today ? FontWeight.bold : FontWeight.normal,
+                                  color: selected ? Colors.white : const Color(0xFF25352D),
+                                ),
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                '${AfghanCalendar.formatNumber(date.day, language)} · ${AfghanCalendar.formatNumber(hijriDate.day, language)}',
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  height: 1,
+                                  color: selected ? Colors.white70 : const Color(0xFF64756D),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

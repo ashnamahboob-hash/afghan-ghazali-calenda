@@ -1,0 +1,585 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "AFGHANISTAN_ADMINISTRATIVE_ZONES_USER_SUPPLIED_DRAFT",
+  "last_updated": "2026-11-01",
+  "status": "user_supplied_zone_grouping_pending_primary_source_verification",
+  "purpose": "Separate regional grouping crosswalk for the Afghan Ghazali Calendar app. Zone labels and unit membership are preserved as supplied by the user and are not asserted to be an official administrative level.",
+  "source": {
+    "type": "user_supplied",
+    "received_on": "2026-11-01",
+    "authority_status": "not_independently_verified"
+  },
+  "rules": [
+    "Zone groupings are a separate regional layer and must not be represented as an official administrative level.",
+    "Do not change stable ADM2 P-codes or candidate names in the national administrative reference using this file.",
+    "Preserve the user-supplied Pashto display labels as aliases; they do not overwrite source labels.",
+    "Each listed ADM2 P-code must exist in the candidate administrative reference and have the stated parent province ID.",
+    "This regional grouping must not be used to infer district-level agricultural statistics or recommendations."
+  ],
+  "summary": {
+    "zones": 4,
+    "units": 72,
+    "unique_unit_ids": 72,
+    "matched_candidate_reference_ids": 72,
+    "wrong_parent_ids": 0,
+    "missing_candidate_ids": 0
+  },
+  "zones": [
+    {
+      "id": "CR",
+      "name": {
+        "ps": "د کابل زون",
+        "en": "Central Zone"
+      },
+      "province": {
+        "id": "AF01",
+        "name_ps": "کابل"
+      },
+      "units": [
+        {
+          "id": "AF0101",
+          "display_name_ps": "کابل مرکز",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0102",
+          "display_name_ps": "پغمان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0103",
+          "display_name_ps": "چهار آسیاب",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0104",
+          "display_name_ps": "بګرامي",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0105",
+          "display_name_ps": "ده سبز",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0106",
+          "display_name_ps": "شکردره",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0107",
+          "display_name_ps": "موسهي",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0108",
+          "display_name_ps": "میربچه کوټ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0109",
+          "display_name_ps": "خاک جبار",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0110",
+          "display_name_ps": "کلکان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0111",
+          "display_name_ps": "ګلدره",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0112",
+          "display_name_ps": "فرزه",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0113",
+          "display_name_ps": "استالف",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0114",
+          "display_name_ps": "قره باغ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0115",
+          "display_name_ps": "سروبي",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        }
+      ]
+    },
+    {
+      "id": "SR",
+      "name": {
+        "ps": "د سویل لویدیز زون",
+        "en": "Southern Zone"
+      },
+      "province": {
+        "id": "AF27",
+        "name_ps": "کندهار"
+      },
+      "units": [
+        {
+          "id": "AF2701",
+          "display_name_ps": "کندهار مرکز",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2702",
+          "display_name_ps": "ارغنداب",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2703",
+          "display_name_ps": "دامان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2704",
+          "display_name_ps": "پنجوايي",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2705",
+          "display_name_ps": "ژړۍ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2706",
+          "display_name_ps": "شاه ولي کوټ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2707",
+          "display_name_ps": "خاکریز",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2708",
+          "display_name_ps": "ارغستان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2709",
+          "display_name_ps": "غورک",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2710",
+          "display_name_ps": "میوند",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2711",
+          "display_name_ps": "سپین بولدک",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2712",
+          "display_name_ps": "نیش",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2713",
+          "display_name_ps": "میانشین",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2714",
+          "display_name_ps": "شورابک",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2715",
+          "display_name_ps": "معروف",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF2716",
+          "display_name_ps": "ریګ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        }
+      ]
+    },
+    {
+      "id": "ER",
+      "name": {
+        "ps": "د ختیځ زون",
+        "en": "Eastern Zone"
+      },
+      "province": {
+        "id": "AF06",
+        "name_ps": "ننګرهار"
+      },
+      "units": [
+        {
+          "id": "AF0601",
+          "display_name_ps": "جلال اباد",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0602",
+          "display_name_ps": "بهسود",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0603",
+          "display_name_ps": "سرخ رود",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0604",
+          "display_name_ps": "چپرهار",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0605",
+          "display_name_ps": "کامه",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0606",
+          "display_name_ps": "کوز کونړ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0607",
+          "display_name_ps": "رودات",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0608",
+          "display_name_ps": "خوګیاڼي",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0609",
+          "display_name_ps": "بټي کوټ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0610",
+          "display_name_ps": "ده بالا",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0611",
+          "display_name_ps": "پچیراګام",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0612",
+          "display_name_ps": "دره نور",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0613",
+          "display_name_ps": "کوټ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0614",
+          "display_name_ps": "ګوشته",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0615",
+          "display_name_ps": "اچین",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0616",
+          "display_name_ps": "شینوار",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0617",
+          "display_name_ps": "مومند دره",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0618",
+          "display_name_ps": "لعلپوره",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0619",
+          "display_name_ps": "شېرزاد",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0620",
+          "display_name_ps": "نازیان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0621",
+          "display_name_ps": "حصارک",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF0622",
+          "display_name_ps": "دوربابا",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        }
+      ]
+    },
+    {
+      "id": "SE",
+      "name": {
+        "ps": "د سویل ختیځ زون",
+        "en": "Southeastern Zone"
+      },
+      "province": {
+        "id": "AF11",
+        "name_ps": "غزني"
+      },
+      "units": [
+        {
+          "id": "AF1101",
+          "display_name_ps": "غزني مرکز",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1102",
+          "display_name_ps": "ولي محمد شهید",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1103",
+          "display_name_ps": "خواجه عمري",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1104",
+          "display_name_ps": "واغظ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1105",
+          "display_name_ps": "ده یک",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1106",
+          "display_name_ps": "جغتو",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1107",
+          "display_name_ps": "اندړ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1108",
+          "display_name_ps": "زنه خان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1109",
+          "display_name_ps": "رشیدان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1110",
+          "display_name_ps": "ناور",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1111",
+          "display_name_ps": "قره باغ",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1112",
+          "display_name_ps": "ګیرو",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1113",
+          "display_name_ps": "آب بند",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1114",
+          "display_name_ps": "جاغوري",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1115",
+          "display_name_ps": "مقر",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1116",
+          "display_name_ps": "مالستان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1117",
+          "display_name_ps": "ګیلان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1118",
+          "display_name_ps": "اجرستان",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        },
+        {
+          "id": "AF1119",
+          "display_name_ps": "ناوه",
+          "source": "user_supplied",
+          "candidate_reference_match": "matched_by_exact_pcode",
+          "verification_status": "pending_primary_source_verification"
+        }
+      ]
+    }
+  ]
+}

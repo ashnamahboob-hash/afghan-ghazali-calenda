@@ -29,6 +29,25 @@ class PrayerTimes {
     double ishaAngle = 17.0,
     int asrFactor = 1,
   }) {
+    if (!latitude.isFinite || latitude < -90 || latitude > 90) {
+      throw ArgumentError.value(latitude, 'latitude', 'Must be finite and between -90 and 90 degrees.');
+    }
+    if (!longitude.isFinite || longitude < -180 || longitude > 180) {
+      throw ArgumentError.value(longitude, 'longitude', 'Must be finite and between -180 and 180 degrees.');
+    }
+    if (!utcOffsetHours.isFinite || utcOffsetHours < -14 || utcOffsetHours > 14) {
+      throw ArgumentError.value(utcOffsetHours, 'utcOffsetHours', 'Must be between -14 and 14 hours.');
+    }
+    if (!fajrAngle.isFinite || fajrAngle <= 0 || fajrAngle > 30) {
+      throw ArgumentError.value(fajrAngle, 'fajrAngle', 'Must be greater than 0 and at most 30 degrees.');
+    }
+    if (!ishaAngle.isFinite || ishaAngle <= 0 || ishaAngle > 30) {
+      throw ArgumentError.value(ishaAngle, 'ishaAngle', 'Must be greater than 0 and at most 30 degrees.');
+    }
+    if (asrFactor != 1 && asrFactor != 2) {
+      throw ArgumentError.value(asrFactor, 'asrFactor', 'Must be 1 (standard) or 2 (Hanafi).');
+    }
+
     final n = date.difference(DateTime(date.year, 1, 1)).inDays + 1;
     final gamma = 2 * math.pi / 365 * (n - 1);
     final eqTime = 229.18 *

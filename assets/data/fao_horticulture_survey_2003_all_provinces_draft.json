@@ -1,0 +1,423 @@
+{
+  "dataset_id": "FAO-AFG-HORTICULTURE-2003",
+  "title": "Afghanistan Survey of the Horticulture Sector 2003",
+  "publisher": "Food and Agriculture Organization of the United Nations (FAO)",
+  "publication_place": "Rome",
+  "publication_year": 2004,
+  "survey_year": 2003,
+  "source_url": "https://www.fao.org/4/y5163e/y5163e00.htm",
+  "source_methodology_url": "https://www.fao.org/4/y5163e/y5163e09.htm",
+  "source_findings_url": "https://www.fao.org/4/y5163e/y5163e08.htm",
+  "status": "historical_reference_draft",
+  "publication_status": "not_for_current_planting_advice",
+  "verification_note": "The survey reports 32 provinces and 1,805 villages across 327 districts. The present 34-province administrative list is represented here; Daikundi and Panjshir did not exist as separate surveyed provinces in this report and are marked not_covered. Empty crop arrays do not mean a crop was absent; the online summary does not provide explicit province-by-province crop lists for every province.",
+  "coverage": {
+    "surveyed_provinces_reported": 32,
+    "villages": 1805,
+    "districts": 327,
+    "excluded_districts_due_to_weather_or_security": 2,
+    "current_province_count_represented": 34,
+    "limitations": [
+      "Survey took place in spring 2003; it is historical, not current agronomic guidance.",
+      "The published online summary provides selected provincial crop mentions and thematic maps, not a complete numeric crop inventory for every province.",
+      "Most cultivated land figures were farmer estimates and not physically measured.",
+      "Do not infer that an unlisted crop was not cultivated."
+    ]
+  },
+  "province_data": [
+    {
+      "province_id": "AF-01",
+      "province_en": "Badakhshan",
+      "province_ps": "بدخشان",
+      "explicitly_named_crops": [
+        "onion"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-02",
+      "province_en": "Badghis",
+      "province_ps": "بادغیس",
+      "explicitly_named_crops": [
+        "mulberry"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-03",
+      "province_en": "Baghlan",
+      "province_ps": "بغلان",
+      "explicitly_named_crops": [
+        "honeydew_melon"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-04",
+      "province_en": "Balkh",
+      "province_ps": "بلخ",
+      "explicitly_named_crops": [
+        "pomegranate",
+        "almond"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-05",
+      "province_en": "Bamyan",
+      "province_ps": "بامیان",
+      "explicitly_named_crops": [
+        "potato"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-06",
+      "province_en": "Daykundi",
+      "province_ps": "دایکندي",
+      "explicitly_named_crops": [],
+      "data_status": "not_covered_as_separate_province_in_2003",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-07",
+      "province_en": "Farah",
+      "province_ps": "فراه",
+      "explicitly_named_crops": [
+        "honeydew_melon",
+        "pomegranate"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-08",
+      "province_en": "Faryab",
+      "province_ps": "فاریاب",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_but_no_specific_crop_named_in_text_summary",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-09",
+      "province_en": "Ghazni",
+      "province_ps": "غزني",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_but_no_specific_crop_named_in_text_summary",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-10",
+      "province_en": "Ghor",
+      "province_ps": "غور",
+      "explicitly_named_crops": [
+        "potato",
+        "peach"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-11",
+      "province_en": "Helmand",
+      "province_ps": "هلمند",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_but_no_specific_crop_named_in_text_summary",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-12",
+      "province_en": "Herat",
+      "province_ps": "هرات",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_general_vegetable_diversity_mentioned",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-13",
+      "province_en": "Jowzjan",
+      "province_ps": "جوزجان",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_but_no_specific_crop_named_in_text_summary",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-14",
+      "province_en": "Kabul",
+      "province_ps": "کابل",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_general_vegetable_diversity_mentioned",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-15",
+      "province_en": "Kandahar",
+      "province_ps": "کندهار",
+      "explicitly_named_crops": [
+        "onion",
+        "pomegranate",
+        "almond"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-16",
+      "province_en": "Kapisa",
+      "province_ps": "کاپیسا",
+      "explicitly_named_crops": [
+        "onion",
+        "pomegranate"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-17",
+      "province_en": "Khost",
+      "province_ps": "خوست",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_but_no_specific_crop_named_in_text_summary",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-18",
+      "province_en": "Kunar",
+      "province_ps": "کونړ",
+      "explicitly_named_crops": [
+        "onion"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-19",
+      "province_en": "Kunduz",
+      "province_ps": "کندز",
+      "explicitly_named_crops": [
+        "almond"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-20",
+      "province_en": "Laghman",
+      "province_ps": "لغمان",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_special_early_vegetable_tunnel_use_mentioned",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-21",
+      "province_en": "Logar",
+      "province_ps": "لوګر",
+      "explicitly_named_crops": [
+        "onion"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-22",
+      "province_en": "Nangarhar",
+      "province_ps": "ننګرهار",
+      "explicitly_named_crops": [
+        "onion",
+        "orange",
+        "subtropical_fruits"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-23",
+      "province_en": "Nimroz",
+      "province_ps": "نیمروز",
+      "explicitly_named_crops": [
+        "potato",
+        "pomegranate"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-24",
+      "province_en": "Nuristan",
+      "province_ps": "نورستان",
+      "explicitly_named_crops": [
+        "beans",
+        "potato"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-25",
+      "province_en": "Paktia",
+      "province_ps": "پکتیا",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_but_no_specific_crop_named_in_text_summary",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-26",
+      "province_en": "Paktika",
+      "province_ps": "پکتیکا",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_but_no_specific_crop_named_in_text_summary",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-27",
+      "province_en": "Panjshir",
+      "province_ps": "پنجشېر",
+      "explicitly_named_crops": [],
+      "data_status": "not_covered_as_separate_province_in_2003",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-28",
+      "province_en": "Parwan",
+      "province_ps": "پروان",
+      "explicitly_named_crops": [
+        "potato"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-29",
+      "province_en": "Samangan",
+      "province_ps": "سمنګان",
+      "explicitly_named_crops": [],
+      "data_status": "surveyed_but_no_specific_crop_named_in_text_summary",
+      "crop_presence_interpretation": "no_province_specific_crop_claim_in_summary_do_not_interpret_as_absence"
+    },
+    {
+      "province_id": "AF-30",
+      "province_en": "Sar-e Pol",
+      "province_ps": "سرپل",
+      "explicitly_named_crops": [
+        "almond"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-31",
+      "province_en": "Takhar",
+      "province_ps": "تخار",
+      "explicitly_named_crops": [
+        "peach"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-32",
+      "province_en": "Uruzgan",
+      "province_ps": "ارزګان",
+      "explicitly_named_crops": [
+        "honeydew_melon",
+        "almond"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-33",
+      "province_en": "Wardak",
+      "province_ps": "میدان وردګ",
+      "explicitly_named_crops": [
+        "apple"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    },
+    {
+      "province_id": "AF-34",
+      "province_en": "Zabul",
+      "province_ps": "زابل",
+      "explicitly_named_crops": [
+        "honeydew_melon"
+      ],
+      "data_status": "surveyed_crop_explicitly_mentioned",
+      "crop_presence_interpretation": "crop_is_explicitly_mentioned_in_FAO_2003_summary_not_a_current_presence_claim"
+    }
+  ],
+  "national_findings": {
+    "major_vegetables_by_national_area_order": [
+      "watermelon",
+      "honeydew_melon",
+      "onion",
+      "potato",
+      "tomato",
+      "carrot"
+    ],
+    "other_vegetables_mentioned": [
+      "turnip",
+      "pumpkin",
+      "beans"
+    ],
+    "major_fruit_crops_by_orchard_area": [
+      "grape",
+      "apple",
+      "almond",
+      "pomegranate",
+      "apricot"
+    ],
+    "grape": {
+      "national_share_of_fruit_growing_area_percent": 48,
+      "note": "Reported as a major crop in more than 15 provinces; the summary does not enumerate all those provinces."
+    },
+    "kandahar_pomegranate": {
+      "surveyed_area_jeribs": 4032,
+      "surveyed_area_hectares": 806,
+      "dand_reported_yield_kg_per_jerib_approx": 1720,
+      "arghandab_reported_yield_kg_per_jerib_over": 3800
+    },
+    "farah_pomegranate": {
+      "surveyed_area_jeribs": 1097,
+      "surveyed_area_hectares": 219,
+      "note": "Surveyed villages; not a current provincial total."
+    }
+  },
+  "map_references": [
+    {
+      "map": "Map 11",
+      "subject": "Most common vegetables grown in provinces",
+      "url": "https://www.fao.org/4/y5163e/y5163e0v.jpg"
+    },
+    {
+      "map": "Map 12",
+      "subject": "Most grown fruit species by province",
+      "url": "https://www.fao.org/4/y5163e/y5163e10.jpg"
+    },
+    {
+      "map": "Map 13",
+      "subject": "Surveyed horticulture area by province",
+      "url": "https://www.fao.org/4/y5163e/y5163e11.jpg"
+    },
+    {
+      "map": "Map 14",
+      "subject": "Grape area by province",
+      "url": "https://www.fao.org/4/y5163e/y5163e12.jpg"
+    },
+    {
+      "map": "Map 15",
+      "subject": "Provinces with highest apple area",
+      "url": "https://www.fao.org/4/y5163e/y5163e13.jpg"
+    }
+  ],
+  "source_notes": [
+    "Methodology and 32-province coverage: Annex 1, https://www.fao.org/4/y5163e/y5163e09.htm",
+    "Provincial crop mentions and national findings: National Survey at the Village Level, https://www.fao.org/4/y5163e/y5163e08.htm",
+    "Province-specific crops above are only those explicitly named in the report's searchable narrative summary; map classes require separate visual/digitized review before being converted to per-province crop records."
+  ]
+}

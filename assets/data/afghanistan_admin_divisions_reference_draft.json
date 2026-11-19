@@ -1,0 +1,5842 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "AFGHANISTAN-ADMIN-REFERENCE-DRAFT-2026-10",
+  "last_updated": "2026-11-01",
+  "status": "secondary_reference_workbook_pcode_crosscheck_complete_pending_discrepancy_reconciliation_and_ocha_row_level_verification",
+  "counts": {
+    "provinces": 34,
+    "districts": 401
+  },
+  "purpose": "A bilingual administrative reference draft for application development and candidate name/code matching. It is not an officially verified OCHA gazetteer.",
+  "sources": {
+    "secondary": {
+      "name": "Open Admin Data - Afghanistan Administrative Divisions",
+      "url": "https://github.com/open-admin-data/afghanistan-administrative-divisions",
+      "raw_url": "https://raw.githubusercontent.com/open-admin-data/afghanistan-administrative-divisions/main/data/hierarchy.json",
+      "source_commit": "9ceec68cc8f3eb66116b304f8ceaa6c7330d6266",
+      "license": "CC-BY-4.0",
+      "retrieved_at": "2026-10-31",
+      "declared_coverage": "34 provinces and 401 districts",
+      "role": "Secondary candidate reference; local-script labels are not assumed to be verified Pashto or Dari official spellings."
+    },
+    "primary": {
+      "name": "OCHA/HDX Afghanistan - Subnational Administrative Boundaries (COD-AB)",
+      "url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74",
+      "metadata_url": "https://data.amerigeoss.org/dataset/cod-ab-afg",
+      "resource_name": "afg_admin_boundaries.xlsx",
+      "resource_url": "https://data.humdata.org/dataset/4c303d7b-8eae-4a5a-a3aa-b2331fa39d74/resource/45f2ff90-13c0-46bf-a46e-7d443e9b9fdd/download/afg_admin_boundaries.xlsx",
+      "source_authority": "Afghanistan Geodesy and Cartography Head Office (AGCHO)",
+      "established_year": 2019,
+      "last_accuracy_review": "2024-07",
+      "metadata_last_updated": "2025-01-17",
+      "declared_coverage": {
+        "admin1_provinces": 34,
+        "admin2_districts": 401
+      },
+      "license": "CC-BY-IGO",
+      "verification_status": "metadata_confirmed_row_level_pcode_extraction_pending",
+      "notes": "Official HDX/AGCHO dataset metadata confirms the historical COD-AB dataset and 34/401 coverage, but the accessible metadata describes a 2019-established dataset last reviewed in July 2024 and metadata last updated 2025-01-17. OCHA's separate status dashboard now reports Afghanistan COD-AB reference year 2026 with 34 ADM1/401 ADM2 features; its coverage dashboard lists the work status as In Progress. The 2026 dashboard summary does not expose row-level ADM2 P-code/name/parent data in the retrieved page. This draft therefore still lacks a verified 401-row comparison against the current COD-AB gazetteer."
+    },
+    "official_status_dashboard": {
+      "name": "OCHA COD Status Dashboard",
+      "url": "https://ocha-dap.github.io/cod-site/status/",
+      "checked_on": "2026-11-01",
+      "dashboard_last_updated": "2026-10-31",
+      "afghanistan": {
+        "iso3": "AFG",
+        "cod_ab_reference_year": 2026,
+        "cod_ab_adm1_features": 34,
+        "cod_ab_adm2_features": 401,
+        "cod_ps_reference_year": 2027,
+        "cod_ps_adm2_pcodes": 457,
+        "cod_ps_adm2_pcodes_not_in_cod_ab": 56
+      },
+      "work_status_dashboard": {
+        "url": "https://ocha-dap.github.io/cod-site/status/coverage/",
+        "observed_last_updated": "2026-10-23",
+        "status": "In Progress",
+        "expected_review_window": "In 5 months",
+        "published_in_gis": true
+      },
+      "interpretation": "The status dashboard reports Afghanistan COD-AB reference year 2026 and 401 ADM2 features, while the separate coverage/work dashboard lists the Afghanistan update as In Progress. The accessible HDX/AGCHO dataset metadata still describes a 2019-established dataset last reviewed in July 2024, with metadata last updated 2025-01-17. These dashboard summaries do not provide the 401 row-level P-code/name/parent records needed for a reproducible comparison. Do not infer that the user-supplied v04 workbook is the 2026 COD-AB gazetteer, and do not mark row-level verification complete.",
+      "row_level_gazetteer_retrieved": false
+    },
+    "official_gis_service_candidate": {
+      "id": "OCHA_GLOBAL_COD_ADMIN2_ARCGIS_LAYER",
+      "name": "OCHA COD Global Admin2 Feature Layer",
+      "service_url": "https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0",
+      "query_endpoint": "https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0/query",
+      "checked_on": "2026-11-01",
+      "observed_fields": [
+        "adm2_pcode",
+        "adm2_name",
+        "adm2_name1",
+        "adm2_name2",
+        "adm2_name3",
+        "adm1_pcode",
+        "adm1_name",
+        "adm1_name1",
+        "adm0_pcode",
+        "valid_on",
+        "valid_to",
+        "version_no",
+        "lang",
+        "lang1",
+        "lang2",
+        "lang3"
+      ],
+      "source_evidence": "OCHA GIS REST layer metadata exposes an Admin2 feature layer with P-code, parent P-code, multilingual name, validity-date and version fields. OCHA COD documentation identifies live geoservices as a COD-AB distribution format.",
+      "row_level_query_status": "not_retrieved",
+      "query_attempt": "The Afghanistan-filtered feature query was attempted, but the web retrieval interface returned an access/cache-miss error; no features were obtained or inspected.",
+      "interpretation": "This is a strong official-service retrieval lead, not yet a completed Afghanistan row-level verification. Do not use service schema alone to confirm any district record or update candidate labels."
+    }
+  },
+  "rules": [
+    "Treat IDs from the secondary source as candidate identifiers only until checked against the OCHA COD-AB gazetteer.",
+    "Do not use these records to overwrite existing application IDs or user-supplied IDs.",
+    "Preserve original source spellings and add reviewed aliases separately; never silently normalize names.",
+    "Do not publish district-specific agricultural recommendations solely because an administrative code is present.",
+    "Keep this file separate from runtime advisory data until primary-source verification is complete."
+  ],
+  "provinces": [
+    {
+      "id": "AF17",
+      "names": {
+        "local": "بدخشان",
+        "en": "Badakhshan"
+      },
+      "slug": "badakhshan-af17",
+      "districts": [
+        {
+          "id": "AF1705",
+          "names": {
+            "local": "خاش",
+            "en": "Khash"
+          },
+          "slug": "khash-af1705"
+        },
+        {
+          "id": "AF1712",
+          "names": {
+            "local": "شهدا",
+            "en": "Shuhada"
+          },
+          "slug": "shuhada-af1712"
+        },
+        {
+          "id": "AF1711",
+          "names": {
+            "local": "تشکان",
+            "en": "Teshkan"
+          },
+          "slug": "teshkan-af1711"
+        },
+        {
+          "id": "AF1708",
+          "names": {
+            "local": "کوهستان",
+            "en": "Kohistan"
+          },
+          "slug": "kohistan-af1708"
+        },
+        {
+          "id": "AF1726",
+          "names": {
+            "local": "کران ومنجان",
+            "en": "Koran Wa Monjan"
+          },
+          "slug": "koran-wa-monjan-af1726"
+        },
+        {
+          "id": "AF1713",
+          "names": {
+            "local": "شهر بزرگ",
+            "en": "Shahr-e-Buzorg"
+          },
+          "slug": "shahr-e-buzorg-af1713"
+        },
+        {
+          "id": "AF1710",
+          "names": {
+            "local": "جرم",
+            "en": "Jorm"
+          },
+          "slug": "jorm-af1710"
+        },
+        {
+          "id": "AF1718",
+          "names": {
+            "local": "یمگان",
+            "en": "Yamgan"
+          },
+          "slug": "yamgan-af1718"
+        },
+        {
+          "id": "AF1725",
+          "names": {
+            "local": "زیباک",
+            "en": "Zebak"
+          },
+          "slug": "zebak-af1725"
+        },
+        {
+          "id": "AF1709",
+          "names": {
+            "local": "یاوان",
+            "en": "Yawan"
+          },
+          "slug": "yawan-af1709"
+        },
+        {
+          "id": "AF1716",
+          "names": {
+            "local": "وردوج",
+            "en": "Warduj"
+          },
+          "slug": "warduj-af1716"
+        },
+        {
+          "id": "AF1706",
+          "names": {
+            "local": "بهارک",
+            "en": "Baharak"
+          },
+          "slug": "baharak-af1706"
+        },
+        {
+          "id": "AF1721",
+          "names": {
+            "local": "کوف آب",
+            "en": "Kofab"
+          },
+          "slug": "kofab-af1721"
+        },
+        {
+          "id": "AF1701",
+          "names": {
+            "local": "فیض آباد",
+            "en": "Fayzabad"
+          },
+          "slug": "fayzabad-af1701"
+        },
+        {
+          "id": "AF1714",
+          "names": {
+            "local": "راغستان",
+            "en": "Raghestan"
+          },
+          "slug": "raghestan-af1714"
+        },
+        {
+          "id": "AF1704",
+          "names": {
+            "local": "یفتل سفلی",
+            "en": "Yaftal"
+          },
+          "slug": "yaftal-e-sufla-af1704"
+        },
+        {
+          "id": "AF1702",
+          "names": {
+            "local": "ارگو",
+            "en": "Argo"
+          },
+          "slug": "argo-af1702"
+        },
+        {
+          "id": "AF1717",
+          "names": {
+            "local": "تگاب",
+            "en": "Tagab"
+          },
+          "slug": "tagab-af1717"
+        },
+        {
+          "id": "AF1722",
+          "names": {
+            "local": "درواز پائین (ما می )",
+            "en": "Darwaz-e-Payin"
+          },
+          "slug": "darwaz-e-payin-af1722"
+        },
+        {
+          "id": "AF1727",
+          "names": {
+            "local": "دروازبالا ( نیسی)",
+            "en": "Darwaz-e-Balla"
+          },
+          "slug": "darwaz-e-balla-af1727"
+        },
+        {
+          "id": "AF1703",
+          "names": {
+            "local": "ارغنچخواه",
+            "en": "Arghanchkhwah"
+          },
+          "slug": "arghanj-khwah-af1703"
+        },
+        {
+          "id": "AF1720",
+          "names": {
+            "local": "خواهان",
+            "en": "Khwahan"
+          },
+          "slug": "khwahan-af1720"
+        },
+        {
+          "id": "AF1728",
+          "names": {
+            "local": "واخان",
+            "en": "Wakhan"
+          },
+          "slug": "wakhan-af1728"
+        },
+        {
+          "id": "AF1719",
+          "names": {
+            "local": "شغنان",
+            "en": "Shighnan"
+          },
+          "slug": "shighnan-af1719"
+        },
+        {
+          "id": "AF1723",
+          "names": {
+            "local": "اشکاشم",
+            "en": "Eshkashem"
+          },
+          "slug": "eshkashem-af1723"
+        },
+        {
+          "id": "AF1707",
+          "names": {
+            "local": "درایم",
+            "en": "Darayem"
+          },
+          "slug": "darayem-af1707"
+        },
+        {
+          "id": "AF1724",
+          "names": {
+            "local": "شکی",
+            "en": "Shakai"
+          },
+          "slug": "shaki-af1724"
+        },
+        {
+          "id": "AF1715",
+          "names": {
+            "local": "کشم",
+            "en": "Keshem"
+          },
+          "slug": "keshem-af1715"
+        }
+      ]
+    },
+    {
+      "id": "AF20",
+      "names": {
+        "local": "سمنگان",
+        "en": "Samangan"
+      },
+      "slug": "samangan-af20",
+      "districts": [
+        {
+          "id": "AF2002",
+          "names": {
+            "local": "حضرت سلطان",
+            "en": "Hazrat-e-Sultan"
+          },
+          "slug": "hazrat-e-sultan-af2002"
+        },
+        {
+          "id": "AF2001",
+          "names": {
+            "local": "ایبک",
+            "en": "Aybak"
+          },
+          "slug": "aybak-af2001"
+        },
+        {
+          "id": "AF2005",
+          "names": {
+            "local": "روی دو آب",
+            "en": "Ruy-e-Duab"
+          },
+          "slug": "ruy-e-duab-af2005"
+        },
+        {
+          "id": "AF2006",
+          "names": {
+            "local": "درۀ صوف پائین",
+            "en": "Dara-e-Suf-e-Payin"
+          },
+          "slug": "dara-e-suf-e-payin-af2006"
+        },
+        {
+          "id": "AF2003",
+          "names": {
+            "local": "خرم وسارباغ",
+            "en": "Khuram Wa Sarbagh"
+          },
+          "slug": "khuram-wa-sarbagh-af2003"
+        },
+        {
+          "id": "AF2008",
+          "names": {
+            "local": "خلم",
+            "en": "Khulm"
+          },
+          "slug": "khulm-af2008"
+        },
+        {
+          "id": "AF2007",
+          "names": {
+            "local": "درۀ صوف بالا",
+            "en": "Dara-e-Suf-e-Bala"
+          },
+          "slug": "dara-e-suf-e-bala-af2007"
+        },
+        {
+          "id": "AF2004",
+          "names": {
+            "local": "فیروز نخچیر",
+            "en": "Feroz Nakhchir"
+          },
+          "slug": "feroz-nakhchir-af2004"
+        }
+      ]
+    },
+    {
+      "id": "AF05",
+      "names": {
+        "local": "لوگر",
+        "en": "Logar"
+      },
+      "slug": "logar-af05",
+      "districts": [
+        {
+          "id": "AF0501",
+          "names": {
+            "local": "پل علم",
+            "en": "Pul-e-Alam"
+          },
+          "slug": "pul-e-alam-af0501"
+        },
+        {
+          "id": "AF0502",
+          "names": {
+            "local": "برکی برک",
+            "en": "Baraki Barak"
+          },
+          "slug": "baraki-barak-af0502"
+        },
+        {
+          "id": "AF0503",
+          "names": {
+            "local": "چرخ",
+            "en": "Charkh"
+          },
+          "slug": "charkh-af0503"
+        },
+        {
+          "id": "AF0505",
+          "names": {
+            "local": "محمدآغه",
+            "en": "Mohammad Agha"
+          },
+          "slug": "mohammad-agha-af0505"
+        },
+        {
+          "id": "AF0504",
+          "names": {
+            "local": "خوشی",
+            "en": "Khoshi"
+          },
+          "slug": "khoshi-af0504"
+        },
+        {
+          "id": "AF0506",
+          "names": {
+            "local": "خروار",
+            "en": "Kharwar"
+          },
+          "slug": "kharwar-af0506"
+        },
+        {
+          "id": "AF0507",
+          "names": {
+            "local": "ازره",
+            "en": "Azra"
+          },
+          "slug": "azra-af0507"
+        }
+      ]
+    },
+    {
+      "id": "AF12",
+      "names": {
+        "local": "پکتیکا",
+        "en": "Paktika"
+      },
+      "slug": "paktika-af12",
+      "districts": [
+        {
+          "id": "AF1202",
+          "names": {
+            "local": "متاخان",
+            "en": "Mata Khan"
+          },
+          "slug": "mata-khan-af1202"
+        },
+        {
+          "id": "AF1212",
+          "names": {
+            "local": "زیړوک",
+            "en": "Ziruk"
+          },
+          "slug": "ziruk-af1212"
+        },
+        {
+          "id": "AF1213",
+          "names": {
+            "local": "نیکه",
+            "en": "Neka"
+          },
+          "slug": "nika-af1213"
+        },
+        {
+          "id": "AF1214",
+          "names": {
+            "local": "برمل",
+            "en": "Barmal"
+          },
+          "slug": "barmal-af1214"
+        },
+        {
+          "id": "AF1219",
+          "names": {
+            "local": "تروو",
+            "en": "Turwo"
+          },
+          "slug": "turwo-af1219"
+        },
+        {
+          "id": "AF1211",
+          "names": {
+            "local": "ارگون",
+            "en": "Urgun"
+          },
+          "slug": "urgun-af1211"
+        },
+        {
+          "id": "AF1204",
+          "names": {
+            "local": "یحی خیل",
+            "en": "Yahya Khel"
+          },
+          "slug": "yahya-khel-af1204"
+        },
+        {
+          "id": "AF1208",
+          "names": {
+            "local": "گومل",
+            "en": "Gomal"
+          },
+          "slug": "gomal-af1208"
+        },
+        {
+          "id": "AF1209",
+          "names": {
+            "local": "جانی خیل",
+            "en": "Jani Khel"
+          },
+          "slug": "jani-khel-af1209"
+        },
+        {
+          "id": "AF1210",
+          "names": {
+            "local": "سروبی",
+            "en": "Surobi"
+          },
+          "slug": "surobi-af1210"
+        },
+        {
+          "id": "AF1205",
+          "names": {
+            "local": "سرروضه (سرحوضه)",
+            "en": "Sar Rawza"
+          },
+          "slug": "sar-rawzah-af1205"
+        },
+        {
+          "id": "AF1216",
+          "names": {
+            "local": "دیله",
+            "en": "Delah"
+          },
+          "slug": "dila-af1216"
+        },
+        {
+          "id": "AF1203",
+          "names": {
+            "local": "یوسف خیل",
+            "en": "Yosuf Khel"
+          },
+          "slug": "yosuf-khel-af1203"
+        },
+        {
+          "id": "AF1201",
+          "names": {
+            "local": "شرن",
+            "en": "Sharan"
+          },
+          "slug": "sharan-af1201"
+        },
+        {
+          "id": "AF1218",
+          "names": {
+            "local": "وړ ممی",
+            "en": "Wormamay"
+          },
+          "slug": "wormamay-af1218"
+        },
+        {
+          "id": "AF1215",
+          "names": {
+            "local": "گیان",
+            "en": "Giyan"
+          },
+          "slug": "giyan-af1215"
+        },
+        {
+          "id": "AF1217",
+          "names": {
+            "local": "وازه خواه",
+            "en": "Wazakhwa"
+          },
+          "slug": "wazakhah-af1217"
+        },
+        {
+          "id": "AF1207",
+          "names": {
+            "local": "زرغون شهر",
+            "en": "Zarghun Shahr"
+          },
+          "slug": "zarghun-shahr-af1207"
+        },
+        {
+          "id": "AF1206",
+          "names": {
+            "local": "اومنه",
+            "en": "Omna"
+          },
+          "slug": "omna-af1206"
+        }
+      ]
+    },
+    {
+      "id": "AF22",
+      "names": {
+        "local": "سرپل",
+        "en": "Sar-e-Pul"
+      },
+      "slug": "sar-e-pul-af22",
+      "districts": [
+        {
+          "id": "AF2206",
+          "names": {
+            "local": "گوسفندی",
+            "en": "Gosfandi"
+          },
+          "slug": "gosfandi-af2206"
+        },
+        {
+          "id": "AF2202",
+          "names": {
+            "local": "صیاد",
+            "en": "Sayad"
+          },
+          "slug": "sayad-af2202"
+        },
+        {
+          "id": "AF2201",
+          "names": {
+            "local": "سرپل",
+            "en": "Sar-e-Pul"
+          },
+          "slug": "sar-e-pul-af2201"
+        },
+        {
+          "id": "AF2207",
+          "names": {
+            "local": "بلخاب",
+            "en": "Balkhab"
+          },
+          "slug": "balkhab-af2207"
+        },
+        {
+          "id": "AF2205",
+          "names": {
+            "local": "سانچارك",
+            "en": "Sancharak"
+          },
+          "slug": "sancharak-af2205"
+        },
+        {
+          "id": "AF2204",
+          "names": {
+            "local": "سوزمه قلعه",
+            "en": "Sozmaqala"
+          },
+          "slug": "sozmaqala-af2204"
+        },
+        {
+          "id": "AF2203",
+          "names": {
+            "local": "کوهستانات",
+            "en": "Kohestanat"
+          },
+          "slug": "kohestanat-af2203"
+        }
+      ]
+    },
+    {
+      "id": "AF13",
+      "names": {
+        "local": "پکتیا",
+        "en": "Paktya"
+      },
+      "slug": "paktya-af13",
+      "districts": [
+        {
+          "id": "AF1310",
+          "names": {
+            "local": "څمکنی",
+            "en": "Chamkani"
+          },
+          "slug": "chamkani-af1310"
+        },
+        {
+          "id": "AF1307",
+          "names": {
+            "local": "علی خیل",
+            "en": "Zazi"
+          },
+          "slug": "jaji-af1307"
+        },
+        {
+          "id": "AF1308",
+          "names": {
+            "local": "لجه احمد خیل",
+            "en": "Laj-e-Ahmadkhel"
+          },
+          "slug": "lija-ahmad-khel-af1308"
+        },
+        {
+          "id": "AF1309",
+          "names": {
+            "local": "جانی خیل",
+            "en": "Jani Khel"
+          },
+          "slug": "jani-khel-af1309"
+        },
+        {
+          "id": "AF1304",
+          "names": {
+            "local": "شواک",
+            "en": "Shawak"
+          },
+          "slug": "shawak-af1304"
+        },
+        {
+          "id": "AF1305",
+          "names": {
+            "local": "حّدران",
+            "en": "Waza Zadran"
+          },
+          "slug": "zadran-af1305"
+        },
+        {
+          "id": "AF1302",
+          "names": {
+            "local": "احمد آبا",
+            "en": "Ahmad Abad"
+          },
+          "slug": "ahmadaba-af1302"
+        },
+        {
+          "id": "AF1303",
+          "names": {
+            "local": "زُرمت",
+            "en": "Zurmat"
+          },
+          "slug": "zurmat-af1303"
+        },
+        {
+          "id": "AF1311",
+          "names": {
+            "local": "دند وپټان",
+            "en": "Dand-e-Patan"
+          },
+          "slug": "dand-wa-patan-af1311"
+        },
+        {
+          "id": "AF1301",
+          "names": {
+            "local": "گردیز",
+            "en": "Gardez"
+          },
+          "slug": "gardez-af1301"
+        },
+        {
+          "id": "AF1306",
+          "names": {
+            "local": "سیدکرم",
+            "en": "Sayed Karam"
+          },
+          "slug": "sayed-karam-af1306"
+        }
+      ]
+    },
+    {
+      "id": "AF16",
+      "names": {
+        "local": "نورستان",
+        "en": "Nuristan"
+      },
+      "slug": "nuristan-af16",
+      "districts": [
+        {
+          "id": "AF1602",
+          "names": {
+            "local": "وایگل",
+            "en": "Waygal"
+          },
+          "slug": "waygal-af1602"
+        },
+        {
+          "id": "AF1604",
+          "names": {
+            "local": "نورگرام",
+            "en": "Nurgeram"
+          },
+          "slug": "nurgaram-af1604"
+        },
+        {
+          "id": "AF1605",
+          "names": {
+            "local": "دو آب",
+            "en": "Dowab"
+          },
+          "slug": "duab-af1605"
+        },
+        {
+          "id": "AF1603",
+          "names": {
+            "local": "واما",
+            "en": "Wama"
+          },
+          "slug": "wama-af1603"
+        },
+        {
+          "id": "AF1606",
+          "names": {
+            "local": "کامدیش",
+            "en": "Kamdesh"
+          },
+          "slug": "kamdesh-af1606"
+        },
+        {
+          "id": "AF1601",
+          "names": {
+            "local": "پرونس",
+            "en": "Parun"
+          },
+          "slug": "parun-af1601"
+        },
+        {
+          "id": "AF1608",
+          "names": {
+            "local": "برگ متال",
+            "en": "Barg-e-Matal"
+          },
+          "slug": "barg-e-matal-af1608"
+        },
+        {
+          "id": "AF1607",
+          "names": {
+            "local": "مندول",
+            "en": "Mandol"
+          },
+          "slug": "mandol-af1607"
+        }
+      ]
+    },
+    {
+      "id": "AF21",
+      "names": {
+        "local": "بلخ",
+        "en": "Balkh"
+      },
+      "slug": "balkh-af21",
+      "districts": [
+        {
+          "id": "AF2113",
+          "names": {
+            "local": "کلدار",
+            "en": "Kaldar"
+          },
+          "slug": "kaldar-af2113"
+        },
+        {
+          "id": "AF2116",
+          "names": {
+            "local": "شهرک حیرتان",
+            "en": "Chahi"
+          },
+          "slug": "sharak-e-hayratan-af2116"
+        },
+        {
+          "id": "AF2105",
+          "names": {
+            "local": "مارمُل",
+            "en": "Marmul"
+          },
+          "slug": "marmul-af2105"
+        },
+        {
+          "id": "AF2109",
+          "names": {
+            "local": "دولت آباد",
+            "en": "Dawlat Abad"
+          },
+          "slug": "dawlat-abad-af2109"
+        },
+        {
+          "id": "AF2101",
+          "names": {
+            "local": "مزار شریف",
+            "en": "Mazar-e-Sharif"
+          },
+          "slug": "mazar-e-sharif-af2101"
+        },
+        {
+          "id": "AF2115",
+          "names": {
+            "local": "زاری",
+            "en": "Zari"
+          },
+          "slug": "zari-af2115"
+        },
+        {
+          "id": "AF2103",
+          "names": {
+            "local": "دهدادی",
+            "en": "Dehdadi"
+          },
+          "slug": "dehdadi-af2103"
+        },
+        {
+          "id": "AF2111",
+          "names": {
+            "local": "چار بولک",
+            "en": "Chaharbolak"
+          },
+          "slug": "char-bolak-af2111"
+        },
+        {
+          "id": "AF2104",
+          "names": {
+            "local": "چار کنت",
+            "en": "Charkent"
+          },
+          "slug": "charkent-af2104"
+        },
+        {
+          "id": "AF2112",
+          "names": {
+            "local": "شور تیپه",
+            "en": "Shortepa"
+          },
+          "slug": "shortepa-af2112"
+        },
+        {
+          "id": "AF2106",
+          "names": {
+            "local": "بلخ",
+            "en": "Balkh"
+          },
+          "slug": "balkh-af2106"
+        },
+        {
+          "id": "AF2114",
+          "names": {
+            "local": "کشنده",
+            "en": "Kushenda"
+          },
+          "slug": "keshendeh-af2114"
+        },
+        {
+          "id": "AF2102",
+          "names": {
+            "local": "نهر شاهی",
+            "en": "Nahr-e-Shahi"
+          },
+          "slug": "nahr-e-shahi-af2102"
+        },
+        {
+          "id": "AF2107",
+          "names": {
+            "local": "شولگره",
+            "en": "Sholgarah"
+          },
+          "slug": "sholgareh-af2107"
+        },
+        {
+          "id": "AF2108",
+          "names": {
+            "local": "چمتال",
+            "en": "Chemtal"
+          },
+          "slug": "chemtal-af2108"
+        }
+      ]
+    },
+    {
+      "id": "AF08",
+      "names": {
+        "local": "پنجشیر",
+        "en": "Panjsher"
+      },
+      "slug": "panjsher-af08",
+      "districts": [
+        {
+          "id": "AF0807",
+          "names": {
+            "local": "پریان",
+            "en": "Paryan"
+          },
+          "slug": "paryan-af0807"
+        },
+        {
+          "id": "AF0802",
+          "names": {
+            "local": "رُخه",
+            "en": "Rukha"
+          },
+          "slug": "rukha-af0802"
+        },
+        {
+          "id": "AF0803",
+          "names": {
+            "local": "دره",
+            "en": "Darah"
+          },
+          "slug": "dara-af0803"
+        },
+        {
+          "id": "AF0805",
+          "names": {
+            "local": "عُنابه",
+            "en": "Onaba"
+          },
+          "slug": "anawa-af0805"
+        },
+        {
+          "id": "AF0806",
+          "names": {
+            "local": "شتُل",
+            "en": "Shutol"
+          },
+          "slug": "shutul-af0806"
+        },
+        {
+          "id": "AF0801",
+          "names": {
+            "local": "بازارک",
+            "en": "Bazarak"
+          },
+          "slug": "bazarak-af0801"
+        },
+        {
+          "id": "AF0804",
+          "names": {
+            "local": "حصه اول",
+            "en": "Hesa-e-Awal"
+          },
+          "slug": "khenj-af0804"
+        }
+      ]
+    },
+    {
+      "id": "AF28",
+      "names": {
+        "local": "جوزجان",
+        "en": "Jawzjan"
+      },
+      "slug": "jawzjan-af28",
+      "districts": [
+        {
+          "id": "AF2804",
+          "names": {
+            "local": "منگجک",
+            "en": "Mingajek"
+          },
+          "slug": "mingajik-af2804"
+        },
+        {
+          "id": "AF2811",
+          "names": {
+            "local": "درز آب",
+            "en": "Darz Ab"
+          },
+          "slug": "darzab-af2811"
+        },
+        {
+          "id": "AF2806",
+          "names": {
+            "local": "خمیاب",
+            "en": "Kham Ab"
+          },
+          "slug": "khamyab-af2806"
+        },
+        {
+          "id": "AF2805",
+          "names": {
+            "local": "قوش تیپه",
+            "en": "Qush Tepa"
+          },
+          "slug": "qush-tepa-af2805"
+        },
+        {
+          "id": "AF2803",
+          "names": {
+            "local": "خانقا",
+            "en": "Khanaqa"
+          },
+          "slug": "khanaqa-af2803"
+        },
+        {
+          "id": "AF2810",
+          "names": {
+            "local": "قرقین",
+            "en": "Qarqen"
+          },
+          "slug": "qarqin-af2810"
+        },
+        {
+          "id": "AF2809",
+          "names": {
+            "local": "مردیان",
+            "en": "Mardyan"
+          },
+          "slug": "mardyan-af2809"
+        },
+        {
+          "id": "AF2802",
+          "names": {
+            "local": "خواجه دوکوه",
+            "en": "Khwaja Dukoh"
+          },
+          "slug": "khwaja-dukoh-af2802"
+        },
+        {
+          "id": "AF2807",
+          "names": {
+            "local": "آقچه",
+            "en": "Aqcha"
+          },
+          "slug": "aqcha-af2807"
+        },
+        {
+          "id": "AF2808",
+          "names": {
+            "local": "فیض آباد",
+            "en": "Fayzabad"
+          },
+          "slug": "fayzabad-af2808"
+        },
+        {
+          "id": "AF2801",
+          "names": {
+            "local": "شبرغان",
+            "en": "Sheberghan"
+          },
+          "slug": "shiberghan-af2801"
+        }
+      ]
+    },
+    {
+      "id": "AF27",
+      "names": {
+        "local": "کندهار",
+        "en": "Kandahar"
+      },
+      "slug": "kandahar-af27",
+      "districts": [
+        {
+          "id": "AF2709",
+          "names": {
+            "local": "غورک",
+            "en": "Ghorak"
+          },
+          "slug": "ghorak-af2709"
+        },
+        {
+          "id": "AF2704",
+          "names": {
+            "local": "پنجوائی",
+            "en": "Panjwayi"
+          },
+          "slug": "panjwayi-af2704"
+        },
+        {
+          "id": "AF2705",
+          "names": {
+            "local": "ژړۍ",
+            "en": "Zheray"
+          },
+          "slug": "zheray-af2705"
+        },
+        {
+          "id": "AF2713",
+          "names": {
+            "local": "میانشین",
+            "en": "Meyanishin"
+          },
+          "slug": "miyanshin-af2713"
+        },
+        {
+          "id": "AF2714",
+          "names": {
+            "local": "شور آبک",
+            "en": "Shorabak"
+          },
+          "slug": "shorabak-af2714"
+        },
+        {
+          "id": "AF2711",
+          "names": {
+            "local": "سپین بولدک",
+            "en": "Spin Boldak"
+          },
+          "slug": "spin-boldak-af2711"
+        },
+        {
+          "id": "AF2703",
+          "names": {
+            "local": "دامان",
+            "en": "Daman"
+          },
+          "slug": "daman-af2703"
+        },
+        {
+          "id": "AF2706",
+          "names": {
+            "local": "شاه ولیکوت",
+            "en": "Shah Walikot"
+          },
+          "slug": "shah-wali-kot-af2706"
+        },
+        {
+          "id": "AF2701",
+          "names": {
+            "local": "کندهار",
+            "en": "Kandahar"
+          },
+          "slug": "kandahar-af2701"
+        },
+        {
+          "id": "AF2715",
+          "names": {
+            "local": "معروف",
+            "en": "Marof"
+          },
+          "slug": "maruf-af2715"
+        },
+        {
+          "id": "AF2707",
+          "names": {
+            "local": "خاکریز",
+            "en": "Khakrez"
+          },
+          "slug": "khakrez-af2707"
+        },
+        {
+          "id": "AF2702",
+          "names": {
+            "local": "ارغنداب",
+            "en": "Arghandab"
+          },
+          "slug": "arghandab-af2702"
+        },
+        {
+          "id": "AF2712",
+          "names": {
+            "local": "نیش",
+            "en": "Neash"
+          },
+          "slug": "nesh-af2712"
+        },
+        {
+          "id": "AF2716",
+          "names": {
+            "local": "ریگ",
+            "en": "Reg"
+          },
+          "slug": "reg-af2716"
+        },
+        {
+          "id": "AF2710",
+          "names": {
+            "local": "میوند",
+            "en": "Maiwand"
+          },
+          "slug": "maywand-af2710"
+        },
+        {
+          "id": "AF2708",
+          "names": {
+            "local": "ارغستان",
+            "en": "Arghistan"
+          },
+          "slug": "arghestan-af2708"
+        }
+      ]
+    },
+    {
+      "id": "AF24",
+      "names": {
+        "local": "دایکندی",
+        "en": "Daykundi"
+      },
+      "slug": "daykundi-af24",
+      "districts": [
+        {
+          "id": "AF2402",
+          "names": {
+            "local": "شهرستان",
+            "en": "Shahristan"
+          },
+          "slug": "shahrestan-af2402"
+        },
+        {
+          "id": "AF2403",
+          "names": {
+            "local": "اشترلی",
+            "en": "Ashtarlay"
+          },
+          "slug": "ashtarlay-af2403"
+        },
+        {
+          "id": "AF2405",
+          "names": {
+            "local": "کیتی",
+            "en": "Kiti"
+          },
+          "slug": "kiti-af2405"
+        },
+        {
+          "id": "AF2409",
+          "names": {
+            "local": "پاتو",
+            "en": "Pato"
+          },
+          "slug": "patoo-af2409"
+        },
+        {
+          "id": "AF2406",
+          "names": {
+            "local": "میرامور",
+            "en": "Meramor"
+          },
+          "slug": "miramor-af2406"
+        },
+        {
+          "id": "AF2401",
+          "names": {
+            "local": "نیلی",
+            "en": "Nili"
+          },
+          "slug": "nili-af2401"
+        },
+        {
+          "id": "AF2404",
+          "names": {
+            "local": "خدیر",
+            "en": "Khader"
+          },
+          "slug": "khadir-af2404"
+        },
+        {
+          "id": "AF2407",
+          "names": {
+            "local": "سنگ تخت",
+            "en": "Sang-e-Takht"
+          },
+          "slug": "sang-e-takht-af2407"
+        },
+        {
+          "id": "AF2408",
+          "names": {
+            "local": "کجران",
+            "en": "Kejran"
+          },
+          "slug": "kajran-af2408"
+        }
+      ]
+    },
+    {
+      "id": "AF25",
+      "names": {
+        "local": "ارزگان",
+        "en": "Uruzgan"
+      },
+      "slug": "uruzgan-af25",
+      "districts": [
+        {
+          "id": "AF2506",
+          "names": {
+            "local": "چنارتو",
+            "en": "Chinarto"
+          },
+          "slug": "chinarto-af2506"
+        },
+        {
+          "id": "AF2505",
+          "names": {
+            "local": "خاص ارزگان",
+            "en": "Khas Urozgan"
+          },
+          "slug": "khas-uruzgan-af2505"
+        },
+        {
+          "id": "AF2507",
+          "names": {
+            "local": "گیزاب",
+            "en": "Gizab"
+          },
+          "slug": "gizab-af2507"
+        },
+        {
+          "id": "AF2503",
+          "names": {
+            "local": "چوره",
+            "en": "Chorah"
+          },
+          "slug": "chora-af2503"
+        },
+        {
+          "id": "AF2504",
+          "names": {
+            "local": "شهید حساس",
+            "en": "Shahid-e-Hassas"
+          },
+          "slug": "shahid-e-hassas-af2504"
+        },
+        {
+          "id": "AF2502",
+          "names": {
+            "local": "دهراود",
+            "en": "Dehrawud"
+          },
+          "slug": "dehrawud-af2502"
+        },
+        {
+          "id": "AF2501",
+          "names": {
+            "local": "تیرینکوت",
+            "en": "Tirinkot"
+          },
+          "slug": "tirinkot-af2501"
+        }
+      ]
+    },
+    {
+      "id": "AF23",
+      "names": {
+        "local": "غور",
+        "en": "Ghor"
+      },
+      "slug": "ghor-af23",
+      "districts": [
+        {
+          "id": "AF2306",
+          "names": {
+            "local": "شهرک",
+            "en": "Shahrak"
+          },
+          "slug": "shahrak-af2306"
+        },
+        {
+          "id": "AF2304",
+          "names": {
+            "local": "چار صد ره",
+            "en": "Charsadra"
+          },
+          "slug": "charsadra-af2304"
+        },
+        {
+          "id": "AF2302",
+          "names": {
+            "local": "دو لینه",
+            "en": "Do Layna"
+          },
+          "slug": "dolayna-af2302"
+        },
+        {
+          "id": "AF2309",
+          "names": {
+            "local": "تولک",
+            "en": "Tolak"
+          },
+          "slug": "tolak-af2309"
+        },
+        {
+          "id": "AF2307",
+          "names": {
+            "local": "لعل و سرجنگل",
+            "en": "Lal Wa Sarjangal"
+          },
+          "slug": "lal-wa-sarjangal-af2307"
+        },
+        {
+          "id": "AF2308",
+          "names": {
+            "local": "تیوره",
+            "en": "Taywarah"
+          },
+          "slug": "taywarah-af2308"
+        },
+        {
+          "id": "AF2303",
+          "names": {
+            "local": "دولت یار",
+            "en": "Dawlatyar"
+          },
+          "slug": "dawlatyar-af2303"
+        },
+        {
+          "id": "AF2305",
+          "names": {
+            "local": "پسابند",
+            "en": "Pasaband"
+          },
+          "slug": "pasaband-af2305"
+        },
+        {
+          "id": "AF2301",
+          "names": {
+            "local": "فیروزکوه",
+            "en": "Feroz Koh"
+          },
+          "slug": "feroz-koh-af2301"
+        },
+        {
+          "id": "AF2310",
+          "names": {
+            "local": "ساغر",
+            "en": "Saghar"
+          },
+          "slug": "saghar-af2310"
+        }
+      ]
+    },
+    {
+      "id": "AF33",
+      "names": {
+        "local": "فراه",
+        "en": "Farah"
+      },
+      "slug": "farah-af33",
+      "districts": [
+        {
+          "id": "AF3309",
+          "names": {
+            "local": "لاش جوین",
+            "en": "Lash-e-Juwayn"
+          },
+          "slug": "lash-e-juwayn-af3309"
+        },
+        {
+          "id": "AF3302",
+          "names": {
+            "local": "پشترود",
+            "en": "Pushterod"
+          },
+          "slug": "pushtrod-af3302"
+        },
+        {
+          "id": "AF3304",
+          "names": {
+            "local": "قلعه کاه",
+            "en": "Qalah-e-Kah"
+          },
+          "slug": "qala-e-kah-af3304"
+        },
+        {
+          "id": "AF3307",
+          "names": {
+            "local": "انار دره",
+            "en": "Anar Dara"
+          },
+          "slug": "anar-dara-af3307"
+        },
+        {
+          "id": "AF3308",
+          "names": {
+            "local": "بکواه",
+            "en": "Bakwa"
+          },
+          "slug": "bakwa-af3308"
+        },
+        {
+          "id": "AF3306",
+          "names": {
+            "local": "بالا بلوک",
+            "en": "Bala Buluk"
+          },
+          "slug": "bala-buluk-af3306"
+        },
+        {
+          "id": "AF3301",
+          "names": {
+            "local": "فراه",
+            "en": "Farah"
+          },
+          "slug": "farah-af3301"
+        },
+        {
+          "id": "AF3305",
+          "names": {
+            "local": "شیب کوه",
+            "en": "Shebkoh"
+          },
+          "slug": "shibkoh-af3305"
+        },
+        {
+          "id": "AF3311",
+          "names": {
+            "local": "پُرچمن",
+            "en": "Purchaman"
+          },
+          "slug": "pur-chaman-af3311"
+        },
+        {
+          "id": "AF3303",
+          "names": {
+            "local": "خاک سفید",
+            "en": "Khak-e-Safid"
+          },
+          "slug": "khak-e-safed-af3303"
+        },
+        {
+          "id": "AF3310",
+          "names": {
+            "local": "گلستان",
+            "en": "Gulistan"
+          },
+          "slug": "gulistan-af3310"
+        }
+      ]
+    },
+    {
+      "id": "AF03",
+      "names": {
+        "local": "پروان",
+        "en": "Parwan"
+      },
+      "slug": "parwan-af03",
+      "districts": [
+        {
+          "id": "AF0307",
+          "names": {
+            "local": "غوربند",
+            "en": "Ghorband"
+          },
+          "slug": "ghorband-af0307"
+        },
+        {
+          "id": "AF0308",
+          "names": {
+            "local": "کوه صافی",
+            "en": "Koh-e-Safi"
+          },
+          "slug": "koh-e-safi-af0308"
+        },
+        {
+          "id": "AF0306",
+          "names": {
+            "local": "سالنگ",
+            "en": "Salang"
+          },
+          "slug": "salang-af0306"
+        },
+        {
+          "id": "AF0309",
+          "names": {
+            "local": "سرخ پارسا",
+            "en": "Surkh-e-Parsa"
+          },
+          "slug": "surkh-e-parsa-af0309"
+        },
+        {
+          "id": "AF0305",
+          "names": {
+            "local": "جبل السراج",
+            "en": "Jabal Saraj"
+          },
+          "slug": "jabal-saraj-af0305"
+        },
+        {
+          "id": "AF0304",
+          "names": {
+            "local": "سیدخیل",
+            "en": "Sayed Khel"
+          },
+          "slug": "sayed-khel-af0304"
+        },
+        {
+          "id": "AF0310",
+          "names": {
+            "local": "شیخ علی",
+            "en": "Shekh Ali"
+          },
+          "slug": "shekh-ali-af0310"
+        },
+        {
+          "id": "AF0303",
+          "names": {
+            "local": "شینواری",
+            "en": "Shinwari"
+          },
+          "slug": "shinwari-af0303"
+        },
+        {
+          "id": "AF0301",
+          "names": {
+            "local": "چاریکار",
+            "en": "Charikar"
+          },
+          "slug": "charikar-af0301"
+        },
+        {
+          "id": "AF0302",
+          "names": {
+            "local": "بگرام",
+            "en": "Bagram"
+          },
+          "slug": "bagram-af0302"
+        }
+      ]
+    },
+    {
+      "id": "AF29",
+      "names": {
+        "local": "فاریاب",
+        "en": "Faryab"
+      },
+      "slug": "faryab-af29",
+      "districts": [
+        {
+          "id": "AF2902",
+          "names": {
+            "local": "پشتون کوټ",
+            "en": "Pashtun Kot"
+          },
+          "slug": "pashtun-kot-af2902"
+        },
+        {
+          "id": "AF2912",
+          "names": {
+            "local": "قرغان",
+            "en": "Qurghan"
+          },
+          "slug": "qurghan-af2912"
+        },
+        {
+          "id": "AF2911",
+          "names": {
+            "local": "قرم قل",
+            "en": "Qaramqul"
+          },
+          "slug": "qaram-qul-af2911"
+        },
+        {
+          "id": "AF2908",
+          "names": {
+            "local": "گرزیوان",
+            "en": "Garziwan"
+          },
+          "slug": "garzewan-af2908"
+        },
+        {
+          "id": "AF2904",
+          "names": {
+            "local": "المار",
+            "en": "Almar"
+          },
+          "slug": "almar-af2904"
+        },
+        {
+          "id": "AF2903",
+          "names": {
+            "local": "خواجه سبزپوش",
+            "en": "Khwaja Sabzposh"
+          },
+          "slug": "khwaja-sabz-posh-af2903"
+        },
+        {
+          "id": "AF2901",
+          "names": {
+            "local": "میمنه",
+            "en": "Maimana"
+          },
+          "slug": "maymana-af2901"
+        },
+        {
+          "id": "AF2914",
+          "names": {
+            "local": "خان چارباغ",
+            "en": "Khan-e-Char Bagh"
+          },
+          "slug": "khan-e-char-bagh-af2914"
+        },
+        {
+          "id": "AF2910",
+          "names": {
+            "local": "کوهستان",
+            "en": "Kohistan"
+          },
+          "slug": "kohistan-af2910"
+        },
+        {
+          "id": "AF2913",
+          "names": {
+            "local": "اندخوی",
+            "en": "Andkhoy"
+          },
+          "slug": "andkhoy-af2913"
+        },
+        {
+          "id": "AF2906",
+          "names": {
+            "local": "شیرین تگاب",
+            "en": "Shirin Tagab"
+          },
+          "slug": "shirin-tagab-af2906"
+        },
+        {
+          "id": "AF2905",
+          "names": {
+            "local": "بلچراغ",
+            "en": "Bilcheragh"
+          },
+          "slug": "bilcheragh-af2905"
+        },
+        {
+          "id": "AF2907",
+          "names": {
+            "local": "قیصار",
+            "en": "Qaisar"
+          },
+          "slug": "qaysar-af2907"
+        },
+        {
+          "id": "AF2909",
+          "names": {
+            "local": "دولت آباد",
+            "en": "Dawlat Abad"
+          },
+          "slug": "dawlat-abad-af2909"
+        }
+      ]
+    },
+    {
+      "id": "AF19",
+      "names": {
+        "local": "کندز",
+        "en": "Kunduz"
+      },
+      "slug": "kunduz-af19",
+      "districts": [
+        {
+          "id": "AF1905",
+          "names": {
+            "local": "امام صاحب",
+            "en": "Imam Sahib"
+          },
+          "slug": "imam-sahib-af1905"
+        },
+        {
+          "id": "AF1903",
+          "names": {
+            "local": "علی آباد",
+            "en": "Ali Abad"
+          },
+          "slug": "ali-abad-af1903"
+        },
+        {
+          "id": "AF1904",
+          "names": {
+            "local": "خان آباد",
+            "en": "Khan Abad"
+          },
+          "slug": "khan-abad-af1904"
+        },
+        {
+          "id": "AF1906",
+          "names": {
+            "local": "دشت ارچی",
+            "en": "Dasht-e-Archi"
+          },
+          "slug": "dasht-e-archi-af1906"
+        },
+        {
+          "id": "AF1907",
+          "names": {
+            "local": "قلعه ذال",
+            "en": "Qala-e-zal"
+          },
+          "slug": "qala-e-zal-af1907"
+        },
+        {
+          "id": "AF1902",
+          "names": {
+            "local": "چهار دره",
+            "en": "Chahar Darah"
+          },
+          "slug": "chahar-darah-af1902"
+        },
+        {
+          "id": "AF1901",
+          "names": {
+            "local": "کندز",
+            "en": "Kunduz"
+          },
+          "slug": "kunduz-af1901"
+        }
+      ]
+    },
+    {
+      "id": "AF14",
+      "names": {
+        "local": "خوست",
+        "en": "Khost"
+      },
+      "slug": "khost-af14",
+      "districts": [
+        {
+          "id": "AF1411",
+          "names": {
+            "local": "سپیره",
+            "en": "Spera"
+          },
+          "slug": "spera-af1411"
+        },
+        {
+          "id": "AF1410",
+          "names": {
+            "local": "قلندر",
+            "en": "Qalandar"
+          },
+          "slug": "qalandar-af1410"
+        },
+        {
+          "id": "AF1412",
+          "names": {
+            "local": "شمل",
+            "en": "Shumul"
+          },
+          "slug": "shamal-af1412"
+        },
+        {
+          "id": "AF1413",
+          "names": {
+            "local": "جاجی میدان",
+            "en": "Zazi Maydan"
+          },
+          "slug": "jaji-maydan-af1413"
+        },
+        {
+          "id": "AF1404",
+          "names": {
+            "local": "تنی",
+            "en": "Tani"
+          },
+          "slug": "tani-af1404"
+        },
+        {
+          "id": "AF1403",
+          "names": {
+            "local": "گربز",
+            "en": "Gurbaz"
+          },
+          "slug": "gurbuz-af1403"
+        },
+        {
+          "id": "AF1408",
+          "names": {
+            "local": "تری زائی",
+            "en": "Alisher Aw Terizi"
+          },
+          "slug": "terezayi-af1408"
+        },
+        {
+          "id": "AF1406",
+          "names": {
+            "local": "نادرشاه کوت",
+            "en": "Nadershahkot"
+          },
+          "slug": "nadir-shah-kot-af1406"
+        },
+        {
+          "id": "AF1402",
+          "names": {
+            "local": "مندوزائی",
+            "en": "Esmail Khel Aw Mandozayi"
+          },
+          "slug": "mandozayi-af1402"
+        },
+        {
+          "id": "AF1409",
+          "names": {
+            "local": "باک",
+            "en": "Bak"
+          },
+          "slug": "bak-af1409"
+        },
+        {
+          "id": "AF1407",
+          "names": {
+            "local": "صبری",
+            "en": "Sabari Aw Yaqubi"
+          },
+          "slug": "sabari-af1407"
+        },
+        {
+          "id": "AF1401",
+          "names": {
+            "local": "خوست (متون)",
+            "en": "Matun"
+          },
+          "slug": "matun-af1401"
+        },
+        {
+          "id": "AF1405",
+          "names": {
+            "local": "موسی خیل",
+            "en": "Musakhel"
+          },
+          "slug": "musa-khel-af1405"
+        }
+      ]
+    },
+    {
+      "id": "AF32",
+      "names": {
+        "local": "هرات",
+        "en": "Herat"
+      },
+      "slug": "hirat-af32",
+      "districts": [
+        {
+          "id": "AF3212",
+          "names": {
+            "local": "اوبی",
+            "en": "Obe"
+          },
+          "slug": "obe-af3212"
+        },
+        {
+          "id": "AF3208",
+          "names": {
+            "local": "گلران",
+            "en": "Gulran"
+          },
+          "slug": "gulran-af3208"
+        },
+        {
+          "id": "AF3203",
+          "names": {
+            "local": "گذره",
+            "en": "Guzara"
+          },
+          "slug": "guzara-af3203"
+        },
+        {
+          "id": "AF3201",
+          "names": {
+            "local": "هرات",
+            "en": "Herat"
+          },
+          "slug": "hirat-af3201"
+        },
+        {
+          "id": "AF3210",
+          "names": {
+            "local": "کُشک کهنه",
+            "en": "Kushk-e-Kohna"
+          },
+          "slug": "kushk-e-kuhna-af3210"
+        },
+        {
+          "id": "AF3206",
+          "names": {
+            "local": "پشتون زرغون",
+            "en": "Pashtun Zarghun"
+          },
+          "slug": "pashtun-zarghun-af3206"
+        },
+        {
+          "id": "AF3207",
+          "names": {
+            "local": "کُشک",
+            "en": "Kushk"
+          },
+          "slug": "kushk-af3207"
+        },
+        {
+          "id": "AF3205",
+          "names": {
+            "local": "زنده جان",
+            "en": "Zindajan"
+          },
+          "slug": "zindajan-af3205"
+        },
+        {
+          "id": "AF3214",
+          "names": {
+            "local": "شیندند",
+            "en": "Shindand"
+          },
+          "slug": "shindand-af3214"
+        },
+        {
+          "id": "AF3202",
+          "names": {
+            "local": "انجیل",
+            "en": "Injil"
+          },
+          "slug": "injil-af3202"
+        },
+        {
+          "id": "AF3213",
+          "names": {
+            "local": "کوهسان",
+            "en": "Kohsan"
+          },
+          "slug": "kohsan-af3213"
+        },
+        {
+          "id": "AF3216",
+          "names": {
+            "local": "چشت شریف",
+            "en": "Chesht-e-Sharif"
+          },
+          "slug": "chisht-e-sharif-af3216"
+        },
+        {
+          "id": "AF3204",
+          "names": {
+            "local": "کرُخ",
+            "en": "Karukh"
+          },
+          "slug": "karukh-af3204"
+        },
+        {
+          "id": "AF3211",
+          "names": {
+            "local": "غوریان",
+            "en": "Ghoryan"
+          },
+          "slug": "ghoryan-af3211"
+        },
+        {
+          "id": "AF3215",
+          "names": {
+            "local": "فرسی",
+            "en": "Farsi"
+          },
+          "slug": "farsi-af3215"
+        },
+        {
+          "id": "AF3209",
+          "names": {
+            "local": "ادرسکن",
+            "en": "Adraskan"
+          },
+          "slug": "adraskan-af3209"
+        }
+      ]
+    },
+    {
+      "id": "AF15",
+      "names": {
+        "local": "کونړ",
+        "en": "Kunar"
+      },
+      "slug": "kunar-af15",
+      "districts": [
+        {
+          "id": "AF1509",
+          "names": {
+            "local": "چوکی",
+            "en": "Chawkay"
+          },
+          "slug": "chawkay-af1509"
+        },
+        {
+          "id": "AF1513",
+          "names": {
+            "local": "چپه دره",
+            "en": "Chapa Darah"
+          },
+          "slug": "chapa-dara-af1513"
+        },
+        {
+          "id": "AF1503",
+          "names": {
+            "local": "وته پور",
+            "en": "Watapor"
+          },
+          "slug": "watapur-af1503"
+        },
+        {
+          "id": "AF1501",
+          "names": {
+            "local": "اسد آباد",
+            "en": "Asadabad"
+          },
+          "slug": "asad-abad-af1501"
+        },
+        {
+          "id": "AF1514",
+          "names": {
+            "local": "نورگل",
+            "en": "Noorgal"
+          },
+          "slug": "nurgal-af1514"
+        },
+        {
+          "id": "AF1511",
+          "names": {
+            "local": "غازی آباد",
+            "en": "Ghazi Abad"
+          },
+          "slug": "ghazi-abad-af1511"
+        },
+        {
+          "id": "AF1510",
+          "names": {
+            "local": "خاص کنر",
+            "en": "Khas Kunar"
+          },
+          "slug": "khas-kunar-af1510"
+        },
+        {
+          "id": "AF1507",
+          "names": {
+            "local": "دره پیچ",
+            "en": "Darah-e-Pech"
+          },
+          "slug": "dara-e-pech-af1507"
+        },
+        {
+          "id": "AF1502",
+          "names": {
+            "local": "مروره",
+            "en": "Marawara"
+          },
+          "slug": "marawara-af1502"
+        },
+        {
+          "id": "AF1506",
+          "names": {
+            "local": "شیگل وشلتن",
+            "en": "Shigal"
+          },
+          "slug": "shigal-af1506"
+        },
+        {
+          "id": "AF1504",
+          "names": {
+            "local": "نرنگ",
+            "en": "Narang"
+          },
+          "slug": "narang-af1504"
+        },
+        {
+          "id": "AF1515",
+          "names": {
+            "local": "ناړی",
+            "en": "Narai"
+          },
+          "slug": "nari-af1515"
+        },
+        {
+          "id": "AF1512",
+          "names": {
+            "local": "دانگام",
+            "en": "Dangam"
+          },
+          "slug": "dangam-af1512"
+        },
+        {
+          "id": "AF1508",
+          "names": {
+            "local": "برکنر",
+            "en": "Bar Kunar"
+          },
+          "slug": "bar-kunar-af1508"
+        },
+        {
+          "id": "AF1505",
+          "names": {
+            "local": "سرکانی",
+            "en": "Sarkani"
+          },
+          "slug": "sar-kani-af1505"
+        }
+      ]
+    },
+    {
+      "id": "AF01",
+      "names": {
+        "local": "کابل",
+        "en": "Kabul"
+      },
+      "slug": "kabul-af01",
+      "districts": [
+        {
+          "id": "AF0115",
+          "names": {
+            "local": "سروبی",
+            "en": "Surobi"
+          },
+          "slug": "surobi-af0115"
+        },
+        {
+          "id": "AF0108",
+          "names": {
+            "local": "میر بچه کوت",
+            "en": "Mir Bacha Kot"
+          },
+          "slug": "mir-bacha-kot-af0108"
+        },
+        {
+          "id": "AF0112",
+          "names": {
+            "local": "فرزه",
+            "en": "Farza"
+          },
+          "slug": "farza-af0112"
+        },
+        {
+          "id": "AF0106",
+          "names": {
+            "local": "شکردره",
+            "en": "Shakardara"
+          },
+          "slug": "shakar-dara-af0106"
+        },
+        {
+          "id": "AF0105",
+          "names": {
+            "local": "ده سبز",
+            "en": "Deh Sabz"
+          },
+          "slug": "deh-sabz-af0105"
+        },
+        {
+          "id": "AF0107",
+          "names": {
+            "local": "موسهی",
+            "en": "Mosahi"
+          },
+          "slug": "musahi-af0107"
+        },
+        {
+          "id": "AF0109",
+          "names": {
+            "local": "خاک جبار",
+            "en": "Khak-e-Jabar"
+          },
+          "slug": "khak-e-jabbar-af0109"
+        },
+        {
+          "id": "AF0104",
+          "names": {
+            "local": "بگرامی",
+            "en": "Bagrami"
+          },
+          "slug": "bagrami-af0104"
+        },
+        {
+          "id": "AF0101",
+          "names": {
+            "local": "کابل",
+            "en": "Kabul"
+          },
+          "slug": "kabul-af0101"
+        },
+        {
+          "id": "AF0111",
+          "names": {
+            "local": "گلدره",
+            "en": "Guldara"
+          },
+          "slug": "guldara-af0111"
+        },
+        {
+          "id": "AF0113",
+          "names": {
+            "local": "استالف",
+            "en": "Istalef"
+          },
+          "slug": "estalef-af0113"
+        },
+        {
+          "id": "AF0102",
+          "names": {
+            "local": "پغمان",
+            "en": "Paghman"
+          },
+          "slug": "paghman-af0102"
+        },
+        {
+          "id": "AF0103",
+          "names": {
+            "local": "چهار آسیاب",
+            "en": "Chahar Asyab"
+          },
+          "slug": "chahar-asyab-af0103"
+        },
+        {
+          "id": "AF0110",
+          "names": {
+            "local": "کلکان",
+            "en": "Kalakan"
+          },
+          "slug": "kalakan-af0110"
+        },
+        {
+          "id": "AF0114",
+          "names": {
+            "local": "قره باغ",
+            "en": "Qarabagh"
+          },
+          "slug": "qara-bagh-af0114"
+        }
+      ]
+    },
+    {
+      "id": "AF30",
+      "names": {
+        "local": "هلمند",
+        "en": "Helmand"
+      },
+      "slug": "hilmand-af30",
+      "districts": [
+        {
+          "id": "AF3013",
+          "names": {
+            "local": "دیشو",
+            "en": "Disho"
+          },
+          "slug": "deh-e-shu-af3013"
+        },
+        {
+          "id": "AF3012",
+          "names": {
+            "local": "باغران",
+            "en": "Baghran"
+          },
+          "slug": "baghran-af3012"
+        },
+        {
+          "id": "AF3008",
+          "names": {
+            "local": "سنگین",
+            "en": "Sangin"
+          },
+          "slug": "sangin-af3008"
+        },
+        {
+          "id": "AF3006",
+          "names": {
+            "local": "گرم سیر",
+            "en": "Garmser"
+          },
+          "slug": "garmser-af3006"
+        },
+        {
+          "id": "AF3004",
+          "names": {
+            "local": "نهر سراج",
+            "en": "Gereshk"
+          },
+          "slug": "nahr-e-saraj-af3004"
+        },
+        {
+          "id": "AF3003",
+          "names": {
+            "local": "ناوه بارکزائی",
+            "en": "Nawa"
+          },
+          "slug": "nawa-e-barakzaiy-af3003"
+        },
+        {
+          "id": "AF3001",
+          "names": {
+            "local": "لشکرگاه",
+            "en": "Lashkargah"
+          },
+          "slug": "lashkargah-af3001"
+        },
+        {
+          "id": "AF3005",
+          "names": {
+            "local": "واشیر",
+            "en": "Washir"
+          },
+          "slug": "washer-af3005"
+        },
+        {
+          "id": "AF3011",
+          "names": {
+            "local": "ریگ خان نشین",
+            "en": "Khanshin"
+          },
+          "slug": "reg-i-khan-nishin-af3011"
+        },
+        {
+          "id": "AF3010",
+          "names": {
+            "local": "کجکی",
+            "en": "Kajaki"
+          },
+          "slug": "kajaki-af3010"
+        },
+        {
+          "id": "AF3002",
+          "names": {
+            "local": "نادعلی",
+            "en": "Nad-e-Ali"
+          },
+          "slug": "nad-e-ali-af3002"
+        },
+        {
+          "id": "AF3007",
+          "names": {
+            "local": "نوزاد",
+            "en": "Nawzad"
+          },
+          "slug": "nawzad-af3007"
+        },
+        {
+          "id": "AF3009",
+          "names": {
+            "local": "موسی قلعه",
+            "en": "Musa Qala"
+          },
+          "slug": "musa-qala-af3009"
+        }
+      ]
+    },
+    {
+      "id": "AF11",
+      "names": {
+        "local": "غزنی",
+        "en": "Ghazni"
+      },
+      "slug": "ghazni-af11",
+      "districts": [
+        {
+          "id": "AF1106",
+          "names": {
+            "local": "جغتو",
+            "en": "Jaghatu"
+          },
+          "slug": "jaghatu-af1106"
+        },
+        {
+          "id": "AF1112",
+          "names": {
+            "local": "گیرو",
+            "en": "Giro"
+          },
+          "slug": "giro-af1112"
+        },
+        {
+          "id": "AF1104",
+          "names": {
+            "local": "واغظ",
+            "en": "Waghaz"
+          },
+          "slug": "waghaz-af1104"
+        },
+        {
+          "id": "AF1113",
+          "names": {
+            "local": "آب بند",
+            "en": "Ab Band"
+          },
+          "slug": "ab-band-af1113"
+        },
+        {
+          "id": "AF1114",
+          "names": {
+            "local": "جاغوری",
+            "en": "Jaghori"
+          },
+          "slug": "jaghuri-af1114"
+        },
+        {
+          "id": "AF1101",
+          "names": {
+            "local": "غزنی",
+            "en": "Ghazni"
+          },
+          "slug": "ghazni-af1101"
+        },
+        {
+          "id": "AF1102",
+          "names": {
+            "local": "ولی محمد شهید",
+            "en": "Wal-e-Muhammad-e-Shahid"
+          },
+          "slug": "wal-e-muhammad-e-shahid-af1102"
+        },
+        {
+          "id": "AF1105",
+          "names": {
+            "local": "ده یک",
+            "en": "Deh Yak"
+          },
+          "slug": "deh-yak-af1105"
+        },
+        {
+          "id": "AF1109",
+          "names": {
+            "local": "رشیدان",
+            "en": "Rashidan"
+          },
+          "slug": "rashidan-af1109"
+        },
+        {
+          "id": "AF1116",
+          "names": {
+            "local": "مالستان",
+            "en": "Malistan"
+          },
+          "slug": "malistan-af1116"
+        },
+        {
+          "id": "AF1115",
+          "names": {
+            "local": "مقر",
+            "en": "Muqur"
+          },
+          "slug": "muqur-af1115"
+        },
+        {
+          "id": "AF1108",
+          "names": {
+            "local": "زنه خان",
+            "en": "Zana Khan"
+          },
+          "slug": "zanakhan-af1108"
+        },
+        {
+          "id": "AF1107",
+          "names": {
+            "local": "اندړ",
+            "en": "Andar"
+          },
+          "slug": "andar-af1107"
+        },
+        {
+          "id": "AF1111",
+          "names": {
+            "local": "قره باغ",
+            "en": "Qarabagh"
+          },
+          "slug": "qara-bagh-af1111"
+        },
+        {
+          "id": "AF1103",
+          "names": {
+            "local": "خواجه عمری",
+            "en": "Khwaja Omari"
+          },
+          "slug": "khwaja-umari-af1103"
+        },
+        {
+          "id": "AF1110",
+          "names": {
+            "local": "ناور",
+            "en": "Nawur"
+          },
+          "slug": "nawur-af1110"
+        },
+        {
+          "id": "AF1119",
+          "names": {
+            "local": "ناوه",
+            "en": "Nawa"
+          },
+          "slug": "nawa-af1119"
+        },
+        {
+          "id": "AF1117",
+          "names": {
+            "local": "گیلان",
+            "en": "Gelan"
+          },
+          "slug": "gelan-af1117"
+        },
+        {
+          "id": "AF1118",
+          "names": {
+            "local": "اجرستان",
+            "en": "Ajristan"
+          },
+          "slug": "ajristan-af1118"
+        }
+      ]
+    },
+    {
+      "id": "AF04",
+      "names": {
+        "local": "میدان وردگ",
+        "en": "Maidan Wardak"
+      },
+      "slug": "maidan-wardak-af04",
+      "districts": [
+        {
+          "id": "AF0403",
+          "names": {
+            "local": "جلریز",
+            "en": "Jalrez"
+          },
+          "slug": "jalrez-af0403"
+        },
+        {
+          "id": "AF0401",
+          "names": {
+            "local": "میدان شهر",
+            "en": "Maydan Shahr"
+          },
+          "slug": "maydan-shahr-af0401"
+        },
+        {
+          "id": "AF0406",
+          "names": {
+            "local": "دایمیرداد",
+            "en": "Daimirdad"
+          },
+          "slug": "daymirdad-af0406"
+        },
+        {
+          "id": "AF0408",
+          "names": {
+            "local": "جغتو",
+            "en": "Jaghato"
+          },
+          "slug": "jaghatu-af0408"
+        },
+        {
+          "id": "AF0404",
+          "names": {
+            "local": "چک",
+            "en": "Chak"
+          },
+          "slug": "chak-e-wardak-af0404"
+        },
+        {
+          "id": "AF0405",
+          "names": {
+            "local": "سید آباد",
+            "en": "Sayedabad"
+          },
+          "slug": "saydabad-af0405"
+        },
+        {
+          "id": "AF0409",
+          "names": {
+            "local": "مدکز بهسود",
+            "en": "Markaz-e-Behsud"
+          },
+          "slug": "markaz-e-behsud-af0409"
+        },
+        {
+          "id": "AF0407",
+          "names": {
+            "local": "حصه اول بهسود",
+            "en": "Hesa-e-Awal-e-Behsud"
+          },
+          "slug": "hesa-e-awal-e-behsud-af0407"
+        },
+        {
+          "id": "AF0402",
+          "names": {
+            "local": "نرخ",
+            "en": "Nerkh"
+          },
+          "slug": "nerkh-af0402"
+        }
+      ]
+    },
+    {
+      "id": "AF02",
+      "names": {
+        "local": "کاپیسا",
+        "en": "Kapisa"
+      },
+      "slug": "kapisa-af02",
+      "districts": [
+        {
+          "id": "AF0201",
+          "names": {
+            "local": "محمود راقی",
+            "en": "Mahmood-e-Raqi"
+          },
+          "slug": "mahmood-e-raqi-af0201"
+        },
+        {
+          "id": "AF0203",
+          "names": {
+            "local": "کوه بند",
+            "en": "Koh Band"
+          },
+          "slug": "koh-band-af0203"
+        },
+        {
+          "id": "AF0205",
+          "names": {
+            "local": "نجراب",
+            "en": "Nijrab"
+          },
+          "slug": "nijrab-af0205"
+        },
+        {
+          "id": "AF0206",
+          "names": {
+            "local": "تگاب",
+            "en": "Tagab"
+          },
+          "slug": "tagab-af0206"
+        },
+        {
+          "id": "AF0204",
+          "names": {
+            "local": "حصه اول کوهستان",
+            "en": "Hisa-e-Awal-e-Kohistan"
+          },
+          "slug": "hisa-e-awal-e-kohistan-af0204"
+        },
+        {
+          "id": "AF0202",
+          "names": {
+            "local": "حصه دوم کوهستان",
+            "en": "Hisa-e-Duwum-e-Kohistan"
+          },
+          "slug": "hisa-e-duwum-e-kohistan-af0202"
+        },
+        {
+          "id": "AF0207",
+          "names": {
+            "local": "اله سای",
+            "en": "Alasay"
+          },
+          "slug": "alasay-af0207"
+        }
+      ]
+    },
+    {
+      "id": "AF06",
+      "names": {
+        "local": "ننگرهار",
+        "en": "Nangarhar"
+      },
+      "slug": "nangarhar-af06",
+      "districts": [
+        {
+          "id": "AF0602",
+          "names": {
+            "local": "بهسود",
+            "en": "Behsud"
+          },
+          "slug": "behsud-af0602"
+        },
+        {
+          "id": "AF0617",
+          "names": {
+            "local": "مهمند دره",
+            "en": "Momand Darah"
+          },
+          "slug": "muhmand-dara-af0617"
+        },
+        {
+          "id": "AF0621",
+          "names": {
+            "local": "حصارک",
+            "en": "Hesarak"
+          },
+          "slug": "hesarak-af0621"
+        },
+        {
+          "id": "AF0606",
+          "names": {
+            "local": "کوز کنر",
+            "en": "Kuz Kunar"
+          },
+          "slug": "kuz-kunar-af0606"
+        },
+        {
+          "id": "AF0620",
+          "names": {
+            "local": "نازیان",
+            "en": "Nazyan"
+          },
+          "slug": "nazyan-af0620"
+        },
+        {
+          "id": "AF0604",
+          "names": {
+            "local": "چپر هار",
+            "en": "Chaparhar"
+          },
+          "slug": "chaparhar-af0604"
+        },
+        {
+          "id": "AF0607",
+          "names": {
+            "local": "رودات",
+            "en": "Rodat"
+          },
+          "slug": "rodat-af0607"
+        },
+        {
+          "id": "AF0609",
+          "names": {
+            "local": "بتی کوټ",
+            "en": "Bati Kot"
+          },
+          "slug": "bati-kot-af0609"
+        },
+        {
+          "id": "AF0613",
+          "names": {
+            "local": "کوټ",
+            "en": "Kot"
+          },
+          "slug": "kot-af0613"
+        },
+        {
+          "id": "AF0619",
+          "names": {
+            "local": "شیرزاد",
+            "en": "Sherzad"
+          },
+          "slug": "sherzad-af0619"
+        },
+        {
+          "id": "AF0615",
+          "names": {
+            "local": "اچین",
+            "en": "Achin"
+          },
+          "slug": "achin-af0615"
+        },
+        {
+          "id": "AF0618",
+          "names": {
+            "local": "لعل پور",
+            "en": "Lalpura"
+          },
+          "slug": "lalpur-af0618"
+        },
+        {
+          "id": "AF0608",
+          "names": {
+            "local": "خوگیانی",
+            "en": "Khogyani"
+          },
+          "slug": "khogyani-af0608"
+        },
+        {
+          "id": "AF0610",
+          "names": {
+            "local": "ده بالا",
+            "en": "Deh Bala"
+          },
+          "slug": "deh-bala-af0610"
+        },
+        {
+          "id": "AF0616",
+          "names": {
+            "local": "شینوار",
+            "en": "Shinwar"
+          },
+          "slug": "shinwar-af0616"
+        },
+        {
+          "id": "AF0611",
+          "names": {
+            "local": "پچیراگام",
+            "en": "Pachiragam"
+          },
+          "slug": "pachir-wa-agam-af0611"
+        },
+        {
+          "id": "AF0612",
+          "names": {
+            "local": "دره نور",
+            "en": "Dara-e-Nur"
+          },
+          "slug": "dara-e-nur-af0612"
+        },
+        {
+          "id": "AF0622",
+          "names": {
+            "local": "دُر بابا",
+            "en": "Dur Baba"
+          },
+          "slug": "dur-baba-af0622"
+        },
+        {
+          "id": "AF0605",
+          "names": {
+            "local": "کامه",
+            "en": "Kama"
+          },
+          "slug": "kama-af0605"
+        },
+        {
+          "id": "AF0601",
+          "names": {
+            "local": "جلال آباد",
+            "en": "Jalalabad"
+          },
+          "slug": "jalalabad-af0601"
+        },
+        {
+          "id": "AF0614",
+          "names": {
+            "local": "گوشته",
+            "en": "Goshta"
+          },
+          "slug": "goshta-af0614"
+        },
+        {
+          "id": "AF0603",
+          "names": {
+            "local": "سرخ رود",
+            "en": "Surkh Rod"
+          },
+          "slug": "surkh-rod-af0603"
+        }
+      ]
+    },
+    {
+      "id": "AF26",
+      "names": {
+        "local": "زابل",
+        "en": "Zabul"
+      },
+      "slug": "zabul-af26",
+      "districts": [
+        {
+          "id": "AF2610",
+          "names": {
+            "local": "شملزائی",
+            "en": "Shamolzai"
+          },
+          "slug": "shamul-zayi-af2610"
+        },
+        {
+          "id": "AF2607",
+          "names": {
+            "local": "دای چوپان",
+            "en": "Daychopan"
+          },
+          "slug": "daychopan-af2607"
+        },
+        {
+          "id": "AF2604",
+          "names": {
+            "local": "میزان",
+            "en": "Mizan"
+          },
+          "slug": "mizan-af2604"
+        },
+        {
+          "id": "AF2611",
+          "names": {
+            "local": "کاکړ",
+            "en": "Khak-e-Afghan"
+          },
+          "slug": "kakar-af2611"
+        },
+        {
+          "id": "AF2603",
+          "names": {
+            "local": "شینکی",
+            "en": "Shinkay"
+          },
+          "slug": "shinkay-af2603"
+        },
+        {
+          "id": "AF2608",
+          "names": {
+            "local": "اتغر",
+            "en": "Atghar"
+          },
+          "slug": "atghar-af2608"
+        },
+        {
+          "id": "AF2606",
+          "names": {
+            "local": "شاه جوی",
+            "en": "Shahjoy"
+          },
+          "slug": "shah-joi-af2606"
+        },
+        {
+          "id": "AF2609",
+          "names": {
+            "local": "نوبهار",
+            "en": "Nawbahar"
+          },
+          "slug": "nawbahar-af2609"
+        },
+        {
+          "id": "AF2602",
+          "names": {
+            "local": "ترنک و جلدک",
+            "en": "Tarnak Wa Jaldak"
+          },
+          "slug": "tarnak-wa-jaldak-af2602"
+        },
+        {
+          "id": "AF2605",
+          "names": {
+            "local": "ارغنداب",
+            "en": "Arghandab"
+          },
+          "slug": "arghandab-af2605"
+        },
+        {
+          "id": "AF2601",
+          "names": {
+            "local": "قلات",
+            "en": "Qalat"
+          },
+          "slug": "qalat-af2601"
+        }
+      ]
+    },
+    {
+      "id": "AF18",
+      "names": {
+        "local": "تخار",
+        "en": "Takhar"
+      },
+      "slug": "takhar-af18",
+      "districts": [
+        {
+          "id": "AF1803",
+          "names": {
+            "local": "بهارک",
+            "en": "Baharak"
+          },
+          "slug": "baharak-af1803"
+        },
+        {
+          "id": "AF1813",
+          "names": {
+            "local": "ورسج",
+            "en": "Warsaj"
+          },
+          "slug": "warsaj-af1813"
+        },
+        {
+          "id": "AF1802",
+          "names": {
+            "local": "هزار سموچ",
+            "en": "Hazar Sumuch"
+          },
+          "slug": "hazar-sumuch-af1802"
+        },
+        {
+          "id": "AF1801",
+          "names": {
+            "local": "تالقان",
+            "en": "Taloqan"
+          },
+          "slug": "taloqan-af1801"
+        },
+        {
+          "id": "AF1804",
+          "names": {
+            "local": "بنگی",
+            "en": "Bangi"
+          },
+          "slug": "bangi-af1804"
+        },
+        {
+          "id": "AF1805",
+          "names": {
+            "local": "چال",
+            "en": "Chal"
+          },
+          "slug": "chal-af1805"
+        },
+        {
+          "id": "AF1808",
+          "names": {
+            "local": "فرخار",
+            "en": "Farkhar"
+          },
+          "slug": "farkhar-af1808"
+        },
+        {
+          "id": "AF1806",
+          "names": {
+            "local": "نمک آب",
+            "en": "Namak Ab"
+          },
+          "slug": "namak-ab-af1806"
+        },
+        {
+          "id": "AF1816",
+          "names": {
+            "local": "چاه آب",
+            "en": "Chah Ab"
+          },
+          "slug": "chahab-af1816"
+        },
+        {
+          "id": "AF1812",
+          "names": {
+            "local": "دشت قلعه",
+            "en": "Dasht-e-Qala"
+          },
+          "slug": "dasht-e-qala-af1812"
+        },
+        {
+          "id": "AF1807",
+          "names": {
+            "local": "کلفگان",
+            "en": "Kalafgan"
+          },
+          "slug": "kalafgan-af1807"
+        },
+        {
+          "id": "AF1814",
+          "names": {
+            "local": "خواجه بهاوالدین",
+            "en": "Khwaja Bahawuddin"
+          },
+          "slug": "khwaja-bahawuddin-af1814"
+        },
+        {
+          "id": "AF1811",
+          "names": {
+            "local": "اشکمش",
+            "en": "Eshkamesh"
+          },
+          "slug": "eshkmesh-af1811"
+        },
+        {
+          "id": "AF1817",
+          "names": {
+            "local": "ینگی قلعه",
+            "en": "Yangi Qalah"
+          },
+          "slug": "yangi-qala-af1817"
+        },
+        {
+          "id": "AF1815",
+          "names": {
+            "local": "درقد",
+            "en": "Darqad"
+          },
+          "slug": "darqad-af1815"
+        },
+        {
+          "id": "AF1809",
+          "names": {
+            "local": "خواجه غار",
+            "en": "Khwaja Ghar"
+          },
+          "slug": "khwaja-ghar-af1809"
+        },
+        {
+          "id": "AF1810",
+          "names": {
+            "local": "رُستاق",
+            "en": "Rustaq"
+          },
+          "slug": "rostaq-af1810"
+        }
+      ]
+    },
+    {
+      "id": "AF34",
+      "names": {
+        "local": "نیمروز",
+        "en": "Nimroz"
+      },
+      "slug": "nimroz-af34",
+      "districts": [
+        {
+          "id": "AF3402",
+          "names": {
+            "local": "کنگ",
+            "en": "Kang"
+          },
+          "slug": "kang-af3402"
+        },
+        {
+          "id": "AF3404",
+          "names": {
+            "local": "چاربرجک",
+            "en": "Chahar Burjak"
+          },
+          "slug": "char-burjak-af3404"
+        },
+        {
+          "id": "AF3405",
+          "names": {
+            "local": "خاش رود",
+            "en": "Khashrod"
+          },
+          "slug": "khashrod-af3405"
+        },
+        {
+          "id": "AF3401",
+          "names": {
+            "local": "زرنج",
+            "en": "Zaranj"
+          },
+          "slug": "zaranj-af3401"
+        },
+        {
+          "id": "AF3403",
+          "names": {
+            "local": "چخانسور",
+            "en": "Chakhansur"
+          },
+          "slug": "chakhansur-af3403"
+        }
+      ]
+    },
+    {
+      "id": "AF07",
+      "names": {
+        "local": "لغمان",
+        "en": "Laghman"
+      },
+      "slug": "laghman-af07",
+      "districts": [
+        {
+          "id": "AF0704",
+          "names": {
+            "local": "علینگار",
+            "en": "Alingar"
+          },
+          "slug": "alingar-af0704"
+        },
+        {
+          "id": "AF0701",
+          "names": {
+            "local": "مهتر لام",
+            "en": "Mehtarlam"
+          },
+          "slug": "mehtarlam-af0701"
+        },
+        {
+          "id": "AF0705",
+          "names": {
+            "local": "دولت شاه",
+            "en": "Dawlat Shah"
+          },
+          "slug": "dawlatshah-af0705"
+        },
+        {
+          "id": "AF0703",
+          "names": {
+            "local": "علیشنگ",
+            "en": "Alishang"
+          },
+          "slug": "alishang-af0703"
+        },
+        {
+          "id": "AF0702",
+          "names": {
+            "local": "قرغه ئی",
+            "en": "Qarghayee"
+          },
+          "slug": "qarghayi-af0702"
+        }
+      ]
+    },
+    {
+      "id": "AF09",
+      "names": {
+        "local": "بغلان",
+        "en": "Baghlan"
+      },
+      "slug": "baghlan-af09",
+      "districts": [
+        {
+          "id": "AF0909",
+          "names": {
+            "local": "خواجه هجران",
+            "en": "Jelgah"
+          },
+          "slug": "khwaja-hejran-af0909"
+        },
+        {
+          "id": "AF0914",
+          "names": {
+            "local": "گذرگاه نور",
+            "en": "Guzargah-e-Noor"
+          },
+          "slug": "guzargah-e-nur-af0914"
+        },
+        {
+          "id": "AF0913",
+          "names": {
+            "local": "خوست و فرنگ",
+            "en": "Khost Wa Fereng"
+          },
+          "slug": "khost-wa-fereng-af0913"
+        },
+        {
+          "id": "AF0907",
+          "names": {
+            "local": "اندراب",
+            "en": "Andarab"
+          },
+          "slug": "andarab-af0907"
+        },
+        {
+          "id": "AF0903",
+          "names": {
+            "local": "دوشی",
+            "en": "Doshi"
+          },
+          "slug": "doshi-af0903"
+        },
+        {
+          "id": "AF0902",
+          "names": {
+            "local": "دهنۀ غوری",
+            "en": "Dahana-e-Ghori"
+          },
+          "slug": "dahana-e-ghori-af0902"
+        },
+        {
+          "id": "AF0912",
+          "names": {
+            "local": "پل حصار",
+            "en": "Pul-e-Hisar"
+          },
+          "slug": "pul-e-hisar-af0912"
+        },
+        {
+          "id": "AF0906",
+          "names": {
+            "local": "خنجان",
+            "en": "Khenjan"
+          },
+          "slug": "khinjan-af0906"
+        },
+        {
+          "id": "AF0911",
+          "names": {
+            "local": "تاله وبرفک",
+            "en": "Tala-Wa-Barfak"
+          },
+          "slug": "tala-wa-barfak-af0911"
+        },
+        {
+          "id": "AF0904",
+          "names": {
+            "local": "نهرین",
+            "en": "Nahrin"
+          },
+          "slug": "nahrin-af0904"
+        },
+        {
+          "id": "AF0901",
+          "names": {
+            "local": "پلخمری",
+            "en": "Pul-e-Khumri"
+          },
+          "slug": "pul-e-khumri-af0901"
+        },
+        {
+          "id": "AF0908",
+          "names": {
+            "local": "ده صلاح",
+            "en": "Dehsalah"
+          },
+          "slug": "deh-salah-af0908"
+        },
+        {
+          "id": "AF0910",
+          "names": {
+            "local": "بورکه",
+            "en": "Borka"
+          },
+          "slug": "burka-af0910"
+        },
+        {
+          "id": "AF0905",
+          "names": {
+            "local": "بغلان جدید",
+            "en": "Baghlan-e-Jadid"
+          },
+          "slug": "baghlan-e-jadid-af0905"
+        },
+        {
+          "id": "AF0915",
+          "names": {
+            "local": "فرنگ وغارو",
+            "en": "Fereng-o-Gharu"
+          },
+          "slug": "fereng-wa-gharu-af0915"
+        }
+      ]
+    },
+    {
+      "id": "AF31",
+      "names": {
+        "local": "بادغیس",
+        "en": "Badghis"
+      },
+      "slug": "badghis-af31",
+      "districts": [
+        {
+          "id": "AF3105",
+          "names": {
+            "local": "بالا مرغاب",
+            "en": "Bala Murghab"
+          },
+          "slug": "bala-murghab-af3105"
+        },
+        {
+          "id": "AF3106",
+          "names": {
+            "local": "جوند",
+            "en": "Jawand"
+          },
+          "slug": "jawand-af3106"
+        },
+        {
+          "id": "AF3103",
+          "names": {
+            "local": "مقر",
+            "en": "Muqur"
+          },
+          "slug": "muqur-af3103"
+        },
+        {
+          "id": "AF3101",
+          "names": {
+            "local": "قلعه نو",
+            "en": "Qala-e Naw"
+          },
+          "slug": "qala-e-naw-af3101"
+        },
+        {
+          "id": "AF3107",
+          "names": {
+            "local": "غورماچ",
+            "en": "Ghormach"
+          },
+          "slug": "ghormach-af3107"
+        },
+        {
+          "id": "AF3104",
+          "names": {
+            "local": "قادیس",
+            "en": "Qades"
+          },
+          "slug": "qadis-af3104"
+        },
+        {
+          "id": "AF3102",
+          "names": {
+            "local": "آب کمری",
+            "en": "Abkamari"
+          },
+          "slug": "ab-kamari-af3102"
+        }
+      ]
+    },
+    {
+      "id": "AF10",
+      "names": {
+        "local": "بامیان",
+        "en": "Bamyan"
+      },
+      "slug": "bamyan-af10",
+      "districts": [
+        {
+          "id": "AF1002",
+          "names": {
+            "local": "شیبر",
+            "en": "Shebar"
+          },
+          "slug": "shibar-af1002"
+        },
+        {
+          "id": "AF1006",
+          "names": {
+            "local": "پنجاب",
+            "en": "Panjab"
+          },
+          "slug": "panjab-af1006"
+        },
+        {
+          "id": "AF1001",
+          "names": {
+            "local": "بامیان",
+            "en": "Bamyan"
+          },
+          "slug": "bamyan-af1001"
+        },
+        {
+          "id": "AF1007",
+          "names": {
+            "local": "ورث",
+            "en": "Waras"
+          },
+          "slug": "waras-af1007"
+        },
+        {
+          "id": "AF1003",
+          "names": {
+            "local": "سیغان",
+            "en": "Sayghan"
+          },
+          "slug": "sayghan-af1003"
+        },
+        {
+          "id": "AF1004",
+          "names": {
+            "local": "کهمرد",
+            "en": "Kahmard"
+          },
+          "slug": "kahmard-af1004"
+        },
+        {
+          "id": "AF1005",
+          "names": {
+            "local": "یکاولنگ",
+            "en": "Yakawlang"
+          },
+          "slug": "yakawlang-af1005"
+        }
+      ]
+    }
+  ],
+  "excel_crosscheck": {
+    "workbook": "afg_admin_boundaries.xlsx",
+    "workbook_version": "v04",
+    "valid_on": "2026-06-23",
+    "inspected_at": "2026-11-01",
+    "sha256": "726774df112bb6419d5146f2170957a2a5a29294b94d9e271fb45d19d6175101",
+    "worksheets": {
+      "provinces": "afg_admin1",
+      "admin2": "afg_admin2"
+    },
+    "workbook_counts": {
+      "province_rows": 34,
+      "unique_province_pcodes": 34,
+      "admin2_rows": 457,
+      "unique_admin2_pcodes": 457,
+      "unit_type_counts": {
+        "District": 397,
+        "Temporaray District": 29,
+        "Provincial Capital": 30,
+        "Capital": 1
+      }
+    },
+    "candidate_reference_match": {
+      "candidate_provinces": 34,
+      "province_pcodes_found": 34,
+      "candidate_adm2_records": 401,
+      "unique_candidate_adm2_pcodes": 401,
+      "candidate_pcodes_found_in_workbook": 401,
+      "parent_province_pcodes_match": 401,
+      "candidate_records_by_workbook_unit_type": {
+        "District": 367,
+        "Temporaray District": 3,
+        "Provincial Capital": 30,
+        "Capital": 1
+      }
+    },
+    "workbook_records_not_in_candidate_reference": {
+      "count": 56,
+      "by_unit_type": {
+        "District": 30,
+        "Temporaray District": 26
+      },
+      "note": "These are additional workbook ADM2 records; they are not silently added to the candidate reference."
+    },
+    "province_name_differences": [],
+    "district_name_review_status": "136_candidate_adm2_names_reviewed_by_pcode; 265_remaining_pending",
+    "official_verification_status": "not_ocha_row_level_certified",
+    "runtime_enabled": false,
+    "notes": [
+      "All 401 candidate ADM2 P-codes are present in the supplied workbook and all 401 parent province P-codes match.",
+      "The 401 candidate ADM2 entries are not 401 ordinary districts: their workbook unit types are 367 District, 30 Provincial Capital, 3 Temporaray District, and 1 Capital.",
+      "The workbook has 56 additional ADM2 records outside the candidate reference: 30 District and 26 Temporaray District.",
+      "The 457 workbook ADM2 rows must not be described as 457 districts or equated directly with the OCHA metadata's declared 401-district coverage.",
+      "Province name differences are recorded as variants and have not been normalized or promoted to official spellings.",
+      "District name-by-name comparison is partial: 136 of 401 candidate ADM2 labels have been checked by P-code; 265 remain. P-code presence and parent-code matching do not certify names.",
+      "This workbook comparison does not constitute independent OCHA/AGCHO certification.",
+      "The full 401-record candidate-to-workbook district-name comparison remains incomplete; 136 records have been reviewed and 265 remain. Do not infer name equality from P-code and parent-code matches.",
+      "The four province-name variants identified in the first workbook comparison were updated to the workbook spellings. Stable province IDs were unchanged."
+    ],
+    "province_name_review_status": "province_names_aligned_to_user_supplied_workbook_v04"
+  },
+  "district_name_review_status": {
+    "method": "ADM2 P-code keyed comparison against user-supplied afg_admin_boundaries2.csv (v04, valid_on 2026-06-23), comparing candidate names.local to adm2_name1. Exact matches are recorded as reviewed; discrepancies remain unchanged pending reconciliation. This is secondary-reference alignment, not primary-source certification.",
+    "workbook_name_matches_completed": 349,
+    "workbook_name_matches_remaining": 52,
+    "completed_record_ids": [
+      "AF0101",
+      "AF0102",
+      "AF0103",
+      "AF0104",
+      "AF0105",
+      "AF0106",
+      "AF0107",
+      "AF0108",
+      "AF0109",
+      "AF0110",
+      "AF0111",
+      "AF0112",
+      "AF0113",
+      "AF0114",
+      "AF0115",
+      "AF0201",
+      "AF0202",
+      "AF0203",
+      "AF0204",
+      "AF0205",
+      "AF0206",
+      "AF0207",
+      "AF0301",
+      "AF0302",
+      "AF0303",
+      "AF0304",
+      "AF0305",
+      "AF0306",
+      "AF0307",
+      "AF0309",
+      "AF0310",
+      "AF0401",
+      "AF0402",
+      "AF0403",
+      "AF0404",
+      "AF0405",
+      "AF0406",
+      "AF0407",
+      "AF0408",
+      "AF0501",
+      "AF0502",
+      "AF0503",
+      "AF0504",
+      "AF0505",
+      "AF0506",
+      "AF0507",
+      "AF0601",
+      "AF0602",
+      "AF0603",
+      "AF0604",
+      "AF0605",
+      "AF0607",
+      "AF0608",
+      "AF0610",
+      "AF0611",
+      "AF0612",
+      "AF0613",
+      "AF0614",
+      "AF0615",
+      "AF0616",
+      "AF0619",
+      "AF0620",
+      "AF0621",
+      "AF0622",
+      "AF0701",
+      "AF0702",
+      "AF0705",
+      "AF0801",
+      "AF0802",
+      "AF0803",
+      "AF0804",
+      "AF0805",
+      "AF0806",
+      "AF0807",
+      "AF0902",
+      "AF0903",
+      "AF0904",
+      "AF0906",
+      "AF0907",
+      "AF0908",
+      "AF0911",
+      "AF0914",
+      "AF1001",
+      "AF1002",
+      "AF1003",
+      "AF1004",
+      "AF1005",
+      "AF1006",
+      "AF1101",
+      "AF1102",
+      "AF1103",
+      "AF1104",
+      "AF1105",
+      "AF1106",
+      "AF1107",
+      "AF1108",
+      "AF1109",
+      "AF1110",
+      "AF1111",
+      "AF1112",
+      "AF1113",
+      "AF1114",
+      "AF1115",
+      "AF1116",
+      "AF1117",
+      "AF1118",
+      "AF1119",
+      "AF1201",
+      "AF1202",
+      "AF1203",
+      "AF1204",
+      "AF1205",
+      "AF1206",
+      "AF1207",
+      "AF1208",
+      "AF1209",
+      "AF1210",
+      "AF1211",
+      "AF1212",
+      "AF1213",
+      "AF1214",
+      "AF1215",
+      "AF1216",
+      "AF1217",
+      "AF1218",
+      "AF1219",
+      "AF1301",
+      "AF1302",
+      "AF1303",
+      "AF1304",
+      "AF1305",
+      "AF1306",
+      "AF1307",
+      "AF1308",
+      "AF1309",
+      "AF1310",
+      "AF1311",
+      "AF1405",
+      "AF1406",
+      "AF1409",
+      "AF1410",
+      "AF1411",
+      "AF1412",
+      "AF1501",
+      "AF1504",
+      "AF1506",
+      "AF1508",
+      "AF1510",
+      "AF1511",
+      "AF1512",
+      "AF1513",
+      "AF1514",
+      "AF1515",
+      "AF1601",
+      "AF1602",
+      "AF1603",
+      "AF1604",
+      "AF1605",
+      "AF1606",
+      "AF1607",
+      "AF1608",
+      "AF1701",
+      "AF1702",
+      "AF1703",
+      "AF1704",
+      "AF1705",
+      "AF1706",
+      "AF1707",
+      "AF1708",
+      "AF1709",
+      "AF1710",
+      "AF1711",
+      "AF1712",
+      "AF1713",
+      "AF1714",
+      "AF1715",
+      "AF1716",
+      "AF1717",
+      "AF1718",
+      "AF1719",
+      "AF1720",
+      "AF1721",
+      "AF1722",
+      "AF1723",
+      "AF1724",
+      "AF1725",
+      "AF1726",
+      "AF1727",
+      "AF1728",
+      "AF1801",
+      "AF1803",
+      "AF1804",
+      "AF1805",
+      "AF1806",
+      "AF1807",
+      "AF1808",
+      "AF1809",
+      "AF1810",
+      "AF1811",
+      "AF1812",
+      "AF1813",
+      "AF1814",
+      "AF1815",
+      "AF1816",
+      "AF1817",
+      "AF1901",
+      "AF1902",
+      "AF1903",
+      "AF1904",
+      "AF1905",
+      "AF1906",
+      "AF1907",
+      "AF2001",
+      "AF2002",
+      "AF2003",
+      "AF2004",
+      "AF2005",
+      "AF2006",
+      "AF2007",
+      "AF2008",
+      "AF2101",
+      "AF2102",
+      "AF2103",
+      "AF2104",
+      "AF2105",
+      "AF2106",
+      "AF2107",
+      "AF2108",
+      "AF2109",
+      "AF2111",
+      "AF2112",
+      "AF2113",
+      "AF2114",
+      "AF2115",
+      "AF2116",
+      "AF2201",
+      "AF2202",
+      "AF2203",
+      "AF2204",
+      "AF2205",
+      "AF2206",
+      "AF2207",
+      "AF2302",
+      "AF2303",
+      "AF2305",
+      "AF2306",
+      "AF2307",
+      "AF2308",
+      "AF2309",
+      "AF2310",
+      "AF2401",
+      "AF2402",
+      "AF2403",
+      "AF2404",
+      "AF2405",
+      "AF2406",
+      "AF2407",
+      "AF2408",
+      "AF2409",
+      "AF2502",
+      "AF2503",
+      "AF2505",
+      "AF2601",
+      "AF2602",
+      "AF2603",
+      "AF2604",
+      "AF2605",
+      "AF2606",
+      "AF2607",
+      "AF2609",
+      "AF2701",
+      "AF2702",
+      "AF2703",
+      "AF2704",
+      "AF2705",
+      "AF2706",
+      "AF2707",
+      "AF2708",
+      "AF2709",
+      "AF2710",
+      "AF2711",
+      "AF2712",
+      "AF2713",
+      "AF2714",
+      "AF2715",
+      "AF2716",
+      "AF2801",
+      "AF2802",
+      "AF2803",
+      "AF2804",
+      "AF2805",
+      "AF2807",
+      "AF2808",
+      "AF2809",
+      "AF2810",
+      "AF2811",
+      "AF2901",
+      "AF2903",
+      "AF2904",
+      "AF2905",
+      "AF2907",
+      "AF2908",
+      "AF2909",
+      "AF2910",
+      "AF2911",
+      "AF2912",
+      "AF2913",
+      "AF3001",
+      "AF3002",
+      "AF3005",
+      "AF3006",
+      "AF3007",
+      "AF3008",
+      "AF3009",
+      "AF3010",
+      "AF3012",
+      "AF3013",
+      "AF3101",
+      "AF3102",
+      "AF3103",
+      "AF3104",
+      "AF3106",
+      "AF3107",
+      "AF3201",
+      "AF3202",
+      "AF3203",
+      "AF3204",
+      "AF3205",
+      "AF3207",
+      "AF3208",
+      "AF3209",
+      "AF3210",
+      "AF3211",
+      "AF3213",
+      "AF3214",
+      "AF3215",
+      "AF3216",
+      "AF3301",
+      "AF3303",
+      "AF3304",
+      "AF3305",
+      "AF3306",
+      "AF3307",
+      "AF3308",
+      "AF3309",
+      "AF3311",
+      "AF3401",
+      "AF3402",
+      "AF3403"
+    ],
+    "last_reviewed": "2026-11-01",
+    "comparison_batches": [
+      {
+        "reviewed_on": "2026-11-01",
+        "province_pcodes": [
+          "AF17",
+          "AF20",
+          "AF05",
+          "AF12",
+          "AF22",
+          "AF13",
+          "AF16",
+          "AF21"
+        ],
+        "records_checked": 103,
+        "method": "Manual P-code keyed comparison of candidate English/local labels against afg_admin2 workbook columns adm2_name, adm2_name1; no automatic normalization of disputed labels."
+      },
+      {
+        "reviewed_on": "2026-11-01",
+        "source_file": "afg_admin_boundaries2.csv",
+        "source_version": "v04",
+        "source_valid_on": "2026-06-23",
+        "candidate_records_checked": 265,
+        "exact_local_matches": 213,
+        "local_discrepancies": 52,
+        "method": "Exact P-code join for the 265 previously unreviewed candidate records; no automatic spelling normalization or replacement. All 52 discrepancies retained for manual/source reconciliation."
+      }
+    ],
+    "discrepancy_notes": [
+      {
+        "id": "AF1703",
+        "candidate_en": "Arghanj Khwah",
+        "workbook_en": "Arghanchkhwah",
+        "type": "English spelling variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1704",
+        "candidate_en": "Yaftal-e-Sufla",
+        "candidate_local": "یفتل سفلی",
+        "workbook_en": "Yaftal",
+        "workbook_local": "یفتل",
+        "type": "Potentially broader/different label; retain pending source reconciliation",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1722",
+        "candidate_en": "Darwaz-e-Payin",
+        "candidate_local": "درواز پائین (ما می )",
+        "workbook_en": "Darwaz",
+        "workbook_local": "درواز",
+        "type": "OCHA code/name corroborates extended candidate label",
+        "status": "OCHA 2024 Annex 1 identifies AF1722 as Darwaz-e-Payin; English label corrected. Local-script variant remains open.",
+        "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF1722 with Darwaz-e-Payin. English label corrected; local-script variant remains open."
+      },
+      {
+        "id": "AF1724",
+        "candidate_en": "Shaki",
+        "workbook_en": "Shakai",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1727",
+        "candidate_local": "دروازبالا ( نیسی)",
+        "workbook_local": "درواز بالا",
+        "type": "Local-script spacing/parenthetical variant"
+      },
+      {
+        "id": "AF1213",
+        "candidate_en": "Nika",
+        "workbook_en": "Neka",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1205",
+        "candidate_en": "Sar Rawzah",
+        "workbook_en": "Sar Rawza",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1216",
+        "candidate_en": "Dila",
+        "workbook_en": "Delah",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1217",
+        "candidate_en": "Wazakhah",
+        "workbook_en": "Wazakhwa",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1207",
+        "candidate_local": "زرغون شهر",
+        "workbook_local": "زرغون ښار",
+        "type": "Local-script label discrepancy"
+      },
+      {
+        "id": "AF1307",
+        "candidate_en": "Jaji",
+        "candidate_local": "علی خیل",
+        "workbook_en": "Zazi",
+        "workbook_local": "آریوب ځاځۍ",
+        "type": "Substantive name discrepancy; do not overwrite",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1308",
+        "candidate_en": "Lija Ahmad Khel",
+        "workbook_en": "Laj-e-Ahmadkhel",
+        "type": "Transliteration/spacing variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1305",
+        "candidate_en": "Zadran",
+        "workbook_en": "Waza Zadran",
+        "type": "Specific vs broader label; retain pending source reconciliation",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1302",
+        "candidate_en": "Ahmadaba",
+        "workbook_en": "Ahmad Abad",
+        "type": "Spacing variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1311",
+        "candidate_en": "Dand Wa Patan",
+        "workbook_en": "Dand-e-Patan",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1604",
+        "candidate_en": "Nurgaram",
+        "workbook_en": "Nurgeram",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1605",
+        "candidate_en": "Duab",
+        "workbook_en": "Dowab",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF1601",
+        "candidate_local": "پرونس",
+        "workbook_local": "پارون",
+        "type": "Local-script discrepancy"
+      },
+      {
+        "id": "AF2116",
+        "candidate_en": "Sharak-e-Hayratan",
+        "workbook_en": "Chahi",
+        "type": "Substantive name discrepancy; do not overwrite",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF2114",
+        "candidate_en": "Keshendeh",
+        "workbook_en": "Kushenda",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF2107",
+        "candidate_en": "Sholgareh",
+        "workbook_en": "Sholgarah",
+        "type": "Transliteration variant",
+        "status": "English label aligned to Excel v04 by matching ADM2 P-code; local-language label left unchanged unless separately reviewed."
+      },
+      {
+        "id": "AF2806",
+        "candidate_local": "خمیاب",
+        "workbook_local": "خم آب",
+        "candidate_en": "Kham Ab",
+        "workbook_en": "Kham Ab",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF2506",
+        "candidate_local": "چنارتو",
+        "workbook_local": "گیزاب",
+        "candidate_en": "Chinarto",
+        "workbook_en": "Gizab",
+        "unit_type": "District",
+        "type": "Secondary workbook code/name conflict; OCHA corroborates candidate",
+        "status": "OCHA HAG February 2021 identifies AF2506 as Chinarto; candidate name retained. Workbook v04 appears to swap the Chinarto/Gizab names across AF2506 and AF2507. Local-script exact form remains open.",
+        "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2506 with Chinarto. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open."
+      },
+      {
+        "id": "AF2507",
+        "candidate_local": "گیزاب",
+        "workbook_local": "چنارتو",
+        "candidate_en": "Gizab",
+        "workbook_en": "Chinarto",
+        "unit_type": "Temporaray District",
+        "type": "Secondary workbook code/name conflict; OCHA corroborates candidate",
+        "status": "OCHA HAG February 2021 identifies AF2507 as Gizab; candidate name retained. Workbook v04 appears to swap the Chinarto/Gizab names across AF2506 and AF2507. Local-script exact form remains open.",
+        "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2507 with Gizab. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open."
+      },
+      {
+        "id": "AF2504",
+        "candidate_local": "شهید حساس",
+        "workbook_local": "چهارچینو",
+        "candidate_en": "Chahar Chino",
+        "workbook_en": "Chahar Chino",
+        "unit_type": "District",
+        "type": "OCHA code/name conflict with secondary workbook",
+        "status": "OCHA HAG February 2021 explicitly identifies AF2504 as Shahid-e-Hassas; candidate local label retained and English label corrected. Workbook v04's Chahar Chino label is not accepted for this P-code. Local-script verification remains open.",
+        "independent_source_review": "OCHA HAG February 2021 explicitly pairs AF2504 with Shahid-e-Hassas. Candidate local label «شهید حساس» is retained; the previous workbook-aligned English label was corrected."
+      },
+      {
+        "id": "AF2501",
+        "candidate_local": "تیرینکوت",
+        "workbook_local": "ترینکوت",
+        "candidate_en": "Tirenkot",
+        "workbook_en": "Tirenkot",
+        "unit_type": "Provincial Capital",
+        "type": "OCHA orthographic spelling preferred",
+        "status": "OCHA 2024 Annex 1 spells AF2501 as Tirinkot; English label corrected. Local-script orthographic variant remains open.",
+        "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF2501 with Tirinkot. English label corrected to the OCHA spelling; local-script orthographic variant remains open."
+      },
+      {
+        "id": "AF2304",
+        "candidate_local": "چار صد ره",
+        "workbook_local": "چار سده",
+        "candidate_en": "Chaharsada",
+        "workbook_en": "Chaharsada",
+        "unit_type": "District",
+        "type": "OCHA code/name corroborates alternate candidate spelling",
+        "status": "OCHA 2024 Annex 1 identifies AF2304 as Charsadra; English label corrected. Local-script variant remains open.",
+        "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF2304 with Charsadra. English label corrected; local-script variant remains open."
+      },
+      {
+        "id": "AF2301",
+        "candidate_local": "فیروزکوه",
+        "workbook_local": "فیروز کوه",
+        "candidate_en": "Feroz Koh",
+        "workbook_en": "Feroz Koh",
+        "unit_type": "Provincial Capital",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF3302",
+        "candidate_local": "پشترود",
+        "workbook_local": "پُشت رود",
+        "candidate_en": "Pushterod",
+        "workbook_en": "Pushterod",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF3310",
+        "candidate_local": "گلستان",
+        "workbook_local": "گُلستان",
+        "candidate_en": "Gulistan",
+        "workbook_en": "Gulistan",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0308",
+        "candidate_local": "کوه صافی",
+        "workbook_local": "کوهء صافی",
+        "candidate_en": "Koh-e-Safi",
+        "workbook_en": "Koh-e-Safi",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF2902",
+        "candidate_local": "پشتون کوټ",
+        "workbook_local": "پشتون کوت",
+        "candidate_en": "Pashtun Kot",
+        "workbook_en": "Pashtun Kot",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF2914",
+        "candidate_local": "خان چارباغ",
+        "workbook_local": "خان چهارباغ",
+        "candidate_en": "Khan-e-Char Bagh",
+        "workbook_en": "Khan-e-Char Bagh",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF2906",
+        "candidate_local": "شیرین تگاب",
+        "workbook_local": "شرین تگاب",
+        "candidate_en": "Shirin Tagab",
+        "workbook_en": "Shirin Tagab",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1413",
+        "candidate_local": "جاجی میدان",
+        "workbook_local": "ځاځی میدان",
+        "candidate_en": "Zazi Maydan",
+        "workbook_en": "Zazi Maydan",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1404",
+        "candidate_local": "تنی",
+        "workbook_local": "تڼی",
+        "candidate_en": "Tani",
+        "workbook_en": "Tani",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1403",
+        "candidate_local": "گربز",
+        "workbook_local": "گُربز",
+        "candidate_en": "Gurbaz",
+        "workbook_en": "Gurbaz",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1408",
+        "candidate_local": "تری زائی",
+        "workbook_local": "علیشیراوتریزي",
+        "candidate_en": "Alisher Aw Terizi",
+        "workbook_en": "Alisher Aw Terizi",
+        "unit_type": "District",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "Secondary sources describe Ali Sher (Terezayi) / Tere Zayi. Candidate «تری زائی» and workbook «علیشیراوتریزي» may be short/expanded names; keep local-script reconciliation pending.",
+        "secondary_source_review": "EUAA/EASO 2021 lists Ali Sher (Terezayi); SATP lists Tere Zayi. This supports an alias explanation, not a current COD row-level P-code verification.",
+        "source_urls": [
+          "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+          "https://www.satp.org/documents/district/afghanistan"
+        ]
+      },
+      {
+        "id": "AF1402",
+        "candidate_local": "مندوزائی",
+        "workbook_local": "اسماعیل خېل او مندوزي",
+        "candidate_en": "Esmail Khel Aw Mandozayi",
+        "workbook_en": "Esmail Khel Aw Mandozayi",
+        "unit_type": "District",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "Secondary sources describe Mandozayi with Esmayel Khel as an alternate/expanded form. Candidate «مندوزائی» and workbook «اسماعیل خېل او مندوزي» may be short/expanded names; keep local-script reconciliation pending.",
+        "secondary_source_review": "EUAA/EASO 2021 lists Mandozayi (Esmayel Khel); SATP lists Mando Zayi. This supports an alias explanation, not a current COD row-level P-code verification.",
+        "source_urls": [
+          "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+          "https://www.satp.org/documents/district/afghanistan"
+        ]
+      },
+      {
+        "id": "AF1407",
+        "candidate_local": "صبری",
+        "workbook_local": "صبری او یعقوبی",
+        "candidate_en": "Sabari Aw Yaqubi",
+        "workbook_en": "Sabari Aw Yaqubi",
+        "unit_type": "District",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "Secondary sources describe Sabari with Yaqubi as an alternate/expanded form. Candidate «صبری» and workbook «صبری او یعقوبی» may be short/expanded names; keep local-script reconciliation pending.",
+        "secondary_source_review": "EUAA/EASO 2021 lists Sabari (Yaqubi); SATP lists Sabri. This supports an alias explanation, not a current COD row-level P-code verification.",
+        "source_urls": [
+          "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+          "https://www.satp.org/documents/district/afghanistan"
+        ]
+      },
+      {
+        "id": "AF1401",
+        "candidate_local": "خوست (متون)",
+        "workbook_local": "متون",
+        "candidate_en": "Matun",
+        "workbook_en": "Matun",
+        "unit_type": "Provincial Capital",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "Secondary sources identify Khost (Matun) as the provincial capital and list Khost/Matun as a district name. The workbook's «متون» and candidate «خوست (متون)» may be short/expanded forms; keep local-script reconciliation pending.",
+        "secondary_source_review": "EUAA/EASO 2021 describes Khost (Matun) and says Khost city is locally known as Matun; SATP lists Khost / Matun. These sources support an alias explanation, not a current COD row-level P-code verification.",
+        "source_urls": [
+          "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+          "https://www.satp.org/documents/district/afghanistan"
+        ]
+      },
+      {
+        "id": "AF3212",
+        "candidate_local": "اوبی",
+        "workbook_local": "اوبه",
+        "candidate_en": "Obe",
+        "workbook_en": "Obe",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF3206",
+        "candidate_local": "پشتون زرغون",
+        "workbook_local": "پښتون زرغون",
+        "candidate_en": "Pashtun Zarghun",
+        "workbook_en": "Pashtun Zarghun",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1509",
+        "candidate_local": "چوکی",
+        "workbook_local": "څوکی/ سوکی",
+        "candidate_en": "Chawkay",
+        "workbook_en": "Chawkay",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1503",
+        "candidate_local": "وته پور",
+        "workbook_local": "وټه پور",
+        "candidate_en": "Watapor",
+        "workbook_en": "Watapor",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1507",
+        "candidate_local": "دره پیچ",
+        "workbook_local": "درهء پیچ",
+        "candidate_en": "Darah-e-Pech",
+        "workbook_en": "Darah-e-Pech",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1502",
+        "candidate_local": "مروره",
+        "workbook_local": "منوری",
+        "candidate_en": "Marawara",
+        "workbook_en": "Marawara",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1505",
+        "candidate_local": "سرکانی",
+        "workbook_local": "سرکاڼی",
+        "candidate_en": "Sarkani",
+        "workbook_en": "Sarkani",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF3004",
+        "candidate_local": "نهر سراج",
+        "workbook_local": "گرشک",
+        "candidate_en": "Gereshk",
+        "workbook_en": "Gereshk",
+        "unit_type": "District",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "OCHA HAG February 2021 uses Nahr-e-Saraj for AF3004 while the workbook uses Gereshk. Treat as an alternate/expanded name pending current COD row review.",
+        "independent_source_review": "OCHA HAG February 2021 pairs AF3004 with Nahr-e-Saraj. This is an alternate/historical name for the Gereshk label in the workbook; do not treat as a confirmed code error without current COD row review."
+      },
+      {
+        "id": "AF3003",
+        "candidate_local": "ناوه بارکزائی",
+        "workbook_local": "ناوه",
+        "candidate_en": "Nawa",
+        "workbook_en": "Nawa",
+        "unit_type": "District",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "OCHA HAG February 2021 uses Nawa-e-Barakzaiy for AF3003 while the workbook uses Nawa. Treat as an alternate/expanded name pending current COD row review.",
+        "independent_source_review": "OCHA HAG February 2021 pairs AF3003 with Nawa-e-Barakzaiy. This is an alternate/expanded name for Nawa; do not treat as a confirmed code error without current COD row review."
+      },
+      {
+        "id": "AF3011",
+        "candidate_local": "ریگ خان نشین",
+        "workbook_local": "خانشین",
+        "candidate_en": "Khanshin",
+        "workbook_en": "Khanshin",
+        "unit_type": "District",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "A secondary HDX-based operational-presence dataset lists AF3011 as Reg-i-Khan Nishin, supporting the expanded candidate «ریگ خان نشین» against workbook «خانشین». Current COD row-level verification remains pending.",
+        "secondary_source_review": "A secondary HDX-derived operational-presence dataset dated 2026-05-05 pairs AF3011 with Reg-i-Khan Nishin. This supports an expanded-name explanation, not primary-source certification.",
+        "source_urls": [
+          "https://huggingface.co/datasets/electricsheepasia/asia-operational-presence-afghanistan-who-does-what-where-october"
+        ]
+      },
+      {
+        "id": "AF0409",
+        "candidate_local": "مدکز بهسود",
+        "workbook_local": "مرکز بهسود",
+        "candidate_en": "Markaz-e-Behsud",
+        "workbook_en": "Markaz-e-Behsud",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0617",
+        "candidate_local": "مهمند دره",
+        "workbook_local": "مومند دره",
+        "candidate_en": "Momand Darah",
+        "workbook_en": "Momand Darah",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0606",
+        "candidate_local": "کوز کنر",
+        "workbook_local": "کوز کونړ",
+        "candidate_en": "Kuz Kunar",
+        "workbook_en": "Kuz Kunar",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0609",
+        "candidate_local": "بتی کوټ",
+        "workbook_local": "بټی کوټ",
+        "candidate_en": "Bati Kot",
+        "workbook_en": "Bati Kot",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0618",
+        "candidate_local": "لعل پور",
+        "workbook_local": "لعل پوره",
+        "candidate_en": "Lalpura",
+        "workbook_en": "Lalpura",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF2610",
+        "candidate_local": "شملزائی",
+        "workbook_local": "شملزی",
+        "candidate_en": "Shamolzai",
+        "workbook_en": "Shamolzai",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF2611",
+        "candidate_local": "کاکړ",
+        "workbook_local": "خاک افغان",
+        "candidate_en": "Khak-e-Afghan",
+        "workbook_en": "Khak-e-Afghan",
+        "unit_type": "District",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "GeoNames records Kakar and Khak-e-Afghan as alternate names for the same Zabul ADM2 place. This supports an alias explanation for candidate «کاکړ» and workbook «خاک افغان»; current COD row-level P-code verification remains pending.",
+        "secondary_source_review": "GeoNames identifies the feature as Kakar ADM2 in Zabul and records “Khāk-e Afghān” as a historical/alternate name. This is useful alias evidence but not an authoritative current P-code gazetteer.",
+        "source_urls": [
+          "https://www.geonames.org/7053347/kakar.html"
+        ]
+      },
+      {
+        "id": "AF2608",
+        "candidate_local": "اتغر",
+        "workbook_local": "اټغر",
+        "candidate_en": "Atghar",
+        "workbook_en": "Atghar",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1802",
+        "candidate_local": "هزار سموچ",
+        "workbook_local": "هزار سمُچ",
+        "candidate_en": "Hazar Sumuch",
+        "workbook_en": "Hazar Sumuch",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF3404",
+        "candidate_local": "چاربرجک",
+        "workbook_local": "چهاربرجک",
+        "candidate_en": "Chahar Burjak",
+        "workbook_en": "Chahar Burjak",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF3405",
+        "candidate_local": "خاش رود",
+        "workbook_local": "خاشرود",
+        "candidate_en": "Khashrod",
+        "workbook_en": "Khashrod",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0704",
+        "candidate_local": "علینگار",
+        "workbook_local": "الینگار",
+        "candidate_en": "Alingar",
+        "workbook_en": "Alingar",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0703",
+        "candidate_local": "علیشنگ",
+        "workbook_local": "الیشنگ",
+        "candidate_en": "Alishang",
+        "workbook_en": "Alishang",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0909",
+        "candidate_local": "خواجه هجران",
+        "workbook_local": "جلگه",
+        "candidate_en": "Jelgah",
+        "workbook_en": "Jelgah",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0913",
+        "candidate_local": "خوست و فرنگ",
+        "workbook_local": "خوست وفرینگ",
+        "candidate_en": "Khost Wa Fereng",
+        "workbook_en": "Khost Wa Fereng",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0912",
+        "candidate_local": "پل حصار",
+        "workbook_local": "پُل حصار",
+        "candidate_en": "Pul-e-Hisar",
+        "workbook_en": "Pul-e-Hesar",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0901",
+        "candidate_local": "پلخمری",
+        "workbook_local": "بغلان مرکزی",
+        "candidate_en": "Pul-e-Khumri",
+        "workbook_en": "Pul-e-Khumri",
+        "unit_type": "Provincial Capital",
+        "type": "Alternate/expanded name; no confirmed code error",
+        "status": "A FAO/CSO-sourced 2010 district table describes the provincial center as «مرکز بغلان - پلخمری» / Provincial Center of Baghlan (Pul-i-Khumri). This supports a local-name alias explanation for «پلخمری» versus «بغلان مرکزی»; current COD row-level P-code verification remains pending.",
+        "secondary_source_review": "FAO 2010 district list gives the Baghlan provincial center as «مرکز بغلان - پلخمری» and English “Provincial Center Of Baghlan (Pul-I-Khumri)”. This supports the name relationship but is not a current OCHA P-code row.",
+        "source_urls": [
+          "https://coin.fao.org/coin-static/cms/media/5/12825541120990/all_apr_may_10_v1_1.pdf"
+        ]
+      },
+      {
+        "id": "AF0910",
+        "candidate_local": "بورکه",
+        "workbook_local": "بُرکه",
+        "candidate_en": "Borka",
+        "workbook_en": "Borka",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF0905",
+        "candidate_local": "بغلان جدید",
+        "workbook_local": "بغلان مرکزی",
+        "candidate_en": "Baghlan-e-Markazi",
+        "workbook_en": "Baghlan-e-Markazi",
+        "unit_type": "District",
+        "type": "OCHA code/name evidence conflicts with secondary workbook",
+        "status": "OCHA 2024 Annex 1 identifies AF0905 as Baghlan-e-Jadid; English label corrected. Candidate local label retained; local-script mismatch remains open.",
+        "independent_source_review": "OCHA 2024 Annex 1 explicitly pairs AF0905 with Baghlan-e-Jadid. The workbook's English label conflicts. Candidate local label «بغلان جدید» is retained; local-script discrepancy remains open pending direct local-language source."
+      },
+      {
+        "id": "AF0915",
+        "candidate_local": "فرنگ وغارو",
+        "workbook_local": "فرینگ غارو",
+        "candidate_en": "Fereng-o-Gharu",
+        "workbook_en": "Fereng-o-Gharu",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF3105",
+        "candidate_local": "بالا مرغاب",
+        "workbook_local": "بالامرغاب",
+        "candidate_en": "Bala Murghab",
+        "workbook_en": "Bala Murghab",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      },
+      {
+        "id": "AF1007",
+        "candidate_local": "ورث",
+        "workbook_local": "ورس",
+        "candidate_en": "Waras",
+        "workbook_en": "Waras",
+        "unit_type": "District",
+        "type": "Local-script spelling/transliteration discrepancy",
+        "status": "Compared against user-supplied afg_admin_boundaries2.csv v04 by ADM2 P-code on 2026-11-01; candidate value retained pending reconciliation."
+      }
+    ],
+    "english_name_fixes_from_excel": [
+      {
+        "id": "AF1704",
+        "from": "Yaftal-e-Sufla",
+        "to": "Yaftal",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1722",
+        "from": "Darwaz-e-Payin",
+        "to": "Darwaz",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1703",
+        "from": "Arghanj Khwah",
+        "to": "Arghanchkhwah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1724",
+        "from": "Shaki",
+        "to": "Shakai",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1213",
+        "from": "Nika",
+        "to": "Neka",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1205",
+        "from": "Sar Rawzah",
+        "to": "Sar Rawza",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1216",
+        "from": "Dila",
+        "to": "Delah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1217",
+        "from": "Wazakhah",
+        "to": "Wazakhwa",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1307",
+        "from": "Jaji",
+        "to": "Zazi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1308",
+        "from": "Lija Ahmad Khel",
+        "to": "Laj-e-Ahmadkhel",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1305",
+        "from": "Zadran",
+        "to": "Waza Zadran",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1302",
+        "from": "Ahmadaba",
+        "to": "Ahmad Abad",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1311",
+        "from": "Dand Wa Patan",
+        "to": "Dand-e-Patan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1604",
+        "from": "Nurgaram",
+        "to": "Nurgeram",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1605",
+        "from": "Duab",
+        "to": "Dowab",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2116",
+        "from": "Sharak-e-Hayratan",
+        "to": "Chahi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2111",
+        "from": "Char Bolak",
+        "to": "Chaharbolak",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2114",
+        "from": "Keshendeh",
+        "to": "Kushenda",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2107",
+        "from": "Sholgareh",
+        "to": "Sholgarah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2804",
+        "from": "Mingajik",
+        "to": "Mingajek",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2811",
+        "from": "Darzab",
+        "to": "Darz Ab",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2806",
+        "from": "Khamyab",
+        "to": "Kham Ab",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2810",
+        "from": "Qarqin",
+        "to": "Qarqen",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2801",
+        "from": "Shiberghan",
+        "to": "Sheberghan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2505",
+        "from": "Khas Uruzgan",
+        "to": "Khas Urozgan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2503",
+        "from": "Chora",
+        "to": "Chorah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2504",
+        "from": "Shahid-e-Hassas",
+        "to": "Chahar Chino",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2501",
+        "from": "Tirinkot",
+        "to": "Tirenkot",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2304",
+        "from": "Charsadra",
+        "to": "Chaharsada",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2302",
+        "from": "DoLayna",
+        "to": "Do Layna",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3302",
+        "from": "Pushtrod",
+        "to": "Pushterod",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3304",
+        "from": "Qala-e-Kah",
+        "to": "Qalah-e-Kah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3305",
+        "from": "Shibkoh",
+        "to": "Shebkoh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3311",
+        "from": "Pur Chaman",
+        "to": "Purchaman",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3303",
+        "from": "Khak-e-Safed",
+        "to": "Khak-e-Safid",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2911",
+        "from": "Qaram Qul",
+        "to": "Qaramqul",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2908",
+        "from": "Garzewan",
+        "to": "Garziwan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2903",
+        "from": "Khwaja Sabz Posh",
+        "to": "Khwaja Sabzposh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2901",
+        "from": "Maymana",
+        "to": "Maimana",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2907",
+        "from": "Qaysar",
+        "to": "Qaisar",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1907",
+        "from": "Qala-e-Zal",
+        "to": "Qala-e-zal",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1412",
+        "from": "Shamal",
+        "to": "Shumul",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1413",
+        "from": "Jaji Maydan",
+        "to": "Zazi Maydan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1403",
+        "from": "Gurbuz",
+        "to": "Gurbaz",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1408",
+        "from": "Terezayi",
+        "to": "Alisher Aw Terizi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1406",
+        "from": "Nadir Shah Kot",
+        "to": "Nadershahkot",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1402",
+        "from": "Mandozayi",
+        "to": "Esmail Khel Aw Mandozayi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1407",
+        "from": "Sabari",
+        "to": "Sabari Aw Yaqubi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1405",
+        "from": "Musa Khel",
+        "to": "Musakhel",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3210",
+        "from": "Kushk-e-Kuhna",
+        "to": "Kushk-e-Kohna",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3216",
+        "from": "Chisht-e-Sharif",
+        "to": "Chesht-e-Sharif",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1513",
+        "from": "Chapa Dara",
+        "to": "Chapa Darah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1503",
+        "from": "Watapur",
+        "to": "Watapor",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1514",
+        "from": "Nurgal",
+        "to": "Noorgal",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1515",
+        "from": "Nari",
+        "to": "Narai",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1505",
+        "from": "Sar Kani",
+        "to": "Sarkani",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0106",
+        "from": "Shakar Dara",
+        "to": "Shakardara",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0107",
+        "from": "Musahi",
+        "to": "Mosahi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0113",
+        "from": "Estalef",
+        "to": "Istalef",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0114",
+        "from": "Qara Bagh",
+        "to": "Qarabagh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3013",
+        "from": "Deh-e-Shu",
+        "to": "Disho",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3003",
+        "from": "Nawa-e-Barakzaiy",
+        "to": "Nawa",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3005",
+        "from": "Washer",
+        "to": "Washir",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3011",
+        "from": "Reg-i-Khan Nishin",
+        "to": "Khanshin",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1114",
+        "from": "Jaghuri",
+        "to": "Jaghori",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1108",
+        "from": "Zanakhan",
+        "to": "Zana Khan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1111",
+        "from": "Qara Bagh",
+        "to": "Qarabagh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1103",
+        "from": "Khwaja Umari",
+        "to": "Khwaja Omari",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0406",
+        "from": "Daymirdad",
+        "to": "Daimirdad",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0408",
+        "from": "Jaghatu",
+        "to": "Jaghato",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0617",
+        "from": "Muhmand Dara",
+        "to": "Momand Darah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0618",
+        "from": "Lalpur",
+        "to": "Lalpura",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0611",
+        "from": "Pachir Wa Agam",
+        "to": "Pachiragam",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2610",
+        "from": "Shamul Zayi",
+        "to": "Shamolzai",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2606",
+        "from": "Shah Joi",
+        "to": "Shahjoy",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1816",
+        "from": "Chahab",
+        "to": "Chah Ab",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1811",
+        "from": "Eshkmesh",
+        "to": "Eshkamesh",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1817",
+        "from": "Yangi Qala",
+        "to": "Yangi Qalah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1810",
+        "from": "Rostaq",
+        "to": "Rustaq",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3404",
+        "from": "Char Burjak",
+        "to": "Chahar Burjak",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0705",
+        "from": "Dawlatshah",
+        "to": "Dawlat Shah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0702",
+        "from": "Qarghayi",
+        "to": "Qarghayee",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0909",
+        "from": "Khwaja Hejran",
+        "to": "Jelgah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0914",
+        "from": "Guzargah-e-Nur",
+        "to": "Guzargah-e-Noor",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0906",
+        "from": "Khinjan",
+        "to": "Khenjan",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0911",
+        "from": "Tala Wa Barfak",
+        "to": "Tala-Wa-Barfak",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0908",
+        "from": "Deh Salah",
+        "to": "Dehsalah",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0910",
+        "from": "Burka",
+        "to": "Borka",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0905",
+        "from": "Baghlan-e-Jadid",
+        "to": "Baghlan-e-Markazi",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0915",
+        "from": "Fereng Wa Gharu",
+        "to": "Fereng-o-Gharu",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3101",
+        "from": "Qala-e-Naw",
+        "to": "Qala-e Naw",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3104",
+        "from": "Qadis",
+        "to": "Qades",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3102",
+        "from": "Ab Kamari",
+        "to": "Abkamari",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1002",
+        "from": "Shibar",
+        "to": "Shebar",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1501",
+        "from": "Asad Abad",
+        "to": "Asadabad",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF1507",
+        "from": "Dara-e-Pech",
+        "to": "Darah-e-Pech",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0109",
+        "from": "Khak-e-Jabbar",
+        "to": "Khak-e-Jabar",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF3004",
+        "from": "Nahr-e-Saraj",
+        "to": "Gereshk",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0404",
+        "from": "Chak-e-Wardak",
+        "to": "Chak",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF0405",
+        "from": "Saydabad",
+        "to": "Sayedabad",
+        "updated_on": "2026-11-01"
+      },
+      {
+        "id": "AF2611",
+        "from": "Kakar",
+        "to": "Khak-e-Afghan",
+        "updated_on": "2026-11-01"
+      }
+    ],
+    "records_compared": 401,
+    "exact_local_name_matches": 332,
+    "local_name_discrepancies": 69,
+    "pending_discrepancy_record_ids": [
+      "AF0308",
+      "AF0409",
+      "AF0606",
+      "AF0609",
+      "AF0617",
+      "AF0618",
+      "AF0703",
+      "AF0704",
+      "AF0901",
+      "AF0905",
+      "AF0909",
+      "AF0910",
+      "AF0912",
+      "AF0913",
+      "AF0915",
+      "AF1007",
+      "AF1401",
+      "AF1402",
+      "AF1403",
+      "AF1404",
+      "AF1407",
+      "AF1408",
+      "AF1413",
+      "AF1502",
+      "AF1503",
+      "AF1505",
+      "AF1507",
+      "AF1509",
+      "AF1802",
+      "AF2301",
+      "AF2304",
+      "AF2501",
+      "AF2504",
+      "AF2506",
+      "AF2507",
+      "AF2608",
+      "AF2610",
+      "AF2611",
+      "AF2806",
+      "AF2902",
+      "AF2906",
+      "AF2914",
+      "AF3003",
+      "AF3004",
+      "AF3011",
+      "AF3105",
+      "AF3206",
+      "AF3212",
+      "AF3302",
+      "AF3310",
+      "AF3404",
+      "AF3405"
+    ],
+    "independent_source_checks": [
+      {
+        "id": "AF0905",
+        "candidate": "Baghlan-e-Jadid",
+        "workbook": "Baghlan-e-Markazi",
+        "finding": "OCHA 2024 Annex 1 explicitly pairs AF0905 with Baghlan-e-Jadid. The workbook's English label conflicts. Candidate local label «بغلان جدید» is retained; local-script discrepancy remains open pending direct local-language source.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf"
+        ]
+      },
+      {
+        "id": "AF2504",
+        "candidate": "Shahid-e-Hassas",
+        "workbook": "Chahar Chino",
+        "finding": "OCHA HAG February 2021 explicitly pairs AF2504 with Shahid-e-Hassas. Candidate local label «شهید حساس» is retained; the previous workbook-aligned English label was corrected.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      },
+      {
+        "id": "AF2506",
+        "candidate": "Chinarto",
+        "workbook": "Gizab",
+        "finding": "OCHA HAG February 2021 explicitly pairs AF2506 with Chinarto. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      },
+      {
+        "id": "AF2507",
+        "candidate": "Gizab",
+        "workbook": "Chinarto",
+        "finding": "OCHA HAG February 2021 explicitly pairs AF2507 with Gizab. This supports the candidate code/name pairing and indicates the v04 workbook labels are crossed for AF2506/AF2507; local-script exact form remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      },
+      {
+        "id": "AF1722",
+        "candidate": "Darwaz-e-Payin",
+        "workbook": "Darwaz",
+        "finding": "OCHA 2024 Annex 1 explicitly pairs AF1722 with Darwaz-e-Payin. English label corrected; local-script variant remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf"
+        ]
+      },
+      {
+        "id": "AF2304",
+        "candidate": "Charsadra",
+        "workbook": "Chaharsada",
+        "finding": "OCHA 2024 Annex 1 explicitly pairs AF2304 with Charsadra. English label corrected; local-script variant remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf"
+        ]
+      },
+      {
+        "id": "AF2501",
+        "candidate": "Tirinkot",
+        "workbook": "Tirenkot",
+        "finding": "OCHA 2024 Annex 1 explicitly pairs AF2501 with Tirinkot. English label corrected to the OCHA spelling; local-script orthographic variant remains open.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf"
+        ]
+      },
+      {
+        "id": "AF3004",
+        "candidate": "Nahr-e-Saraj",
+        "workbook": "Gereshk",
+        "finding": "OCHA HAG February 2021 pairs AF3004 with Nahr-e-Saraj. This is an alternate/historical name for the Gereshk label in the workbook; do not treat as a confirmed code error without current COD row review.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      },
+      {
+        "id": "AF3003",
+        "candidate": "Nawa-e-Barakzaiy",
+        "workbook": "Nawa",
+        "finding": "OCHA HAG February 2021 pairs AF3003 with Nawa-e-Barakzaiy. This is an alternate/expanded name for Nawa; do not treat as a confirmed code error without current COD row review.",
+        "source_level": "OCHA publication; targeted code/name evidence, not the full COD gazetteer",
+        "source_urls": [
+          "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf"
+        ]
+      }
+    ],
+    "independent_source_checks_completed": 9,
+    "independent_source_checks_last_reviewed": "2026-11-01",
+    "english_label_corrections_from_ocha": 5,
+    "review_triage": {
+      "last_reviewed": "2026-11-01",
+      "total_pending": 52,
+      "orthographic_or_transliteration": 37,
+      "material_name_or_code_conflicts": 0,
+      "source_checked_or_alternate_name_pending_local_review": 15,
+      "note": "Triage only. All listed records remain pending; secondary alias evidence does not verify the current COD P-code mapping or certify local-script spelling."
+    }
+  },
+  "english_name_review_status": {
+    "method": "P-code keyed comparison of all candidate ADM2 English labels against the user-provided afg_admin_boundaries.xlsx v04 (valid_on 2026-06-23), using the workbook adm2_name field. This is secondary-reference alignment, not primary-source certification.",
+    "candidate_records": 401,
+    "records_compared": 401,
+    "labels_changed_to_workbook": 101,
+    "labels_already_matching": 300,
+    "last_reviewed": "2026-11-01",
+    "changed_record_ids": [
+      "AF0106",
+      "AF0107",
+      "AF0109",
+      "AF0113",
+      "AF0114",
+      "AF0404",
+      "AF0405",
+      "AF0406",
+      "AF0408",
+      "AF0611",
+      "AF0617",
+      "AF0618",
+      "AF0702",
+      "AF0705",
+      "AF0905",
+      "AF0906",
+      "AF0908",
+      "AF0909",
+      "AF0910",
+      "AF0911",
+      "AF0914",
+      "AF0915",
+      "AF1002",
+      "AF1103",
+      "AF1108",
+      "AF1111",
+      "AF1114",
+      "AF1205",
+      "AF1213",
+      "AF1216",
+      "AF1217",
+      "AF1302",
+      "AF1305",
+      "AF1307",
+      "AF1308",
+      "AF1311",
+      "AF1402",
+      "AF1403",
+      "AF1405",
+      "AF1406",
+      "AF1407",
+      "AF1408",
+      "AF1412",
+      "AF1413",
+      "AF1501",
+      "AF1503",
+      "AF1505",
+      "AF1507",
+      "AF1513",
+      "AF1514",
+      "AF1515",
+      "AF1604",
+      "AF1605",
+      "AF1703",
+      "AF1704",
+      "AF1722",
+      "AF1724",
+      "AF1810",
+      "AF1811",
+      "AF1816",
+      "AF1817",
+      "AF1907",
+      "AF2107",
+      "AF2111",
+      "AF2114",
+      "AF2116",
+      "AF2302",
+      "AF2304",
+      "AF2501",
+      "AF2503",
+      "AF2504",
+      "AF2505",
+      "AF2606",
+      "AF2610",
+      "AF2611",
+      "AF2801",
+      "AF2804",
+      "AF2806",
+      "AF2810",
+      "AF2811",
+      "AF2901",
+      "AF2903",
+      "AF2907",
+      "AF2908",
+      "AF2911",
+      "AF3003",
+      "AF3004",
+      "AF3005",
+      "AF3011",
+      "AF3013",
+      "AF3101",
+      "AF3102",
+      "AF3104",
+      "AF3210",
+      "AF3216",
+      "AF3302",
+      "AF3303",
+      "AF3304",
+      "AF3305",
+      "AF3311",
+      "AF3404"
+    ],
+    "post_workbook_ocha_crosscheck": {
+      "reviewed_on": "2026-11-01",
+      "records_rechecked": 5,
+      "english_labels_revised": 5,
+      "revised_record_ids": [
+        "AF0905",
+        "AF2504",
+        "AF1722",
+        "AF2304",
+        "AF2501"
+      ],
+      "method": "Targeted exact-P-code cross-check against OCHA Afghanistan Humanitarian Fund Standard Allocation Strategy Annex 1 (2024) and OCHA Humanitarian Access Group Hard-to-Reach Districts (February 2021). OCHA labels take precedence over conflicting secondary workbook labels for these exact P-codes. This is not a full 401-row primary-source certification.",
+      "sources": [
+        {
+          "title": "OCHA Afghanistan Humanitarian Fund Standard Allocation Strategy, 2024, Annex 1",
+          "url": "https://onegms.unocha.org/pubdocs/Allocationsdocs/AFG-AllocDocs_2024_60_78.pdf",
+          "records": [
+            "AF0905",
+            "AF1722",
+            "AF2304",
+            "AF2501"
+          ]
+        },
+        {
+          "title": "OCHA Humanitarian Access Group, Hard-to-Reach Districts, February 2021",
+          "url": "https://www.ecoi.net/en/file/local/2056916/hard_to_reach_district_map_february_2021.pdf",
+          "records": [
+            "AF2504",
+            "AF2506",
+            "AF2507",
+            "AF3003",
+            "AF3004"
+          ]
+        }
+      ]
+    },
+    "labels_subsequently_overridden_by_ocha": 5,
+    "subsequently_overridden_record_ids": [
+      "AF0905",
+      "AF1722",
+      "AF2304",
+      "AF2501",
+      "AF2504"
+    ],
+    "labels_currently_matching_workbook_from_initial_alignment": 96,
+    "user_accepted_variation_policy": {
+      "recorded_on": "2026-11-01",
+      "user_instruction": "Small English spelling/transliteration differences are acceptable and should not block continued work.",
+      "policy": "Retain current candidate English labels when exact ADM2 P-code and parent province IDs match. Treat formatting and minor orthographic variants as non-blocking for draft preview. Keep a short manual-glance list for more divergent aliases; do not automatically overwrite labels from a secondary source.",
+      "secondary_crosscheck_counts": {
+        "exact_match": 289,
+        "formatting_only": 20,
+        "minor_variant_non_blocking": 67,
+        "manual_glance_recommended": 25,
+        "total": 401
+      },
+      "source_audit_file": "docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json",
+      "candidate_labels_changed": false,
+      "official_cod_ab_certified": false
+    }
+  },
+  "dataset_level_source_checks": [
+    {
+      "id": "OCHA_COD_STATUS_DASHBOARD_2026-11-01",
+      "source_name": "OCHA Common Operational Datasets status dashboard",
+      "source_url": "https://ocha-dap.github.io/cod-site/status/",
+      "accessed_on": "2026-11-01",
+      "scope": "Afghanistan dataset-level status only; not row-level name evidence",
+      "findings": {
+        "adm1_features": 34,
+        "adm2_features": 401,
+        "cod_ab_reference_year": 2026,
+        "cod_ps_reference_year": 2027,
+        "cod_ps_adm2_pcodes": 457,
+        "cod_ps_adm2_pcodes_not_in_cod_ab": 56
+      },
+      "interpretation": "The dashboard reports 401 Afghanistan ADM2 COD-AB features and 56 of 457 ADM2 COD-PS P-codes not in COD-AB. This supports keeping the 56 unmatched workbook/PS records separate from the 401-record candidate reference until row-level reconciliation. It does not verify any individual district name or P-code mapping."
+    },
+    {
+      "id": "OCHA_COD_AB_WORK_STATUS_2026-11-01",
+      "source_name": "OCHA COD-AB work status dashboard",
+      "source_url": "https://ocha-dap.github.io/hdx-cod-ab-status/",
+      "accessed_on": "2026-11-01",
+      "scope": "Country-level workflow status only; not row-level name evidence",
+      "finding": "Afghanistan is listed as In Progress, with work active for approximately five weeks at the time accessed.",
+      "interpretation": "Treat current COD-AB update activity as a reason to obtain the latest row-level Afghanistan gazetteer before closing disputed labels. This status page is not itself a district gazetteer."
+    },
+    {
+      "id": "OCHA_GLOBAL_COD_ADMIN2_SERVICE_SCHEMA",
+      "source_url": "https://gis.unocha.org/server/rest/services/COD/GLB_COD_Admin2/MapServer/0",
+      "scope": "OCHA GIS global Admin2 service schema only; no Afghanistan row-level features retrieved",
+      "finding": "The layer exposes ADM2 P-code, ADM1 parent P-code, multilingual names, validity dates and version fields. Afghanistan-filtered query could not be retrieved in this environment; schema metadata is not row-level verification.",
+      "checked_on": "2026-11-01"
+    }
+  ],
+  "secondary_source_checks": [
+    {
+      "id": "KHOST_DISTRICT_ALIAS_REVIEW",
+      "scope": "District-name aliases only; not current COD P-code evidence",
+      "source_urls": [
+        "https://www.euaa.europa.eu/sites/default/files/publications/2021_EASO_COI_AFG_Security_Situation_Report_AC_final_sized23.pdf",
+        "https://www.satp.org/documents/district/afghanistan"
+      ],
+      "finding": "EUAA/EASO 2021 and SATP list Khost/Matun, Mandozayi (Esmayel Khel), Sabari (Yaqubi), and Ali Sher (Terezayi)/Tere Zayi. Four workbook/candidate local-name differences may be short versus expanded forms."
+    },
+    {
+      "id": "BAGHLAN_PUL_E_KHUMRI_ALIAS_REVIEW",
+      "scope": "Historical local/English name evidence; not current COD P-code evidence",
+      "source_urls": [
+        "https://coin.fao.org/coin-static/cms/media/5/12825541120990/all_apr_may_10_v1_1.pdf"
+      ],
+      "finding": "FAO/CSO-sourced 2010 table describes the provincial center as «مرکز بغلان - پلخمری» / Provincial Center of Baghlan (Pul-I-Khumri), supporting an alias explanation for AF0901."
+    },
+    {
+      "id": "ZABUL_KAKAR_ALIAS_REVIEW",
+      "scope": "Alternate-name evidence; not current COD P-code evidence",
+      "source_urls": [
+        "https://www.geonames.org/7053347/kakar.html"
+      ],
+      "finding": "GeoNames lists Kakar and Khak-e-Afghan as alternate names for the same Zabul ADM2 place."
+    },
+    {
+      "id": "HELMAND_REG_E_KHAN_NISHIN_ALIAS_REVIEW",
+      "scope": "Secondary code/name evidence; not primary COD P-code evidence",
+      "source_urls": [
+        "https://huggingface.co/datasets/electricsheepasia/asia-operational-presence-afghanistan-who-does-what-where-october"
+      ],
+      "finding": "A secondary HDX-derived operational-presence dataset pairs AF3011 with Reg-i-Khan Nishin, supporting an expanded-name explanation for Khanshin."
+    },
+    {
+      "id": "OPEN_ADMIN_DATA_SECONDARY_CROSSCHECK_2026_11_01",
+      "scope": "Exact-ID crosscheck against a community-maintained bilingual administrative hierarchy; secondary reference only, not official COD-AB row-level evidence",
+      "source_urls": [
+        "https://github.com/open-admin-data/afghanistan-administrative-divisions",
+        "https://github.com/open-admin-data/afghanistan-administrative-divisions/blob/main/data/all-district.json"
+      ],
+      "checked_on": "2026-11-01",
+      "finding": "All 401 records joined by exact ID and all 401 parent province IDs matched. English labels: 289 exact, 20 normalization-only, 92 remaining differences. Local-script labels: 396 exact, 1 normalization-only, 4 remaining differences. No labels changed and no pending review status was resolved.",
+      "audit_file": "docs/admin-reference-secondary-crosscheck-open-admin-data-2026-11-01.json"
+    }
+  ],
+  "runtime_preview": {
+    "enabled": true,
+    "enabled_on": "2026-11-01",
+    "surface": "Agriculture screen province and ADM2 administrative-unit selectors",
+    "purpose": "Allows users to preview and select candidate province/ADM2 labels during development.",
+    "production_official_data_enabled": false,
+    "source_verification_status": "pending",
+    "safeguards": [
+      "The UI must display a draft/unverified notice beside the selector.",
+      "Do not use these labels as officially certified names.",
+      "Do not infer agricultural recommendations or planting dates from this administrative reference.",
+      "Preserve all stable P-code-derived IDs."
+    ]
+  }
+}
