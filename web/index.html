@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ps" dir="rtl">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="افغان غزالي کلیز؛ لمریز، قمري او میلادي نېټې، د لمانځه وختونه او کرنیز معلومات.">
+  <meta name="theme-color" content="#145A42">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="افغان غزالي کلیز">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <title>افغان غزالي کلیز | Afghan Ghazali Calendar</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-width: 320px;
+      min-height: 100%;
+      background: #F3F7F3;
+      overscroll-behavior: none;
+    }
+    body { min-height: 100vh; }
+    #flutter-loading {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: #F3F7F3;
+      color: #145A42;
+      font-family: sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    #flutter-loading span {
+      padding: 14px 20px;
+      border: 1px solid #DCE8DE;
+      border-radius: 16px;
+      background: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div id="flutter-loading" role="status" aria-live="polite"><span>افغان غزالي کلیز چمتو کېږي…</span></div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var loading = document.getElementById('flutter-loading');
+      if (loading) loading.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
