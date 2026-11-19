@@ -8,9 +8,17 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: HomeScreen()));
     await tester.pumpAndSettle();
 
-    // The calendar sits inside a scrollable page. Bring its legend into view
-    // so all calendar day cells are built before checking their paired dates.
+    // The calendar is below the hero card in a lazy ListView. Scroll until
+    // its legend is built, then bring the full calendar grid into view.
+    final listView = find.byType(ListView).first;
     final calendarLegend = find.textContaining('افغاني لمریز');
+    for (var attempt = 0;
+        attempt < 6 && calendarLegend.evaluate().isEmpty;
+        attempt++) {
+      await tester.drag(listView, const Offset(0, -500));
+      await tester.pumpAndSettle();
+    }
+    expect(calendarLegend, findsOneWidget);
     await tester.ensureVisible(calendarLegend);
     await tester.pumpAndSettle();
 
