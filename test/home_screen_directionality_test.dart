@@ -14,7 +14,7 @@ void main() {
 
     expect(contentDirection().textDirection, TextDirection.rtl);
 
-    await tester.tap(find.byIcon(Icons.language));
+    await tester.tap(find.byIcon(Icons.translate_rounded));
     await tester.pumpAndSettle();
     await tester.tap(find.text('English').last);
     await tester.pumpAndSettle();
