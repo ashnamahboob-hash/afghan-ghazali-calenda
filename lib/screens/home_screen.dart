@@ -392,7 +392,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ? 'AFGHAN SOLAR  •  GREGORIAN  •  ISLAMIC LUNAR'
         : language == 'fa'
             ? 'شمسی افغانستان  •  میلادی  •  قمری'
-            : 'افغاني لمریز  •  عیسوي میلادي  •  اسلامي قمري';
+            : 'افغاني لمریز  ·  عیسوي میلادي  ·  اسلامي قمري';
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 15, 10, 12),
       decoration: BoxDecoration(
