@@ -198,77 +198,121 @@ class _HomeScreenState extends State<HomeScreen> {
     final month = AfghanCalendar.monthName(solar.month, language);
     final day = AfghanCalendar.formatNumber(solar.day, language);
     final year = AfghanCalendar.formatNumber(solar.year, language);
+    final muted = Colors.white.withOpacity(0.76);
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.fromLTRB(20, 22, 20, 18),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF145A42), Color(0xFF247A59)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          colors: [Color(0xFF104B3A), Color(0xFF176B50), Color(0xFF21805E)],
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
         ),
-        borderRadius: BorderRadius.circular(22),
-        boxShadow: const [BoxShadow(color: Color(0x22204435), blurRadius: 14, offset: Offset(0, 6))],
+        borderRadius: BorderRadius.circular(28),
+        boxShadow: const [
+          BoxShadow(color: Color(0x24104B3A), blurRadius: 24, offset: Offset(0, 12)),
+        ],
       ),
       child: Column(
         children: [
-          Text(isToday ? todayLabel : _gregorian(selectedDate),
-              style: const TextStyle(color: Colors.white70, fontSize: 15)),
-          const SizedBox(height: 8),
-          Text(day, style: const TextStyle(color: Color(0xFFFFD76A), fontSize: 52, fontWeight: FontWeight.w800)),
-          Text('$month $year', style: const TextStyle(color: Colors.white, fontSize: 23, fontWeight: FontWeight.bold)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 6),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.13),
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: Colors.white.withOpacity(0.16)),
+                ),
+                child: Text(
+                  isToday ? todayLabel : _gregorian(selectedDate),
+                  style: TextStyle(color: muted, fontSize: 13, fontWeight: FontWeight.w600),
+                ),
+              ),
+            ],
+          ),
           const SizedBox(height: 10),
+          Text(day, style: const TextStyle(
+            color: Color(0xFFFFD76A), fontSize: 62, height: 1.08, fontWeight: FontWeight.w800,
+          )),
+          const SizedBox(height: 3),
+          Text('$month $year', style: const TextStyle(
+            color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold,
+          )),
+          const SizedBox(height: 20),
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 14),
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.12),
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(19),
+              border: Border.all(color: Colors.white.withOpacity(0.12)),
             ),
             child: Column(
               children: [
-                Text(
-                  language == 'en'
-                      ? 'Islamic: ${IslamicCalendar.monthName(hijri.month, language)} ${hijri.day} ${hijri.year} AH'
-                      : language == 'fa'
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.nightlight_round, color: Color(0xFFFFD76A), size: 18),
+                    const SizedBox(width: 7),
+                    Flexible(child: Text(
+                      language == 'en'
+                        ? 'Islamic: ${IslamicCalendar.monthName(hijri.month, language)} ${hijri.day} ${hijri.year} AH'
+                        : language == 'fa'
                           ? 'قمری: ${IslamicCalendar.monthName(hijri.month, language)} ${AfghanCalendar.formatNumber(hijri.day, language)} ${AfghanCalendar.formatNumber(hijri.year, language)}'
                           : 'قمري: ${IslamicCalendar.monthName(hijri.month, language)} ${AfghanCalendar.formatNumber(hijri.day, language)} ${AfghanCalendar.formatNumber(hijri.year, language)}',
-                  style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
-                  textAlign: TextAlign.center,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w700),
+                    )),
+                  ],
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 8),
+                Container(height: 1, color: Colors.white.withOpacity(0.16)),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.calendar_today_outlined, color: Colors.white70, size: 15),
+                    const SizedBox(width: 7),
+                    Text(
+                      language == 'en' ? 'Gregorian: ${_gregorian(selectedDate)}'
+                        : language == 'fa' ? 'میلادی: ${_gregorian(selectedDate)}'
+                        : 'میلادي: ${_gregorian(selectedDate)}',
+                      style: TextStyle(color: muted, fontSize: 13, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 9),
                 Text(
                   language == 'en'
-                      ? 'Gregorian: ${_gregorian(selectedDate)}'
-                      : language == 'fa'
-                          ? 'میلادی: ${_gregorian(selectedDate)}'
-                          : 'میلادي: ${_gregorian(selectedDate)}',
-                  style: const TextStyle(color: Colors.white70, fontSize: 13),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  language == 'en'
-                      ? 'Tabular estimate; local moon sighting may differ by one day.'
-                      : language == 'fa'
-                          ? 'تاریخ محاسباتی است؛ ممکن است با رؤیت محلی هلال یک روز تفاوت داشته باشد.'
-                          : 'دا محاسبوي قمري نېټه ده؛ د سپوږمۍ د رسمي لیدنې له مخې یوه ورځ توپیر کولای شي.',
-                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                    ? 'Calculated lunar date; local moon sighting may differ by one day.'
+                    : language == 'fa'
+                      ? 'تاریخ قمری محاسباتی است و ممکن است با رؤیت محلی هلال یک روز تفاوت داشته باشد.'
+                      : 'دا محاسبوي قمري نېټه ده؛ د سپوږمۍ د رسمي لیدنې له مخې یوه ورځ توپیر کولای شي.',
+                  style: TextStyle(color: muted, fontSize: 11.5, height: 1.45),
                   textAlign: TextAlign.center,
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 14),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          const SizedBox(height: 16),
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 10,
+            runSpacing: 8,
             children: [
               OutlinedButton.icon(
                 onPressed: () => setState(() => selectedDate = DateTime.now()),
-                icon: const Icon(Icons.today, size: 17),
+                icon: const Icon(Icons.today_rounded, size: 17),
                 label: Text(todayLabel),
-                style: OutlinedButton.styleFrom(foregroundColor: Colors.white, side: const BorderSide(color: Colors.white54)),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  side: BorderSide(color: Colors.white.withOpacity(0.55)),
+                  shape: const StadiumBorder(),
+                  padding: const EdgeInsets.symmetric(horizontal: 19, vertical: 11),
+                ),
               ),
-              const SizedBox(width: 8),
-              OutlinedButton(
+              OutlinedButton.icon(
                 onPressed: () async {
                   final picked = await showDatePicker(
                     context: context,
@@ -278,8 +322,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                   if (picked != null) setState(() => selectedDate = picked);
                 },
-                style: OutlinedButton.styleFrom(foregroundColor: Colors.white, side: const BorderSide(color: Colors.white54)),
-                child: Text(language == 'en' ? 'Choose date' : language == 'fa' ? 'انتخاب تاریخ' : 'نېټه وټاکئ'),
+                icon: const Icon(Icons.calendar_month_rounded, size: 18),
+                label: Text(language == 'en' ? 'Choose date' : language == 'fa' ? 'انتخاب تاریخ' : 'نېټه وټاکئ'),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  side: BorderSide(color: Colors.white.withOpacity(0.55)),
+                  shape: const StadiumBorder(),
+                  padding: const EdgeInsets.symmetric(horizontal: 19, vertical: 11),
+                ),
               ),
             ],
           ),
@@ -288,132 +338,154 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  String _gregorian(DateTime date) =>
+    String _gregorian(DateTime date) =>
       '${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
 
   Widget _monthHeader(dynamic solar) {
-    return Row(
-      children: [
-        IconButton(
-          onPressed: () {
-            final first = DateTime(selectedDate.year, selectedDate.month, 1);
-            setState(() => selectedDate = DateTime(first.year, first.month - 1, 15));
-          },
-          icon: const Icon(Icons.chevron_left),
-        ),
-        Expanded(
-          child: Text(
-            '${AfghanCalendar.monthName(solar.month, language)} ${AfghanCalendar.formatNumber(solar.year, language)}',
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 19, fontWeight: FontWeight.bold, color: Color(0xFF145A42)),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: Row(
+        children: [
+          IconButton.filledTonal(
+            onPressed: () {
+              final first = DateTime(selectedDate.year, selectedDate.month, 1);
+              setState(() => selectedDate = DateTime(first.year, first.month - 1, 15));
+            },
+            icon: const Icon(Icons.chevron_left_rounded),
+            tooltip: language == 'en' ? 'Previous month' : language == 'fa' ? 'ماه قبل' : 'تېره میاشت',
           ),
-        ),
-        IconButton(
-          onPressed: () {
-            final first = DateTime(selectedDate.year, selectedDate.month, 1);
-            setState(() => selectedDate = DateTime(first.year, first.month + 1, 1));
-          },
-          icon: const Icon(Icons.chevron_right),
-        ),
-      ],
+          Expanded(
+            child: Column(
+              children: [
+                Text(
+                  '${AfghanCalendar.monthName(solar.month, language)} ${AfghanCalendar.formatNumber(solar.year, language)}',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800, color: Color(0xFF145A42)),
+                ),
+                Text(
+                  language == 'en' ? 'Afghan solar calendar' : language == 'fa' ? 'تقویم هجری شمسی افغانستان' : 'د افغانستان لمریز کلیز',
+                  style: const TextStyle(fontSize: 11, color: Color(0xFF75847C), fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
+          ),
+          IconButton.filledTonal(
+            onPressed: () {
+              final first = DateTime(selectedDate.year, selectedDate.month, 1);
+              setState(() => selectedDate = DateTime(first.year, first.month + 1, 1));
+            },
+            icon: const Icon(Icons.chevron_right_rounded),
+            tooltip: language == 'en' ? 'Next month' : language == 'fa' ? 'ماه بعد' : 'راتلونکې میاشت',
+          ),
+        ],
+      ),
     );
   }
 
-  Widget _calendarGrid(dynamic selectedSolar) {
+    Widget _calendarGrid(dynamic selectedSolar) {
     final firstDate = AfghanCalendar.toGregorian(selectedSolar.year, selectedSolar.month, 1);
     final offset = (firstDate.weekday + 1) % 7;
     final count = AfghanCalendar.daysInMonth(selectedSolar.year, selectedSolar.month);
     final rows = ((offset + count) / 7).ceil();
     final weekdays = AfghanCalendar.weekdayNames(language);
     final legend = language == 'en'
-        ? 'Afghan solar  ·  Gregorian  ·  Islamic lunar'
+        ? 'AFGHAN SOLAR  •  GREGORIAN  •  ISLAMIC LUNAR'
         : language == 'fa'
-            ? 'شمسی افغانستان  ·  میلادی  ·  قمری'
-            : 'افغاني لمریز  ·  عیسوي میلادي  ·  اسلامي قمري';
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Text(
-                legend,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF527064),
+            ? 'شمسی افغانستان  •  میلادی  •  قمری'
+            : 'افغاني لمریز  •  عیسوي میلادي  •  اسلامي قمري';
+    return Container(
+      padding: const EdgeInsets.fromLTRB(10, 15, 10, 12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: const Color(0xFFE8EEE9)),
+        boxShadow: const [
+          BoxShadow(color: Color(0x0D173F30), blurRadius: 18, offset: Offset(0, 7)),
+        ],
+      ),
+      child: Column(
+        children: [
+          Text(legend, textAlign: TextAlign.center, style: const TextStyle(
+            fontSize: 10, letterSpacing: 0.25, fontWeight: FontWeight.w800, color: Color(0xFF718078),
+          )),
+          const SizedBox(height: 13),
+          Row(
+            children: weekdays.map((d) => Expanded(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 7),
+                  child: Text(d, style: const TextStyle(
+                    fontSize: 11, fontWeight: FontWeight.w800, color: Color(0xFF145A42),
+                  )),
                 ),
               ),
-            ),
+            )).toList(),
+          ),
+          const SizedBox(height: 3),
+          for (var row = 0; row < rows; row++)
             Row(
-              children: weekdays.map((d) => Expanded(
-                child: Center(child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: Text(d, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Color(0xFF145A42))),
-                )),
-              )).toList(),
-            ),
-            for (var row = 0; row < rows; row++)
-              Row(
-                children: List.generate(7, (col) {
-                  final day = row * 7 + col - offset + 1;
-                  if (day < 1 || day > count) return const Expanded(child: SizedBox(height: 46));
-                  final date = AfghanCalendar.toGregorian(selectedSolar.year, selectedSolar.month, day);
-                  final selected = DateUtils.isSameDay(date, selectedDate);
-                  final today = DateUtils.isSameDay(date, DateTime.now());
-                  final hijriDate = IslamicCalendar.fromGregorian(date);
-                  return Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(2),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(12),
-                        onTap: () => setState(() => selectedDate = date),
-                        child: Container(
-                          height: 54,
-                          decoration: BoxDecoration(
-                            color: selected ? const Color(0xFF145A42) : today ? const Color(0xFFFFF2C7) : Colors.transparent,
-                            borderRadius: BorderRadius.circular(12),
-                            border: today && !selected ? Border.all(color: const Color(0xFFD4AF37)) : null,
+              children: List.generate(7, (col) {
+                final day = row * 7 + col - offset + 1;
+                if (day < 1 || day > count) {
+                  return const Expanded(child: SizedBox(height: 57));
+                }
+                final date = AfghanCalendar.toGregorian(selectedSolar.year, selectedSolar.month, day);
+                final selected = DateUtils.isSameDay(date, selectedDate);
+                final today = DateUtils.isSameDay(date, DateTime.now());
+                final hijriDate = IslamicCalendar.fromGregorian(date);
+                return Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(2),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(13),
+                      onTap: () => setState(() => selectedDate = date),
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 180),
+                        height: 57,
+                        decoration: BoxDecoration(
+                          color: selected
+                            ? const Color(0xFF145A42)
+                            : today ? const Color(0xFFFFF5D8) : const Color(0xFFF8FAF8),
+                          borderRadius: BorderRadius.circular(13),
+                          border: Border.all(
+                            color: selected ? const Color(0xFF145A42)
+                              : today ? const Color(0xFFE3BD54) : const Color(0xFFF0F3F0),
                           ),
-                          alignment: Alignment.center,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                AfghanCalendar.formatNumber(day, language),
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: selected || today ? FontWeight.bold : FontWeight.normal,
-                                  color: selected ? Colors.white : const Color(0xFF25352D),
-                                ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              AfghanCalendar.formatNumber(day, language),
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: selected || today ? FontWeight.w800 : FontWeight.w600,
+                                color: selected ? Colors.white : const Color(0xFF263A30),
                               ),
-                              const SizedBox(height: 2),
-                              Text(
-                                '${AfghanCalendar.formatNumber(date.day, language)} · ${AfghanCalendar.formatNumber(hijriDate.day, language)}',
-                                style: TextStyle(
-                                  fontSize: 8,
-                                  height: 1,
-                                  color: selected ? Colors.white70 : const Color(0xFF64756D),
-                                ),
+                            ),
+                            const SizedBox(height: 3),
+                            Text(
+                              '${AfghanCalendar.formatNumber(date.day, language)} · ${AfghanCalendar.formatNumber(hijriDate.day, language)}',
+                              style: TextStyle(
+                                fontSize: 8.5,
+                                height: 1,
+                                color: selected ? Colors.white70 : const Color(0xFF849188),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  );
-                }),
-              ),
-          ],
-        ),
+                  ),
+                );
+              }),
+            ),
+        ],
       ),
     );
   }
 
-  Widget _sectionTitle(String title) => Text(title,
+    Widget _sectionTitle(String title) => Text(title,
       style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF145A42)));
 
   Widget _prayerCard(PrayerTimes times) {
