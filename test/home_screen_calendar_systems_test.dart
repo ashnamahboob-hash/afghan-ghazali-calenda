@@ -6,16 +6,17 @@ void main() {
   testWidgets('Calendar grid displays Afghan, Gregorian and Islamic dates',
       (tester) async {
     await tester.pumpWidget(const MaterialApp(home: HomeScreen()));
-
     await tester.pumpAndSettle();
 
-    // Verify the rendered calendar exposes paired Gregorian and Islamic
-    // day labels, without relying on a specific localized legend string.
+    // The calendar sits inside a scrollable page. Bring its legend into view
+    // so all calendar day cells are built before checking their paired dates.
+    final calendarLegend = find.textContaining('افغاني لمریز');
+    await tester.ensureVisible(calendarLegend);
+    await tester.pumpAndSettle();
+
     final dateLabels = find.byWidgetPredicate(
-      (widget) =>
-          widget is Text && (widget.data?.contains(' · ') ?? false),
+      (widget) => widget is Text && (widget.data?.contains(' · ') ?? false),
     );
-    // Each populated day cell shows the Gregorian and Islamic day numbers.
     expect(dateLabels, findsAtLeastNWidgets(29));
   });
 }
