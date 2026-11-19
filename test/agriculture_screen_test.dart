@@ -13,7 +13,11 @@ void main() {
         ),
       ),
     );
-    await tester.pumpAndSettle();
+    // The screen contains an indeterminate loading spinner while its bundled
+    // administrative reference is read; pump a bounded interval instead of
+    // waiting for all animations to settle.
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 250));
 
     expect(find.textContaining('ازمایښتي معلومات'), findsOneWidget);
     expect(find.text('15/10 – 15/11'), findsOneWidget);
