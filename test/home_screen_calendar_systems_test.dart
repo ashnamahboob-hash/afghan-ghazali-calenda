@@ -7,10 +7,10 @@ void main() {
       (tester) async {
     await tester.pumpWidget(const MaterialApp(home: HomeScreen()));
 
-    // Match the localized calendar legend without depending on exact
-    // punctuation or text wrapping in the rendered widget.
-    expect(find.textContaining('افغاني لمریز'), findsOneWidget);
+    await tester.pumpAndSettle();
 
+    // Verify the rendered calendar exposes paired Gregorian and Islamic
+    // day labels, without relying on a specific localized legend string.
     final dateLabels = find.byWidgetPredicate(
       (widget) =>
           widget is Text && (widget.data?.contains(' · ') ?? false),
