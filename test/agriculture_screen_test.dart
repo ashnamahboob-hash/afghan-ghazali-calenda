@@ -32,6 +32,15 @@ void main() {
 
     expect(find.text('01/09 – 20/09'), findsOneWidget);
     expect(find.text('01/01 – 20/01'), findsOneWidget);
-    expect(find.textContaining('د حقیقي کرنې لپاره یې مه کاروئ'), findsOneWidget);
+
+    // The warning is below the initial viewport in the scrollable screen.
+    // Scroll it into view before asserting so the lazy ListView builds it.
+    final warning = find.textContaining('د حقیقي کرنې لپاره یې مه کاروئ');
+    await tester.scrollUntilVisible(
+      warning,
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(warning, findsOneWidget);
   });
 }
