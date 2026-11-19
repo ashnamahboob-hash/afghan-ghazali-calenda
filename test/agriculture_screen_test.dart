@@ -25,9 +25,10 @@ void main() {
 
     // The last dropdown is the crop selector.
     await tester.tap(find.byType(DropdownButtonFormField<String>).last);
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 300));
     await tester.tap(find.text('وریجې').last);
-    await tester.pumpAndSettle();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
 
     expect(find.text('01/09 – 20/09'), findsOneWidget);
     expect(find.text('01/01 – 20/01'), findsOneWidget);
