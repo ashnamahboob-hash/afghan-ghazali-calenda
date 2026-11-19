@@ -32,6 +32,6 @@ void main() {
 
     expect(find.text('01/09 – 20/09'), findsOneWidget);
     expect(find.text('01/01 – 20/01'), findsOneWidget);
-    expect(find.textContaining('د کرنې لپاره یې مه کاروئ'), findsOneWidget);
+    expect(find.textContaining('د حقیقي کرنې لپاره یې مه کاروئ'), findsOneWidget);
   });
 }
