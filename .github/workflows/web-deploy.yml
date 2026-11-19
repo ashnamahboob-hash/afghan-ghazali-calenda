@@ -43,6 +43,13 @@ jobs:
           if [ ! -f web/index.html ]; then
             flutter create --platforms=web --project-name afghan_ghazali_calendar .
           fi
+      - name: Remove generated placeholder test
+        run: |
+          # flutter create generates a generic test when the repository has no widget_test.dart.
+          # That scaffold targets MyApp/material_ui, while this app uses AfghanGhazaliApp.
+          if [ -f test/widget_test.dart ] && grep -q "package:material_ui/material_ui.dart" test/widget_test.dart; then
+            rm test/widget_test.dart
+          fi
       - name: Install dependencies
         run: flutter pub get
       - name: Analyze
