@@ -20,7 +20,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(contentDirection().textDirection, TextDirection.ltr);
 
-    await tester.tap(find.byIcon(Icons.language));
+    await tester.tap(find.byType(PopupMenuButton<String>));
     await tester.pumpAndSettle();
     await tester.tap(find.text('دری').last);
     await tester.pumpAndSettle();
